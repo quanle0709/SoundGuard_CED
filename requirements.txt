@@ -1,0 +1,11 @@
+librosa
+numpy
+scipy
+silero-vad
+sounddevice
+soundfile
+SpeechRecognition
+torch
+transformers
+torchaudio
+tensorflow
