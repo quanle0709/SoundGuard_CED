@@ -25,15 +25,27 @@ class AudioStreamHub:
 
     def __init__(self, sample_rate: int = 16000, frame_samples: int = 512,
                  queue_seconds: float = 4.0, device_index: int | None = None,
-                 stream_factory=None, clock=time.time) -> None:
-        if sample_rate <= 0 or frame_samples <= 0 or queue_seconds <= 0:
+                 stream_factory=None, clock=time.time,
+                 ced_queue_seconds: float | None = None) -> None:
+        if (sample_rate <= 0 or frame_samples <= 0 or queue_seconds <= 0 or
+                (ced_queue_seconds is not None and ced_queue_seconds <= 0)):
             raise ValueError("Audio stream dimensions must be positive.")
         self.sample_rate = sample_rate
         self.frame_samples = frame_samples
         self.device_index = device_index
-        capacity = max(1, int(queue_seconds / (frame_samples / sample_rate)))
-        self.speech_frames: queue.Queue[AudioFrame] = queue.Queue(maxsize=capacity)
-        self.ced_frames: queue.Queue[AudioFrame] = queue.Queue(maxsize=capacity)
+        frame_seconds = frame_samples / sample_rate
+        speech_capacity = max(1, int(queue_seconds / frame_seconds))
+        ced_capacity = max(
+            1, int((ced_queue_seconds or queue_seconds) / frame_seconds)
+        )
+        self.speech_frames: queue.Queue[AudioFrame] = queue.Queue(
+            maxsize=speech_capacity
+        )
+        self.ced_frames: queue.Queue[AudioFrame] = queue.Queue(
+            maxsize=ced_capacity
+        )
+        self.raw_frames_captured = 0
+        self.ced_frames_produced = 0
         self.dropped_speech_frames = 0
         self.dropped_ced_frames = 0
         self.stream_statuses: deque[str] = deque(maxlen=32)
@@ -69,6 +81,7 @@ class AudioStreamHub:
         with self._lock:
             self._sequence += 1
             sequence = self._sequence
+            self.raw_frames_captured += 1
             if self.capture_started_at is None:
                 self.capture_started_at = started
             self.capture_ended_at = ended
@@ -80,6 +93,7 @@ class AudioStreamHub:
             self.dropped_speech_frames += 1
         if self._offer(self.ced_frames, ced_frame):
             self.dropped_ced_frames += 1
+        self.ced_frames_produced += 1
 
     def __enter__(self) -> "AudioStreamHub":
         if self._stream_factory is None:
@@ -110,6 +124,8 @@ class AudioStreamHub:
     @property
     def counters(self) -> dict[str, int]:
         return {
+            "raw_frames_captured": self.raw_frames_captured,
+            "ced_frames_produced": self.ced_frames_produced,
             "speech_frames_dropped": self.dropped_speech_frames,
             "ced_frames_dropped": self.dropped_ced_frames,
         }

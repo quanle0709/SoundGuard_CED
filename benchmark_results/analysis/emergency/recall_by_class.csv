@@ -1,0 +1,6 @@
+source_class,positives_n,tp,fn,recall,fnr
+glass_breaking,40,0,40,0.0,1.0
+vehicle_horn,40,18,22,0.45,0.55
+fire,40,20,20,0.5,0.5
+siren,40,29,11,0.725,0.275
+baby_crying,40,35,5,0.875,0.125

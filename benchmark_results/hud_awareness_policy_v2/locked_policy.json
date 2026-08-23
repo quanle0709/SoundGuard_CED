@@ -1,0 +1,85 @@
+{
+  "policy": "SoundGuard noncritical HUD awareness v2",
+  "locked_before_validation": true,
+  "metric": "sample-level micro F1; wrong labels count as FP+FN",
+  "threshold_scope": "single global threshold across supported HUD labels",
+  "threshold": 0.52,
+  "calibration_folds": [
+    1,
+    2,
+    3
+  ],
+  "calibration_speakers": [
+    "VIVOSDEV01",
+    "VIVOSDEV02",
+    "VIVOSDEV03",
+    "VIVOSDEV04",
+    "VIVOSDEV05",
+    "VIVOSDEV06",
+    "VIVOSDEV07",
+    "VIVOSDEV08",
+    "VIVOSDEV09",
+    "VIVOSDEV10",
+    "VIVOSDEV11",
+    "VIVOSDEV12"
+  ],
+  "mixture_environment_db_relative_to_speech": [
+    -6.0,
+    0.0,
+    6.0
+  ],
+  "supported_labels": [
+    "ANIMAL",
+    "BABY",
+    "DOG",
+    "DOOR",
+    "HORN"
+  ],
+  "calibration_summary": {
+    "threshold": 0.52,
+    "tp": 50,
+    "fp": 0,
+    "fn": 10,
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "f1": 0.9090909090909091,
+    "by_condition": {
+      "background_only": {
+        "threshold": 0.52,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "environment_only": {
+        "threshold": 0.52,
+        "tp": 23,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.9583333333333334,
+        "f1": 0.9787234042553191
+      },
+      "mixed": {
+        "threshold": 0.52,
+        "tp": 27,
+        "fp": 0,
+        "fn": 9,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571
+      },
+      "speech_only": {
+        "threshold": 0.52,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    }
+  }
+}

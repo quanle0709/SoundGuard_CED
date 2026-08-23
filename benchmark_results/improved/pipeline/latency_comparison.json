@@ -1,0 +1,30 @@
+{
+  "frozen_expanded_p95_ms": 24.87394498020876,
+  "baseline_p95_ms": 33.53750003152527,
+  "improved_p95_ms": 31.120124971494075,
+  "absolute_delta_ms": -2.417375060031194,
+  "percentage_delta": -7.207976318326828,
+  "paired_legacy_distribution": {
+    "count": 100,
+    "mean_ms": 23.700993004022166,
+    "std_ms": 4.513551260449019,
+    "median_ms": 22.80650002649054,
+    "p90_ms": 28.546180028934042,
+    "p95_ms": 33.53750003152527,
+    "p99_ms": 40.741020033601686,
+    "min_ms": 18.144199973903596,
+    "max_ms": 43.76249999040738
+  },
+  "paired_improved_distribution": {
+    "count": 100,
+    "mean_ms": 24.169425998115912,
+    "std_ms": 7.465300410508099,
+    "median_ms": 22.677850007312372,
+    "p90_ms": 27.44259997853078,
+    "p95_ms": 31.120124971494075,
+    "p99_ms": 57.31121401477151,
+    "min_ms": 17.88890000898391,
+    "max_ms": 79.9935000250116
+  },
+  "note": "Alternating same-process, same-clip feature-off/feature-on measurement; frozen P95 retained separately."
+}

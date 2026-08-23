@@ -1,0 +1,21 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "executable": "D:\\AI_Projects\\SoundGuard_CED\\benchmark_data\\external\\efficientsed_venv\\Scripts\\python.exe",
+  "packages": {
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu",
+    "torchaudio": "2.11.0+cpu",
+    "librosa": "1.0.0",
+    "numpy": "2.5.2",
+    "scipy": "1.18.0",
+    "pandas": null,
+    "timm": null,
+    "nnAudio": null
+  },
+  "torch_runtime": {
+    "version": "2.13.0+cpu",
+    "cuda_version": null,
+    "cuda_available": false
+  }
+}

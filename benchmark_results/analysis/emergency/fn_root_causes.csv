@@ -1,0 +1,7 @@
+failure_stage,description,count,percent_of_98_fn
+A,CED failed to recognize the event,87,88.77551020408163
+B,CED recognized it but alert mapper failed,11,11.224489795918368
+C,fusion suppressed it,0,0.0
+D,emergency rule classified it non-emergency,0,0.0
+E,ground-truth/rule mismatch,0,0.0
+F,other,0,0.0

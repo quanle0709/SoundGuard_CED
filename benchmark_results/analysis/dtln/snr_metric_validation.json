@@ -1,0 +1,37 @@
+{
+  "known_snr_cases": [
+    {
+      "case": "known_20_db",
+      "expected_db": 20.0,
+      "measured_db": 19.999999981103564,
+      "absolute_error_db": 1.8896436415616336e-08,
+      "passed": true
+    },
+    {
+      "case": "known_10_db",
+      "expected_db": 10.0,
+      "measured_db": 10.000000005291943,
+      "absolute_error_db": 5.291942883900447e-09,
+      "passed": true
+    },
+    {
+      "case": "known_0_db",
+      "expected_db": 0.0,
+      "measured_db": -9.093377544852972e-09,
+      "absolute_error_db": 9.093377544852972e-09,
+      "passed": true
+    }
+  ],
+  "edge_cases": {
+    "identical_is_infinite": true,
+    "delayed_lag_samples": 384,
+    "delayed_aligned_snr_db": Infinity,
+    "scaled_raw_snr_db": 6.020599913279624,
+    "scaled_best_gain": 2.0,
+    "scaled_corrected_snr_db": Infinity,
+    "delayed_scaled_lag_samples": 384,
+    "delayed_scaled_corrected_snr_db": Infinity
+  },
+  "all_known_cases_pass": true,
+  "interpretation": "Plain SNR is alignment- and gain-sensitive; aligned, gain-corrected checks recover delayed/scaled identity."
+}

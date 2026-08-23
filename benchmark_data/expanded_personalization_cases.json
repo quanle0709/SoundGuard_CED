@@ -1,0 +1,270 @@
+[
+  {
+    "id": "driver_1",
+    "text": "I drive in busy road traffic every day.",
+    "expected_role": "driver",
+    "priority_assertions": {
+      "siren": 5,
+      "vehicle_horn": 5,
+      "explosion": 5,
+      "screaming": 4,
+      "speech": 3,
+      "dog_barking": 1,
+      "door_activity": 1
+    }
+  },
+  {
+    "id": "driver_2",
+    "text": "I am a taxi driver on city roads.",
+    "expected_role": "driver",
+    "priority_assertions": {
+      "siren": 5,
+      "vehicle_horn": 5,
+      "explosion": 5,
+      "screaming": 4,
+      "speech": 3,
+      "dog_barking": 1,
+      "door_activity": 1
+    }
+  },
+  {
+    "id": "motorcyclist_cyclist_1",
+    "text": "I ride a motorbike to work.",
+    "expected_role": "motorcyclist_cyclist",
+    "priority_assertions": {
+      "vehicle_horn": 5,
+      "siren": 5,
+      "explosion": 5,
+      "screaming": 4,
+      "speech": 3,
+      "door_activity": 1
+    }
+  },
+  {
+    "id": "motorcyclist_cyclist_2",
+    "text": "I am a cyclist in road traffic.",
+    "expected_role": "motorcyclist_cyclist",
+    "priority_assertions": {
+      "vehicle_horn": 5,
+      "siren": 5,
+      "explosion": 5,
+      "screaming": 4,
+      "speech": 3,
+      "door_activity": 1
+    }
+  },
+  {
+    "id": "pedestrian_commuter_1",
+    "text": "I walk to work on foot.",
+    "expected_role": "pedestrian_commuter",
+    "priority_assertions": {
+      "vehicle_horn": 5,
+      "siren": 5,
+      "screaming": 4,
+      "speech": 3,
+      "door_activity": 1
+    }
+  },
+  {
+    "id": "pedestrian_commuter_2",
+    "text": "I am a pedestrian and travel on foot.",
+    "expected_role": "pedestrian_commuter",
+    "priority_assertions": {
+      "vehicle_horn": 5,
+      "siren": 5,
+      "screaming": 4,
+      "speech": 3,
+      "door_activity": 1
+    }
+  },
+  {
+    "id": "construction_worker_1",
+    "text": "I am a construction worker at a building site.",
+    "expected_role": "construction_worker",
+    "priority_assertions": {
+      "siren": 5,
+      "explosion": 5,
+      "fire": 5,
+      "screaming": 4,
+      "vehicle_horn": 4,
+      "speech": 3
+    }
+  },
+  {
+    "id": "construction_worker_2",
+    "text": "I work in construction at my workplace.",
+    "expected_role": "construction_worker",
+    "priority_assertions": {
+      "siren": 5,
+      "explosion": 5,
+      "fire": 5,
+      "screaming": 4,
+      "vehicle_horn": 4,
+      "speech": 3
+    }
+  },
+  {
+    "id": "factory_warehouse_worker_1",
+    "text": "I work in a factory warehouse.",
+    "expected_role": "factory_warehouse_worker",
+    "priority_assertions": {
+      "siren": 5,
+      "explosion": 5,
+      "fire": 5,
+      "screaming": 4,
+      "vehicle_horn": 4,
+      "speech": 3
+    }
+  },
+  {
+    "id": "factory_warehouse_worker_2",
+    "text": "I operate near a warehouse forklift.",
+    "expected_role": "factory_warehouse_worker",
+    "priority_assertions": {
+      "siren": 5,
+      "explosion": 5,
+      "fire": 5,
+      "screaming": 4,
+      "vehicle_horn": 4,
+      "speech": 3
+    }
+  },
+  {
+    "id": "parent_infant_caregiver_1",
+    "text": "I am a parent caring for my baby at home.",
+    "expected_role": "parent_infant_caregiver",
+    "priority_assertions": {
+      "baby_crying": 5,
+      "smoke_alarm": 5,
+      "fire": 5,
+      "glass_breaking": 4,
+      "door_activity": 4,
+      "screaming": 4,
+      "speech": 3,
+      "vehicle_horn": 1
+    }
+  },
+  {
+    "id": "parent_infant_caregiver_2",
+    "text": "I am an infant caregiver in my house.",
+    "expected_role": "parent_infant_caregiver",
+    "priority_assertions": {
+      "baby_crying": 5,
+      "smoke_alarm": 5,
+      "fire": 5,
+      "glass_breaking": 4,
+      "door_activity": 4,
+      "screaming": 4,
+      "speech": 3,
+      "vehicle_horn": 1
+    }
+  },
+  {
+    "id": "pregnant_expectant_mother_1",
+    "text": "I am pregnant and spend time at home.",
+    "expected_role": "pregnant_expectant_mother",
+    "priority_assertions": {
+      "smoke_alarm": 5,
+      "fire": 5,
+      "explosion": 5,
+      "vehicle_horn": 5,
+      "screaming": 4,
+      "glass_breaking": 4,
+      "siren": 5,
+      "speech": 3,
+      "door_activity": 3
+    }
+  },
+  {
+    "id": "pregnant_expectant_mother_2",
+    "text": "I am an expectant mother outdoors.",
+    "expected_role": "pregnant_expectant_mother",
+    "priority_assertions": {
+      "smoke_alarm": 5,
+      "fire": 5,
+      "explosion": 5,
+      "vehicle_horn": 5,
+      "screaming": 4,
+      "glass_breaking": 4,
+      "siren": 5,
+      "speech": 3,
+      "door_activity": 3
+    }
+  },
+  {
+    "id": "older_adult_independent_1",
+    "text": "I am an older adult and live independently.",
+    "expected_role": "older_adult_independent",
+    "priority_assertions": {
+      "smoke_alarm": 5,
+      "fire": 5,
+      "screaming": 5,
+      "glass_breaking": 5,
+      "door_activity": 4,
+      "siren": 5,
+      "speech": 3
+    }
+  },
+  {
+    "id": "older_adult_independent_2",
+    "text": "I am a senior living at home.",
+    "expected_role": "older_adult_independent",
+    "priority_assertions": {
+      "smoke_alarm": 5,
+      "fire": 5,
+      "screaming": 5,
+      "glass_breaking": 5,
+      "door_activity": 4,
+      "siren": 5,
+      "speech": 3
+    }
+  },
+  {
+    "id": "student_1",
+    "text": "I am a student at school.",
+    "expected_role": "student",
+    "priority_assertions": {
+      "fire": 5,
+      "siren": 5,
+      "vehicle_horn": 5,
+      "screaming": 5,
+      "speech": 3
+    }
+  },
+  {
+    "id": "student_2",
+    "text": "I attend university and study at home.",
+    "expected_role": "student",
+    "priority_assertions": {
+      "fire": 5,
+      "siren": 5,
+      "vehicle_horn": 5,
+      "screaming": 5,
+      "speech": 3
+    }
+  },
+  {
+    "id": "healthcare_care_worker_1",
+    "text": "I am a nurse working in a hospital.",
+    "expected_role": "healthcare_care_worker",
+    "priority_assertions": {
+      "siren": 5,
+      "screaming": 5,
+      "glass_breaking": 4,
+      "speech": 3,
+      "door_activity": 3
+    }
+  },
+  {
+    "id": "healthcare_care_worker_2",
+    "text": "I am a healthcare care worker at a clinic.",
+    "expected_role": "healthcare_care_worker",
+    "priority_assertions": {
+      "siren": 5,
+      "screaming": 5,
+      "glass_breaking": 4,
+      "speech": 3,
+      "door_activity": 3
+    }
+  }
+]

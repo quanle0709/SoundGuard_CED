@@ -1,0 +1,12 @@
+{
+  "ced_samples": 30,
+  "stt_final_samples": 20,
+  "stt_partial_samples": 10,
+  "concurrent_samples": 20,
+  "resource_mode_seconds": 15.0,
+  "ced_configuration": "CED-Tiny V2 OR EfficientSED frozen specialist, opt-in production path",
+  "stt_configuration": "DTLN preprocessing + Google Speech Recognition vi-VN",
+  "transport": "in-memory write boundary with production UTF-8/CRC framing",
+  "KHKT_CLAIM": "Computer-only evidence for local real-time performance and stability.",
+  "REPORT_USE": "Layer 2 latency, resource, reliability, and stability tables."
+}

@@ -1,0 +1,11 @@
+sample_id,snr_db,true_label,without_filter,with_filter,without_correct,with_correct
+esc50_bark_100032,20,dog_barking,animal,dog,False,False
+esc50_bark_100032,15,dog_barking,animal,dog,False,False
+esc50_bark_100032,10,dog_barking,dog_barking,animal,True,False
+esc50_bark_100032,5,dog_barking,animal,dog,False,False
+esc50_bark_100032,0,dog_barking,animal,animal,False,False
+local_vi_speech,20,speech,speech,speech_synthesizer,True,False
+local_vi_speech,15,speech,speech,speech_synthesizer,True,False
+local_vi_speech,10,speech,speech,speech_synthesizer,True,False
+local_vi_speech,5,speech,speech,speech_synthesizer,True,False
+local_vi_speech,0,speech,speech,speech,True,True

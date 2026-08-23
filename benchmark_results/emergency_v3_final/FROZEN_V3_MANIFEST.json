@@ -1,0 +1,81 @@
+{
+  "frozen_at_local_date": "2026-08-19",
+  "git": {
+    "branch": "experiment/emergency-ced-v3",
+    "commit": "24346d879634f65eeb8a647bdba0ac84e249c63d",
+    "dirty": true,
+    "dirty_status": [
+      "M .gitignore",
+      "M README.md",
+      "M app.py",
+      "M audio_pipeline.py",
+      "M emergency_system.py",
+      "M requirements.txt",
+      "M sound_classifier.py",
+      "M test_audio_pipeline.py",
+      "?? THIRD_PARTY_EFFICIENTSED.md",
+      "?? benchmark/",
+      "?? benchmark_data/",
+      "?? benchmark_results/",
+      "?? display_transport.py",
+      "?? emergency_v3.py",
+      "?? firmware/",
+      "?? personalization/",
+      "?? requirements-dev.txt",
+      "?? sound_taxonomy.py",
+      "?? test_display_transport.py",
+      "?? test_emergency_v3.py",
+      "?? test_personalization.py"
+    ]
+  },
+  "hash_algorithm": "sha256",
+  "frozen_file_hashes": {
+    "emergency_v3.py": "207349ab6b4fe464f20bf32af59f737d9f5f6b9dabe0b70841a88bc4d0165e33",
+    "app.py": "05705d30fb23de82c7bf800380a9cba6c61c0ae419ff11345eb96897ed5192de",
+    "audio_pipeline.py": "81b5b5ccb2eec2b0c0778cdc4f6051a4b2cd79e96f53aab9f35751f5ecd10871",
+    "benchmark/experiments/emergency_v3/efficientsed_adapter.py": "96b7d1292d989da74c0393e6f7b19b9761d00b36bf54cd1ec6bc765939ec769f",
+    "benchmark/experiments/emergency_v3/efficientsed_worker.py": "df741be342f22c0e64139b7d8d284f5dbfe2ee5022d0040f32346bd51d393e8d",
+    "benchmark/experiments/emergency_v3/efficientsed_safety_taxonomy.json": "3dafb2e5fa6ced1fbc3a15335576ad62a9de04a12b2bb972db4da636566aa97a",
+    "sound_classifier.py": "30f5beb37201d5108f45ad605917010a00d9670441861734bdb8e219fbcf87ad",
+    "sound_taxonomy.py": "d16ba3c8d0050f14d04852524ea87e051705bf33bf1ebdaf187059ea2a137958",
+    "emergency_system.py": "d2813fca63304f4d53f23eee14928836ef974fe70570541090702000de363f79"
+  },
+  "efficientsed": {
+    "repository": "https://github.com/theMoro/EfficientSED",
+    "commit": "e3449bfd1f4922b81d82410ed842653f462bfca8",
+    "checkpoint": "fmn10_strong.pt",
+    "checkpoint_sha256": "92a5c1dc5aa21620e262420c4cc657d2f699bdfa20a748de506c354a2fe2770a",
+    "threshold": 0.05,
+    "safety_taxonomy_sha256": "3dafb2e5fa6ced1fbc3a15335576ad62a9de04a12b2bb972db4da636566aa97a"
+  },
+  "policy": {
+    "name": "V2 OR EfficientSED approved-safety evidence",
+    "categories": [
+      "glass_breaking",
+      "vehicle_horn",
+      "fire",
+      "siren",
+      "baby_crying"
+    ],
+    "existing_dangerous_ced_evidence_takes_precedence": true,
+    "specialist_confidence_delivered_to_existing_emergency_layer": 1.0,
+    "normal_ced_output_preserved": true,
+    "fusion_input_preserved_as_ced_tiny": true,
+    "default_enabled": false
+  },
+  "ced": {
+    "model": "mispeech/ced-tiny",
+    "semantic_mapping_environment": "SOUNDGUARD_ENABLE_SEMANTIC_CED_MAPPING",
+    "semantic_mapping_for_v3_validation": true,
+    "ced_thresholds_unchanged": true
+  },
+  "baseline_validation": {
+    "command": "$env:HF_HUB_OFFLINE='1'; $env:TRANSFORMERS_OFFLINE='1'; .\\.venv\\Scripts\\python.exe -m pytest -q",
+    "tests_passed": 150,
+    "tests_failed": 0,
+    "unittest_subtests_passed": 5,
+    "golden_legacy": "exact match"
+  },
+  "exact_v3_command": "$env:SOUNDGUARD_ENABLE_SEMANTIC_CED_MAPPING='1'; .\\.venv\\Scripts\\python.exe app.py --mic --duration 5 --emergency-v3",
+  "freeze_rule": "No threshold, taxonomy, alias, policy, CED, Emergency V3, or EfficientSED changes after this manifest."
+}

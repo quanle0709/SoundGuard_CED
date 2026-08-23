@@ -1,0 +1,6 @@
+{
+  "path": "deterministic_rule_based",
+  "repetitions": 10,
+  "same_input_same_priority_rate": 1.0,
+  "remote": "SKIPPED: no API credential"
+}

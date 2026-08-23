@@ -1,0 +1,30 @@
+{
+  "source": "benchmark_data\\external\\esc50\\audio\\1-17124-A-43.wav",
+  "cold_seconds": 4.5445538999920245,
+  "result": {
+    "label": "Vehicle horn, car horn, honking",
+    "confidence": 0.7162976264953613,
+    "top_predictions": [
+      {
+        "label": "Vehicle horn, car horn, honking",
+        "score": 0.7162976264953613
+      },
+      {
+        "label": "Vehicle",
+        "score": 0.6758347153663635
+      },
+      {
+        "label": "Outside, urban or manmade",
+        "score": 0.6214818954467773
+      },
+      {
+        "label": "Car",
+        "score": 0.6016305685043335
+      },
+      {
+        "label": "Toot",
+        "score": 0.5115513205528259
+      }
+    ]
+  }
+}

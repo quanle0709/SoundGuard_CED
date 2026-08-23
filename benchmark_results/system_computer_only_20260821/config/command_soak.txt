@@ -1,0 +1,1 @@
+D:\AI_Projects\SoundGuard_CED\.venv\Scripts\python.exe D:\AI_Projects\SoundGuard_CED\benchmark\run_layer2_computer_only.py soak --seconds 3600 --event-interval 5

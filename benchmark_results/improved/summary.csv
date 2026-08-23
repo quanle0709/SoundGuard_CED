@@ -1,0 +1,18 @@
+metric,baseline,improved,delta
+CED accuracy,0.45,0.5678571428571428,0.11785714285714283
+CED Macro F1,0.5525488037155136,0.6773233024863591,0.12477449877084545
+Glass recall,0.0,0.125,0.125
+Vehicle-horn recall,0.45,0.5,0.04999999999999999
+Fire recall,0.5,0.55,0.050000000000000044
+Siren recall,0.6,0.975,0.375
+Baby-crying recall,0.65,0.65,0.0
+Emergency recall,0.51,0.575,0.06499999999999995
+Emergency FNR,0.49,0.425,-0.065
+Emergency precision,1.0,1.0,0.0
+Emergency false positives,0,0,0
+STT clean WER,0.1074540174249758,0.1074540174249758,0.0
+STT clean CER,0.05942857142857143,0.05942857142857143,0.0
+Personalization priority accuracy,1.0,1.0,0.0
+Personalization Universal Critical,1.0,1.0,0.0
+Personalization fixed safety,0.96,1.0,0.040000000000000036
+Local PC P95 ms,33.53750003152527,31.120124971494075,-2.417375060031194

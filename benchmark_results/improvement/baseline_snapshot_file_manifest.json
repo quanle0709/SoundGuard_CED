@@ -1,0 +1,3032 @@
+[
+  {
+    "path": ".gitignore",
+    "sha256": "24a6788f8f34ceb8fa6195894393842bcd18761c61254f060323994ae8653d58",
+    "tracked": true,
+    "size_bytes": 682
+  },
+  {
+    "path": "README.md",
+    "sha256": "38f9aaed72985811c0535f11bbb4d985c2ad34bd13a46a4bbffbeabfb46b4ded",
+    "tracked": true,
+    "size_bytes": 12171
+  },
+  {
+    "path": "alert_mapper.py",
+    "sha256": "83b80b73a556ad6019b8551a96d6bfa42c5733314ea457a871eaa0b0eb38331e",
+    "tracked": true,
+    "size_bytes": 757
+  },
+  {
+    "path": "app.py",
+    "sha256": "7b6fd7f74b98cc44189b6c2899db5bcdeb8eee981f64a47115160090913f16ff",
+    "tracked": true,
+    "size_bytes": 20485
+  },
+  {
+    "path": "audio_capture.py",
+    "sha256": "bc32c127692e5825b73a2d5eeb754cc70eb60f30c7b554e48cbe590c46023177",
+    "tracked": true,
+    "size_bytes": 5121
+  },
+  {
+    "path": "audio_pipeline.py",
+    "sha256": "357f69e2aa1c3c2197142d853b9aa92aef733d79cfdc20b4e0ffabdf4788d91a",
+    "tracked": true,
+    "size_bytes": 19079
+  },
+  {
+    "path": "benchmark/__init__.py",
+    "sha256": "afdfe1ad323dc44100a73e987a7ba9a571c7ca1d5933231b2cca20e3438fb301",
+    "tracked": false,
+    "size_bytes": 81
+  },
+  {
+    "path": "benchmark/analyze_expanded_benchmark.py",
+    "sha256": "3486900d3476368009bfd32be1d729ef9c3b1688cd64326bd972982212f13a4f",
+    "tracked": false,
+    "size_bytes": 53113
+  },
+  {
+    "path": "benchmark/config.py",
+    "sha256": "38f9024a2cff1a10509a3fa7101dd8f08fbfd07afcd73a3ecac454bc226ca8eb",
+    "tracked": false,
+    "size_bytes": 749
+  },
+  {
+    "path": "benchmark/download_datasets.py",
+    "sha256": "476e5868853033275b864da4205025971105e46717f3221b88d79315d8849951",
+    "tracked": false,
+    "size_bytes": 14756
+  },
+  {
+    "path": "benchmark/metrics.py",
+    "sha256": "a3b92c1d45f0065302ee7e913c8ae9af3161dd6f62a539cfcda32ed63f5381d3",
+    "tracked": false,
+    "size_bytes": 5299
+  },
+  {
+    "path": "benchmark/noise.py",
+    "sha256": "6b45dea7f3dcf87b99a6076ad41ad07cb5c2abcd73b1d1ccdde6519ee2a5ef0c",
+    "tracked": false,
+    "size_bytes": 5583
+  },
+  {
+    "path": "benchmark/run_expanded_benchmark.py",
+    "sha256": "d04bf7344f5e14aa70176e276e81c9f270071126ea4cd210a2704c30351e09f7",
+    "tracked": false,
+    "size_bytes": 63811
+  },
+  {
+    "path": "benchmark/run_full_benchmark.py",
+    "sha256": "65b8c9a161603ed241e1f75f7efb7cfc5686546b7a10be977324225c071fb2d4",
+    "tracked": false,
+    "size_bytes": 59092
+  },
+  {
+    "path": "benchmark/test_analysis.py",
+    "sha256": "3bc236f96b9b69664e802b737f9d45503bdb7ea7d816377e631a45135af88bf0",
+    "tracked": false,
+    "size_bytes": 2177
+  },
+  {
+    "path": "benchmark/test_benchmark_suite.py",
+    "sha256": "e54c91442497aca62924af80dac7d4de61a6c35b6efcd4c279758da1f25a5cbe",
+    "tracked": false,
+    "size_bytes": 4369
+  },
+  {
+    "path": "benchmark_data/DATASETS.md",
+    "sha256": "437314a580e7a9c7a9842bcc589442fe23c065ca3705264b79f2365f53724579",
+    "tracked": false,
+    "size_bytes": 1469
+  },
+  {
+    "path": "benchmark_data/emergency_cases.json",
+    "sha256": "13ee82946501cb99c1032192b2a47e5799e489855960a12b9b94924523ed840d",
+    "tracked": false,
+    "size_bytes": 799
+  },
+  {
+    "path": "benchmark_data/expanded_personalization_cases.json",
+    "sha256": "7ad9b7586b5c99013a9910ffb285abae1424a43b0f5e6539bda86ace6d7dcaf5",
+    "tracked": false,
+    "size_bytes": 6513
+  },
+  {
+    "path": "benchmark_data/fusion_cases.json",
+    "sha256": "a12fd1d69bbb0834845ccee7f32fb591ad7ca181caf32bbd674e620797b59ec4",
+    "tracked": false,
+    "size_bytes": 865
+  },
+  {
+    "path": "benchmark_data/mappings/esc50_to_soundguard.json",
+    "sha256": "743692432e1d181bc562ecfe82781bf0fed89891fe9932e408a011e8dc187f36",
+    "tracked": false,
+    "size_bytes": 1548
+  },
+  {
+    "path": "benchmark_data/mappings/urbansound8k_to_soundguard.json",
+    "sha256": "32f571d696cac000b684d918b55db542544caa584bfdce6a3943dd2c62ab2bf7",
+    "tracked": false,
+    "size_bytes": 976
+  },
+  {
+    "path": "benchmark_data/personalization_cases.json",
+    "sha256": "8ececb4de8eb0206df0f5f693701f3b172b51fa6ce5b4919c2c96327f4c98ff0",
+    "tracked": false,
+    "size_bytes": 1587
+  },
+  {
+    "path": "benchmark_metrics.py",
+    "sha256": "5f1f2841ba3e100c83b4eedeb9c37730e0be7b5b70bfe01691229c4fe5585206",
+    "tracked": true,
+    "size_bytes": 11511
+  },
+  {
+    "path": "benchmark_report.py",
+    "sha256": "052120530dbda2708ae3a83901ec03f3134371c4cbf1452ea74e09faf4b0558c",
+    "tracked": true,
+    "size_bytes": 8436
+  },
+  {
+    "path": "benchmark_runner.py",
+    "sha256": "1c4f941ba9d3a6aba13c5bd365764f950ab7830641e1499809f1fa401d1ef928",
+    "tracked": true,
+    "size_bytes": 20574
+  },
+  {
+    "path": "benchmark_v1/MANUAL_TEST_CHECKLIST.md",
+    "sha256": "486b04830c837675989ed4e4dec9c1fd4bd19fded63f256438736e7c6b8dcc4f",
+    "tracked": true,
+    "size_bytes": 842
+  },
+  {
+    "path": "benchmark_v1/README.md",
+    "sha256": "f59e307aa4f40a6926a625287f045a1c8c2c0d65174b1ff05b2c823facf1af90",
+    "tracked": true,
+    "size_bytes": 4247
+  },
+  {
+    "path": "display_transport.py",
+    "sha256": "b46827107b6041628b98705ac862cc2d2ab4bc05770e0b5e502eb396ed0a8eaa",
+    "tracked": false,
+    "size_bytes": 4533
+  },
+  {
+    "path": "emergency_system.py",
+    "sha256": "d2813fca63304f4d53f23eee14928836ef974fe70570541090702000de363f79",
+    "tracked": true,
+    "size_bytes": 17573
+  },
+  {
+    "path": "external/DTLN-master/LICENSE",
+    "sha256": "aa95acd8c8a7341bfcdb2823694dcbb27a2a4143e860bb52db1ff0f29c85e5a1",
+    "tracked": true,
+    "size_bytes": 1075
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/.sconsign311.dblite",
+    "sha256": "11aff3db8680816789b5a50bdf0d3b0adc775db201651c31602f11e4ea3d2425",
+    "tracked": false,
+    "size_bytes": 1096524
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/.sconsign312.dblite",
+    "sha256": "93bf262bbaaf6446d47bc9dd70f58d731fe6e042afd03d224c252c4e74532a9f",
+    "tracked": false,
+    "size_bytes": 1095475
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/Esp.cpp.d",
+    "sha256": "4805fb6d964cc525be42b02d7cc500e46a8bbb857209ed3722227283f8d964db",
+    "tracked": false,
+    "size_bytes": 18748
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/Esp.cpp.o",
+    "sha256": "79c7f15af00dd45d5aaaea321c7da78fb6d7f82bbb5eca09eb9f901f477450df",
+    "tracked": false,
+    "size_bytes": 232880
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/FirmwareMSC.cpp.d",
+    "sha256": "4459c857757d024b36c1cce4f65083648bb953997e3f17df7e5c4c2408163eab",
+    "tracked": false,
+    "size_bytes": 402
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/FirmwareMSC.cpp.o",
+    "sha256": "539d99e26159b619e595dcabb18bcf1954496aa0f7ff8a214a94130ce13e23bf",
+    "tracked": false,
+    "size_bytes": 2356
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/FunctionalInterrupt.cpp.d",
+    "sha256": "d2791bd5f00cf7e2f8c33c0b75484c1530f7f4dc8a50ebfd64303da7fe299b5d",
+    "tracked": false,
+    "size_bytes": 17822
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/FunctionalInterrupt.cpp.o",
+    "sha256": "4d725fce1467123346cd5e7350b5e1ca80c631346bfb5ba9d8521c280dc26bc4",
+    "tracked": false,
+    "size_bytes": 141084
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/HWCDC.cpp.d",
+    "sha256": "ed5c4dc034342494eb52be2c72ac4b293095a8dcbd120729e5ed874cba1c091e",
+    "tracked": false,
+    "size_bytes": 16660
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/HWCDC.cpp.o",
+    "sha256": "7801b54d62810b07d984e7d4136cb5ee03c81efc6d6e3f71fc7e02b24554b6bb",
+    "tracked": false,
+    "size_bytes": 303228
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/HardwareSerial.cpp.d",
+    "sha256": "06eb47e20e00f9c1fe3a608da4604cb6657c8dba23a828b160df0de7b4e918ae",
+    "tracked": false,
+    "size_bytes": 17954
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/HardwareSerial.cpp.o",
+    "sha256": "758d9130ef75af8136c4b2dc4be23cd2761ca0081ca4415cd667ea74c9c31770",
+    "tracked": false,
+    "size_bytes": 274132
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/IPAddress.cpp.d",
+    "sha256": "4dbc142eaedc3aa216f23f7d01f04b278f5eeca84e2fb05e682ed92f5f2a0117",
+    "tracked": false,
+    "size_bytes": 17788
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/IPAddress.cpp.o",
+    "sha256": "dfa8ec3ba63774a2335c0db4f03082d408ad5c0764f429a4896dfeb216922fd5",
+    "tracked": false,
+    "size_bytes": 154836
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/IPv6Address.cpp.d",
+    "sha256": "4f045e1f4a30296d36d41bdbb85924a3af2b00f3e34d179ee31d02277770ae15",
+    "tracked": false,
+    "size_bytes": 17874
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/IPv6Address.cpp.o",
+    "sha256": "d187780c6e30bca1cc8b42f6d21edf131b09f9872b273c9222e07244fd49252e",
+    "tracked": false,
+    "size_bytes": 147604
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/MD5Builder.cpp.d",
+    "sha256": "de4349822d232b10a931a49dbc82b6d4f107dff8dcd6fad6b05f251e761e8593",
+    "tracked": false,
+    "size_bytes": 17907
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/MD5Builder.cpp.o",
+    "sha256": "09e83f66ee53cc10d7fff03ac914e38113d832fb4244b8115ef55db6134b960a",
+    "tracked": false,
+    "size_bytes": 152512
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/Print.cpp.d",
+    "sha256": "40dbb12638228b3d2192b4985a4ecad23703658df78202b68145e024ac3f0ace",
+    "tracked": false,
+    "size_bytes": 17704
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/Print.cpp.o",
+    "sha256": "162e388c93ffdd377e2c27f7a9a596d71e3de0d7bab1bf6a58f3ca67dcb173ec",
+    "tracked": false,
+    "size_bytes": 221112
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/Stream.cpp.d",
+    "sha256": "686e4e0b8d119613816f30caab5665985d453baaab52011ca8593cda1e76075d",
+    "tracked": false,
+    "size_bytes": 17706
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/Stream.cpp.o",
+    "sha256": "54ebc921d26a0d0d14459a4dc5ab9d774151ca9476114e7d9c22570eda03f541",
+    "tracked": false,
+    "size_bytes": 187896
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/StreamString.cpp.d",
+    "sha256": "867d57dc4a033ebf186cb3ffd8df0b2e5ac7818e9c1ac78c6adf5aef1f785a3b",
+    "tracked": false,
+    "size_bytes": 17801
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/StreamString.cpp.o",
+    "sha256": "3f0787a17add9ef3715b4aef5ab311de3d214545f9ae33690aa0527552b8a8c7",
+    "tracked": false,
+    "size_bytes": 149364
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/Tone.cpp.d",
+    "sha256": "255ea68d4eabb74b5ef9532131a55afb59460e938102dfec7ed723a4258d4812",
+    "tracked": false,
+    "size_bytes": 17702
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/Tone.cpp.o",
+    "sha256": "b8b88417aeba99d878d6711c5492465c7a328761d7b63bc31cef3572bc810864",
+    "tracked": false,
+    "size_bytes": 146544
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/USB.cpp.d",
+    "sha256": "5cb3f742fa02648153b182a371675fed75245d841993f3d981b41d802bc299a8",
+    "tracked": false,
+    "size_bytes": 301
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/USB.cpp.o",
+    "sha256": "4b7cf844e8ab9ba35dbcd4f9f9516a98d0b4714ce2f9666f3af57ac3368557e2",
+    "tracked": false,
+    "size_bytes": 1168
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/USBCDC.cpp.d",
+    "sha256": "b3e932c9cb554306e21fa35469bf25af4b03ad7c25be2bbe7eff6c885d53747f",
+    "tracked": false,
+    "size_bytes": 307
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/USBCDC.cpp.o",
+    "sha256": "56e267717e2956d7a18589b2a3ef369227e07d3703b89197449857a84623a75e",
+    "tracked": false,
+    "size_bytes": 1172
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/USBMSC.cpp.d",
+    "sha256": "a0d142831534c9677c30b7748f7f0748eec583e0a4644ece7370a961dbca9d79",
+    "tracked": false,
+    "size_bytes": 310
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/USBMSC.cpp.o",
+    "sha256": "8acc65fbd7b96f5afa8b22225485431a293d00c16b562b292e75cbd206f77c50",
+    "tracked": false,
+    "size_bytes": 2348
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/WMath.cpp.d",
+    "sha256": "26d7d12d8b1a2b2e09df0266b830f4816643f796903df2ab7ef283a91ebadfc6",
+    "tracked": false,
+    "size_bytes": 1937
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/WMath.cpp.o",
+    "sha256": "a62efb5e729bdc4b1aa38556421fbff18ec257c481de20eb19bbe65c04bcc50b",
+    "tracked": false,
+    "size_bytes": 32860
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/WString.cpp.d",
+    "sha256": "4eb72e9370fc3e5e5f699b3c6053aaaefc288a4e4f895ca895bfa60cc37da094",
+    "tracked": false,
+    "size_bytes": 17708
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/WString.cpp.o",
+    "sha256": "bd9b65b236a4cac3aa7aa9714f688a1520fc5858c58e8572a1ee569681b8efec",
+    "tracked": false,
+    "size_bytes": 408732
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/base64.cpp.d",
+    "sha256": "48a1675f48105a3f41eae47e1b4d1a61a37031d635e0ee76bf1e6b6c098e872a",
+    "tracked": false,
+    "size_bytes": 17953
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/base64.cpp.o",
+    "sha256": "158fe6f474b593ac7f1ebc639d4a5aaa3641a4e40b010be3f345be7843f2396e",
+    "tracked": false,
+    "size_bytes": 137148
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/cbuf.cpp.d",
+    "sha256": "4bc1b002c24c554e3b2d5d8f20dc4ff39af05a81e743c06ea0a490949eb71e93",
+    "tracked": false,
+    "size_bytes": 201
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/cbuf.cpp.o",
+    "sha256": "b205fc2b5e13d7975a6b5486edddf53572ffa7da66bebb9b9e34fad31f6e1716",
+    "tracked": false,
+    "size_bytes": 56384
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-adc.c.d",
+    "sha256": "00096108f1dc631e86e11bad58467951bdeb926db26aebd343aac8f0f6185da8",
+    "tracked": false,
+    "size_bytes": 10501
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-adc.c.o",
+    "sha256": "741e2871735422920ce18763638d0b0454e1f8a9bc94470d11accfab6207fa5b",
+    "tracked": false,
+    "size_bytes": 72448
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-bt.c.d",
+    "sha256": "74ce9a3b8ed24eb58625ccfac145aeef50fc5cf8e21e4963f8b9d23b456a6303",
+    "tracked": false,
+    "size_bytes": 10532
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-bt.c.o",
+    "sha256": "6cc82fea939f97441f596e630cf8747343d0e9090df8d6f5f7743a8716496180",
+    "tracked": false,
+    "size_bytes": 51660
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-cpu.c.d",
+    "sha256": "4a57e708255ce3080be67df3117bed1c5f278f4bde5d1db87497d63b9e25c648",
+    "tracked": false,
+    "size_bytes": 11091
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-cpu.c.o",
+    "sha256": "9d28e01355f422dbb5fafd16873582d31e388ed0842c498a771c093b1ab3c65a",
+    "tracked": false,
+    "size_bytes": 71448
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-dac.c.d",
+    "sha256": "7350ab89b371e56b5c3dc54e0982a46b03edf3e69341b1cb3e5ecdc7b6845fd3",
+    "tracked": false,
+    "size_bytes": 10165
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-dac.c.o",
+    "sha256": "18c0b7694348209e8a1c8bca09c9e60a9a1d078c87f65dea3cbd602a053e95b4",
+    "tracked": false,
+    "size_bytes": 34020
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-gpio.c.d",
+    "sha256": "562ead56b189cc13d60e173a79a97cae782eac174af284fad06b56a39ae9faed",
+    "tracked": false,
+    "size_bytes": 11458
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-gpio.c.o",
+    "sha256": "6d75bb6d1e1246480f788b0a3dd42981334287d0832f9d326d83459924146f0f",
+    "tracked": false,
+    "size_bytes": 129292
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-i2c-slave.c.d",
+    "sha256": "5ceba8cc1f5bb283d2086670d19cfcdc7598e824c9e44cff2306d8ab9973a883",
+    "tracked": false,
+    "size_bytes": 9554
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-i2c-slave.c.o",
+    "sha256": "85dc3fa709455388e29da2cbf4e42c7e8c97f9cee360cac045669fff6ddfcafe",
+    "tracked": false,
+    "size_bytes": 190872
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-i2c.c.d",
+    "sha256": "90cab3fdce4ffbebf29959360e62ad146d2f87ec3f1c3b50f52366faeae6dcf7",
+    "tracked": false,
+    "size_bytes": 11556
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-i2c.c.o",
+    "sha256": "9f164da9ed02484b89d2ff34bc175c35721c6e0b6aec4d5b634c7857061da08e",
+    "tracked": false,
+    "size_bytes": 106856
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-ledc.c.d",
+    "sha256": "030c8e67bebad78cc414d7ca68b886fdceae4c37f6282c4dfa53239aae14bcc0",
+    "tracked": false,
+    "size_bytes": 10627
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-ledc.c.o",
+    "sha256": "0ba5c1374d043710a182728750d9d9d01d258eb7fd2dc51d4869e5d35b528154",
+    "tracked": false,
+    "size_bytes": 92516
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-matrix.c.d",
+    "sha256": "a6ccd32fd09b31451b8cb54f233f0256cd2cde06aff41f3f706d97d26e2c0faa",
+    "tracked": false,
+    "size_bytes": 10289
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-matrix.c.o",
+    "sha256": "87b257343a7d3cb5a15f4dac6b62fef7726d9215f745be5e39d008367442c120",
+    "tracked": false,
+    "size_bytes": 39996
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-misc.c.d",
+    "sha256": "bd3ae2f3c01a1e0f13a7ee420b7230850d71d8e306f6dcbe931e3980bb1d2030",
+    "tracked": false,
+    "size_bytes": 13227
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-misc.c.o",
+    "sha256": "e15fffe04363c20001eadbe40adb4906647776e76a6a3e76cbdff9a52b9fea7d",
+    "tracked": false,
+    "size_bytes": 92188
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-psram.c.d",
+    "sha256": "76abd82b759972db4dcc8f5b2fd137a0fedf034de024b8c225c60f652355be49",
+    "tracked": false,
+    "size_bytes": 10169
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-psram.c.o",
+    "sha256": "2f9b557ab8b2c9cdff576fa126b89de795701e410b4269f283c29f35059b8067",
+    "tracked": false,
+    "size_bytes": 38124
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-rgb-led.c.d",
+    "sha256": "3beda4cea7be7a0ea3d4bccade539e122ca5fb1b137b9b857c5b4efaa1e5ecef",
+    "tracked": false,
+    "size_bytes": 10173
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-rgb-led.c.o",
+    "sha256": "784c3c7bcd1aae026d94eda5a9c306dea02e1cfa71d1fc8cc439034352002bef",
+    "tracked": false,
+    "size_bytes": 45364
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-rmt.c.d",
+    "sha256": "d01c52536f6d89978db50076baa020d669e1d252e5829d04983eddba9eb26556",
+    "tracked": false,
+    "size_bytes": 10625
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-rmt.c.o",
+    "sha256": "ff19b6adeb3ca65adc2904decb71ffbc8c2fb52a2de7e8eab4ee0275b8fe78f4",
+    "tracked": false,
+    "size_bytes": 145976
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-sigmadelta.c.d",
+    "sha256": "37910d0525b150c5e1a161b3ad000758d097039b2f22e21129a62a36d41c6fe8",
+    "tracked": false,
+    "size_bytes": 10774
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-sigmadelta.c.o",
+    "sha256": "d73e8a716de1eb4196745153e62f495e7ca3aefbb2572a5a4ff6c543ddca036f",
+    "tracked": false,
+    "size_bytes": 51832
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-spi.c.d",
+    "sha256": "8aed5ef74c0a68a8e7ddd21020257a29296bbda18b83af24d000891e4dddeb95",
+    "tracked": false,
+    "size_bytes": 10853
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-spi.c.o",
+    "sha256": "893072f8d89d644260a9cf939e3d1a66b6c9eca3d8b9546ecb60e0e7a7c5842b",
+    "tracked": false,
+    "size_bytes": 251824
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-time.c.d",
+    "sha256": "01995b1bf3a8fb69bf0c75ed2974806ccb22f4ab9357488e0ca1a12d13633952",
+    "tracked": false,
+    "size_bytes": 15048
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-time.c.o",
+    "sha256": "dd67586962a0951f4f00958ede255bfc472f569ea3d9f9a9f38d1c7fc33554e6",
+    "tracked": false,
+    "size_bytes": 57904
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-timer.c.d",
+    "sha256": "8ade155ee27a0cb120cc56cfe7c4e4a11a47745087d823a52e51e1aea6db327f",
+    "tracked": false,
+    "size_bytes": 10877
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-timer.c.o",
+    "sha256": "56b61cfd9fb2b9682d1cbbfe4717f9914da8836422c5e6252f2191659b676b20",
+    "tracked": false,
+    "size_bytes": 113376
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-tinyusb.c.d",
+    "sha256": "0acdad97c2c647f4aedf3b7f2f7c77dc88df0fcb6c1cc8cb9ffc08d20cafd9f0",
+    "tracked": false,
+    "size_bytes": 251
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-tinyusb.c.o",
+    "sha256": "e6787e2c6c93a28162f918a19c31268e610e0906f3f825dac1f64e400ff976dc",
+    "tracked": false,
+    "size_bytes": 1164
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-touch.c.d",
+    "sha256": "aedc3f6386bd063918c0514e97a5a9c44552f41e8167cf5ef2ac387b2e516cb2",
+    "tracked": false,
+    "size_bytes": 261
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-touch.c.o",
+    "sha256": "c3a4894f4f86c9765bed8d9ebb86a256093713aef6ac06c548f85ef76c7135f6",
+    "tracked": false,
+    "size_bytes": 1160
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-uart.c.d",
+    "sha256": "5af4edd1616def7d6b3e8dd3ea5c2604d6ef728be499a7e55eb68582da0fd80e",
+    "tracked": false,
+    "size_bytes": 12163
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/esp32-hal-uart.c.o",
+    "sha256": "569e2ca86bfb785b7e19234ed934d197a16b460cbd0e25ffd5f744ef70c2152a",
+    "tracked": false,
+    "size_bytes": 239356
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/firmware_msc_fat.c.d",
+    "sha256": "20205a67e9a6242bbbbd52896966e19913ebe5b76d931a1da068ef33a8c01b10",
+    "tracked": false,
+    "size_bytes": 233
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/firmware_msc_fat.c.o",
+    "sha256": "f4ae9aca5ff25a3cfd69a51150cb261ff86b8dd1ae86c8e8923e94fc4a762907",
+    "tracked": false,
+    "size_bytes": 59240
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/libb64/cdecode.c.d",
+    "sha256": "970441b4bd857d1d2c5e1bf06b71de02babcabc5fd10f815ba10c7d0ee5cf2eb",
+    "tracked": false,
+    "size_bytes": 227
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/libb64/cdecode.c.o",
+    "sha256": "1150341c3c0ae418d3573b705cee6b98c252ad00431b33c59b7f99339b38947b",
+    "tracked": false,
+    "size_bytes": 26316
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/libb64/cencode.c.d",
+    "sha256": "3c4dda3b888776cca93ee88da273c329c84fae11b5d2d1d593e8bce251079660",
+    "tracked": false,
+    "size_bytes": 227
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/libb64/cencode.c.o",
+    "sha256": "d038d3cf86bd52f1b93d68eb7d057b9102b3a367f779eb7d78f27892c8de2645",
+    "tracked": false,
+    "size_bytes": 21712
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/main.cpp.d",
+    "sha256": "f68a23ae936c931ceca8ef35ebc9b00941e63a7feda69f5f8dcc74a0ae98b4a3",
+    "tracked": false,
+    "size_bytes": 18036
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/main.cpp.o",
+    "sha256": "34027b1816582c89465bb4d5c1781321f24b52ebbbd474bf0aa773033dda94c7",
+    "tracked": false,
+    "size_bytes": 136656
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/stdlib_noniso.c.d",
+    "sha256": "d51fc2da117fb44d16eabf611fca9607eef4e525c08fcacc7cdf242adf9efdcf",
+    "tracked": false,
+    "size_bytes": 1266
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/stdlib_noniso.c.o",
+    "sha256": "d1a2ce1c877d98c899b480b1561d004897cb5bc87ca4dd8b23674f68ad4d84a6",
+    "tracked": false,
+    "size_bytes": 46700
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/wiring_pulse.c.d",
+    "sha256": "c77f11099933c374a6b338965d279b938c3fc0083ee6f48f6821072232e4655b",
+    "tracked": false,
+    "size_bytes": 10745
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/wiring_pulse.c.o",
+    "sha256": "8f7a053a958889d19f7818ed32d708e3a49e7c49ea38a8303a002d3bb11f00de",
+    "tracked": false,
+    "size_bytes": 45092
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/wiring_shift.c.d",
+    "sha256": "ddd7f586855492b4510bc5ea5841723989be85ca16be9dddc4703c0d0125d278",
+    "tracked": false,
+    "size_bytes": 10745
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/FrameworkArduino/wiring_shift.c.o",
+    "sha256": "e07716c6cc3dc243ab2da6725288efc90bf629f8eb478d5ee379c61ad4139f17",
+    "tracked": false,
+    "size_bytes": 41412
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/bootloader.bin",
+    "sha256": "30d47ab1f344cfa69f6b2f718ffa72fc7baea6db047eaabefea162db29e6821c",
+    "tracked": false,
+    "size_bytes": 13248
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/firmware.bin",
+    "sha256": "1157447c5b2e08fd9de9266d2930d3160ab2a99a119b213c04ec120a631664bd",
+    "tracked": false,
+    "size_bytes": 304208
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/firmware.elf",
+    "sha256": "a83d141297df56c91aef23b3ef7b57e34f6cd87b7bfd57df35ac35dc0c7a7c5c",
+    "tracked": false,
+    "size_bytes": 7087216
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/firmware.map",
+    "sha256": "6d2bb430a02d16be83a3b54521977d5dee83d15d7e811180cc95eb4773363890",
+    "tracked": false,
+    "size_bytes": 8110103
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib0ba/SPI/SPI.cpp.d",
+    "sha256": "5665ef870e7e97e21a6d7e982a842999fc19a09acc9c4993c27cf946eebd9e21",
+    "tracked": false,
+    "size_bytes": 18031
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib0ba/SPI/SPI.cpp.o",
+    "sha256": "4e65eebe6c3b708f15c5b120e8675c364bf1a592a52af5877714b8c0157f4109",
+    "tracked": false,
+    "size_bytes": 198680
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib0ba/libSPI.a",
+    "sha256": "25951a641c9a9c51d73edd9ed087e6e88d3c4137603ac3068c51f3c008ab783e",
+    "tracked": false,
+    "size_bytes": 199686
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib0f0/Wire/Wire.cpp.d",
+    "sha256": "35518ae55c553a98fbe249d78a26d156d58cbbb01209ab1c3b1945f60ff9a120",
+    "tracked": false,
+    "size_bytes": 18040
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib0f0/Wire/Wire.cpp.o",
+    "sha256": "ca2d827592d6b056b3b9f41b53d74a810a52f261fa249bcabba99b9ac5570640",
+    "tracked": false,
+    "size_bytes": 274876
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib0f0/libWire.a",
+    "sha256": "23f37ff56f8b0b69c082fb775aca93c2ec087f4db045a4114c345f2822fe4b97",
+    "tracked": false,
+    "size_bytes": 276390
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib214/Adafruit SSD1306/Adafruit_SSD1306.cpp.d",
+    "sha256": "155f9ba1be40cd104f74c38fb55398315f03c6fc8e393dd5dfbaa4e7b59f0ee2",
+    "tracked": false,
+    "size_bytes": 18470
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib214/Adafruit SSD1306/Adafruit_SSD1306.cpp.o",
+    "sha256": "8eea34169c888cc91034e37bc618f72cf40543013ae5787e37c0083d48a5fe03",
+    "tracked": false,
+    "size_bytes": 291776
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib214/libAdafruit SSD1306.a",
+    "sha256": "b648b3582e0049480f52beb1840f75f1905cb03f484443f708fe9d299a5c2ca7",
+    "tracked": false,
+    "size_bytes": 293490
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib3f1/Adafruit GFX Library/Adafruit_GFX.cpp.d",
+    "sha256": "c77244dc944057f870fb031ebb7cdb41be0b713b873617faca57819932391b3b",
+    "tracked": false,
+    "size_bytes": 18417
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib3f1/Adafruit GFX Library/Adafruit_GFX.cpp.o",
+    "sha256": "8f043bd7a050d52160850f3b3146660c5fab57b721089b3fbb9c5d0a9b495386",
+    "tracked": false,
+    "size_bytes": 580536
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib3f1/Adafruit GFX Library/Adafruit_GrayOLED.cpp.d",
+    "sha256": "5180a6208f7c823db2c4fcb827b91f3088dc7feef9b62da2745b32fad4a14db4",
+    "tracked": false,
+    "size_bytes": 18436
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib3f1/Adafruit GFX Library/Adafruit_GrayOLED.cpp.o",
+    "sha256": "bb2bc672d46db1a2c0a9664989fb905a15609212218ae4dbf289610d3f6f827b",
+    "tracked": false,
+    "size_bytes": 193684
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib3f1/Adafruit GFX Library/Adafruit_SPITFT.cpp.d",
+    "sha256": "2778fe8a57d2715fd81da87b99dbb646abd7276f69fa09b7630dc1a478d634df",
+    "tracked": false,
+    "size_bytes": 18430
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib3f1/Adafruit GFX Library/Adafruit_SPITFT.cpp.o",
+    "sha256": "e842e567bd51dcc4719dea62ca275a8e42cdb123c9e966b3bf8d3c501b93d11b",
+    "tracked": false,
+    "size_bytes": 306400
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib3f1/Adafruit GFX Library/glcdfont.c.d",
+    "sha256": "783f4dd874d3dcbdd8dbd755dd48c9146da2f3e7b639ef9b55432478ef65a9d8",
+    "tracked": false,
+    "size_bytes": 123
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib3f1/Adafruit GFX Library/glcdfont.c.o",
+    "sha256": "59d881e02f17020a64cf5ceee4cc490fbcd0609aed165fb01b5f1c0784042d87",
+    "tracked": false,
+    "size_bytes": 3340
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib3f1/libAdafruit GFX Library.a",
+    "sha256": "49e065371501b1a13b311fc41ed034a7224c8dd0be8323b469812aceb62fc76d",
+    "tracked": false,
+    "size_bytes": 1091440
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib470/U8g2_for_Adafruit_GFX/U8g2_for_Adafruit_GFX.cpp.d",
+    "sha256": "bc70bf8cc1ae979a22d38f4be5f412484ed43639698c38dc1f9d0dca745256c2",
+    "tracked": false,
+    "size_bytes": 18517
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib470/U8g2_for_Adafruit_GFX/U8g2_for_Adafruit_GFX.cpp.o",
+    "sha256": "4693bedc6af7913bc857b3defbfcf1b07cb8d6e8c0805e91cf76e54c72429e13",
+    "tracked": false,
+    "size_bytes": 352168
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib470/U8g2_for_Adafruit_GFX/u8g2_fonts.c.d",
+    "sha256": "7feecd20fa0f6d6f19dfc9fdf458e08321fd90c1d08b8e5884f2b5daf969aa5d",
+    "tracked": false,
+    "size_bytes": 193
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib470/U8g2_for_Adafruit_GFX/u8g2_fonts.c.o",
+    "sha256": "495adc37c753031e31271a107f9d3734fc51ca49253663734228d9428dd90e4e",
+    "tracked": false,
+    "size_bytes": 10995428
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/lib470/libU8g2_for_Adafruit_GFX.a",
+    "sha256": "ff366c28530cec22a3f2d2ebb20340aaf5fbb3adc62e4f0e19807146a1330240",
+    "tracked": false,
+    "size_bytes": 11394094
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/libFrameworkArduino.a",
+    "sha256": "5d485f67280a75279a012ca1393662640de0dda181954a43269d778320f148a8",
+    "tracked": false,
+    "size_bytes": 4977146
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/liba83/Adafruit BusIO/Adafruit_BusIO_Register.cpp.d",
+    "sha256": "a2eb2890f8ebedc392ce9767ba65c81e0d823cad2773e19e7e53150344700167",
+    "tracked": false,
+    "size_bytes": 18302
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/liba83/Adafruit BusIO/Adafruit_BusIO_Register.cpp.o",
+    "sha256": "8fcb220b48d260c8613283aa2706c85dc4dcea4b5fd4d47e8fc73fc6459e6e11",
+    "tracked": false,
+    "size_bytes": 185092
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/liba83/Adafruit BusIO/Adafruit_GenericDevice.cpp.d",
+    "sha256": "da2870d10acca0aae140afa146151c6d5110af2c1a0a3540205cb0b9916f2591",
+    "tracked": false,
+    "size_bytes": 17783
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/liba83/Adafruit BusIO/Adafruit_GenericDevice.cpp.o",
+    "sha256": "91055074529e9521388bd4cd5a17523721c9ba0a7c16b01e89175a44deeee01b",
+    "tracked": false,
+    "size_bytes": 137272
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/liba83/Adafruit BusIO/Adafruit_I2CDevice.cpp.d",
+    "sha256": "4ad6cf70a96225207f6670c39575c493ba7353bde5eab86bd7268ca6cb4b9b01",
+    "tracked": false,
+    "size_bytes": 17933
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/liba83/Adafruit BusIO/Adafruit_I2CDevice.cpp.o",
+    "sha256": "0a05b716d26cc1945c8d6f06648bd07b8d5d1e7b6fcf9b2a5a0fa6f763ac3573",
+    "tracked": false,
+    "size_bytes": 152244
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/liba83/Adafruit BusIO/Adafruit_SPIDevice.cpp.d",
+    "sha256": "42c44ddf574d1332bb98b1bc759ba41073840efcbce193c59f4761ad1451fc96",
+    "tracked": false,
+    "size_bytes": 17935
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/liba83/Adafruit BusIO/Adafruit_SPIDevice.cpp.o",
+    "sha256": "1fdb2b74dfc67e6f5cd7182e56d69a1375be80ba8c871451dd9caaa2d15888d7",
+    "tracked": false,
+    "size_bytes": 182988
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/liba83/libAdafruit BusIO.a",
+    "sha256": "8bd1f506275ca87a621dffd26b671f82ebcff1dcbbdf8dd99f389b1ff1f1d385",
+    "tracked": false,
+    "size_bytes": 661256
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/partitions.bin",
+    "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1",
+    "tracked": false,
+    "size_bytes": 3072
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/src/hud.cpp.d",
+    "sha256": "54aa60514bac7f7cbd1393f4e9996f6052ce0ff551bd32b5f719de2bf9172c89",
+    "tracked": false,
+    "size_bytes": 18481
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/src/hud.cpp.o",
+    "sha256": "10ae8dfce8dcda34b9687d4ea2806c5636b47ac52f3536c834a3eafab12cac19",
+    "tracked": false,
+    "size_bytes": 355920
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/src/main.cpp.d",
+    "sha256": "81e36d78c5bcba8c05f215014db10f6c177ba52f4b6af5bba97acd0c0bf3b00e",
+    "tracked": false,
+    "size_bytes": 18502
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/src/main.cpp.o",
+    "sha256": "fa5083c09f62e1674ad28ad81eb4c0757bab86b42ed8dbf4c883a0e64d02cd8a",
+    "tracked": false,
+    "size_bytes": 300276
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/src/protocol.cpp.d",
+    "sha256": "b5de42488db45bca673059a68780f96fa0b101d551af9b3b0d7cb30f116c3233",
+    "tracked": false,
+    "size_bytes": 18506
+  },
+  {
+    "path": "firmware/.pio/build/esp32c3/src/protocol.cpp.o",
+    "sha256": "3e5dec6faeb52ba97e143ac94937de00f7eafc679ec8ec52a977100730d339ab",
+    "tracked": false,
+    "size_bytes": 284884
+  },
+  {
+    "path": "firmware/.pio/build/project.checksum",
+    "sha256": "cc6524fe0c6bc9761bb0c21d7dfc0eaac17f37b12efc4dc0fd73afb9f5a00d04",
+    "tracked": false,
+    "size_bytes": 40
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/.clang-format",
+    "sha256": "2f94fd8d9bfa98f3c75a1ee6d7ae4e30eec3c179502c6ba2ba9f05af22b68bbe",
+    "tracked": false,
+    "size_bytes": 6815
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/.github/ISSUE_TEMPLATE.md",
+    "sha256": "60387287586189ad227cf94cea78ae09939007ad7cb01572b8ebcd148cb86aee",
+    "tracked": false,
+    "size_bytes": 2624
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/.github/PULL_REQUEST_TEMPLATE.md",
+    "sha256": "750454b578623fc9db1fb59060c702a1eb1fe0bc9b12153d79b9dd48dd530596",
+    "tracked": false,
+    "size_bytes": 1415
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/.github/workflows/githubci.yml",
+    "sha256": "cacc78cfe9b34227cbadd29b5c5e8fe5e6a1d2c105f33aa7790a3c8e70a29f8e",
+    "tracked": false,
+    "size_bytes": 887
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/.piopm",
+    "sha256": "771c328575dfedeba2d82d66b318b686bdd6b47e2c241f5a40d733e9809307ce",
+    "tracked": false,
+    "size_bytes": 170
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/Adafruit_BusIO_Register.cpp",
+    "sha256": "9a0af578ea07956296834f4505e5b134ad7e1cc22ac9c9d84a640a07a94f870b",
+    "tracked": false,
+    "size_bytes": 12495
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/Adafruit_BusIO_Register.h",
+    "sha256": "91560f9fc1b8cda42ab039ccdfe0abf92bf09c425a6142ff54af099809b9d47a",
+    "tracked": false,
+    "size_bytes": 3802
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/Adafruit_GenericDevice.cpp",
+    "sha256": "c26d9c1207c3626fb95884f01cc1f8179fcd7c2c6b0583fff25187c4f2c814d2",
+    "tracked": false,
+    "size_bytes": 3301
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/Adafruit_GenericDevice.h",
+    "sha256": "b12c364e359a0aba6aabc440bc64e375b825214a2835fa1bf38ac709f9e25546",
+    "tracked": false,
+    "size_bytes": 2268
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/Adafruit_I2CDevice.cpp",
+    "sha256": "317c342821f1df676a0e034f65685b4d6bf240d2ab8dcea91d18f1e063326d37",
+    "tracked": false,
+    "size_bytes": 9404
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/Adafruit_I2CDevice.h",
+    "sha256": "88b843d7a44e3f974950d883649e5682f21d9f8ce135daff3a42d015f7cd27e7",
+    "tracked": false,
+    "size_bytes": 1139
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/Adafruit_I2CRegister.h",
+    "sha256": "8318d1f65d5468742c0aa48bd50a7e3bd4ddf02e3eba11bc01ad50cf9c20bc67",
+    "tracked": false,
+    "size_bytes": 252
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/Adafruit_SPIDevice.cpp",
+    "sha256": "f846ee438eee41bef174c6dbe1f689f7ccbbd732ca4261c7b9e9337b1e5d08b5",
+    "tracked": false,
+    "size_bytes": 14297
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/Adafruit_SPIDevice.h",
+    "sha256": "58ff1433718cef7317638403160d5dd918d92c0f7b4204fb08ad401751d74508",
+    "tracked": false,
+    "size_bytes": 5515
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/CMakeLists.txt",
+    "sha256": "388cb8134d21bca989fa8efc48f6e8f7960805a14bfef75ae0d23ee8dcef97cd",
+    "tracked": false,
+    "size_bytes": 383
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/LICENSE",
+    "sha256": "86e9fafdb50d2a85d8fef369b4635b5a1b89160603e5b1f95484df0804b49508",
+    "tracked": false,
+    "size_bytes": 1085
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/README.md",
+    "sha256": "7857d55466e3f419a4f99829968fb94ef270b816152592eb6c561e880daa6e3e",
+    "tracked": false,
+    "size_bytes": 525
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/component.mk",
+    "sha256": "65a8bc94954334982bc226826da72647027c1bcc85447804e1fbab7f23228ab7",
+    "tracked": false,
+    "size_bytes": 31
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/examples/genericdevice_uartregtest/.uno.test.skip",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tracked": false,
+    "size_bytes": 0
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/examples/genericdevice_uartregtest/genericdevice_uartregtest.ino",
+    "sha256": "fd481a405762d0126b24e43e7bd4a325d0b2d872e135b517a9b5066b740fa85a",
+    "tracked": false,
+    "size_bytes": 6283
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/examples/genericdevice_uarttest/.uno.test.skip",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tracked": false,
+    "size_bytes": 0
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/examples/genericdevice_uarttest/genericdevice_uarttest.ino",
+    "sha256": "86e41d2c599b41c7fd211020bc9a6ee253a6d903af0a6ab029c84e6d351c44eb",
+    "tracked": false,
+    "size_bytes": 2676
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/examples/i2c_address_detect/i2c_address_detect.ino",
+    "sha256": "89cf0ee48c931364bea41cf3dab036342ae4c835d02626f7635b576c130a4c12",
+    "tracked": false,
+    "size_bytes": 465
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/examples/i2c_readwrite/i2c_readwrite.ino",
+    "sha256": "1cc8df8ea7c9c27c3d337b3d84993af3b1463699bc5fd198a81a6a869fff3a39",
+    "tracked": false,
+    "size_bytes": 1086
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/examples/i2c_registers/i2c_registers.ino",
+    "sha256": "a49021363dd14caed7250bd37414062614a22819364ae2cd2e4a5fb7ee7f29c9",
+    "tracked": false,
+    "size_bytes": 1075
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/examples/i2corspi_register/i2corspi_register.ino",
+    "sha256": "2f6f8a11ecb2cd0bda15aafe93a91ca92814fc4b3693d5978255b1c45d5c6912",
+    "tracked": false,
+    "size_bytes": 1039
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/examples/spi_modetest/spi_modetest.ino",
+    "sha256": "acd3f3fe9c85a8cb022230e8cc1c3b66e7d363a9a0a456dc176adedf7c548c22",
+    "tracked": false,
+    "size_bytes": 805
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/examples/spi_readwrite/spi_readwrite.ino",
+    "sha256": "3a0955fa5c28452ecfe51fcb699ce15667b9556e32426cfe120d02ae1ea6aad1",
+    "tracked": false,
+    "size_bytes": 963
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/examples/spi_register_bits/spi_register_bits.ino",
+    "sha256": "9149aa505c8b3239d27d7bb9fae6f50a86956234e8b6e10c49bedb823c6332d6",
+    "tracked": false,
+    "size_bytes": 9090
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/examples/spi_registers/spi_registers.ino",
+    "sha256": "8b65414c766bf25a7b7aeda67f5bc00fe09c18bb443828068e2ad7a96931457a",
+    "tracked": false,
+    "size_bytes": 991
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit BusIO/library.properties",
+    "sha256": "1f1c13c18d84a15f71e8e833aeaf1ada2d505cc915485174167ea661ed085194",
+    "tracked": false,
+    "size_bytes": 340
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/.clang-format",
+    "sha256": "2cabe8f1e6ad606c466800e23977fb90f778bfaaaf6ee86371cc34e8806f1da1",
+    "tracked": false,
+    "size_bytes": 6692
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/.github/ISSUE_TEMPLATE.md",
+    "sha256": "60387287586189ad227cf94cea78ae09939007ad7cb01572b8ebcd148cb86aee",
+    "tracked": false,
+    "size_bytes": 2624
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/.github/PULL_REQUEST_TEMPLATE.md",
+    "sha256": "750454b578623fc9db1fb59060c702a1eb1fe0bc9b12153d79b9dd48dd530596",
+    "tracked": false,
+    "size_bytes": 1415
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/.github/workflows/githubci.yml",
+    "sha256": "92753d4fae2229da28f6e35ba92963efe541a42245d1239572fa1df849841461",
+    "tracked": false,
+    "size_bytes": 913
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/.gitignore",
+    "sha256": "4f4379e5842048665af5783c81921085a19017e95ecc7361c3f53cc9bd179f1b",
+    "tracked": false,
+    "size_bytes": 112
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/.piopm",
+    "sha256": "f8bb427fe1e24fdd1e030afffea197fe5a5bc778a10b1eaa2956c5fd57365e35",
+    "tracked": false,
+    "size_bytes": 180
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Adafruit_GFX.cpp",
+    "sha256": "5afa8ca16241a9a0cb354012dd00780c6c00620c345b810a9504cb77bfc698d5",
+    "tracked": false,
+    "size_bytes": 102797
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Adafruit_GFX.h",
+    "sha256": "e4ace04cbed4499c0e2a80df33b381c87ce98689d98da82712f0748bf7359171",
+    "tracked": false,
+    "size_bytes": 18022
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Adafruit_GrayOLED.cpp",
+    "sha256": "03ea5c79bf86d8c7a7118dee264341fac0ecc0c5ecdc57eee47dea1981f9edd6",
+    "tracked": false,
+    "size_bytes": 15424
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Adafruit_GrayOLED.h",
+    "sha256": "27c451c21b6d16bef0fb6b94527dfe1d738a9445de4b351f75f24cc360c4e0ad",
+    "tracked": false,
+    "size_bytes": 3920
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Adafruit_SPITFT.cpp",
+    "sha256": "b5982e2ebb558b29a9c76a9bb694193208b46fdafa7d8ea105eb168b0fe9dcb5",
+    "tracked": false,
+    "size_bytes": 99447
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Adafruit_SPITFT.h",
+    "sha256": "23901ed7ab3953816d13471c4016763b25983fa0400448589f06376d53be1b10",
+    "tracked": false,
+    "size_bytes": 25059
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Adafruit_SPITFT_Macros.h",
+    "sha256": "c6f1e4e0cc97b98e85bb0c863954d41f72d3bd31874b03a57faa9ae4f8984f6d",
+    "tracked": false,
+    "size_bytes": 329
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/CMakeLists.txt",
+    "sha256": "719d4bf7cc03c5e1c3227d6786980ac2e2491f8dd98baa055bf3e55820f80e35",
+    "tracked": false,
+    "size_bytes": 370
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMono12pt7b.h",
+    "sha256": "21f369cca12e929a6cc26c740b64d2e9bb40ebf8f20c5b878f064d4ebb3d36de",
+    "tracked": false,
+    "size_bytes": 13799
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMono18pt7b.h",
+    "sha256": "f09df516cb487de3d2e0f36d9c45ffe4ea4bfc938735d10b47ff641842618688",
+    "tracked": false,
+    "size_bytes": 24117
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMono24pt7b.h",
+    "sha256": "c9a03fb1fad357e68f7487da819b083711d7c3d11201635da5ed12a6a83821a2",
+    "tracked": false,
+    "size_bytes": 40387
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMono9pt7b.h",
+    "sha256": "6bef1a38a049113ee9f4c7874ba3a164631e74d608df117491bcfb60fec56ec3",
+    "tracked": false,
+    "size_bytes": 9702
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMonoBold12pt7b.h",
+    "sha256": "0739083a428d8120ac0818e0585717f46b2183f08530f9b83813f1447febc611",
+    "tracked": false,
+    "size_bytes": 15460
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMonoBold18pt7b.h",
+    "sha256": "0c89a48671074e834b9c00d2347cb4e433799b8bfcde9eade8979a07d5bedda4",
+    "tracked": false,
+    "size_bytes": 28745
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMonoBold24pt7b.h",
+    "sha256": "660733c0f5bdf2afc72472af94404bc59dc2eebe7e9787f064ba7756a594ce38",
+    "tracked": false,
+    "size_bytes": 47645
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMonoBold9pt7b.h",
+    "sha256": "8cfea064cff367cf3e6a89cd2400ffdb731271f88a5016fb619dcd79b7dad733",
+    "tracked": false,
+    "size_bytes": 10813
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMonoBoldOblique12pt7b.h",
+    "sha256": "e7d8dc059aca726294f1dbc6eb4826e13261059434d426bc717cba629cd4b61a",
+    "tracked": false,
+    "size_bytes": 17082
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMonoBoldOblique18pt7b.h",
+    "sha256": "97083aec2726a168deafb4766377187dceb8fe6e52382b242730c3ec34cc8f8f",
+    "tracked": false,
+    "size_bytes": 31586
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMonoBoldOblique24pt7b.h",
+    "sha256": "b30c44c9aa6edc573c1b587ac0dc56388c62d05114cb76510a0f78e4ded86d18",
+    "tracked": false,
+    "size_bytes": 52988
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMonoBoldOblique9pt7b.h",
+    "sha256": "77e4c898599042277d04d3004feffd39b18c89d1a93f5cba65ff7506e25dd6ea",
+    "tracked": false,
+    "size_bytes": 11829
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMonoOblique12pt7b.h",
+    "sha256": "cd07c68d1dd9ecb2654a66fbb1aeb0117f779844cc079f99678cf9c3dabf04fe",
+    "tracked": false,
+    "size_bytes": 15329
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMonoOblique18pt7b.h",
+    "sha256": "d80a751b9b2a60178699602ee042006b944263175494d53d1a404d2968a1a508",
+    "tracked": false,
+    "size_bytes": 26771
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMonoOblique24pt7b.h",
+    "sha256": "f7f878d3b47231b43c9dd07d57100dd0364abfdb8953a25fd85b107da7ab0d1f",
+    "tracked": false,
+    "size_bytes": 45474
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeMonoOblique9pt7b.h",
+    "sha256": "8bbee06061722f180fe53e8813857dfd00cf404630c60283c4407f6f7700ac89",
+    "tracked": false,
+    "size_bytes": 10635
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSans12pt7b.h",
+    "sha256": "0e15e376ec314ac1399613e2466288d795501a467d4e7860e852976997cd7850",
+    "tracked": false,
+    "size_bytes": 17025
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSans18pt7b.h",
+    "sha256": "b6cc5607b838fcb422ef5c5925439b54061ab63eda1e00767d0c0bf3ee0b429f",
+    "tracked": false,
+    "size_bytes": 30893
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSans24pt7b.h",
+    "sha256": "e3cde750f607f1db3bd6c6d2d92e5cfd36a9a20d49df90d6a13b6eee7a490747",
+    "tracked": false,
+    "size_bytes": 51823
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSans9pt7b.h",
+    "sha256": "feacaaf7df57be67d483ed35a7aeb59402ad8c9736e456e3f044e62eaf3a9314",
+    "tracked": false,
+    "size_bytes": 11733
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSansBold12pt7b.h",
+    "sha256": "50b008dd06cf02fc3e46d872781f3bebb2009f09f80ca791e67138ef51d58630",
+    "tracked": false,
+    "size_bytes": 18348
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSansBold18pt7b.h",
+    "sha256": "4b3a67ee0d2fd5bce431a256cc77c0acd53f8cce4e0d0619a7a2695a7fbee970",
+    "tracked": false,
+    "size_bytes": 33022
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSansBold24pt7b.h",
+    "sha256": "ce00fb926f7d718b253dde1cbdd2f18c509c748ecec608c0ddc639ce188e9a54",
+    "tracked": false,
+    "size_bytes": 56169
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSansBold9pt7b.h",
+    "sha256": "a833751a8153c442afaadc16de2699e9a0163264c1df2ef30f3b5bbdba2b93ed",
+    "tracked": false,
+    "size_bytes": 12269
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSansBoldOblique12pt7b.h",
+    "sha256": "6cf7dc07ecc478acb2822e067b05be5834331f0751bd2aba030a3d38e001a6de",
+    "tracked": false,
+    "size_bytes": 20593
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSansBoldOblique18pt7b.h",
+    "sha256": "b6cd1ab0683ca218a93b22c499e750300c1d4c101ac4566db84a6fa28d236f30",
+    "tracked": false,
+    "size_bytes": 38016
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSansBoldOblique24pt7b.h",
+    "sha256": "4fed61aa9cd99eb0a492f10e8aa01287db136e24235fb195f75412ae2e1db0ab",
+    "tracked": false,
+    "size_bytes": 64465
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSansBoldOblique9pt7b.h",
+    "sha256": "399a69c387df1a8cd84987f9d2b9a015443e18bf1d819b74b5bf66af6aed3ebc",
+    "tracked": false,
+    "size_bytes": 13802
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSansOblique12pt7b.h",
+    "sha256": "c3ae703940f3f08bf4ccbcbb24cae7771720ab8b9b8ca74d390edd99a9659688",
+    "tracked": false,
+    "size_bytes": 19475
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSansOblique18pt7b.h",
+    "sha256": "9d03873e93cc61fcbed21128c22c37e2d93a470165280a0822dbbf331eefa122",
+    "tracked": false,
+    "size_bytes": 35968
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSansOblique24pt7b.h",
+    "sha256": "d41e526b2d677bc32edcc5e5b674a07be7a08048375ad69d3651717de3cb7753",
+    "tracked": false,
+    "size_bytes": 60416
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSansOblique9pt7b.h",
+    "sha256": "1ddc19a4b495408ba0d0c7efb48904d9c3459c62ab722aa54b99d283fa5cd0d4",
+    "tracked": false,
+    "size_bytes": 13184
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerif12pt7b.h",
+    "sha256": "d9e664a614eeda7ea7942b0fd85e2715d28747a712f346377c47efcbab99aed9",
+    "tracked": false,
+    "size_bytes": 16208
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerif18pt7b.h",
+    "sha256": "498cd6591b04cc27c0306979016a059ed284f44338375143e99a0c6fa1000171",
+    "tracked": false,
+    "size_bytes": 29170
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerif24pt7b.h",
+    "sha256": "c6cbb427f51e1ffe1f4cfe89e1f2c2317edbe0a5a8c3b517eb02719721e27c57",
+    "tracked": false,
+    "size_bytes": 48958
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerif9pt7b.h",
+    "sha256": "330670dc6c05b39915dc47bd5b1e272a44f2bf18108eca799649d2ac7368839a",
+    "tracked": false,
+    "size_bytes": 11296
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerifBold12pt7b.h",
+    "sha256": "e1aa2959eb408b289cff144996efd7bf2d6b08e5eebde8dbb80792aaee8dbfeb",
+    "tracked": false,
+    "size_bytes": 17115
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerifBold18pt7b.h",
+    "sha256": "4fbfb1faa143e09b570e95c434c0821a07994529bec579fd22bfd9f9baad3780",
+    "tracked": false,
+    "size_bytes": 31666
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerifBold24pt7b.h",
+    "sha256": "e66cb62a26127b5776848167c9cb406ebc51c480123eb313e6fc9f2e38c62460",
+    "tracked": false,
+    "size_bytes": 54298
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerifBold9pt7b.h",
+    "sha256": "61ebd809fca54d93b4195289be5f4e837cfe41f7998cff66b5fa2c09c5916b3f",
+    "tracked": false,
+    "size_bytes": 11765
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerifBoldItalic12pt7b.h",
+    "sha256": "c4587d3d064b6ee43cdc27c4fbe1828cf0bf531dc19ff692d177f71b358d2277",
+    "tracked": false,
+    "size_bytes": 18806
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerifBoldItalic18pt7b.h",
+    "sha256": "ec0ca5a439493bded92a41534644c9db51298bcda976362880ae6ee933aea0a5",
+    "tracked": false,
+    "size_bytes": 34638
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerifBoldItalic24pt7b.h",
+    "sha256": "98cc662d98016e0e69125f4e0da5bce9a364490eccb008c73bf9ed313df9831a",
+    "tracked": false,
+    "size_bytes": 56852
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerifBoldItalic9pt7b.h",
+    "sha256": "96aec072db8f36a223d055521f1f04f6c9a1aa64395a974464d00e80e5ed67ea",
+    "tracked": false,
+    "size_bytes": 12830
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerifItalic12pt7b.h",
+    "sha256": "587bc04736886112a06d1bc4fbafc242c4a24de032acb42d9fda43596e2dcbcd",
+    "tracked": false,
+    "size_bytes": 17178
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerifItalic18pt7b.h",
+    "sha256": "86cdd8f59ca0b47508a6e858f84e796adf735c0a8355e2f52784ad526033cdff",
+    "tracked": false,
+    "size_bytes": 30788
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerifItalic24pt7b.h",
+    "sha256": "3af05ccf96780dc26b9154b7871528e3c8c7e09f82b6b00e17d9dfb5020478f8",
+    "tracked": false,
+    "size_bytes": 52612
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/FreeSerifItalic9pt7b.h",
+    "sha256": "ee4f79365a5ec0dcac844c497cbb484cc6d46d6c2391b3ebad58eec8e4ea0620",
+    "tracked": false,
+    "size_bytes": 11781
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/Org_01.h",
+    "sha256": "6366cd58da1ab53f7b27d68f85463d3db207c88b7a01f97132f8c6a8c3be4451",
+    "tracked": false,
+    "size_bytes": 9394
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/Picopixel.h",
+    "sha256": "035c01e6d48efdfef1e4de6152d0d03910210e449236506ec7c8f71799073363",
+    "tracked": false,
+    "size_bytes": 9089
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/Tiny3x3a2pt7b.h",
+    "sha256": "96fe2267efcd0f9086c735ad594fe9798b868b9198720af9bf18cc929d96f474",
+    "tracked": false,
+    "size_bytes": 5684
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/Fonts/TomThumb.h",
+    "sha256": "a2b89525189e738feb2eba5288f9f6c7ece0b171d603468c4c585372a3342723",
+    "tracked": false,
+    "size_bytes": 20296
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/README.md",
+    "sha256": "6890f42a55c06828629738cb9b015f813a108a85d30013a3b1a77c4a7d0140a1",
+    "tracked": false,
+    "size_bytes": 4772
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/component.mk",
+    "sha256": "65a8bc94954334982bc226826da72647027c1bcc85447804e1fbab7f23228ab7",
+    "tracked": false,
+    "size_bytes": 31
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/examples/GFXcanvas/GFXcanvas.ino",
+    "sha256": "8bc2d443ee94aea3b445e293da18093859e88024d94dfcf8fb33d9c668e3db64",
+    "tracked": false,
+    "size_bytes": 3671
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/examples/GFXcanvas/GFXcanvasSerialDemo.cpp",
+    "sha256": "9cd57fa49ed5a66e1227e729fd2848e5e519cd86e1563efbb907e7b3aaa4af09",
+    "tracked": false,
+    "size_bytes": 2094
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/examples/GFXcanvas/GFXcanvasSerialDemo.h",
+    "sha256": "c1bfa43f9e35f3488c091734eefd8c6994db9445488e5e3c035a983f31423221",
+    "tracked": false,
+    "size_bytes": 2408
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/examples/mock_ili9341/mock_ili9341.ino",
+    "sha256": "552db5228c974f0c7b2c48d9502ddfa109ede4fe46a91539b38fbe8c16236455",
+    "tracked": false,
+    "size_bytes": 9790
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/fontconvert/Makefile",
+    "sha256": "a39d6a4413c7d8d5c394cd9e52c8ad8553a8afc71be3fd426e496a77ec88c17a",
+    "tracked": false,
+    "size_bytes": 236
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/fontconvert/bdf2adafruit.py",
+    "sha256": "eb03983ee15e821888ad4c8f321ffaba8b9346f3d09f6624ab4597d200dcc9ce",
+    "tracked": false,
+    "size_bytes": 4487
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/fontconvert/fontconvert.c",
+    "sha256": "42e70906d68e4a7bced1c47a7bb12d2a86c29484eeb564f76449ea7a9b6c3ba1",
+    "tracked": false,
+    "size_bytes": 10270
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/fontconvert/fontconvert_win.md",
+    "sha256": "76bf8de4bfb5f86fff8d2f80b0f32bcbf401642430b00a6c121112d270e598f1",
+    "tracked": false,
+    "size_bytes": 3831
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/fontconvert/makefonts.sh",
+    "sha256": "ccc786b8fb5077bd6d1948778620469cbbfa83f3f3b17cef1436cd22c71cf662",
+    "tracked": false,
+    "size_bytes": 1221
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/gfxfont.h",
+    "sha256": "4e1b06371217d63102bac242d4a3ec8dcaff93cd34b4241bbc39eda521a1be11",
+    "tracked": false,
+    "size_bytes": 1108
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/glcdfont.c",
+    "sha256": "bd6d60ecb9cc350a83f209d7c62de2fe5f6ce3402d5598cde2988b5b44e83e02",
+    "tracked": false,
+    "size_bytes": 9064
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/library.properties",
+    "sha256": "e6b702f2d0463216bf4b89d10c1701ae0de2aabbee42f7088054e9e21949cc31",
+    "tracked": false,
+    "size_bytes": 412
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit GFX Library/license.txt",
+    "sha256": "3e7bede50526352926c2283e640f2823d9f9f2165d1852044c4fb1bbac283106",
+    "tracked": false,
+    "size_bytes": 1344
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/.github/ISSUE_TEMPLATE.md",
+    "sha256": "60387287586189ad227cf94cea78ae09939007ad7cb01572b8ebcd148cb86aee",
+    "tracked": false,
+    "size_bytes": 2624
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/.github/PULL_REQUEST_TEMPLATE.md",
+    "sha256": "750454b578623fc9db1fb59060c702a1eb1fe0bc9b12153d79b9dd48dd530596",
+    "tracked": false,
+    "size_bytes": 1415
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/.github/workflows/githubci.yml",
+    "sha256": "edeef425247475d607379ebd64695658271fb3b824c9f257138691a956c7455e",
+    "tracked": false,
+    "size_bytes": 756
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/.gitignore",
+    "sha256": "33c4c0c8418ac71de54902492d59326cba7938e48cbbc0550f369dfe0ea7c847",
+    "tracked": false,
+    "size_bytes": 77
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/.piopm",
+    "sha256": "b6e4f7d45ce512e6f14b88e7d979e5df98a4b7bb481eaed2b5616d55bdc21a9e",
+    "tracked": false,
+    "size_bytes": 173
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/Adafruit_SSD1306.cpp",
+    "sha256": "ddbd788bfaf97dd3b5ba5ee67eb62ab51652cbe86e34c2e7d24d5e074bb34bdd",
+    "tracked": false,
+    "size_bytes": 45961
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/Adafruit_SSD1306.h",
+    "sha256": "89c5e18cc19a41bd47130e1a4dc344733ad2bb6b6ef6c4c43eeddaf9854db6a2",
+    "tracked": false,
+    "size_bytes": 9042
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/CMakeLists.txt",
+    "sha256": "470e043da72e14b051ab7f5ba5d33aa28f18ec387d8707f85867a5aaa80d4405",
+    "tracked": false,
+    "size_bytes": 315
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/README.md",
+    "sha256": "b098cb53f4810301ab31d26d3cc0c24310c960c66d7c40453a91be81dc2e5103",
+    "tracked": false,
+    "size_bytes": 4439
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/component.mk",
+    "sha256": "65a8bc94954334982bc226826da72647027c1bcc85447804e1fbab7f23228ab7",
+    "tracked": false,
+    "size_bytes": 31
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/examples/OLED_featherwing/OLED_featherwing.ino",
+    "sha256": "966b36d0c4c460e501134cd9ee96b76789fcfbfdd5acdadfb846f52d126182dd",
+    "tracked": false,
+    "size_bytes": 2485
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/examples/ssd1306_128x32_i2c/ssd1306_128x32_i2c.ino",
+    "sha256": "d2bf9015549240b045cd0e1b3f53b55a5df3ef597d250ba77ce5fbc0c80dfa49",
+    "tracked": false,
+    "size_bytes": 12019
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/examples/ssd1306_128x32_spi/ssd1306_128x32_spi.ino",
+    "sha256": "319e74a91c9dda78a95d9db6715f34335a3b5114fb9da5cdaa0cc58ca8aca87c",
+    "tracked": false,
+    "size_bytes": 11961
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/examples/ssd1306_128x64_i2c/ssd1306_128x64_i2c.ino",
+    "sha256": "cdd2e1f790a6fb2eb1f1d0addd1d82611aa8ff288e3ff7f41c5910fac69e2084",
+    "tracked": false,
+    "size_bytes": 12019
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/examples/ssd1306_128x64_spi/ssd1306_128x64_spi.ino",
+    "sha256": "3e14c5421101924fdf81c04ce8517760224755dd314ace8396c3514d3eb19a1b",
+    "tracked": false,
+    "size_bytes": 11962
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/examples/ssd1306_64x32_i2c/ssd1306_64x32_i2c.ino",
+    "sha256": "fcc72174fe3d8ed58d52530c093f8f7dca773e2a9f081ca6a8ad71d2bd943321",
+    "tracked": false,
+    "size_bytes": 12018
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/library.properties",
+    "sha256": "bfb5d85959c14de682a285496e3c905054a0b126b0ca2d7c1870307890e6bc9d",
+    "tracked": false,
+    "size_bytes": 363
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/license.txt",
+    "sha256": "4b6bb6d827e9da638841bf575c6068b83aaaf0d9508e892d3ea27e2525b070e8",
+    "tracked": false,
+    "size_bytes": 1499
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/scripts/Makefile",
+    "sha256": "d37ea677edb9ca9e7e3b1f30a1a05f897465068578da25d49dca58e5f404e2d9",
+    "tracked": false,
+    "size_bytes": 601
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/scripts/make_splash.py",
+    "sha256": "1208aa2074ee98429cf1aaecc33e473dc3e16c105fd179a91bea9fdcd2d5a735",
+    "tracked": false,
+    "size_bytes": 939
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/Adafruit SSD1306/splash.h",
+    "sha256": "01d79e7b12ba9e2f29f967803bb85b037ad8981b2b2f7d3997db51811d47177d",
+    "tracked": false,
+    "size_bytes": 13813
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/.piopm",
+    "sha256": "9ba934d87ab7f52e66cade5a1354f51c0c88d1db40729a249d2b527e4c577b7b",
+    "tracked": false,
+    "size_bytes": 183
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/LICENSE",
+    "sha256": "019c85fdd2c31be9a6b5e58b362398c647b758e6eeadfaaef67301f6b25d7cb8",
+    "tracked": false,
+    "size_bytes": 3175
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/README.md",
+    "sha256": "10eaf0a2e70e4fd4bf2819fe364b8d360ed0c87885a54818965f68f6c1c1efba",
+    "tracked": false,
+    "size_bytes": 7123
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/examples/Boxed_Text_Adafruit_SSD1306/Boxed_Text_Adafruit_SSD1306.ino",
+    "sha256": "1aaa78fec055ee8a34f964ea059fd9d4e19036929e661645d3cda0660464d2d4",
+    "tracked": false,
+    "size_bytes": 1774
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/examples/Hello_Adafruit_ILI9341/Hello_Adafruit_ILI9341.c",
+    "sha256": "b39b0383d6c9e3f73c964a5a7c293faa8aa918c39ebdf869d5ef87fda9f8ac25",
+    "tracked": false,
+    "size_bytes": 2010
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/examples/Hello_Adafruit_SSD1306/Hello_Adafruit_SSD1306.ino",
+    "sha256": "9eef1463c0c1c17523be83a5a1e70f4a287980d0b1c51b0fa19674ae2ac19339",
+    "tracked": false,
+    "size_bytes": 1653
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/examples/Shennong/Shennong.ino",
+    "sha256": "1a56d2aa2f895f03c3d8a4b6d9510e45b44f8196abd2b722be33ee15df30bd91",
+    "tracked": false,
+    "size_bytes": 8401
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/examples/Shennong_IL9341/Shennong_IL9341.ino",
+    "sha256": "a6a777ba6fd5740d74b2b5b71508e6dd7621cf869d5a24075d9eafb411093820",
+    "tracked": false,
+    "size_bytes": 8804
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/examples/Unicode_Adafruit_SSD1306/Unicode_Adafruit_SSD1306.ino",
+    "sha256": "d38b2dcd80e63a172c967c72861d37484981022fd757b81874fec3715ac30d70",
+    "tracked": false,
+    "size_bytes": 1889
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/keywords.txt",
+    "sha256": "2b338dbbbbc67d15944008707f97b6a7ab17ccb2ff44eeecc4b290decb7f3638",
+    "tracked": false,
+    "size_bytes": 791
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/library.properties",
+    "sha256": "11078753bca28b24631173a317f3b3db89c9df9d46873f5ef1d922166ecdcd6c",
+    "tracked": false,
+    "size_bytes": 442
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/src/U8g2_for_Adafruit_GFX.cpp",
+    "sha256": "51fe7ed9876a756a0e1776b5172ee6216e97b5c4bf7e62429ca6aa5b37a7e4e6",
+    "tracked": false,
+    "size_bytes": 18849
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/src/U8g2_for_Adafruit_GFX.h",
+    "sha256": "914514bbd5b4a33f6f9bd24d96f17d8cdfb52a5864b4da95126c01b434a2b7a9",
+    "tracked": false,
+    "size_bytes": 160395
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/src/u8g2_fonts.c",
+    "sha256": "3045331341bb9680f81bf2d6e94e495417af1d692cdddd16b541b383823006d6",
+    "tracked": false,
+    "size_bytes": 29971292
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/U8g2_for_Adafruit_GFX/src/u8g2_fonts.h",
+    "sha256": "7b5666e3ba039484c51a71652ebe98e962b4a25efaa30faa1beae1731b99734c",
+    "tracked": false,
+    "size_bytes": 2791
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32c3/integrity.dat",
+    "sha256": "8a8ac000cdb321ce776b81a2f4caea9352b4e97f9a25f39f6c0c35dff0daf457",
+    "tracked": false,
+    "size_bytes": 111
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/.clang-format",
+    "sha256": "2f94fd8d9bfa98f3c75a1ee6d7ae4e30eec3c179502c6ba2ba9f05af22b68bbe",
+    "tracked": false,
+    "size_bytes": 6815
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/.github/ISSUE_TEMPLATE.md",
+    "sha256": "60387287586189ad227cf94cea78ae09939007ad7cb01572b8ebcd148cb86aee",
+    "tracked": false,
+    "size_bytes": 2624
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/.github/PULL_REQUEST_TEMPLATE.md",
+    "sha256": "750454b578623fc9db1fb59060c702a1eb1fe0bc9b12153d79b9dd48dd530596",
+    "tracked": false,
+    "size_bytes": 1415
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/.github/workflows/githubci.yml",
+    "sha256": "cacc78cfe9b34227cbadd29b5c5e8fe5e6a1d2c105f33aa7790a3c8e70a29f8e",
+    "tracked": false,
+    "size_bytes": 887
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/.piopm",
+    "sha256": "771c328575dfedeba2d82d66b318b686bdd6b47e2c241f5a40d733e9809307ce",
+    "tracked": false,
+    "size_bytes": 170
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/Adafruit_BusIO_Register.cpp",
+    "sha256": "9a0af578ea07956296834f4505e5b134ad7e1cc22ac9c9d84a640a07a94f870b",
+    "tracked": false,
+    "size_bytes": 12495
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/Adafruit_BusIO_Register.h",
+    "sha256": "91560f9fc1b8cda42ab039ccdfe0abf92bf09c425a6142ff54af099809b9d47a",
+    "tracked": false,
+    "size_bytes": 3802
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/Adafruit_GenericDevice.cpp",
+    "sha256": "c26d9c1207c3626fb95884f01cc1f8179fcd7c2c6b0583fff25187c4f2c814d2",
+    "tracked": false,
+    "size_bytes": 3301
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/Adafruit_GenericDevice.h",
+    "sha256": "b12c364e359a0aba6aabc440bc64e375b825214a2835fa1bf38ac709f9e25546",
+    "tracked": false,
+    "size_bytes": 2268
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/Adafruit_I2CDevice.cpp",
+    "sha256": "317c342821f1df676a0e034f65685b4d6bf240d2ab8dcea91d18f1e063326d37",
+    "tracked": false,
+    "size_bytes": 9404
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/Adafruit_I2CDevice.h",
+    "sha256": "88b843d7a44e3f974950d883649e5682f21d9f8ce135daff3a42d015f7cd27e7",
+    "tracked": false,
+    "size_bytes": 1139
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/Adafruit_I2CRegister.h",
+    "sha256": "8318d1f65d5468742c0aa48bd50a7e3bd4ddf02e3eba11bc01ad50cf9c20bc67",
+    "tracked": false,
+    "size_bytes": 252
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/Adafruit_SPIDevice.cpp",
+    "sha256": "f846ee438eee41bef174c6dbe1f689f7ccbbd732ca4261c7b9e9337b1e5d08b5",
+    "tracked": false,
+    "size_bytes": 14297
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/Adafruit_SPIDevice.h",
+    "sha256": "58ff1433718cef7317638403160d5dd918d92c0f7b4204fb08ad401751d74508",
+    "tracked": false,
+    "size_bytes": 5515
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/CMakeLists.txt",
+    "sha256": "388cb8134d21bca989fa8efc48f6e8f7960805a14bfef75ae0d23ee8dcef97cd",
+    "tracked": false,
+    "size_bytes": 383
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/LICENSE",
+    "sha256": "86e9fafdb50d2a85d8fef369b4635b5a1b89160603e5b1f95484df0804b49508",
+    "tracked": false,
+    "size_bytes": 1085
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/README.md",
+    "sha256": "7857d55466e3f419a4f99829968fb94ef270b816152592eb6c561e880daa6e3e",
+    "tracked": false,
+    "size_bytes": 525
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/component.mk",
+    "sha256": "65a8bc94954334982bc226826da72647027c1bcc85447804e1fbab7f23228ab7",
+    "tracked": false,
+    "size_bytes": 31
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/examples/genericdevice_uartregtest/.uno.test.skip",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tracked": false,
+    "size_bytes": 0
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/examples/genericdevice_uartregtest/genericdevice_uartregtest.ino",
+    "sha256": "fd481a405762d0126b24e43e7bd4a325d0b2d872e135b517a9b5066b740fa85a",
+    "tracked": false,
+    "size_bytes": 6283
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/examples/genericdevice_uarttest/.uno.test.skip",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tracked": false,
+    "size_bytes": 0
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/examples/genericdevice_uarttest/genericdevice_uarttest.ino",
+    "sha256": "86e41d2c599b41c7fd211020bc9a6ee253a6d903af0a6ab029c84e6d351c44eb",
+    "tracked": false,
+    "size_bytes": 2676
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/examples/i2c_address_detect/i2c_address_detect.ino",
+    "sha256": "89cf0ee48c931364bea41cf3dab036342ae4c835d02626f7635b576c130a4c12",
+    "tracked": false,
+    "size_bytes": 465
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/examples/i2c_readwrite/i2c_readwrite.ino",
+    "sha256": "1cc8df8ea7c9c27c3d337b3d84993af3b1463699bc5fd198a81a6a869fff3a39",
+    "tracked": false,
+    "size_bytes": 1086
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/examples/i2c_registers/i2c_registers.ino",
+    "sha256": "a49021363dd14caed7250bd37414062614a22819364ae2cd2e4a5fb7ee7f29c9",
+    "tracked": false,
+    "size_bytes": 1075
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/examples/i2corspi_register/i2corspi_register.ino",
+    "sha256": "2f6f8a11ecb2cd0bda15aafe93a91ca92814fc4b3693d5978255b1c45d5c6912",
+    "tracked": false,
+    "size_bytes": 1039
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/examples/spi_modetest/spi_modetest.ino",
+    "sha256": "acd3f3fe9c85a8cb022230e8cc1c3b66e7d363a9a0a456dc176adedf7c548c22",
+    "tracked": false,
+    "size_bytes": 805
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/examples/spi_readwrite/spi_readwrite.ino",
+    "sha256": "3a0955fa5c28452ecfe51fcb699ce15667b9556e32426cfe120d02ae1ea6aad1",
+    "tracked": false,
+    "size_bytes": 963
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/examples/spi_register_bits/spi_register_bits.ino",
+    "sha256": "9149aa505c8b3239d27d7bb9fae6f50a86956234e8b6e10c49bedb823c6332d6",
+    "tracked": false,
+    "size_bytes": 9090
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/examples/spi_registers/spi_registers.ino",
+    "sha256": "8b65414c766bf25a7b7aeda67f5bc00fe09c18bb443828068e2ad7a96931457a",
+    "tracked": false,
+    "size_bytes": 991
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit BusIO/library.properties",
+    "sha256": "1f1c13c18d84a15f71e8e833aeaf1ada2d505cc915485174167ea661ed085194",
+    "tracked": false,
+    "size_bytes": 340
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/.clang-format",
+    "sha256": "2cabe8f1e6ad606c466800e23977fb90f778bfaaaf6ee86371cc34e8806f1da1",
+    "tracked": false,
+    "size_bytes": 6692
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/.github/ISSUE_TEMPLATE.md",
+    "sha256": "60387287586189ad227cf94cea78ae09939007ad7cb01572b8ebcd148cb86aee",
+    "tracked": false,
+    "size_bytes": 2624
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/.github/PULL_REQUEST_TEMPLATE.md",
+    "sha256": "750454b578623fc9db1fb59060c702a1eb1fe0bc9b12153d79b9dd48dd530596",
+    "tracked": false,
+    "size_bytes": 1415
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/.github/workflows/githubci.yml",
+    "sha256": "92753d4fae2229da28f6e35ba92963efe541a42245d1239572fa1df849841461",
+    "tracked": false,
+    "size_bytes": 913
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/.gitignore",
+    "sha256": "4f4379e5842048665af5783c81921085a19017e95ecc7361c3f53cc9bd179f1b",
+    "tracked": false,
+    "size_bytes": 112
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/.piopm",
+    "sha256": "f8bb427fe1e24fdd1e030afffea197fe5a5bc778a10b1eaa2956c5fd57365e35",
+    "tracked": false,
+    "size_bytes": 180
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Adafruit_GFX.cpp",
+    "sha256": "5afa8ca16241a9a0cb354012dd00780c6c00620c345b810a9504cb77bfc698d5",
+    "tracked": false,
+    "size_bytes": 102797
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Adafruit_GFX.h",
+    "sha256": "e4ace04cbed4499c0e2a80df33b381c87ce98689d98da82712f0748bf7359171",
+    "tracked": false,
+    "size_bytes": 18022
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Adafruit_GrayOLED.cpp",
+    "sha256": "03ea5c79bf86d8c7a7118dee264341fac0ecc0c5ecdc57eee47dea1981f9edd6",
+    "tracked": false,
+    "size_bytes": 15424
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Adafruit_GrayOLED.h",
+    "sha256": "27c451c21b6d16bef0fb6b94527dfe1d738a9445de4b351f75f24cc360c4e0ad",
+    "tracked": false,
+    "size_bytes": 3920
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Adafruit_SPITFT.cpp",
+    "sha256": "b5982e2ebb558b29a9c76a9bb694193208b46fdafa7d8ea105eb168b0fe9dcb5",
+    "tracked": false,
+    "size_bytes": 99447
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Adafruit_SPITFT.h",
+    "sha256": "23901ed7ab3953816d13471c4016763b25983fa0400448589f06376d53be1b10",
+    "tracked": false,
+    "size_bytes": 25059
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Adafruit_SPITFT_Macros.h",
+    "sha256": "c6f1e4e0cc97b98e85bb0c863954d41f72d3bd31874b03a57faa9ae4f8984f6d",
+    "tracked": false,
+    "size_bytes": 329
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/CMakeLists.txt",
+    "sha256": "719d4bf7cc03c5e1c3227d6786980ac2e2491f8dd98baa055bf3e55820f80e35",
+    "tracked": false,
+    "size_bytes": 370
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMono12pt7b.h",
+    "sha256": "21f369cca12e929a6cc26c740b64d2e9bb40ebf8f20c5b878f064d4ebb3d36de",
+    "tracked": false,
+    "size_bytes": 13799
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMono18pt7b.h",
+    "sha256": "f09df516cb487de3d2e0f36d9c45ffe4ea4bfc938735d10b47ff641842618688",
+    "tracked": false,
+    "size_bytes": 24117
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMono24pt7b.h",
+    "sha256": "c9a03fb1fad357e68f7487da819b083711d7c3d11201635da5ed12a6a83821a2",
+    "tracked": false,
+    "size_bytes": 40387
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMono9pt7b.h",
+    "sha256": "6bef1a38a049113ee9f4c7874ba3a164631e74d608df117491bcfb60fec56ec3",
+    "tracked": false,
+    "size_bytes": 9702
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMonoBold12pt7b.h",
+    "sha256": "0739083a428d8120ac0818e0585717f46b2183f08530f9b83813f1447febc611",
+    "tracked": false,
+    "size_bytes": 15460
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMonoBold18pt7b.h",
+    "sha256": "0c89a48671074e834b9c00d2347cb4e433799b8bfcde9eade8979a07d5bedda4",
+    "tracked": false,
+    "size_bytes": 28745
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMonoBold24pt7b.h",
+    "sha256": "660733c0f5bdf2afc72472af94404bc59dc2eebe7e9787f064ba7756a594ce38",
+    "tracked": false,
+    "size_bytes": 47645
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMonoBold9pt7b.h",
+    "sha256": "8cfea064cff367cf3e6a89cd2400ffdb731271f88a5016fb619dcd79b7dad733",
+    "tracked": false,
+    "size_bytes": 10813
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMonoBoldOblique12pt7b.h",
+    "sha256": "e7d8dc059aca726294f1dbc6eb4826e13261059434d426bc717cba629cd4b61a",
+    "tracked": false,
+    "size_bytes": 17082
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMonoBoldOblique18pt7b.h",
+    "sha256": "97083aec2726a168deafb4766377187dceb8fe6e52382b242730c3ec34cc8f8f",
+    "tracked": false,
+    "size_bytes": 31586
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMonoBoldOblique24pt7b.h",
+    "sha256": "b30c44c9aa6edc573c1b587ac0dc56388c62d05114cb76510a0f78e4ded86d18",
+    "tracked": false,
+    "size_bytes": 52988
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMonoBoldOblique9pt7b.h",
+    "sha256": "77e4c898599042277d04d3004feffd39b18c89d1a93f5cba65ff7506e25dd6ea",
+    "tracked": false,
+    "size_bytes": 11829
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMonoOblique12pt7b.h",
+    "sha256": "cd07c68d1dd9ecb2654a66fbb1aeb0117f779844cc079f99678cf9c3dabf04fe",
+    "tracked": false,
+    "size_bytes": 15329
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMonoOblique18pt7b.h",
+    "sha256": "d80a751b9b2a60178699602ee042006b944263175494d53d1a404d2968a1a508",
+    "tracked": false,
+    "size_bytes": 26771
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMonoOblique24pt7b.h",
+    "sha256": "f7f878d3b47231b43c9dd07d57100dd0364abfdb8953a25fd85b107da7ab0d1f",
+    "tracked": false,
+    "size_bytes": 45474
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeMonoOblique9pt7b.h",
+    "sha256": "8bbee06061722f180fe53e8813857dfd00cf404630c60283c4407f6f7700ac89",
+    "tracked": false,
+    "size_bytes": 10635
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSans12pt7b.h",
+    "sha256": "0e15e376ec314ac1399613e2466288d795501a467d4e7860e852976997cd7850",
+    "tracked": false,
+    "size_bytes": 17025
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSans18pt7b.h",
+    "sha256": "b6cc5607b838fcb422ef5c5925439b54061ab63eda1e00767d0c0bf3ee0b429f",
+    "tracked": false,
+    "size_bytes": 30893
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSans24pt7b.h",
+    "sha256": "e3cde750f607f1db3bd6c6d2d92e5cfd36a9a20d49df90d6a13b6eee7a490747",
+    "tracked": false,
+    "size_bytes": 51823
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSans9pt7b.h",
+    "sha256": "feacaaf7df57be67d483ed35a7aeb59402ad8c9736e456e3f044e62eaf3a9314",
+    "tracked": false,
+    "size_bytes": 11733
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSansBold12pt7b.h",
+    "sha256": "50b008dd06cf02fc3e46d872781f3bebb2009f09f80ca791e67138ef51d58630",
+    "tracked": false,
+    "size_bytes": 18348
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSansBold18pt7b.h",
+    "sha256": "4b3a67ee0d2fd5bce431a256cc77c0acd53f8cce4e0d0619a7a2695a7fbee970",
+    "tracked": false,
+    "size_bytes": 33022
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSansBold24pt7b.h",
+    "sha256": "ce00fb926f7d718b253dde1cbdd2f18c509c748ecec608c0ddc639ce188e9a54",
+    "tracked": false,
+    "size_bytes": 56169
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSansBold9pt7b.h",
+    "sha256": "a833751a8153c442afaadc16de2699e9a0163264c1df2ef30f3b5bbdba2b93ed",
+    "tracked": false,
+    "size_bytes": 12269
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSansBoldOblique12pt7b.h",
+    "sha256": "6cf7dc07ecc478acb2822e067b05be5834331f0751bd2aba030a3d38e001a6de",
+    "tracked": false,
+    "size_bytes": 20593
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSansBoldOblique18pt7b.h",
+    "sha256": "b6cd1ab0683ca218a93b22c499e750300c1d4c101ac4566db84a6fa28d236f30",
+    "tracked": false,
+    "size_bytes": 38016
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSansBoldOblique24pt7b.h",
+    "sha256": "4fed61aa9cd99eb0a492f10e8aa01287db136e24235fb195f75412ae2e1db0ab",
+    "tracked": false,
+    "size_bytes": 64465
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSansBoldOblique9pt7b.h",
+    "sha256": "399a69c387df1a8cd84987f9d2b9a015443e18bf1d819b74b5bf66af6aed3ebc",
+    "tracked": false,
+    "size_bytes": 13802
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSansOblique12pt7b.h",
+    "sha256": "c3ae703940f3f08bf4ccbcbb24cae7771720ab8b9b8ca74d390edd99a9659688",
+    "tracked": false,
+    "size_bytes": 19475
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSansOblique18pt7b.h",
+    "sha256": "9d03873e93cc61fcbed21128c22c37e2d93a470165280a0822dbbf331eefa122",
+    "tracked": false,
+    "size_bytes": 35968
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSansOblique24pt7b.h",
+    "sha256": "d41e526b2d677bc32edcc5e5b674a07be7a08048375ad69d3651717de3cb7753",
+    "tracked": false,
+    "size_bytes": 60416
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSansOblique9pt7b.h",
+    "sha256": "1ddc19a4b495408ba0d0c7efb48904d9c3459c62ab722aa54b99d283fa5cd0d4",
+    "tracked": false,
+    "size_bytes": 13184
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerif12pt7b.h",
+    "sha256": "d9e664a614eeda7ea7942b0fd85e2715d28747a712f346377c47efcbab99aed9",
+    "tracked": false,
+    "size_bytes": 16208
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerif18pt7b.h",
+    "sha256": "498cd6591b04cc27c0306979016a059ed284f44338375143e99a0c6fa1000171",
+    "tracked": false,
+    "size_bytes": 29170
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerif24pt7b.h",
+    "sha256": "c6cbb427f51e1ffe1f4cfe89e1f2c2317edbe0a5a8c3b517eb02719721e27c57",
+    "tracked": false,
+    "size_bytes": 48958
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerif9pt7b.h",
+    "sha256": "330670dc6c05b39915dc47bd5b1e272a44f2bf18108eca799649d2ac7368839a",
+    "tracked": false,
+    "size_bytes": 11296
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerifBold12pt7b.h",
+    "sha256": "e1aa2959eb408b289cff144996efd7bf2d6b08e5eebde8dbb80792aaee8dbfeb",
+    "tracked": false,
+    "size_bytes": 17115
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerifBold18pt7b.h",
+    "sha256": "4fbfb1faa143e09b570e95c434c0821a07994529bec579fd22bfd9f9baad3780",
+    "tracked": false,
+    "size_bytes": 31666
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerifBold24pt7b.h",
+    "sha256": "e66cb62a26127b5776848167c9cb406ebc51c480123eb313e6fc9f2e38c62460",
+    "tracked": false,
+    "size_bytes": 54298
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerifBold9pt7b.h",
+    "sha256": "61ebd809fca54d93b4195289be5f4e837cfe41f7998cff66b5fa2c09c5916b3f",
+    "tracked": false,
+    "size_bytes": 11765
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerifBoldItalic12pt7b.h",
+    "sha256": "c4587d3d064b6ee43cdc27c4fbe1828cf0bf531dc19ff692d177f71b358d2277",
+    "tracked": false,
+    "size_bytes": 18806
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerifBoldItalic18pt7b.h",
+    "sha256": "ec0ca5a439493bded92a41534644c9db51298bcda976362880ae6ee933aea0a5",
+    "tracked": false,
+    "size_bytes": 34638
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerifBoldItalic24pt7b.h",
+    "sha256": "98cc662d98016e0e69125f4e0da5bce9a364490eccb008c73bf9ed313df9831a",
+    "tracked": false,
+    "size_bytes": 56852
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerifBoldItalic9pt7b.h",
+    "sha256": "96aec072db8f36a223d055521f1f04f6c9a1aa64395a974464d00e80e5ed67ea",
+    "tracked": false,
+    "size_bytes": 12830
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerifItalic12pt7b.h",
+    "sha256": "587bc04736886112a06d1bc4fbafc242c4a24de032acb42d9fda43596e2dcbcd",
+    "tracked": false,
+    "size_bytes": 17178
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerifItalic18pt7b.h",
+    "sha256": "86cdd8f59ca0b47508a6e858f84e796adf735c0a8355e2f52784ad526033cdff",
+    "tracked": false,
+    "size_bytes": 30788
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerifItalic24pt7b.h",
+    "sha256": "3af05ccf96780dc26b9154b7871528e3c8c7e09f82b6b00e17d9dfb5020478f8",
+    "tracked": false,
+    "size_bytes": 52612
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/FreeSerifItalic9pt7b.h",
+    "sha256": "ee4f79365a5ec0dcac844c497cbb484cc6d46d6c2391b3ebad58eec8e4ea0620",
+    "tracked": false,
+    "size_bytes": 11781
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/Org_01.h",
+    "sha256": "6366cd58da1ab53f7b27d68f85463d3db207c88b7a01f97132f8c6a8c3be4451",
+    "tracked": false,
+    "size_bytes": 9394
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/Picopixel.h",
+    "sha256": "035c01e6d48efdfef1e4de6152d0d03910210e449236506ec7c8f71799073363",
+    "tracked": false,
+    "size_bytes": 9089
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/Tiny3x3a2pt7b.h",
+    "sha256": "96fe2267efcd0f9086c735ad594fe9798b868b9198720af9bf18cc929d96f474",
+    "tracked": false,
+    "size_bytes": 5684
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/Fonts/TomThumb.h",
+    "sha256": "a2b89525189e738feb2eba5288f9f6c7ece0b171d603468c4c585372a3342723",
+    "tracked": false,
+    "size_bytes": 20296
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/README.md",
+    "sha256": "6890f42a55c06828629738cb9b015f813a108a85d30013a3b1a77c4a7d0140a1",
+    "tracked": false,
+    "size_bytes": 4772
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/component.mk",
+    "sha256": "65a8bc94954334982bc226826da72647027c1bcc85447804e1fbab7f23228ab7",
+    "tracked": false,
+    "size_bytes": 31
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/examples/GFXcanvas/GFXcanvas.ino",
+    "sha256": "8bc2d443ee94aea3b445e293da18093859e88024d94dfcf8fb33d9c668e3db64",
+    "tracked": false,
+    "size_bytes": 3671
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/examples/GFXcanvas/GFXcanvasSerialDemo.cpp",
+    "sha256": "9cd57fa49ed5a66e1227e729fd2848e5e519cd86e1563efbb907e7b3aaa4af09",
+    "tracked": false,
+    "size_bytes": 2094
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/examples/GFXcanvas/GFXcanvasSerialDemo.h",
+    "sha256": "c1bfa43f9e35f3488c091734eefd8c6994db9445488e5e3c035a983f31423221",
+    "tracked": false,
+    "size_bytes": 2408
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/examples/mock_ili9341/mock_ili9341.ino",
+    "sha256": "552db5228c974f0c7b2c48d9502ddfa109ede4fe46a91539b38fbe8c16236455",
+    "tracked": false,
+    "size_bytes": 9790
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/fontconvert/Makefile",
+    "sha256": "a39d6a4413c7d8d5c394cd9e52c8ad8553a8afc71be3fd426e496a77ec88c17a",
+    "tracked": false,
+    "size_bytes": 236
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/fontconvert/bdf2adafruit.py",
+    "sha256": "eb03983ee15e821888ad4c8f321ffaba8b9346f3d09f6624ab4597d200dcc9ce",
+    "tracked": false,
+    "size_bytes": 4487
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/fontconvert/fontconvert.c",
+    "sha256": "42e70906d68e4a7bced1c47a7bb12d2a86c29484eeb564f76449ea7a9b6c3ba1",
+    "tracked": false,
+    "size_bytes": 10270
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/fontconvert/fontconvert_win.md",
+    "sha256": "76bf8de4bfb5f86fff8d2f80b0f32bcbf401642430b00a6c121112d270e598f1",
+    "tracked": false,
+    "size_bytes": 3831
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/fontconvert/makefonts.sh",
+    "sha256": "ccc786b8fb5077bd6d1948778620469cbbfa83f3f3b17cef1436cd22c71cf662",
+    "tracked": false,
+    "size_bytes": 1221
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/gfxfont.h",
+    "sha256": "4e1b06371217d63102bac242d4a3ec8dcaff93cd34b4241bbc39eda521a1be11",
+    "tracked": false,
+    "size_bytes": 1108
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/glcdfont.c",
+    "sha256": "bd6d60ecb9cc350a83f209d7c62de2fe5f6ce3402d5598cde2988b5b44e83e02",
+    "tracked": false,
+    "size_bytes": 9064
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/library.properties",
+    "sha256": "e6b702f2d0463216bf4b89d10c1701ae0de2aabbee42f7088054e9e21949cc31",
+    "tracked": false,
+    "size_bytes": 412
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit GFX Library/license.txt",
+    "sha256": "3e7bede50526352926c2283e640f2823d9f9f2165d1852044c4fb1bbac283106",
+    "tracked": false,
+    "size_bytes": 1344
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/.github/ISSUE_TEMPLATE.md",
+    "sha256": "60387287586189ad227cf94cea78ae09939007ad7cb01572b8ebcd148cb86aee",
+    "tracked": false,
+    "size_bytes": 2624
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/.github/PULL_REQUEST_TEMPLATE.md",
+    "sha256": "750454b578623fc9db1fb59060c702a1eb1fe0bc9b12153d79b9dd48dd530596",
+    "tracked": false,
+    "size_bytes": 1415
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/.github/workflows/githubci.yml",
+    "sha256": "edeef425247475d607379ebd64695658271fb3b824c9f257138691a956c7455e",
+    "tracked": false,
+    "size_bytes": 756
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/.gitignore",
+    "sha256": "33c4c0c8418ac71de54902492d59326cba7938e48cbbc0550f369dfe0ea7c847",
+    "tracked": false,
+    "size_bytes": 77
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/.piopm",
+    "sha256": "b6e4f7d45ce512e6f14b88e7d979e5df98a4b7bb481eaed2b5616d55bdc21a9e",
+    "tracked": false,
+    "size_bytes": 173
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/Adafruit_SSD1306.cpp",
+    "sha256": "ddbd788bfaf97dd3b5ba5ee67eb62ab51652cbe86e34c2e7d24d5e074bb34bdd",
+    "tracked": false,
+    "size_bytes": 45961
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/Adafruit_SSD1306.h",
+    "sha256": "89c5e18cc19a41bd47130e1a4dc344733ad2bb6b6ef6c4c43eeddaf9854db6a2",
+    "tracked": false,
+    "size_bytes": 9042
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/CMakeLists.txt",
+    "sha256": "470e043da72e14b051ab7f5ba5d33aa28f18ec387d8707f85867a5aaa80d4405",
+    "tracked": false,
+    "size_bytes": 315
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/README.md",
+    "sha256": "b098cb53f4810301ab31d26d3cc0c24310c960c66d7c40453a91be81dc2e5103",
+    "tracked": false,
+    "size_bytes": 4439
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/component.mk",
+    "sha256": "65a8bc94954334982bc226826da72647027c1bcc85447804e1fbab7f23228ab7",
+    "tracked": false,
+    "size_bytes": 31
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/examples/OLED_featherwing/OLED_featherwing.ino",
+    "sha256": "966b36d0c4c460e501134cd9ee96b76789fcfbfdd5acdadfb846f52d126182dd",
+    "tracked": false,
+    "size_bytes": 2485
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/examples/ssd1306_128x32_i2c/ssd1306_128x32_i2c.ino",
+    "sha256": "d2bf9015549240b045cd0e1b3f53b55a5df3ef597d250ba77ce5fbc0c80dfa49",
+    "tracked": false,
+    "size_bytes": 12019
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/examples/ssd1306_128x32_spi/ssd1306_128x32_spi.ino",
+    "sha256": "319e74a91c9dda78a95d9db6715f34335a3b5114fb9da5cdaa0cc58ca8aca87c",
+    "tracked": false,
+    "size_bytes": 11961
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/examples/ssd1306_128x64_i2c/ssd1306_128x64_i2c.ino",
+    "sha256": "cdd2e1f790a6fb2eb1f1d0addd1d82611aa8ff288e3ff7f41c5910fac69e2084",
+    "tracked": false,
+    "size_bytes": 12019
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/examples/ssd1306_128x64_spi/ssd1306_128x64_spi.ino",
+    "sha256": "3e14c5421101924fdf81c04ce8517760224755dd314ace8396c3514d3eb19a1b",
+    "tracked": false,
+    "size_bytes": 11962
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/examples/ssd1306_64x32_i2c/ssd1306_64x32_i2c.ino",
+    "sha256": "fcc72174fe3d8ed58d52530c093f8f7dca773e2a9f081ca6a8ad71d2bd943321",
+    "tracked": false,
+    "size_bytes": 12018
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/library.properties",
+    "sha256": "bfb5d85959c14de682a285496e3c905054a0b126b0ca2d7c1870307890e6bc9d",
+    "tracked": false,
+    "size_bytes": 363
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/license.txt",
+    "sha256": "4b6bb6d827e9da638841bf575c6068b83aaaf0d9508e892d3ea27e2525b070e8",
+    "tracked": false,
+    "size_bytes": 1499
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/scripts/Makefile",
+    "sha256": "d37ea677edb9ca9e7e3b1f30a1a05f897465068578da25d49dca58e5f404e2d9",
+    "tracked": false,
+    "size_bytes": 601
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/scripts/make_splash.py",
+    "sha256": "1208aa2074ee98429cf1aaecc33e473dc3e16c105fd179a91bea9fdcd2d5a735",
+    "tracked": false,
+    "size_bytes": 939
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/Adafruit SSD1306/splash.h",
+    "sha256": "01d79e7b12ba9e2f29f967803bb85b037ad8981b2b2f7d3997db51811d47177d",
+    "tracked": false,
+    "size_bytes": 13813
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/.piopm",
+    "sha256": "9ba934d87ab7f52e66cade5a1354f51c0c88d1db40729a249d2b527e4c577b7b",
+    "tracked": false,
+    "size_bytes": 183
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/LICENSE",
+    "sha256": "019c85fdd2c31be9a6b5e58b362398c647b758e6eeadfaaef67301f6b25d7cb8",
+    "tracked": false,
+    "size_bytes": 3175
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/README.md",
+    "sha256": "10eaf0a2e70e4fd4bf2819fe364b8d360ed0c87885a54818965f68f6c1c1efba",
+    "tracked": false,
+    "size_bytes": 7123
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/examples/Boxed_Text_Adafruit_SSD1306/Boxed_Text_Adafruit_SSD1306.ino",
+    "sha256": "1aaa78fec055ee8a34f964ea059fd9d4e19036929e661645d3cda0660464d2d4",
+    "tracked": false,
+    "size_bytes": 1774
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/examples/Hello_Adafruit_ILI9341/Hello_Adafruit_ILI9341.c",
+    "sha256": "b39b0383d6c9e3f73c964a5a7c293faa8aa918c39ebdf869d5ef87fda9f8ac25",
+    "tracked": false,
+    "size_bytes": 2010
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/examples/Hello_Adafruit_SSD1306/Hello_Adafruit_SSD1306.ino",
+    "sha256": "9eef1463c0c1c17523be83a5a1e70f4a287980d0b1c51b0fa19674ae2ac19339",
+    "tracked": false,
+    "size_bytes": 1653
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/examples/Shennong/Shennong.ino",
+    "sha256": "1a56d2aa2f895f03c3d8a4b6d9510e45b44f8196abd2b722be33ee15df30bd91",
+    "tracked": false,
+    "size_bytes": 8401
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/examples/Shennong_IL9341/Shennong_IL9341.ino",
+    "sha256": "a6a777ba6fd5740d74b2b5b71508e6dd7621cf869d5a24075d9eafb411093820",
+    "tracked": false,
+    "size_bytes": 8804
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/examples/Unicode_Adafruit_SSD1306/Unicode_Adafruit_SSD1306.ino",
+    "sha256": "d38b2dcd80e63a172c967c72861d37484981022fd757b81874fec3715ac30d70",
+    "tracked": false,
+    "size_bytes": 1889
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/keywords.txt",
+    "sha256": "2b338dbbbbc67d15944008707f97b6a7ab17ccb2ff44eeecc4b290decb7f3638",
+    "tracked": false,
+    "size_bytes": 791
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/library.properties",
+    "sha256": "11078753bca28b24631173a317f3b3db89c9df9d46873f5ef1d922166ecdcd6c",
+    "tracked": false,
+    "size_bytes": 442
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/src/U8g2_for_Adafruit_GFX.cpp",
+    "sha256": "51fe7ed9876a756a0e1776b5172ee6216e97b5c4bf7e62429ca6aa5b37a7e4e6",
+    "tracked": false,
+    "size_bytes": 18849
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/src/U8g2_for_Adafruit_GFX.h",
+    "sha256": "914514bbd5b4a33f6f9bd24d96f17d8cdfb52a5864b4da95126c01b434a2b7a9",
+    "tracked": false,
+    "size_bytes": 160395
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/src/u8g2_fonts.c",
+    "sha256": "3045331341bb9680f81bf2d6e94e495417af1d692cdddd16b541b383823006d6",
+    "tracked": false,
+    "size_bytes": 29971292
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/U8g2_for_Adafruit_GFX/src/u8g2_fonts.h",
+    "sha256": "7b5666e3ba039484c51a71652ebe98e962b4a25efaa30faa1beae1731b99734c",
+    "tracked": false,
+    "size_bytes": 2791
+  },
+  {
+    "path": "firmware/.pio/libdeps/esp32dev/integrity.dat",
+    "sha256": "588b9f25e3a16d5bbf1b2039caf158bed678cd895858bc936655db36c95b1115",
+    "tracked": false,
+    "size_bytes": 111
+  },
+  {
+    "path": "firmware/platformio.ini",
+    "sha256": "f88ae2ef82824919db828e24c9adfa30f1454faa8b135622a9188fc5f076320c",
+    "tracked": false,
+    "size_bytes": 855
+  },
+  {
+    "path": "firmware/src/hud.cpp",
+    "sha256": "82cfa548cff4d319473ec9d9c4a96799ad3a4982482e1ca841edd2d5ff5c3527",
+    "tracked": false,
+    "size_bytes": 6410
+  },
+  {
+    "path": "firmware/src/hud.h",
+    "sha256": "c8adc19c66c5cf4822394ad0d2fe9c6fa28dd5dc2616c8b4bc6132aa71d5ddb4",
+    "tracked": false,
+    "size_bytes": 1820
+  },
+  {
+    "path": "firmware/src/main.cpp",
+    "sha256": "548dcd44abe0e0169b9583aab939068e8edb69945742256d9b966384d40640d2",
+    "tracked": false,
+    "size_bytes": 1031
+  },
+  {
+    "path": "firmware/src/protocol.cpp",
+    "sha256": "546649eda038c85184843277f70c6df76cd6c450996c0a3e21c5decc3c2a41de",
+    "tracked": false,
+    "size_bytes": 2386
+  },
+  {
+    "path": "firmware/src/protocol.h",
+    "sha256": "79e84eee201d2ae3813f8fee600a67a3e3f158cc0613094cba2123d2c86417c3",
+    "tracked": false,
+    "size_bytes": 716
+  },
+  {
+    "path": "fusion_engine.py",
+    "sha256": "767fd6af263869b283e50f5914d42eea753ec3f1dcbefbf1705cecf42cf31701",
+    "tracked": true,
+    "size_bytes": 1609
+  },
+  {
+    "path": "live_speech_to_text.py",
+    "sha256": "0b21d0423bb911a817af2a33dbb3e38be8e7ed87701bc779627d75813c204ef2",
+    "tracked": true,
+    "size_bytes": 20366
+  },
+  {
+    "path": "personalization/__init__.py",
+    "sha256": "acc357d3b8f3eb35a54c35fc3f7e3c960bf9ee84e5316972cb3ce0996ce38e2f",
+    "tracked": false,
+    "size_bytes": 205
+  },
+  {
+    "path": "personalization/default_profile.json",
+    "sha256": "1dbde8d3f5eadb29e7cc868d21bc83550fd605dd346cf7c24ab93a6bf1e16446",
+    "tracked": false,
+    "size_bytes": 968
+  },
+  {
+    "path": "personalization/priority_adapter.py",
+    "sha256": "8a9ba6eb5b7240df6f9fa26265b43b7ab541b2beea021bced02209c555f68da8",
+    "tracked": false,
+    "size_bytes": 1159
+  },
+  {
+    "path": "personalization/profile_generator.py",
+    "sha256": "826c7736a9212769bd5156532b53cd43ab2c2d7c3b0e53dae42716c02ea756c4",
+    "tracked": false,
+    "size_bytes": 22906
+  },
+  {
+    "path": "personalization/profile_manager.py",
+    "sha256": "3e78789b2c92360186f6005012369af4266ada3589f0d53aa7f92b711609124e",
+    "tracked": false,
+    "size_bytes": 2037
+  },
+  {
+    "path": "personalization/profile_validator.py",
+    "sha256": "b2594009b8e7aedf19c8ed0ed96d39f11b3c10ba4f569844dcaaea121dc5e3ad",
+    "tracked": false,
+    "size_bytes": 1549
+  },
+  {
+    "path": "personalization/role_knowledge.py",
+    "sha256": "6c5df39a0f3188c74631552dd0280424af5808bd1b76e14be3c9d6250987bbb9",
+    "tracked": false,
+    "size_bytes": 2156
+  },
+  {
+    "path": "personalization/schemas.py",
+    "sha256": "c7712f4808a1f73514fd99b2b32ef7245db9fd53d13dab0a92b4d1c54bc1c396",
+    "tracked": false,
+    "size_bytes": 4873
+  },
+  {
+    "path": "personalization/sound_labels.py",
+    "sha256": "614afc2c3ff7ea19ca94d3b2755af2f30dfe7cea89e9b68c5b053a112760f4cf",
+    "tracked": false,
+    "size_bytes": 2357
+  },
+  {
+    "path": "personalization/static/index.html",
+    "sha256": "5cc47e7aca85bdd31f76ed4d0d60c8b143492df9ad1a17070be81f0e59d0c306",
+    "tracked": false,
+    "size_bytes": 7471
+  },
+  {
+    "path": "personalization/web_server.py",
+    "sha256": "249e1f4a4a82cb3350a18d899663f7477cdb3292bc865513163858d4446f5d78",
+    "tracked": false,
+    "size_bytes": 5870
+  },
+  {
+    "path": "requirements-dev.txt",
+    "sha256": "6603d61524204b7e415c2d1303e6ee817871ec912963584b6d11611039ca4b8c",
+    "tracked": false,
+    "size_bytes": 27
+  },
+  {
+    "path": "requirements.txt",
+    "sha256": "617bad56cff2f4639da7e12ed145fab598c69eec0e2944667701dc5da04fcc28",
+    "tracked": true,
+    "size_bytes": 138
+  },
+  {
+    "path": "run_software_tests.ps1",
+    "sha256": "be42ece4d647683ca8887896312b85b6a413313e2aaaeb11a8f1e093d54f8a15",
+    "tracked": true,
+    "size_bytes": 578
+  },
+  {
+    "path": "sound_classifier.py",
+    "sha256": "ee829f2e2ae9667faa2abfe8f4143e9f6e5a22a34c1b9f06932687a92a024be5",
+    "tracked": true,
+    "size_bytes": 1591
+  },
+  {
+    "path": "speech_enhancer.py",
+    "sha256": "f1ec7fba4ee6284a8ea924456d18a0fc8741416e47feaa2091b73b8810f58fb0",
+    "tracked": true,
+    "size_bytes": 6409
+  },
+  {
+    "path": "speech_recognizer.py",
+    "sha256": "486a89a950169413e9b3443ba28f85e02703396dbdb5a074ebae154594f79768",
+    "tracked": true,
+    "size_bytes": 930
+  },
+  {
+    "path": "streaming_audio.py",
+    "sha256": "545514e5f191cb97739fdb9560b4a2eb5e090656fbbd92ccad775ba59e8bca6d",
+    "tracked": true,
+    "size_bytes": 6472
+  },
+  {
+    "path": "test_audio_pipeline.py",
+    "sha256": "c056b4d5410637818002c6c1452fc68c3158680d8d8fcab7211930401cded319",
+    "tracked": true,
+    "size_bytes": 11943
+  },
+  {
+    "path": "test_benchmark_metrics.py",
+    "sha256": "f44485f5533df0112c26eb00329f6d9ac480ea9a1059a921dbe465a66d532197",
+    "tracked": true,
+    "size_bytes": 8579
+  },
+  {
+    "path": "test_benchmark_runner.py",
+    "sha256": "e0d9aa9e26616ebf7b516895736a71e789ab358c88022b1fd4e3f349ee074391",
+    "tracked": true,
+    "size_bytes": 11908
+  },
+  {
+    "path": "test_display_transport.py",
+    "sha256": "c4d6c767b885b6d6d9647e4172b1a5b8ecc25f29aa0315cb8d9641f9dcf6e65f",
+    "tracked": false,
+    "size_bytes": 3090
+  },
+  {
+    "path": "test_emergency_system.py",
+    "sha256": "4cef578163d0b7bfb23f6a3c9746ef2b17f62f228587d26d3cfe4a30ea08fd99",
+    "tracked": true,
+    "size_bytes": 9070
+  },
+  {
+    "path": "test_fusion_logic.py",
+    "sha256": "455ce461cb0db7ce19a28ad1206c877164dfb44b8196a4f5b0a1251e51599b6b",
+    "tracked": true,
+    "size_bytes": 1850
+  },
+  {
+    "path": "test_live_stt_logic.py",
+    "sha256": "f3d452d2adea710aa63a50c8f8a6dc7de306bda373ef3228891186265424e0a9",
+    "tracked": true,
+    "size_bytes": 5772
+  },
+  {
+    "path": "test_personalization.py",
+    "sha256": "982fb5c0ea857a32da5a2998e248297fdae4b38a66146b6465a51e61660b77d6",
+    "tracked": false,
+    "size_bytes": 22644
+  },
+  {
+    "path": "test_speech_recognizer.py",
+    "sha256": "8ab538301c964921b288cde591e123ff7d39cfe5b48c1b8bb8590a3501834657",
+    "tracked": true,
+    "size_bytes": 2005
+  },
+  {
+    "path": "test_transcript_logic.py",
+    "sha256": "4021ffed46a5b3c3eafa0e06fb12727e982f4f379e7fcd2a5662d9a4d5e34ca2",
+    "tracked": true,
+    "size_bytes": 10895
+  },
+  {
+    "path": "voice_activity_detector.py",
+    "sha256": "77df90534d5eb648988fe59da8c5bb519feb34c3613fd2b618f56daedbc2ab68",
+    "tracked": true,
+    "size_bytes": 3827
+  }
+]

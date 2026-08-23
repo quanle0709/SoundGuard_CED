@@ -1,0 +1,12 @@
+{
+  "device": "cpu",
+  "sample_count": 280,
+  "scope": "mel preprocessing plus model inference; excludes file decode and model load",
+  "mean_ms": 54.0699074992777,
+  "median_ms": 48.89010003535077,
+  "p95_ms": 82.97610003501177,
+  "min_ms": 36.38419997878373,
+  "max_ms": 189.58270002622157,
+  "model_load_seconds": 4.223024900013115,
+  "gpu_available": false
+}

@@ -1,0 +1,196 @@
+{
+  "ced": {
+    "scope": "audio file available to application through transport-ready frame; hardware excluded",
+    "N": 30,
+    "preprocessing": {
+      "count": 30,
+      "mean_ms": 1.446520001142441,
+      "median_ms": 1.3215000071795657,
+      "p95_ms": 2.022100001340732,
+      "min_ms": 1.1985000019194558,
+      "max_ms": 2.2735999955330044
+    },
+    "ced_tiny_inference": {
+      "count": 30,
+      "mean_ms": 37.30206999947162,
+      "median_ms": 36.37034999701427,
+      "p95_ms": 42.620599997462705,
+      "min_ms": 34.467399993445724,
+      "max_ms": 49.62070001056418
+    },
+    "efficientsed_roundtrip": {
+      "count": 30,
+      "mean_ms": 87.48453333294795,
+      "median_ms": 86.49695000349311,
+      "p95_ms": 98.2784000079846,
+      "min_ms": 78.73280000058003,
+      "max_ms": 113.74110000906512
+    },
+    "fusion_decision": {
+      "count": 30,
+      "mean_ms": 0.15276999959799772,
+      "median_ms": 0.14644999464508146,
+      "p95_ms": 0.17810000281315297,
+      "min_ms": 0.11999999696854502,
+      "max_ms": 0.28839999868068844
+    },
+    "serialization": {
+      "count": 30,
+      "mean_ms": 0.04008999967481941,
+      "median_ms": 0.036650002584792674,
+      "p95_ms": 0.06079999729990959,
+      "min_ms": 0.02540000423323363,
+      "max_ms": 0.06350000330712646
+    },
+    "total_local_pipeline": {
+      "count": 30,
+      "mean_ms": 126.7496099996303,
+      "median_ms": 124.72054999670945,
+      "p95_ms": 149.86900000076275,
+      "min_ms": 115.21770000399556,
+      "max_ms": 150.03129999968223
+    },
+    "KHKT_CLAIM": "SoundGuard's local CED path reaches transport-ready output at practical real-time latency.",
+    "REPORT_USE": "Main KHKT Layer 2 latency table and latency comparison figure."
+  },
+  "stt": {
+    "scope": "prerecorded utterance available to application through transport-ready subtitle frame",
+    "backend": "Google Speech Recognition vi-VN (network-dependent) with production DTLN preprocessing",
+    "partial": {
+      "count": 10,
+      "mean_ms": 517.2503800014965,
+      "median_ms": 487.1924000035506,
+      "p95_ms": 914.447699993616,
+      "min_ms": 400.41430000565015,
+      "max_ms": 914.447699993616
+    },
+    "final": {
+      "count": 20,
+      "mean_ms": 1044.4543600002362,
+      "median_ms": 1013.958100003947,
+      "p95_ms": 1373.3044999971753,
+      "min_ms": 716.897100006463,
+      "max_ms": 1871.918300006655
+    },
+    "final_stt_processing": {
+      "count": 20,
+      "mean_ms": 1043.821855000715,
+      "median_ms": 1013.2519000035245,
+      "p95_ms": 1373.0261999880895,
+      "min_ms": 715.5404000077397,
+      "max_ms": 1871.1855000001378
+    },
+    "empty_transcripts": 0,
+    "KHKT_CLAIM": "SoundGuard's current STT path reaches transport-ready output with measured network-dependent latency.",
+    "REPORT_USE": "Main KHKT Layer 2 latency table with an explicit external-service caveat."
+  },
+  "concurrency": {
+    "N": 20,
+    "ced_concurrent": {
+      "count": 20,
+      "mean_ms": 168.96633499927702,
+      "median_ms": 138.52844999928493,
+      "p95_ms": 267.5630000012461,
+      "min_ms": 114.89050000091083,
+      "max_ms": 354.1755999904126
+    },
+    "stt_concurrent": {
+      "count": 20,
+      "mean_ms": 1140.1264700005413,
+      "median_ms": 1164.8811499981093,
+      "p95_ms": 1550.4037999926368,
+      "min_ms": 775.4068000067491,
+      "max_ms": 1874.2376000009244
+    },
+    "pair_wall": {
+      "count": 20,
+      "mean_ms": 1141.824735001137,
+      "median_ms": 1166.03970000142,
+      "p95_ms": 1552.2237999975914,
+      "min_ms": 776.8913000036264,
+      "max_ms": 1875.986200000625
+    },
+    "ced_median_delta_percent": 11.071070487533753,
+    "stt_median_delta_percent": 14.884545031355323,
+    "KHKT_CLAIM": "Concurrent CED and STT impact is quantified under the production software configuration.",
+    "REPORT_USE": "Main KHKT concurrency result and latency figure."
+  },
+  "resources": [
+    {
+      "mode": "idle",
+      "duration_seconds": 15.035123499998008,
+      "ced_operations": 0,
+      "stt_operations": 0,
+      "errors": [],
+      "samples": 10,
+      "average_cpu_total_capacity_percent": 0.23969136708737754,
+      "peak_cpu_total_capacity_percent": 1.0200401161366859,
+      "average_ram_mb": 1175.6890625,
+      "peak_ram_mb": 1175.90625,
+      "display_name": "idle_initialized"
+    },
+    {
+      "mode": "ced_active",
+      "duration_seconds": 15.655158399997163,
+      "ced_operations": 108,
+      "stt_operations": 0,
+      "errors": [],
+      "samples": 9,
+      "average_cpu_total_capacity_percent": 64.74451308753281,
+      "peak_cpu_total_capacity_percent": 74.14764662798824,
+      "average_ram_mb": 1180.1866319444443,
+      "peak_ram_mb": 1181.9296875,
+      "display_name": "ced_active"
+    },
+    {
+      "mode": "stt_active",
+      "duration_seconds": 16.176246500006528,
+      "ced_operations": 0,
+      "stt_operations": 12,
+      "errors": [],
+      "samples": 11,
+      "average_cpu_total_capacity_percent": 1.1335097344505507,
+      "peak_cpu_total_capacity_percent": 2.359621284670471,
+      "average_ram_mb": 1175.6125710227273,
+      "peak_ram_mb": 1175.71484375,
+      "display_name": "stt_active"
+    },
+    {
+      "mode": "combined",
+      "duration_seconds": 17.98223809999763,
+      "ced_operations": 66,
+      "stt_operations": 10,
+      "errors": [],
+      "samples": 10,
+      "average_cpu_total_capacity_percent": 33.350577933673875,
+      "peak_cpu_total_capacity_percent": 62.89940367343979,
+      "average_ram_mb": 1172.487890625,
+      "peak_ram_mb": 1183.4375,
+      "display_name": "combined"
+    }
+  ],
+  "transport": {
+    "scope": "software transport serialization reliability; no physical serial link",
+    "generated": 2000,
+    "serialized": 2000,
+    "missing": 0,
+    "duplicates": 0,
+    "malformed": 0,
+    "ordering_errors": 0,
+    "exceptions": 0,
+    "success_rate": 1.0,
+    "duplicate_suppression_passed": true,
+    "write_failure_handled_without_raise": true,
+    "latency": {
+      "count": 2000,
+      "mean_ms": 0.13660485015861923,
+      "median_ms": 0.05560000136028975,
+      "p95_ms": 0.12329999299254268,
+      "min_ms": 0.025599991204217076,
+      "max_ms": 27.141099999425933
+    },
+    "KHKT_CLAIM": "The software event path deterministically prepares ordered, CRC-valid HUD frames.",
+    "REPORT_USE": "Supporting Layer 2 transport reliability and serialization overhead evidence."
+  },
+  "completed_at": "2026-08-21T09:31:57.034057+07:00"
+}

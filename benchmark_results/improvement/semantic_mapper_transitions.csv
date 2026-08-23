@@ -1,0 +1,35 @@
+sample_id,true_label,raw_label,confidence,baseline_category,candidate_category,alias,newly_recovered_tp,newly_created_classification_fp,baseline_emergency,candidate_emergency,new_emergency_tp,new_emergency_fp
+1-110389-A-0,dog_barking,Dog,0.6231082081794739,other,dog_barking,Dog,True,False,False,False,False,False
+1-28808-A-43,vehicle_horn,Toot,0.7022253274917603,other,vehicle_horn,Toot,True,False,False,False,False,False
+1-30344-A-0,dog_barking,Dog,0.7032626271247864,other,dog_barking,Dog,True,False,False,False,False,False
+1-31482-B-42,siren,Emergency vehicle,0.678929328918457,other,siren,Emergency vehicle,True,False,False,True,True,False
+1-76831-A-42,siren,Police car (siren),0.7081062197685242,other,siren,Police car (siren),True,False,True,True,False,False
+2-106881-A-39,glass_breaking,Crackle,0.5867802500724792,other,fire,Crackle,False,False,False,True,True,False
+2-112213-A-39,glass_breaking,Glass,0.7007136344909668,other,glass_breaking,Glass,True,False,False,False,False,False
+2-112213-B-39,glass_breaking,Glass,0.672457218170166,other,glass_breaking,Glass,True,False,False,False,False,False
+2-118072-A-0,dog_barking,Bow-wow,0.6322854161262512,other,dog_barking,Bow-wow,True,False,False,False,False,False
+2-118964-A-0,dog_barking,Dog,0.6562652587890625,other,dog_barking,Dog,True,False,False,False,False,False
+2-173618-A-39,glass_breaking,Glass,0.5892844796180725,other,glass_breaking,Glass,True,False,False,False,False,False
+2-43806-A-42,siren,Emergency vehicle,0.6787448525428772,other,siren,Emergency vehicle,True,False,False,True,True,False
+2-70052-A-42,siren,Emergency vehicle,0.7027578353881836,other,siren,Emergency vehicle,True,False,False,True,True,False
+2-70052-B-42,siren,Emergency vehicle,0.6902459859848022,other,siren,Emergency vehicle,True,False,False,True,True,False
+2-70939-A-42,siren,Emergency vehicle,0.6968838572502136,other,siren,Emergency vehicle,True,False,False,True,True,False
+3-104958-A-12,fire,Crackle,0.587339460849762,other,fire,Crackle,True,False,False,True,True,False
+3-170015-A-0,dog_barking,Dog,0.6793336272239685,other,dog_barking,Dog,True,False,False,False,False,False
+3-243726-A-43,vehicle_horn,Toot,0.6656010150909424,other,vehicle_horn,Toot,True,False,False,False,False,False
+3-51731-A-42,siren,Emergency vehicle,0.6946187615394592,other,siren,Emergency vehicle,True,False,False,True,True,False
+3-51731-B-42,siren,Emergency vehicle,0.6880602836608887,other,siren,Emergency vehicle,True,False,False,True,True,False
+3-62878-B-42,siren,Police car (siren),0.6995037794113159,other,siren,Police car (siren),True,False,True,True,False,False
+4-102871-A-42,siren,Emergency vehicle,0.6832640767097473,other,siren,Emergency vehicle,True,False,False,True,True,False
+4-170247-B-12,fire,Crackle,0.5360779762268066,other,fire,Crackle,True,False,False,True,True,False
+4-182395-A-0,dog_barking,Dog,0.6170189380645752,other,dog_barking,Dog,True,False,False,False,False,False
+4-183992-A-0,dog_barking,Dog,0.6906720995903015,other,dog_barking,Dog,True,False,False,False,False,False
+4-204777-A-39,glass_breaking,Glass,0.712471067905426,other,glass_breaking,Glass,True,False,False,False,False,False
+4-204777-B-39,glass_breaking,Glass,0.6760464310646057,other,glass_breaking,Glass,True,False,False,False,False,False
+4-67358-A-42,siren,Police car (siren),0.6802909970283508,other,siren,Police car (siren),True,False,True,True,False,False
+4-80761-A-42,siren,Civil defense siren,0.7076021432876587,other,siren,Civil defense siren,True,False,True,True,False,False
+4-90014-A-42,siren,Ambulance (siren),0.6856417059898376,other,siren,Ambulance (siren),True,False,True,True,False,False
+4-90014-B-42,siren,Emergency vehicle,0.683841347694397,other,siren,Emergency vehicle,True,False,False,True,True,False
+5-160551-A-42,siren,Emergency vehicle,0.6671088337898254,other,siren,Emergency vehicle,True,False,False,True,True,False
+5-217158-A-0,dog_barking,Dog,0.6059903502464294,other,dog_barking,Dog,True,False,False,False,False,False
+5-231762-A-0,dog_barking,Dog,0.6796698570251465,other,dog_barking,Dog,True,False,False,False,False,False

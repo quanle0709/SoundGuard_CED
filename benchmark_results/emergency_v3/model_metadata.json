@@ -1,0 +1,15 @@
+{
+  "model": "fmn10_strong",
+  "checkpoint_url": "https://github.com/theMoro/EfficientSED/releases/download/v0.0.1/fmn10_strong.pt",
+  "checkpoint_sha256": "92a5c1dc5aa21620e262420c4cc657d2f699bdfa20a748de506c354a2fe2770a",
+  "parameter_count": 3830798,
+  "trainable_parameter_count": 3830798,
+  "label_count": 447,
+  "sample_rate": 16000,
+  "frame_seconds": 0.04,
+  "device": "cpu",
+  "torch": "2.13.0+cpu",
+  "load_seconds": 4.223024900013115,
+  "working_set_note": "Measured in latency/runtime_resources.json from the production worker process.",
+  "checkpoint_file_size_bytes": 15538778
+}

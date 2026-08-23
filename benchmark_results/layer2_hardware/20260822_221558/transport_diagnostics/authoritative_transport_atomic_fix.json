@@ -1,0 +1,31 @@
+{
+  "sent": 2000,
+  "received_parsed": 2000,
+  "acked": 2000,
+  "missing": 0,
+  "duplicate": 0,
+  "unexpected": 0,
+  "out_of_order": 0,
+  "parser_state_corruption": 0,
+  "state_mismatch": 0,
+  "late_ack_reconciled": 0,
+  "invalid_injection": [
+    {
+      "case": "invalid_crc",
+      "injected": true,
+      "expected_ack": false
+    },
+    {
+      "case": "malformed_payload",
+      "injected": true,
+      "expected_ack": false
+    },
+    {
+      "case": "truncated_then_valid",
+      "injected": true,
+      "next_valid_succeeded": true
+    }
+  ],
+  "parser_recovered": true,
+  "post_query_ok": true
+}

@@ -1,0 +1,8 @@
+{
+  "semantic_ced": true,
+  "safe_compounds": true,
+  "temporal_pooling_v2": false,
+  "ced_route": "raw",
+  "stt_route": "raw",
+  "dtln": "standalone"
+}

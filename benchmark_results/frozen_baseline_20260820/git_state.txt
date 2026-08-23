@@ -1,0 +1,33 @@
+Frozen before external holdout acquisition/evaluation on 2026-08-20 (Asia/Saigon).
+
+commit: 24346d879634f65eeb8a647bdba0ac84e249c63d
+branch: experiment/emergency-ced-v3
+working_tree: DIRTY (pre-existing user/project work preserved)
+
+Status at freeze:
+ M .gitignore
+ M README.md
+ M app.py
+ M audio_pipeline.py
+ M emergency_system.py
+ M requirements.txt
+ M sound_classifier.py
+ M test_audio_pipeline.py
+?? SOUNDGUARD_BENCHMARK_AUDIT_3_LAYER.md
+?? THIRD_PARTY_EFFICIENTSED.md
+?? benchmark/
+?? benchmark_data/
+?? benchmark_results/
+?? display_transport.py
+?? emergency_v3.py
+?? firmware/
+?? personalization/
+?? requirements-dev.txt
+?? sound_taxonomy.py
+?? test_display_transport.py
+?? test_emergency_v3.py
+?? test_personalization.py
+
+Relevant source and model hashes are recorded in baseline_manifest.json. No threshold,
+model, preprocessing, prediction, emergency, fusion, or mapping behavior was changed
+before this freeze.

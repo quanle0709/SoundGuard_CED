@@ -1,0 +1,1833 @@
+{
+  "terminology": "Decontaminated external holdout derived from official evaluation data",
+  "official_population": {
+    "DCASE2017_source_events": 83,
+    "FSD50K_eval": 10231
+  },
+  "exact_id_overlap_all_official_rows": {
+    "DCASE2017_source_events": 6,
+    "FSD50K_eval": 152
+  },
+  "benchmark_eligible_before_decontamination": 3988,
+  "final_included": 3938,
+  "details": [
+    {
+      "dataset": "DCASE2017_source_events",
+      "class": "baby_crying",
+      "role": "target",
+      "pre_decontamination_n": 19,
+      "post_decontamination_n": 17,
+      "excluded_n": 2,
+      "exclusion_reasons": {
+        "exact_freesound_id_overlap_with_ESC50": 2
+      }
+    },
+    {
+      "dataset": "DCASE2017_source_events",
+      "class": "glass_breaking",
+      "role": "target",
+      "pre_decontamination_n": 35,
+      "post_decontamination_n": 30,
+      "excluded_n": 5,
+      "exclusion_reasons": {
+        "exact_freesound_id_overlap_with_ESC50": 4,
+        "high_confidence_acoustic_fingerprint_duplicate": 1
+      }
+    },
+    {
+      "dataset": "DCASE2017_source_events",
+      "class": "gunshot",
+      "role": "outside_scope",
+      "pre_decontamination_n": 29,
+      "post_decontamination_n": 0,
+      "excluded_n": 29,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGETS_NOT_NEGATIVE": 29
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Acoustic_guitar",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Aircraft",
+      "role": "outside_scope",
+      "pre_decontamination_n": 13,
+      "post_decontamination_n": 0,
+      "excluded_n": 13,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 13
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Alarm",
+      "role": "outside_scope",
+      "pre_decontamination_n": 94,
+      "post_decontamination_n": 0,
+      "excluded_n": 94,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 90,
+        "exact_freesound_id_overlap_with_ESC50": 4
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Applause",
+      "role": "outside_scope",
+      "pre_decontamination_n": 110,
+      "post_decontamination_n": 0,
+      "excluded_n": 110,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 107,
+        "exact_freesound_id_overlap_with_ESC50": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Bark",
+      "role": "outside_scope",
+      "pre_decontamination_n": 5,
+      "post_decontamination_n": 0,
+      "excluded_n": 5,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 5
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Bathtub_(filling_or_washing)",
+      "role": "outside_scope",
+      "pre_decontamination_n": 27,
+      "post_decontamination_n": 0,
+      "excluded_n": 27,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 27
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Bell",
+      "role": "outside_scope",
+      "pre_decontamination_n": 4,
+      "post_decontamination_n": 0,
+      "excluded_n": 4,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 4
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Bicycle",
+      "role": "outside_scope",
+      "pre_decontamination_n": 3,
+      "post_decontamination_n": 0,
+      "excluded_n": 3,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Bicycle_bell",
+      "role": "outside_scope",
+      "pre_decontamination_n": 43,
+      "post_decontamination_n": 0,
+      "excluded_n": 43,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 43
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Bird",
+      "role": "outside_scope",
+      "pre_decontamination_n": 20,
+      "post_decontamination_n": 0,
+      "excluded_n": 20,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 20
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Bird_vocalization_and_bird_call_and_bird_song",
+      "role": "outside_scope",
+      "pre_decontamination_n": 26,
+      "post_decontamination_n": 0,
+      "excluded_n": 26,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 26
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Boat_and_Water_vehicle",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Boiling",
+      "role": "outside_scope",
+      "pre_decontamination_n": 37,
+      "post_decontamination_n": 0,
+      "excluded_n": 37,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 37
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Boom",
+      "role": "outside_scope",
+      "pre_decontamination_n": 25,
+      "post_decontamination_n": 0,
+      "excluded_n": 25,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 25
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Breathing",
+      "role": "outside_scope",
+      "pre_decontamination_n": 74,
+      "post_decontamination_n": 0,
+      "excluded_n": 74,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 68,
+        "exact_freesound_id_overlap_with_ESC50": 6
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Burping_and_eructation",
+      "role": "outside_scope",
+      "pre_decontamination_n": 88,
+      "post_decontamination_n": 0,
+      "excluded_n": 88,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 88
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Bus",
+      "role": "outside_scope",
+      "pre_decontamination_n": 5,
+      "post_decontamination_n": 0,
+      "excluded_n": 5,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 5
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Buzz",
+      "role": "outside_scope",
+      "pre_decontamination_n": 42,
+      "post_decontamination_n": 0,
+      "excluded_n": 42,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 39,
+        "exact_freesound_id_overlap_with_ESC50": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Camera",
+      "role": "outside_scope",
+      "pre_decontamination_n": 68,
+      "post_decontamination_n": 0,
+      "excluded_n": 68,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 68
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Car",
+      "role": "outside_scope",
+      "pre_decontamination_n": 7,
+      "post_decontamination_n": 0,
+      "excluded_n": 7,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 7
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Car_passing_by",
+      "role": "outside_scope",
+      "pre_decontamination_n": 16,
+      "post_decontamination_n": 0,
+      "excluded_n": 16,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 16
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Cat",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Chatter",
+      "role": "outside_scope",
+      "pre_decontamination_n": 135,
+      "post_decontamination_n": 0,
+      "excluded_n": 135,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 133,
+        "exact_freesound_id_overlap_with_ESC50": 2
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Cheering",
+      "role": "outside_scope",
+      "pre_decontamination_n": 9,
+      "post_decontamination_n": 0,
+      "excluded_n": 9,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 9
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Chewing_and_mastication",
+      "role": "outside_scope",
+      "pre_decontamination_n": 63,
+      "post_decontamination_n": 0,
+      "excluded_n": 63,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 63
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Chicken_and_rooster",
+      "role": "outside_scope",
+      "pre_decontamination_n": 15,
+      "post_decontamination_n": 0,
+      "excluded_n": 15,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 11,
+        "exact_freesound_id_overlap_with_ESC50": 4
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Child_speech_and_kid_speaking",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Chink_and_clink",
+      "role": "outside_scope",
+      "pre_decontamination_n": 51,
+      "post_decontamination_n": 0,
+      "excluded_n": 51,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 51
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Chirp_and_tweet",
+      "role": "outside_scope",
+      "pre_decontamination_n": 188,
+      "post_decontamination_n": 0,
+      "excluded_n": 188,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 185,
+        "exact_freesound_id_overlap_with_ESC50": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Chuckle_and_chortle",
+      "role": "outside_scope",
+      "pre_decontamination_n": 32,
+      "post_decontamination_n": 0,
+      "excluded_n": 32,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 31,
+        "exact_freesound_id_overlap_with_ESC50": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Church_bell",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Clapping",
+      "role": "outside_scope",
+      "pre_decontamination_n": 35,
+      "post_decontamination_n": 0,
+      "excluded_n": 35,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 35
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Clock",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Coin_(dropping)",
+      "role": "outside_scope",
+      "pre_decontamination_n": 84,
+      "post_decontamination_n": 0,
+      "excluded_n": 84,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 84
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Computer_keyboard",
+      "role": "outside_scope",
+      "pre_decontamination_n": 79,
+      "post_decontamination_n": 0,
+      "excluded_n": 79,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 75,
+        "exact_freesound_id_overlap_with_ESC50": 4
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Cough",
+      "role": "outside_scope",
+      "pre_decontamination_n": 50,
+      "post_decontamination_n": 0,
+      "excluded_n": 50,
+      "exclusion_reasons": {
+        "exact_freesound_id_overlap_with_ESC50": 5,
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 45
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Crack",
+      "role": "outside_scope",
+      "pre_decontamination_n": 59,
+      "post_decontamination_n": 0,
+      "excluded_n": 59,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 59
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Crackle",
+      "role": "outside_scope",
+      "pre_decontamination_n": 38,
+      "post_decontamination_n": 0,
+      "excluded_n": 38,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 38
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Cricket",
+      "role": "outside_scope",
+      "pre_decontamination_n": 60,
+      "post_decontamination_n": 0,
+      "excluded_n": 60,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 57,
+        "exact_freesound_id_overlap_with_ESC50": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Crow",
+      "role": "outside_scope",
+      "pre_decontamination_n": 5,
+      "post_decontamination_n": 0,
+      "excluded_n": 5,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 5
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Crowd",
+      "role": "outside_scope",
+      "pre_decontamination_n": 35,
+      "post_decontamination_n": 0,
+      "excluded_n": 35,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 35
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Crumpling_and_crinkling",
+      "role": "outside_scope",
+      "pre_decontamination_n": 83,
+      "post_decontamination_n": 0,
+      "excluded_n": 83,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 83
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Crushing",
+      "role": "outside_scope",
+      "pre_decontamination_n": 49,
+      "post_decontamination_n": 0,
+      "excluded_n": 49,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 49
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Crying_and_sobbing",
+      "role": "outside_scope",
+      "pre_decontamination_n": 21,
+      "post_decontamination_n": 0,
+      "excluded_n": 21,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 18,
+        "exact_freesound_id_overlap_with_ESC50": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Cupboard_open_or_close",
+      "role": "outside_scope",
+      "pre_decontamination_n": 35,
+      "post_decontamination_n": 0,
+      "excluded_n": 35,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 35
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Cutlery_and_silverware",
+      "role": "outside_scope",
+      "pre_decontamination_n": 115,
+      "post_decontamination_n": 0,
+      "excluded_n": 115,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 115
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Dishes_and_pots_and_pans",
+      "role": "outside_scope",
+      "pre_decontamination_n": 66,
+      "post_decontamination_n": 0,
+      "excluded_n": 66,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 66
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Dog",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Domestic_sounds_and_home_sounds",
+      "role": "outside_scope",
+      "pre_decontamination_n": 89,
+      "post_decontamination_n": 0,
+      "excluded_n": 89,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 86,
+        "exact_freesound_id_overlap_with_ESC50": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Doorbell",
+      "role": "outside_scope",
+      "pre_decontamination_n": 22,
+      "post_decontamination_n": 0,
+      "excluded_n": 22,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 22
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Drawer_open_or_close",
+      "role": "outside_scope",
+      "pre_decontamination_n": 43,
+      "post_decontamination_n": 0,
+      "excluded_n": 43,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 43
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Drill",
+      "role": "outside_scope",
+      "pre_decontamination_n": 27,
+      "post_decontamination_n": 0,
+      "excluded_n": 27,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 27
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Drip",
+      "role": "outside_scope",
+      "pre_decontamination_n": 63,
+      "post_decontamination_n": 0,
+      "excluded_n": 63,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 60,
+        "exact_freesound_id_overlap_with_ESC50": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Electric_guitar",
+      "role": "outside_scope",
+      "pre_decontamination_n": 2,
+      "post_decontamination_n": 0,
+      "excluded_n": 2,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 2
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Engine",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Explosion",
+      "role": "outside_scope",
+      "pre_decontamination_n": 19,
+      "post_decontamination_n": 0,
+      "excluded_n": 19,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 19
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Fart",
+      "role": "outside_scope",
+      "pre_decontamination_n": 94,
+      "post_decontamination_n": 0,
+      "excluded_n": 94,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 94
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Female_singing",
+      "role": "outside_scope",
+      "pre_decontamination_n": 48,
+      "post_decontamination_n": 0,
+      "excluded_n": 48,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 48
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Female_speech_and_woman_speaking",
+      "role": "outside_scope",
+      "pre_decontamination_n": 33,
+      "post_decontamination_n": 0,
+      "excluded_n": 33,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 33
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Fill_(with_liquid)",
+      "role": "outside_scope",
+      "pre_decontamination_n": 49,
+      "post_decontamination_n": 0,
+      "excluded_n": 49,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 45,
+        "exact_freesound_id_overlap_with_ESC50": 4
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Finger_snapping",
+      "role": "outside_scope",
+      "pre_decontamination_n": 57,
+      "post_decontamination_n": 0,
+      "excluded_n": 57,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 57
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Fireworks",
+      "role": "outside_scope",
+      "pre_decontamination_n": 39,
+      "post_decontamination_n": 0,
+      "excluded_n": 39,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 37,
+        "exact_freesound_id_overlap_with_ESC50": 2
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Fixed-wing_aircraft_and_airplane",
+      "role": "outside_scope",
+      "pre_decontamination_n": 2,
+      "post_decontamination_n": 0,
+      "excluded_n": 2,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 2
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Fowl",
+      "role": "outside_scope",
+      "pre_decontamination_n": 5,
+      "post_decontamination_n": 0,
+      "excluded_n": 5,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 5
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Frog",
+      "role": "outside_scope",
+      "pre_decontamination_n": 17,
+      "post_decontamination_n": 0,
+      "excluded_n": 17,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 17
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Frying_(food)",
+      "role": "outside_scope",
+      "pre_decontamination_n": 51,
+      "post_decontamination_n": 0,
+      "excluded_n": 51,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 51
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Gasp",
+      "role": "outside_scope",
+      "pre_decontamination_n": 37,
+      "post_decontamination_n": 0,
+      "excluded_n": 37,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 36,
+        "exact_freesound_id_overlap_with_ESC50": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Giggle",
+      "role": "outside_scope",
+      "pre_decontamination_n": 53,
+      "post_decontamination_n": 0,
+      "excluded_n": 53,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 51,
+        "exact_freesound_id_overlap_with_ESC50": 2
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Glass",
+      "role": "outside_scope",
+      "pre_decontamination_n": 10,
+      "post_decontamination_n": 0,
+      "excluded_n": 10,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 10
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Glockenspiel",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Growling",
+      "role": "outside_scope",
+      "pre_decontamination_n": 14,
+      "post_decontamination_n": 0,
+      "excluded_n": 14,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 14
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Gull_and_seagull",
+      "role": "outside_scope",
+      "pre_decontamination_n": 25,
+      "post_decontamination_n": 0,
+      "excluded_n": 25,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 25
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Gunshot_and_gunfire",
+      "role": "outside_scope",
+      "pre_decontamination_n": 113,
+      "post_decontamination_n": 0,
+      "excluded_n": 113,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 113
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Gurgling",
+      "role": "outside_scope",
+      "pre_decontamination_n": 12,
+      "post_decontamination_n": 0,
+      "excluded_n": 12,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 12
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Hammer",
+      "role": "outside_scope",
+      "pre_decontamination_n": 59,
+      "post_decontamination_n": 0,
+      "excluded_n": 59,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 59
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Hands",
+      "role": "outside_scope",
+      "pre_decontamination_n": 11,
+      "post_decontamination_n": 0,
+      "excluded_n": 11,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 11
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Hiss",
+      "role": "outside_scope",
+      "pre_decontamination_n": 41,
+      "post_decontamination_n": 0,
+      "excluded_n": 41,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 41
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Human_group_actions",
+      "role": "outside_scope",
+      "pre_decontamination_n": 9,
+      "post_decontamination_n": 0,
+      "excluded_n": 9,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 9
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Human_voice",
+      "role": "outside_scope",
+      "pre_decontamination_n": 53,
+      "post_decontamination_n": 0,
+      "excluded_n": 53,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 53
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Idling",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Insect",
+      "role": "outside_scope",
+      "pre_decontamination_n": 18,
+      "post_decontamination_n": 0,
+      "excluded_n": 18,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 18
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Keyboard_(musical)",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Keys_jangling",
+      "role": "outside_scope",
+      "pre_decontamination_n": 47,
+      "post_decontamination_n": 0,
+      "excluded_n": 47,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 47
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Laughter",
+      "role": "outside_scope",
+      "pre_decontamination_n": 51,
+      "post_decontamination_n": 0,
+      "excluded_n": 51,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 49,
+        "exact_freesound_id_overlap_with_ESC50": 2
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Liquid",
+      "role": "outside_scope",
+      "pre_decontamination_n": 9,
+      "post_decontamination_n": 0,
+      "excluded_n": 9,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 9
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Livestock_and_farm_animals_and_working_animals",
+      "role": "outside_scope",
+      "pre_decontamination_n": 21,
+      "post_decontamination_n": 0,
+      "excluded_n": 21,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 18,
+        "exact_freesound_id_overlap_with_ESC50": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Male_singing",
+      "role": "outside_scope",
+      "pre_decontamination_n": 43,
+      "post_decontamination_n": 0,
+      "excluded_n": 43,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 43
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Male_speech_and_man_speaking",
+      "role": "outside_scope",
+      "pre_decontamination_n": 80,
+      "post_decontamination_n": 0,
+      "excluded_n": 80,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 77,
+        "exact_freesound_id_overlap_with_ESC50": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Marimba_and_xylophone",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Mechanical_fan",
+      "role": "outside_scope",
+      "pre_decontamination_n": 48,
+      "post_decontamination_n": 0,
+      "excluded_n": 48,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 48
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Mechanisms",
+      "role": "outside_scope",
+      "pre_decontamination_n": 57,
+      "post_decontamination_n": 0,
+      "excluded_n": 57,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 57
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Meow",
+      "role": "outside_scope",
+      "pre_decontamination_n": 74,
+      "post_decontamination_n": 0,
+      "excluded_n": 74,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 71,
+        "exact_freesound_id_overlap_with_ESC50": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Microwave_oven",
+      "role": "outside_scope",
+      "pre_decontamination_n": 41,
+      "post_decontamination_n": 0,
+      "excluded_n": 41,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 41
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Motorcycle",
+      "role": "outside_scope",
+      "pre_decontamination_n": 3,
+      "post_decontamination_n": 0,
+      "excluded_n": 3,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Ocean",
+      "role": "outside_scope",
+      "pre_decontamination_n": 2,
+      "post_decontamination_n": 0,
+      "excluded_n": 2,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 2
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Packing_tape_and_duct_tape",
+      "role": "outside_scope",
+      "pre_decontamination_n": 58,
+      "post_decontamination_n": 0,
+      "excluded_n": 58,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 58
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Pour",
+      "role": "outside_scope",
+      "pre_decontamination_n": 6,
+      "post_decontamination_n": 0,
+      "excluded_n": 6,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 6
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Power_tool",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Printer",
+      "role": "outside_scope",
+      "pre_decontamination_n": 49,
+      "post_decontamination_n": 0,
+      "excluded_n": 49,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 49
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Purr",
+      "role": "outside_scope",
+      "pre_decontamination_n": 49,
+      "post_decontamination_n": 0,
+      "excluded_n": 49,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 49
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Race_car_and_auto_racing",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Rail_transport",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Rain",
+      "role": "outside_scope",
+      "pre_decontamination_n": 46,
+      "post_decontamination_n": 0,
+      "excluded_n": 46,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 44,
+        "exact_freesound_id_overlap_with_ESC50": 2
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Raindrop",
+      "role": "outside_scope",
+      "pre_decontamination_n": 71,
+      "post_decontamination_n": 0,
+      "excluded_n": 71,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 71
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Ratchet_and_pawl",
+      "role": "outside_scope",
+      "pre_decontamination_n": 43,
+      "post_decontamination_n": 0,
+      "excluded_n": 43,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 43
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Rattle",
+      "role": "outside_scope",
+      "pre_decontamination_n": 73,
+      "post_decontamination_n": 0,
+      "excluded_n": 73,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 73
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Respiratory_sounds",
+      "role": "outside_scope",
+      "pre_decontamination_n": 10,
+      "post_decontamination_n": 0,
+      "excluded_n": 10,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 10
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Ringtone",
+      "role": "outside_scope",
+      "pre_decontamination_n": 71,
+      "post_decontamination_n": 0,
+      "excluded_n": 71,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 71
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Run",
+      "role": "outside_scope",
+      "pre_decontamination_n": 48,
+      "post_decontamination_n": 0,
+      "excluded_n": 48,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 48
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Sawing",
+      "role": "outside_scope",
+      "pre_decontamination_n": 44,
+      "post_decontamination_n": 0,
+      "excluded_n": 44,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 42,
+        "exact_freesound_id_overlap_with_ESC50": 2
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Scissors",
+      "role": "outside_scope",
+      "pre_decontamination_n": 47,
+      "post_decontamination_n": 0,
+      "excluded_n": 47,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 47
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Screaming",
+      "role": "outside_scope",
+      "pre_decontamination_n": 104,
+      "post_decontamination_n": 0,
+      "excluded_n": 104,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 104
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Screech",
+      "role": "outside_scope",
+      "pre_decontamination_n": 37,
+      "post_decontamination_n": 0,
+      "excluded_n": 37,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 37
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Shatter",
+      "role": "outside_scope",
+      "pre_decontamination_n": 92,
+      "post_decontamination_n": 0,
+      "excluded_n": 92,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 86,
+        "exact_freesound_id_overlap_with_ESC50": 6
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Shout",
+      "role": "outside_scope",
+      "pre_decontamination_n": 15,
+      "post_decontamination_n": 0,
+      "excluded_n": 15,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 15
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Sigh",
+      "role": "outside_scope",
+      "pre_decontamination_n": 42,
+      "post_decontamination_n": 0,
+      "excluded_n": 42,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 41,
+        "exact_freesound_id_overlap_with_ESC50": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Singing",
+      "role": "outside_scope",
+      "pre_decontamination_n": 34,
+      "post_decontamination_n": 0,
+      "excluded_n": 34,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 34
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Sink_(filling_or_washing)",
+      "role": "outside_scope",
+      "pre_decontamination_n": 66,
+      "post_decontamination_n": 0,
+      "excluded_n": 66,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 66
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Skateboard",
+      "role": "outside_scope",
+      "pre_decontamination_n": 44,
+      "post_decontamination_n": 0,
+      "excluded_n": 44,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 44
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Sliding_door",
+      "role": "outside_scope",
+      "pre_decontamination_n": 5,
+      "post_decontamination_n": 0,
+      "excluded_n": 5,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 5
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Sneeze",
+      "role": "outside_scope",
+      "pre_decontamination_n": 57,
+      "post_decontamination_n": 0,
+      "excluded_n": 57,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 42,
+        "exact_freesound_id_overlap_with_ESC50": 15
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Speech",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Speech_synthesizer",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Splash_and_splatter",
+      "role": "outside_scope",
+      "pre_decontamination_n": 33,
+      "post_decontamination_n": 0,
+      "excluded_n": 33,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 33
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Squeak",
+      "role": "outside_scope",
+      "pre_decontamination_n": 101,
+      "post_decontamination_n": 0,
+      "excluded_n": 101,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 101
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Stream",
+      "role": "outside_scope",
+      "pre_decontamination_n": 86,
+      "post_decontamination_n": 0,
+      "excluded_n": 86,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 86
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Subway_and_metro_and_underground",
+      "role": "outside_scope",
+      "pre_decontamination_n": 17,
+      "post_decontamination_n": 0,
+      "excluded_n": 17,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 17
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Tap",
+      "role": "outside_scope",
+      "pre_decontamination_n": 90,
+      "post_decontamination_n": 0,
+      "excluded_n": 90,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 90
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Tearing",
+      "role": "outside_scope",
+      "pre_decontamination_n": 65,
+      "post_decontamination_n": 0,
+      "excluded_n": 65,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 65
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Telephone",
+      "role": "outside_scope",
+      "pre_decontamination_n": 70,
+      "post_decontamination_n": 0,
+      "excluded_n": 70,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 70
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Thump_and_thud",
+      "role": "outside_scope",
+      "pre_decontamination_n": 56,
+      "post_decontamination_n": 0,
+      "excluded_n": 56,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 56
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Thunder",
+      "role": "outside_scope",
+      "pre_decontamination_n": 102,
+      "post_decontamination_n": 0,
+      "excluded_n": 102,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 101,
+        "exact_freesound_id_overlap_with_ESC50": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Thunderstorm",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Tick",
+      "role": "outside_scope",
+      "pre_decontamination_n": 25,
+      "post_decontamination_n": 0,
+      "excluded_n": 25,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 24,
+        "exact_freesound_id_overlap_with_ESC50": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Tick-tock",
+      "role": "outside_scope",
+      "pre_decontamination_n": 62,
+      "post_decontamination_n": 0,
+      "excluded_n": 62,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 57,
+        "exact_freesound_id_overlap_with_ESC50": 5
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Toilet_flush",
+      "role": "outside_scope",
+      "pre_decontamination_n": 36,
+      "post_decontamination_n": 0,
+      "excluded_n": 36,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 33,
+        "exact_freesound_id_overlap_with_ESC50": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Tools",
+      "role": "outside_scope",
+      "pre_decontamination_n": 24,
+      "post_decontamination_n": 0,
+      "excluded_n": 24,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 24
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Traffic_noise_and_roadway_noise",
+      "role": "outside_scope",
+      "pre_decontamination_n": 14,
+      "post_decontamination_n": 0,
+      "excluded_n": 14,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 13,
+        "exact_freesound_id_overlap_with_ESC50": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Train",
+      "role": "outside_scope",
+      "pre_decontamination_n": 41,
+      "post_decontamination_n": 0,
+      "excluded_n": 41,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 41
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Trickle_and_dribble",
+      "role": "outside_scope",
+      "pre_decontamination_n": 81,
+      "post_decontamination_n": 0,
+      "excluded_n": 81,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 79,
+        "exact_freesound_id_overlap_with_ESC50": 2
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Typewriter",
+      "role": "outside_scope",
+      "pre_decontamination_n": 33,
+      "post_decontamination_n": 0,
+      "excluded_n": 33,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 33
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Typing",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Walk_and_footsteps",
+      "role": "outside_scope",
+      "pre_decontamination_n": 133,
+      "post_decontamination_n": 0,
+      "excluded_n": 133,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 131,
+        "exact_freesound_id_overlap_with_ESC50": 2
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Water",
+      "role": "outside_scope",
+      "pre_decontamination_n": 35,
+      "post_decontamination_n": 0,
+      "excluded_n": 35,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 35
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Water_tap_and_faucet",
+      "role": "outside_scope",
+      "pre_decontamination_n": 28,
+      "post_decontamination_n": 0,
+      "excluded_n": 28,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 28
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Waves_and_surf",
+      "role": "outside_scope",
+      "pre_decontamination_n": 50,
+      "post_decontamination_n": 0,
+      "excluded_n": 50,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 50
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Whispering",
+      "role": "outside_scope",
+      "pre_decontamination_n": 16,
+      "post_decontamination_n": 0,
+      "excluded_n": 16,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 16
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Whoosh_and_swoosh_and_swish",
+      "role": "outside_scope",
+      "pre_decontamination_n": 81,
+      "post_decontamination_n": 0,
+      "excluded_n": 81,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 81
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Wild_animals",
+      "role": "outside_scope",
+      "pre_decontamination_n": 2,
+      "post_decontamination_n": 0,
+      "excluded_n": 2,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 2
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Wind",
+      "role": "outside_scope",
+      "pre_decontamination_n": 41,
+      "post_decontamination_n": 0,
+      "excluded_n": 41,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 40,
+        "exact_freesound_id_overlap_with_ESC50": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Wind_chime",
+      "role": "outside_scope",
+      "pre_decontamination_n": 1,
+      "post_decontamination_n": 0,
+      "excluded_n": 1,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 1
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Wood",
+      "role": "outside_scope",
+      "pre_decontamination_n": 25,
+      "post_decontamination_n": 0,
+      "excluded_n": 25,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 25
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Writing",
+      "role": "outside_scope",
+      "pre_decontamination_n": 86,
+      "post_decontamination_n": 0,
+      "excluded_n": 86,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 86
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Yell",
+      "role": "outside_scope",
+      "pre_decontamination_n": 39,
+      "post_decontamination_n": 0,
+      "excluded_n": 39,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 39
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "Zipper_(clothing)",
+      "role": "outside_scope",
+      "pre_decontamination_n": 89,
+      "post_decontamination_n": 0,
+      "excluded_n": 89,
+      "exclusion_reasons": {
+        "OUTSIDE_PREREGISTERED_TARGET_OR_HARD_NEGATIVE_SCOPE": 89
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "fire",
+      "role": "target",
+      "pre_decontamination_n": 124,
+      "post_decontamination_n": 121,
+      "excluded_n": 3,
+      "exclusion_reasons": {
+        "exact_freesound_id_overlap_with_ESC50": 3
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "non_emergency",
+      "role": "hard_negative",
+      "pre_decontamination_n": 3687,
+      "post_decontamination_n": 3657,
+      "excluded_n": 30,
+      "exclusion_reasons": {
+        "exact_freesound_id_overlap_with_ESC50": 30
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "siren",
+      "role": "target",
+      "pre_decontamination_n": 55,
+      "post_decontamination_n": 49,
+      "excluded_n": 6,
+      "exclusion_reasons": {
+        "exact_freesound_id_overlap_with_ESC50": 6
+      }
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "class": "vehicle_horn",
+      "role": "target",
+      "pre_decontamination_n": 68,
+      "post_decontamination_n": 64,
+      "excluded_n": 4,
+      "exclusion_reasons": {
+        "exact_freesound_id_overlap_with_ESC50": 4
+      }
+    }
+  ]
+}

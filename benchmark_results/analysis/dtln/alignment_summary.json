@@ -1,0 +1,11 @@
+{
+  "sample_count": 290,
+  "mean": 383.79655172413794,
+  "median": 384.0,
+  "min": 325,
+  "max": 384,
+  "standard_deviation": 3.4586206896551723,
+  "assumed_delay_samples": 384,
+  "exact_384_count": 289,
+  "residual_nonzero_count": 1
+}

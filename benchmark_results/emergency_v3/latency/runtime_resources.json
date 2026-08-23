@@ -1,0 +1,17 @@
+{
+  "sample_count": 30,
+  "scope": "warm production subprocess round trip including file decode and IPC",
+  "mean_ms": 60.942430002614856,
+  "median_ms": 56.049050006549805,
+  "p90_ms": 76.82000001659617,
+  "p95_ms": 91.06760000577196,
+  "p99_ms": 116.73639999935403,
+  "working_set_bytes": 385679360,
+  "peak_working_set_bytes": 398196736,
+  "virtual_memory_bytes": 11001147392,
+  "cpu_seconds": 10.625,
+  "wall_seconds": 1.8283094000071287,
+  "single_core_utilization_percent": 581.1379627517407,
+  "total_machine_cpu_capacity_percent": 72.64224534396759,
+  "real_time_factor_for_5_second_clips": 0.01218848600052297
+}

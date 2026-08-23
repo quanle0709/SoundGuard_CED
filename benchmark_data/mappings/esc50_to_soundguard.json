@@ -1,0 +1,16 @@
+{
+  "dataset": "ESC-50",
+  "version": "official GitHub master metadata accessed 2026-08-19",
+  "leakage_status": "POSSIBLE SOURCE OVERLAP",
+  "mappings": [
+    {"source_label": "siren", "soundguard_label": "siren", "mapping_type": "exact", "reason": "Same acoustic event."},
+    {"source_label": "car_horn", "soundguard_label": "vehicle_horn", "mapping_type": "compatible", "reason": "Car horn is an unambiguous vehicle horn subtype."},
+    {"source_label": "dog", "soundguard_label": "dog_barking", "mapping_type": "compatible", "reason": "ESC-50 dog clips represent dog vocalization and SoundGuard exposes Bark/dog_barking."},
+    {"source_label": "crying_baby", "soundguard_label": "baby_crying", "mapping_type": "exact", "reason": "Same acoustic event."},
+    {"source_label": "glass_breaking", "soundguard_label": "glass_breaking", "mapping_type": "exact", "reason": "Same acoustic event."},
+    {"source_label": "crackling_fire", "soundguard_label": "fire", "mapping_type": "compatible", "reason": "SoundGuard's fire category aliases the CED fire-crackling ontology label."},
+    {"source_label": "door_wood_knock", "soundguard_label": "door_activity", "mapping_type": "compatible", "reason": "A door knock is an explicit SoundGuard door_activity alias."},
+    {"source_label": "fireworks", "soundguard_label": null, "mapping_type": "excluded", "reason": "Fireworks must not be forced to explosion."},
+    {"source_label": "engine", "soundguard_label": null, "mapping_type": "excluded", "reason": "Engine sound is not a vehicle horn."}
+  ]
+}

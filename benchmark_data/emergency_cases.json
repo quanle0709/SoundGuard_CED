@@ -1,0 +1,10 @@
+[
+  {"id":"gunshot_positive","label":"Gunshot","confidence":0.90,"transcript":"","expected":true},
+  {"id":"siren_positive","label":"Siren","confidence":0.90,"transcript":"","expected":true},
+  {"id":"horn_positive","label":"Vehicle horn","confidence":0.90,"transcript":"","expected":true},
+  {"id":"help_positive","label":"Speech","confidence":0.90,"transcript":"giúp tôi với","expected":true},
+  {"id":"low_confidence_negative","label":"Gunshot","confidence":0.10,"transcript":"","expected":false},
+  {"id":"bark_negative","label":"Bark","confidence":0.90,"transcript":"","expected":false},
+  {"id":"speech_negative","label":"Speech","confidence":0.90,"transcript":"xin chào","expected":false},
+  {"id":"unknown_negative","label":"Music","confidence":0.90,"transcript":"","expected":false}
+]

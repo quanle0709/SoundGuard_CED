@@ -11,6 +11,7 @@ from dataclasses import dataclass, field
 from typing import Callable
 
 LEVEL_ORDER = {"LOW": 0, "MEDIUM": 1, "HIGH": 2, "CRITICAL": 3}
+PRIORITY_LEVEL = {1: "LOW", 2: "LOW", 3: "MEDIUM", 4: "HIGH", 5: "CRITICAL"}
 CONTEXTS = ("indoor", "outdoor", "neutral")
 
 
@@ -157,7 +158,8 @@ def evaluate_sound(label: str, confidence: float, context: str = "neutral") -> d
 class EmergencySystem:
     def __init__(self, context: str = "neutral", decision_mode: str = "continuous",
                  help_end_grace_cycles: int = 2,
-                 clock: Callable[[], float] = time.monotonic):
+                 clock: Callable[[], float] = time.monotonic,
+                 priority_provider: Callable[[str, str], int | None] | None = None):
         if context not in CONTEXTS:
             raise ValueError(f"Unsupported context: {context}")
         if decision_mode not in {"continuous", "single_shot"}:
@@ -168,12 +170,26 @@ class EmergencySystem:
         self.decision_mode = decision_mode
         self.help_end_grace_cycles = help_end_grace_cycles
         self.clock = clock
+        self.priority_provider = priority_provider
         self.history: deque[str | None] = deque(maxlen=3)
         self.active_sound: str | None = None
         self.help_active = False
         self.help_missing_cycles = 0
         self.active_help_message = CATEGORY_CONFIG["help_request"].message_vi
         self.last_emitted: dict[str, float] = {}
+
+    def _get_level(self, category: str) -> str:
+        """Use personalization only when an explicit provider was injected."""
+        default = get_category_level(category, self.context)
+        if self.priority_provider is None:
+            return default
+        try:
+            priority = self.priority_provider(category, self.context)
+        except Exception:
+            return default
+        if isinstance(priority, bool) or priority not in PRIORITY_LEVEL:
+            return default
+        return PRIORITY_LEVEL[priority]
 
     def _can_emit(self, category: str, now: float) -> bool:
         previous = self.last_emitted.get(category)
@@ -185,12 +201,12 @@ class EmergencySystem:
     def _confirmed_sound(self) -> str | None:
         counts = Counter(item for item in self.history if item is not None)
         candidates = [category for category, count in counts.items()
-                      if count >= 2 and LEVEL_ORDER[get_category_level(category, self.context)]
+                      if count >= 2 and LEVEL_ORDER[self._get_level(category)]
                       >= LEVEL_ORDER["MEDIUM"]]
         if not candidates:
             return None
         return min(candidates, key=lambda category: (
-            -LEVEL_ORDER[get_category_level(category, self.context)],
+            -LEVEL_ORDER[self._get_level(category)],
             -counts[category], CATEGORY_CONFIG[category].priority))
 
     def _base_result(self, timestamp: str | None) -> dict:
@@ -213,7 +229,7 @@ class EmergencySystem:
         confirmed = (
             self._confirmed_sound() if self.decision_mode == "continuous"
             else observed if observed and LEVEL_ORDER[
-                get_category_level(observed, self.context)] >= LEVEL_ORDER["MEDIUM"]
+                self._get_level(observed)] >= LEVEL_ORDER["MEDIUM"]
             else None
         )
         previous = self.active_sound
@@ -226,7 +242,7 @@ class EmergencySystem:
         else:
             state, category = "NO_EVENT", None
         active = state in {"EVENT_STARTED", "EVENT_CONTINUING"}
-        level = get_category_level(category, self.context) if category else "LOW"
+        level = self._get_level(category) if category else "LOW"
         actionable = category is not None and LEVEL_ORDER[level] >= LEVEL_ORDER["MEDIUM"]
         emitted = bool(active and actionable and self._can_emit(category, now))
         config = CATEGORY_CONFIG.get(category) if category else None
@@ -306,7 +322,7 @@ class EmergencySystem:
             confirmed = self._confirmed_sound()
         else:
             confirmed = observed if observed and LEVEL_ORDER[
-                get_category_level(observed, self.context)] >= LEVEL_ORDER["MEDIUM"] else None
+                self._get_level(observed)] >= LEVEL_ORDER["MEDIUM"] else None
         previous_sound = self.active_sound
         self.active_sound = confirmed
 
@@ -336,7 +352,7 @@ class EmergencySystem:
             state = "NO_EVENT"
 
         active = state in {"EVENT_STARTED", "EVENT_CONTINUING"}
-        level = get_category_level(category, self.context) if category else "LOW"
+        level = self._get_level(category) if category else "LOW"
         actionable = category is not None and LEVEL_ORDER[level] >= LEVEL_ORDER["MEDIUM"]
         emitted = bool(active and actionable and self._can_emit(category, now))
         config = CATEGORY_CONFIG.get(category) if category else None

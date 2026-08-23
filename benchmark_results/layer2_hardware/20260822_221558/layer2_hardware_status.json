@@ -1,0 +1,560 @@
+{
+  "hardware_detected": true,
+  "firmware_build": true,
+  "functional_acceptance": true,
+  "host_to_oled_latency": true,
+  "stt_to_oled": true,
+  "ced_to_oled": true,
+  "alert_to_oled": true,
+  "transition_latency": true,
+  "transport_reliability": {
+    "sent": 2000,
+    "received_parsed": 1999,
+    "acked": 1999,
+    "missing": 1,
+    "duplicate": 0,
+    "unexpected": 0,
+    "out_of_order": 0,
+    "parser_state_corruption": 0,
+    "state_mismatch": 0,
+    "invalid_injection": [
+      {
+        "case": "invalid_crc",
+        "injected": true,
+        "expected_ack": false
+      },
+      {
+        "case": "malformed_payload",
+        "injected": true,
+        "expected_ack": false
+      },
+      {
+        "case": "truncated_then_valid",
+        "injected": true,
+        "next_valid_succeeded": true
+      }
+    ],
+    "parser_recovered": true
+  },
+  "concurrency": {
+    "raw_frames_captured": 500,
+    "ced_frames_produced": 500,
+    "speech_frames_dropped": 0,
+    "ced_frames_dropped": 0,
+    "speech_frames_produced": 174,
+    "speech_events_dropped": 0,
+    "recognition_jobs_dropped": 0,
+    "recognition_results_dropped": 0,
+    "ced_frames_consumed": 500,
+    "ced_events_dropped": 0,
+    "ced_windows_processed": 4,
+    "ced_windows_dropped": 0,
+    "ced_window_queue_max_depth": 1,
+    "ced_inference_seconds_total": 7.734000000054948,
+    "ced_inference_seconds_max": 7.2810000000172295,
+    "ced_events_dispatched": 4,
+    "ced_top_k_recoveries": 2,
+    "ced_held_label_refreshes": 2,
+    "ced_ttl_expirations": 1,
+    "ced_clear_requests": 1,
+    "stt_partial_count": 2,
+    "stt_final_count": 2,
+    "C_frames_sent": 3
+  },
+  "mixed_audio": {
+    "subtitle_and_ced_coexisted": true,
+    "ced_processed_while_speech": true,
+    "ced_processed_while_stt_idle": true,
+    "idle_ced_windows": 1,
+    "speech_ced_windows": 3,
+    "ced_present_across_multiple_mixed_windows": true,
+    "subtitle_updates": 4,
+    "serial_frames": 16,
+    "serial_failures": 0,
+    "C_frames_sent": 3,
+    "ced_windows": [
+      {
+        "top1": "Bark",
+        "top1_score": 0.6231867671012878,
+        "top5": [
+          {
+            "label": "Bark",
+            "score": 0.6231867671012878
+          },
+          {
+            "label": "Dog",
+            "score": 0.6199265718460083
+          },
+          {
+            "label": "Animal",
+            "score": 0.606243371963501
+          },
+          {
+            "label": "Domestic animals, pets",
+            "score": 0.6011565327644348
+          },
+          {
+            "label": "Bow-wow",
+            "score": 0.589719295501709
+          }
+        ],
+        "selected_hud_label": "DOG",
+        "active_hud_label": "DOG",
+        "c_frame_sent": true
+      },
+      {
+        "top1": "Speech",
+        "top1_score": 0.6980352997779846,
+        "top5": [
+          {
+            "label": "Speech",
+            "score": 0.6980352997779846
+          },
+          {
+            "label": "Bark",
+            "score": 0.6479286551475525
+          },
+          {
+            "label": "Dog",
+            "score": 0.6414333581924438
+          },
+          {
+            "label": "Animal",
+            "score": 0.6280440092086792
+          },
+          {
+            "label": "Domestic animals, pets",
+            "score": 0.6273231506347656
+          }
+        ],
+        "selected_hud_label": "DOG",
+        "active_hud_label": "DOG",
+        "c_frame_sent": true
+      },
+      {
+        "top1": "Speech",
+        "top1_score": 0.6941126585006714,
+        "top5": [
+          {
+            "label": "Speech",
+            "score": 0.6941126585006714
+          },
+          {
+            "label": "Dog",
+            "score": 0.6226301789283752
+          },
+          {
+            "label": "Animal",
+            "score": 0.612921953201294
+          },
+          {
+            "label": "Bark",
+            "score": 0.6025210022926331
+          },
+          {
+            "label": "Domestic animals, pets",
+            "score": 0.6016303896903992
+          }
+        ],
+        "selected_hud_label": "DOG",
+        "active_hud_label": "DOG",
+        "c_frame_sent": true
+      },
+      {
+        "top1": "Silence",
+        "top1_score": 0.6334816813468933,
+        "top5": [
+          {
+            "label": "Silence",
+            "score": 0.6334816813468933
+          },
+          {
+            "label": "Music",
+            "score": 0.5335695147514343
+          },
+          {
+            "label": "Sound effect",
+            "score": 0.5090154409408569
+          },
+          {
+            "label": "Sine wave",
+            "score": 0.5069735050201416
+          },
+          {
+            "label": "Musical instrument",
+            "score": 0.5039905309677124
+          }
+        ],
+        "selected_hud_label": "",
+        "active_hud_label": "",
+        "c_frame_sent": false
+      }
+    ]
+  },
+  "soak": {
+    "requested_seconds": 3600.0,
+    "actual_duration_seconds": 3600.125,
+    "total_frames": 16449,
+    "total_transitions": 16449,
+    "crashes": 0,
+    "python_exceptions": 0,
+    "subsystem_errors": [],
+    "serial_failures": 0,
+    "firmware_reset_evidence": 0,
+    "failed_acks": 0,
+    "screen_state_violations": 0,
+    "stale_ced": 0,
+    "stale_alert": 0,
+    "concurrent_episodes": 5,
+    "concurrent_episode_results": [
+      {
+        "episode": 0,
+        "started_after_seconds": 600.0629999999946,
+        "counters": {
+          "raw_frames_captured": 500,
+          "ced_frames_produced": 500,
+          "speech_frames_dropped": 0,
+          "ced_frames_dropped": 0,
+          "speech_frames_produced": 176,
+          "speech_events_dropped": 0,
+          "recognition_jobs_dropped": 0,
+          "recognition_results_dropped": 0,
+          "ced_frames_consumed": 500,
+          "ced_events_dropped": 0,
+          "ced_windows_processed": 4,
+          "ced_windows_dropped": 0,
+          "ced_window_queue_max_depth": 2,
+          "ced_inference_seconds_total": 11.96899999998277,
+          "ced_inference_seconds_max": 11.405999999988126,
+          "ced_events_dispatched": 4,
+          "ced_top_k_recoveries": 2,
+          "ced_held_label_refreshes": 2,
+          "ced_ttl_expirations": 0,
+          "ced_clear_requests": 0,
+          "stt_partial_count": 4,
+          "stt_final_count": 1,
+          "C_frames_sent": 3
+        },
+        "serial_failures": 0,
+        "subtitle_and_ced_coexisted": true,
+        "ced_processed_while_speech": true,
+        "ced_processed_while_stt_idle": true
+      },
+      {
+        "episode": 1,
+        "started_after_seconds": 1200.0,
+        "counters": {
+          "raw_frames_captured": 500,
+          "ced_frames_produced": 500,
+          "speech_frames_dropped": 0,
+          "ced_frames_dropped": 0,
+          "speech_frames_produced": 174,
+          "speech_events_dropped": 0,
+          "recognition_jobs_dropped": 0,
+          "recognition_results_dropped": 0,
+          "ced_frames_consumed": 500,
+          "ced_events_dropped": 0,
+          "ced_windows_processed": 4,
+          "ced_windows_dropped": 0,
+          "ced_window_queue_max_depth": 2,
+          "ced_inference_seconds_total": 11.437000000005355,
+          "ced_inference_seconds_max": 10.89100000000326,
+          "ced_events_dispatched": 4,
+          "ced_top_k_recoveries": 2,
+          "ced_held_label_refreshes": 2,
+          "ced_ttl_expirations": 0,
+          "ced_clear_requests": 0,
+          "stt_partial_count": 4,
+          "stt_final_count": 1,
+          "C_frames_sent": 3
+        },
+        "serial_failures": 0,
+        "subtitle_and_ced_coexisted": true,
+        "ced_processed_while_speech": true,
+        "ced_processed_while_stt_idle": true
+      },
+      {
+        "episode": 2,
+        "started_after_seconds": 1800.0939999999828,
+        "counters": {
+          "raw_frames_captured": 500,
+          "ced_frames_produced": 500,
+          "speech_frames_dropped": 0,
+          "ced_frames_dropped": 0,
+          "speech_frames_produced": 174,
+          "speech_events_dropped": 0,
+          "recognition_jobs_dropped": 0,
+          "recognition_results_dropped": 0,
+          "ced_frames_consumed": 500,
+          "ced_events_dropped": 0,
+          "ced_windows_processed": 4,
+          "ced_windows_dropped": 0,
+          "ced_window_queue_max_depth": 1,
+          "ced_inference_seconds_total": 10.453000000008615,
+          "ced_inference_seconds_max": 9.703000000008615,
+          "ced_events_dispatched": 4,
+          "ced_top_k_recoveries": 2,
+          "ced_held_label_refreshes": 2,
+          "ced_ttl_expirations": 1,
+          "ced_clear_requests": 1,
+          "stt_partial_count": 5,
+          "stt_final_count": 1,
+          "C_frames_sent": 3
+        },
+        "serial_failures": 0,
+        "subtitle_and_ced_coexisted": true,
+        "ced_processed_while_speech": true,
+        "ced_processed_while_stt_idle": true
+      },
+      {
+        "episode": 3,
+        "started_after_seconds": 2400.0629999999946,
+        "counters": {
+          "raw_frames_captured": 500,
+          "ced_frames_produced": 500,
+          "speech_frames_dropped": 0,
+          "ced_frames_dropped": 0,
+          "speech_frames_produced": 174,
+          "speech_events_dropped": 0,
+          "recognition_jobs_dropped": 0,
+          "recognition_results_dropped": 0,
+          "ced_frames_consumed": 500,
+          "ced_events_dropped": 0,
+          "ced_windows_processed": 4,
+          "ced_windows_dropped": 0,
+          "ced_window_queue_max_depth": 1,
+          "ced_inference_seconds_total": 8.187999999965541,
+          "ced_inference_seconds_max": 7.532000000006519,
+          "ced_events_dispatched": 4,
+          "ced_top_k_recoveries": 2,
+          "ced_held_label_refreshes": 2,
+          "ced_ttl_expirations": 0,
+          "ced_clear_requests": 0,
+          "stt_partial_count": 4,
+          "stt_final_count": 1,
+          "C_frames_sent": 3
+        },
+        "serial_failures": 0,
+        "subtitle_and_ced_coexisted": true,
+        "ced_processed_while_speech": true,
+        "ced_processed_while_stt_idle": true
+      },
+      {
+        "episode": 4,
+        "started_after_seconds": 3000.2029999999795,
+        "counters": {
+          "raw_frames_captured": 500,
+          "ced_frames_produced": 500,
+          "speech_frames_dropped": 0,
+          "ced_frames_dropped": 0,
+          "speech_frames_produced": 174,
+          "speech_events_dropped": 0,
+          "recognition_jobs_dropped": 0,
+          "recognition_results_dropped": 0,
+          "ced_frames_consumed": 500,
+          "ced_events_dropped": 0,
+          "ced_windows_processed": 4,
+          "ced_windows_dropped": 0,
+          "ced_window_queue_max_depth": 1,
+          "ced_inference_seconds_total": 8.65700000000652,
+          "ced_inference_seconds_max": 8.078000000008615,
+          "ced_events_dispatched": 4,
+          "ced_top_k_recoveries": 2,
+          "ced_held_label_refreshes": 2,
+          "ced_ttl_expirations": 0,
+          "ced_clear_requests": 0,
+          "stt_partial_count": 4,
+          "stt_final_count": 1,
+          "C_frames_sent": 3
+        },
+        "serial_failures": 0,
+        "subtitle_and_ced_coexisted": true,
+        "ced_processed_while_speech": true,
+        "ced_processed_while_stt_idle": true
+      }
+    ],
+    "concurrent_counter_totals": {
+      "raw_frames_captured": 2500,
+      "ced_frames_produced": 2500,
+      "speech_frames_dropped": 0,
+      "ced_frames_dropped": 0,
+      "speech_frames_produced": 872,
+      "speech_events_dropped": 0,
+      "recognition_jobs_dropped": 0,
+      "recognition_results_dropped": 0,
+      "ced_frames_consumed": 2500,
+      "ced_events_dropped": 0,
+      "ced_windows_processed": 20,
+      "ced_windows_dropped": 0,
+      "ced_window_queue_max_depth": 7,
+      "ced_inference_seconds_total": 50.7039999999688,
+      "ced_inference_seconds_max": 47.610000000015134,
+      "ced_events_dispatched": 20,
+      "ced_top_k_recoveries": 10,
+      "ced_held_label_refreshes": 10,
+      "ced_ttl_expirations": 1,
+      "ced_clear_requests": 1,
+      "stt_partial_count": 21,
+      "stt_final_count": 5,
+      "C_frames_sent": 15
+    },
+    "ced_raw_drops": 0,
+    "ced_inference_window_drops": 0,
+    "stt_drops": 0,
+    "event_drops": 0,
+    "queue_overflows": 0
+  },
+  "clock": {
+    "automatic_k_after_connection": true,
+    "home_host_minute": "22:18",
+    "home_displayed_minute": "22:18",
+    "home_minute_matches": true,
+    "k_during_subtitle_preserved_screen": true,
+    "k_during_alert_preserved_screen": true,
+    "advanced_without_resync": true,
+    "advance_start": "22:18",
+    "advance_end": "22:19",
+    "wait_seconds": 8.616780281066895
+  },
+  "serial_reconnect": {
+    "label": "serial-session reconnect",
+    "before_ok": true,
+    "reopen_ok": true,
+    "clock_resynchronized": true,
+    "normal_hud_after_reconnect": true,
+    "physical_usb_unplug_replug": "NOT MEASURED"
+  },
+  "regression": {
+    "official_runner_exit": 0,
+    "pytest_exit": 0,
+    "esp32c3_build_exit": 0,
+    "esp32dev_build_exit": 0,
+    "passed": true
+  },
+  "transport_rerun": {
+    "status": "STOPPED_ON_FUNCTIONAL_DEFECT",
+    "trials_attempted": 1710,
+    "acked_before_failure": 1700,
+    "consecutive_missing_acks": 10,
+    "first_missing_trial": "transport-1700",
+    "raw_log": "raw_logs/transport_rerun_serial.log",
+    "finding": "ESP32-C3 USB/HUD protocol stopped responding across multiple frame types"
+  },
+  "post_campaign_device_state": {
+    "usb_enumerated": true,
+    "hud_protocol_responsive": false,
+    "automatic_upload_recovery": false,
+    "recovery_error": "Failed to connect to ESP32-C3: No serial data received",
+    "manual_action_required": "Physically unplug/replug USB or press RESET; if upload is still unavailable, hold BOOT while tapping RESET, then rerun the esp32c3 upload."
+  },
+  "transport_closure_addendum": {
+    "date": "2026-08-23",
+    "status": "PASS",
+    "root_cause": "Benchmark-only SGACK output was fragmented across 13 Print/write calls on ESP32-C3 HWCDC. Under unpaced render/ACK stress a complete 40-byte ACK was observed stranded in the 256-byte CDC TX ring until the next host OUT packet. Atomic ACK output followed by a bounded HWCDC flush removed the failure mechanism.",
+    "root_cause_scope": "benchmark instrumentation / unrealistic high-rate USB CDC TX stress",
+    "production_transport_affected": false,
+    "controlled_reproduction": {
+      "exact_old_permanent_lock_reproduced": false,
+      "underlying_missing_ack_mechanism_reproduced": true,
+      "workload": "S-only, unpaced, fragmented SGACK firmware",
+      "first_missing_index": 636,
+      "firmware_ack_attempt_millis": 796181,
+      "host_delivery": "arrived after the next OUT packet",
+      "tx_available_before_next_ack": 216,
+      "tx_ring_capacity": 256,
+      "firmware_alive": true,
+      "rx_alive": true,
+      "tx_path_state": "one complete 40-byte ACK queued but not delivered until next OUT",
+      "post_query_ok": true,
+      "evidence": "transport_diagnostics/mode10_type_S.json"
+    },
+    "fix": {
+      "firmware": "one bounded SGACK buffer, one output.write, then output.flush",
+      "diagnostics": "benchmark-only D query plus parser/heap/TX/display counters",
+      "production_frame_types_changed": false,
+      "display_semantics_changed": false
+    },
+    "pacing": {
+      "estimated_continuous_speech_product_fps": 0.952,
+      "passed_soak_average_fps": 4.569,
+      "original_failure_stress_fps_approx": 105.7,
+      "maximum_fixed_mixed_rate_fps": 95.092,
+      "documented_production_like_acceptance_fps": 4.989
+    },
+    "paced_ack_modes": [
+      {"target_fps": 5, "transactions": 2571, "acked": 2571, "missing": 0},
+      {"target_fps": 25, "transactions": 2571, "acked": 2571, "missing": 0},
+      {"target_fps": "unpaced", "transactions": 3857, "acked": 3857, "missing": 0, "effective_fps": 95.092}
+    ],
+    "frame_type_isolation": {
+      "S": {"sent": 5000, "acked": 5000, "missing": 0, "fps": 74.04},
+      "P": {"sent": 2000, "acked": 2000, "missing": 0, "fps": 77.21},
+      "C": {"sent": 2000, "acked": 2000, "missing": 0, "fps": 82.34},
+      "E": {"sent": 2000, "acked": 2000, "missing": 0, "fps": 106.89},
+      "K": {"sent": 2000, "acked": 2000, "missing": 0, "fps": 391.2},
+      "Q_non_render": {"sent": 2000, "acked": 2000, "missing": 0, "fps": 506.79}
+    },
+    "authoritative_transport_rerun": {
+      "sent": 2000,
+      "acked": 2000,
+      "missing": 0,
+      "duplicates": 0,
+      "out_of_order": 0,
+      "late_ack_reconciled": 0,
+      "parser_state_corruption": 0,
+      "parser_recovered": true,
+      "post_query_ok": true,
+      "evidence": "transport_diagnostics/authoritative_transport_atomic_fix.json"
+    },
+    "production_like_no_ack": {
+      "sent": 2200,
+      "effective_fps": 4.989,
+      "benchmark_ack_enabled": false,
+      "post_query_ok": true,
+      "evidence": "transport_diagnostics/mode4_production_like_2200_5fps.json"
+    },
+    "resource_evidence": {
+      "cumulative_complete_frames": 21118,
+      "cumulative_display_commits": 16195,
+      "free_heap_stable_bytes": 306776,
+      "minimum_free_heap_bytes": 302204,
+      "largest_free_block_stable_bytes": 278516,
+      "crc_failures_during_valid_load": 0,
+      "parser_recoveries_during_valid_load": 0,
+      "ack_short_writes": 0,
+      "max_display_commit_us": 6713,
+      "reset_evidence": 0
+    },
+    "post_fix_device_state": {
+      "hud_protocol_responsive": true,
+      "serial_close_reopen_ok": true,
+      "automatic_upload_ok": true,
+      "physical_reset_required_after_benchmark": false
+    },
+    "regression": {
+      "official_runner_exit": 0,
+      "pytest_exit": 0,
+      "pytest_passed": 232,
+      "pytest_subtests_passed": 5,
+      "esp32c3_build_exit": 0,
+      "esp32dev_build_exit": 0,
+      "focused_contract_tests_passed": 52
+    },
+    "soak_rerun": false,
+    "soak_rerun_reason": "The accepted fix changes only benchmark B/D instrumentation; production S/P/A/E/C/T/K semantics and HUD output are unchanged, so the passed 3600.125-second soak remains authoritative."
+  },
+  "battery": {
+    "runtime": "MANUAL VALIDATION PENDING",
+    "average_current": "NOT MEASURED"
+  },
+  "physical_acoustic": "NOT MEASURED / MANUAL OPTIONAL",
+  "layer2_status": "COMPLETE",
+  "campaign_duration_seconds": 3848.875,
+  "layer1_model_modified": false,
+  "emergency_thresholds_modified": false,
+  "hud_awareness_threshold_policy_modified": false,
+  "stt_semantics_modified": false,
+  "locked_hud_behavior_modified": false,
+  "production_transport_semantics_modified": false,
+  "benchmark_instrumentation_modified": true
+}

@@ -1,0 +1,12 @@
+{
+  "A_raw_wrong_fusion_correct": {
+    "category": "A_raw_wrong_fusion_correct",
+    "count": 2,
+    "percentage": 0.3333333333333333
+  },
+  "B_raw_correct_fusion_correct": {
+    "category": "B_raw_correct_fusion_correct",
+    "count": 4,
+    "percentage": 0.6666666666666666
+  }
+}

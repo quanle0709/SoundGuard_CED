@@ -1,5 +1,65 @@
 # SoundGuard CED
 
+## Improvement modes (default remains legacy)
+
+The safety-improvement adapters are explicit opt-ins. With both variables absent, CED and personalization retain the frozen legacy behavior.
+
+Legacy mode (DTLN remains enabled for STT as before):
+
+```powershell
+Remove-Item Env:SOUNDGUARD_ENABLE_SEMANTIC_CED_MAPPING -ErrorAction SilentlyContinue
+Remove-Item Env:SOUNDGUARD_SAFE_COMPOUND_EVIDENCE -ErrorAction SilentlyContinue
+.\.venv\Scripts\python.exe app.py --mic --duration 5
+```
+
+Improved development mode uses the audited coarse CED taxonomy, compound-safe personalization, raw CED, and raw STT. DTLN remains available as a standalone filter:
+
+```powershell
+$env:SOUNDGUARD_ENABLE_SEMANTIC_CED_MAPPING='1'
+$env:SOUNDGUARD_SAFE_COMPOUND_EVIDENCE='1'
+.\.venv\Scripts\python.exe app.py --mic --duration 5 --no-dtln
+```
+
+Rerun the frozen improved development benchmark without overwriting baseline evidence:
+
+```powershell
+$env:SOUNDGUARD_ENABLE_SEMANTIC_CED_MAPPING='1'
+$env:SOUNDGUARD_SAFE_COMPOUND_EVIDENCE='1'
+.\.venv\Scripts\python.exe -m benchmark.run_improved_benchmark
+```
+
+The measured development result and limitations are in `benchmark_results/improved/FINAL_IMPROVEMENT_REPORT.md`. Emergency recall remains below the safety target; improved mode is not final holdout validation.
+
+## Emergency V3 EfficientSED specialist (opt-in)
+
+Emergency V3 is an additional PC-side safety-evidence branch. It does not replace CED-Tiny, does not rename normal CED output, and is disabled by default. The isolated setup uses only the audited EfficientSED repository:
+
+    git clone --depth 1 https://github.com/theMoro/EfficientSED.git benchmark_data\external\efficientsed_repo
+    .\.venv\Scripts\python.exe -m venv benchmark_data\external\efficientsed_venv
+    benchmark_data\external\efficientsed_venv\Scripts\python.exe -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+    benchmark_data\external\efficientsed_venv\Scripts\python.exe -m pip install librosa
+    benchmark_data\external\efficientsed_venv\Scripts\python.exe benchmark\experiments\emergency_v3\efficientsed_adapter.py --download
+
+Run the improved V2 path with Emergency V3 disabled:
+
+    Remove-Item Env:SOUNDGUARD_ENABLE_EMERGENCY_V3 -ErrorAction SilentlyContinue
+    $env:SOUNDGUARD_ENABLE_SEMANTIC_CED_MAPPING='1'
+    .\.venv\Scripts\python.exe app.py --mic --duration 5 --no-dtln
+
+Enable Emergency V3 explicitly:
+
+    $env:SOUNDGUARD_ENABLE_SEMANTIC_CED_MAPPING='1'
+    .\.venv\Scripts\python.exe app.py --mic --duration 5 --no-dtln --emergency-v3
+
+Alternatively set SOUNDGUARD_ENABLE_EMERGENCY_V3=1 and omit the CLI switch. The first audio window lazily loads the isolated model; later windows reuse it. Missing model/dependencies or inference failure logs once and falls back to V2.
+
+Rerun the Emergency V3 benchmark and plots:
+
+    benchmark_data\external\efficientsed_venv\Scripts\python.exe benchmark\experiments\emergency_v3\run_evaluation.py
+    .\.venv\Scripts\python.exe benchmark\experiments\emergency_v3\postprocess_results.py
+
+The development evidence, limitations, recovery instructions, and architecture are under benchmark_results/emergency_v3.
+
 SoundGuard CED là nguyên mẫu phần mềm hỗ trợ người khiếm thính bằng cách phân tích âm thanh môi trường, chuyển giọng nói thành văn bản, phát hiện tình huống khẩn cấp và tăng cường tiếng nói trong nhiễu. Dự án đang ở trạng thái prototype; benchmark và tích hợp trên thiết bị thực vẫn đang tiếp tục. Các kết quả hiện có không đủ để tuyên bố độ chính xác trong thực tế.
 
 ## Chức năng chính
@@ -88,11 +148,144 @@ python app.py --help
 
 ## Test và benchmark
 
+## OLED HUD trên kính SoundGuard
+
+HUD giữ nguyên phụ đề và cảnh báo gần nhất trên OLED 64x32 thay vì xóa
+màn hình giữa các bản tin. Phần mềm máy tính gửi UTF-8 đã chuẩn hóa NFC qua một
+khung serial có độ dài và CRC; firmware chỉ cập nhật trạng thái sau khi nhận đủ
+khung hợp lệ. Phụ đề được đo và xuống dòng theo pixel bằng
+`U8g2_for_Adafruit_GFX`, với `u8g2_font_unifont_t_vietnamese1` được kết xuất
+thành ô 6x10 dễ đọc, không theo số byte hoặc số ký tự cố định. Hai dòng phụ đề
+chiếm 22 pixel phía trên; cảnh báo một dòng chiếm 10 pixel cuối màn hình. HUD
+không có đồng hồ, thanh trạng thái, đường viền hoặc trang trí.
+
+HOME clock synchronization uses the existing CRC-protected serial protocol. The
+host sends frame type `K` with ASCII payload `<utc_epoch_seconds>,<utc_offset_minutes>`
+when the HUD port opens, after a reconnect, and approximately every 10 minutes.
+Both values come from the host OS at runtime. The ESP32 sets its system clock to
+UTC, retains the supplied offset, and applies that offset exactly once when HOME
+formats `HH:MM`; before the first valid frame it displays `--:--`.
+
+Firmware PlatformIO nằm trong `firmware/`. Trước khi flash, sửa `HUD_OLED_SDA`,
+`HUD_OLED_SCL`, địa chỉ I2C và `HUD_ROTATION` trong `firmware/platformio.ini`
+cho đúng dây nối và quang học của kính. Cấu hình ESP32 DevKit V1 mặc định là
+SDA GPIO 21, SCL GPIO 22, địa
+chỉ `0x3C`, hướng bình thường; `HUD_ROTATION=2` xoay 180 độ mà không đảo byte
+UTF-8.
+
+Với VS Code, cài extension PlatformIO IDE, mở thư mục `firmware`, chọn
+environment `esp32dev`, rồi chạy **PlatformIO: Upload**. Tương đương
+trên terminal:
+
+```powershell
+cd .\firmware
+pio run
+pio run --target upload --upload-port COM5
+cd ..
+```
+
+Đóng PlatformIO Serial Monitor trước khi Python mở cùng cổng COM. Chạy bộ màn
+hình kiểm tra tiếng Việt xác định (mỗi mẫu hiển thị một giây):
+
+```powershell
+python app.py --hud-port COM5 --hud-test
+```
+
+Chạy pipeline hiện có cùng HUD:
+
+```powershell
+python app.py --live-stt --hud-port COM5
+python app.py --continuous --duration 5 --hud-port COM5
+python app.py ".\path\to\audio.wav" --hud-port COM5
+```
+
+Không truyền `--hud-port` thì mọi chế độ cũ tiếp tục chỉ ghi ra terminal như
+trước. Với ESP32 DevKit V1, dùng cổng USB-to-UART của board và đóng Serial
+Monitor trước khi Python mở cùng cổng COM.
+
 Các software test không cần microphone hoặc gọi model/network bên ngoài:
 
 ```powershell
 .\run_software_tests.ps1
 ```
+
+## AI personalized alert priorities (MVP)
+
+The personalization assistant is isolated from CED, STT, filtering, and HUD
+transport. Start its local web interface with:
+
+```powershell
+.\.venv\Scripts\python.exe -m personalization.web_server
+```
+
+Open `http://127.0.0.1:8765`, complete the short interview, review the generated
+1–5 profile, then select **Apply to SoundGuard**. OpenAI is the default provider
+and uses `gpt-5-mini`. Configure it with `OPENAI_API_KEY`. To use OpenRouter and
+its default `openai/gpt-oss-120b:free` model instead, start the server in the
+same PowerShell session with:
+
+```powershell
+$env:SOUNDGUARD_AI_PROVIDER = "openrouter"
+$env:OPENROUTER_API_KEY = "your-openrouter-api-key"
+Remove-Item Env:SOUNDGUARD_AI_MODEL -ErrorAction SilentlyContinue
+.\.venv\Scripts\python.exe -m personalization.web_server
+```
+
+`SOUNDGUARD_AI_MODEL` overrides the model for either provider. For example:
+
+```powershell
+$env:SOUNDGUARD_AI_MODEL = "openai/gpt-oss-120b:free"
+```
+
+Both providers request the existing strict JSON schema and pass responses
+through the same safety validator. If configuration, API, network, schema, or
+response handling fails, the same flow uses the classified deterministic
+multi-role fallback. The result page and server terminal print the provider;
+successful OpenRouter generation is shown as `openrouter`, while fallback is
+shown as `deterministic_fallback:<reason>`.
+
+Enable the thin runtime adapter when starting SoundGuard:
+
+```powershell
+python app.py --continuous --duration 5 --personalized-alerts
+```
+
+The adapter reloads an applied profile without allowing AI output to address
+the OLED, vibration motors, or other hardware. Omitting `--personalized-alerts`
+preserves the original alert behavior. A missing, malformed, or unsupported
+profile falls back to `personalization/default_profile.json`.
+
+Run the isolated personalization checks with:
+
+```powershell
+.\.venv\Scripts\python.exe test_personalization.py
+```
+
+Run the reproducible PC benchmark suite, including the explicitly enabled
+Google STT calls, with:
+
+```powershell
+.\.venv\Scripts\python.exe benchmark\run_full_benchmark.py --enable-network-stt --stability-seconds 60
+```
+
+Use `--resume` to keep completed checkpoints after an interruption. Results,
+figures, methodology, limitations, and the final report are written under
+`benchmark_results/`. The included 60-second stability run is a bounded
+software smoke soak; use `--stability-seconds 3600` for the one-hour protocol.
+
+The expanded public-dataset suite preserves those preliminary results and
+writes separately to `benchmark_results/expanded/`. Acquire its bounded data
+and run the full protocol with:
+
+```powershell
+.\.venv\Scripts\python.exe benchmark\download_datasets.py
+.\.venv\Scripts\python.exe benchmark\run_full_benchmark.py --expanded --enable-network-stt --stability-seconds 3600 --resume
+```
+
+Downloaded ESC-50, VIVOS, and DEMAND binaries plus generated mixtures are
+gitignored. Sources, licenses, selected portions, denominators, and leakage
+caveats are documented in `benchmark_data/DATASETS.md` and
+`benchmark_results/expanded/dataset_leakage_audit.md`.
 
 Benchmark offline không bật Google STT:
 

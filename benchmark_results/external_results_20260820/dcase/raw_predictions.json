@@ -1,0 +1,2540 @@
+[
+  {
+    "sample_id": "13801",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/13801.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 8.55437641723356,
+    "ced_raw_label": "Baby cry, infant cry",
+    "ced_mapped_label": "baby_crying",
+    "ced_confidence": 0.6388142108917236,
+    "ced_top_predictions": [
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.6388142108917236
+      },
+      {
+        "label": "Crying, sobbing",
+        "score": 0.6221399903297424
+      },
+      {
+        "label": "Whimper",
+        "score": 0.5158579349517822
+      },
+      {
+        "label": "Babbling",
+        "score": 0.5097106695175171
+      },
+      {
+        "label": "Inside, small room",
+        "score": 0.5069586038589478
+      }
+    ],
+    "v2_dangerous": true,
+    "v2_alert_level": "MEDIUM",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.6106500029563904,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 827.3578000007547,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "ced_tiny_v2",
+    "efficientsed_glass_breaking_score": 2.8678958187811077e-05,
+    "efficientsed_vehicle_horn_score": 0.00022812114912085235,
+    "efficientsed_fire_score": 0.0002689206739887595,
+    "efficientsed_siren_score": 0.00037837072159163654,
+    "efficientsed_baby_crying_score": 0.6106500029563904,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "13802",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/13802.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 5.632040816326531,
+    "ced_raw_label": "Crying, sobbing",
+    "ced_mapped_label": "Crying, sobbing",
+    "ced_confidence": 0.6500194072723389,
+    "ced_top_predictions": [
+      {
+        "label": "Crying, sobbing",
+        "score": 0.6500194072723389
+      },
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.6090336441993713
+      },
+      {
+        "label": "Babbling",
+        "score": 0.5404679775238037
+      },
+      {
+        "label": "Inside, small room",
+        "score": 0.5193084478378296
+      },
+      {
+        "label": "Whimper",
+        "score": 0.5115768909454346
+      }
+    ],
+    "v2_dangerous": true,
+    "v2_alert_level": "MEDIUM",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.6373645663261414,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 58.16919999779202,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.00010318758722860366,
+    "efficientsed_vehicle_horn_score": 0.0001789288071449846,
+    "efficientsed_fire_score": 0.0009343307465314865,
+    "efficientsed_siren_score": 0.0002383577957516536,
+    "efficientsed_baby_crying_score": 0.6373645663261414,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "13805",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/13805.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 9.542947845804989,
+    "ced_raw_label": "Baby cry, infant cry",
+    "ced_mapped_label": "baby_crying",
+    "ced_confidence": 0.6327307820320129,
+    "ced_top_predictions": [
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.6327307820320129
+      },
+      {
+        "label": "Crying, sobbing",
+        "score": 0.5937564373016357
+      },
+      {
+        "label": "Babbling",
+        "score": 0.5182274580001831
+      },
+      {
+        "label": "Whimper",
+        "score": 0.5175930261611938
+      },
+      {
+        "label": "Inside, small room",
+        "score": 0.5115647912025452
+      }
+    ],
+    "v2_dangerous": true,
+    "v2_alert_level": "MEDIUM",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.5441167950630188,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 55.40580000524642,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "ced_tiny_v2",
+    "efficientsed_glass_breaking_score": 0.0004949466092512012,
+    "efficientsed_vehicle_horn_score": 0.00040876728598959744,
+    "efficientsed_fire_score": 0.00043672160245478153,
+    "efficientsed_siren_score": 0.0005461007822304964,
+    "efficientsed_baby_crying_score": 0.5441167950630188,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "148072",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/148072.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 1.437125,
+    "ced_raw_label": "Sound effect",
+    "ced_mapped_label": "Sound effect",
+    "ced_confidence": 0.5986320972442627,
+    "ced_top_predictions": [
+      {
+        "label": "Sound effect",
+        "score": 0.5986320972442627
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.5486813187599182
+      },
+      {
+        "label": "Breaking",
+        "score": 0.519058108329773
+      },
+      {
+        "label": "Glass",
+        "score": 0.5110780000686646
+      },
+      {
+        "label": "Ding",
+        "score": 0.5103007555007935
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.7036570310592651,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 80.57560000452213,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.7036570310592651,
+    "efficientsed_vehicle_horn_score": 0.00012213451554998755,
+    "efficientsed_fire_score": 0.0013251506024971604,
+    "efficientsed_siren_score": 0.00018810818437486887,
+    "efficientsed_baby_crying_score": 8.062270353548229e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "148073",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/148073.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 1.5884791666666667,
+    "ced_raw_label": "Sound effect",
+    "ced_mapped_label": "Sound effect",
+    "ced_confidence": 0.5967230796813965,
+    "ced_top_predictions": [
+      {
+        "label": "Sound effect",
+        "score": 0.5967230796813965
+      },
+      {
+        "label": "Breaking",
+        "score": 0.5461713671684265
+      },
+      {
+        "label": "Shatter",
+        "score": 0.537960946559906
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.5208727717399597
+      },
+      {
+        "label": "Glass",
+        "score": 0.5161911249160767
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.7436335682868958,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 76.82860000204528,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.7436335682868958,
+    "efficientsed_vehicle_horn_score": 0.00010525558172957972,
+    "efficientsed_fire_score": 0.001431971206329763,
+    "efficientsed_siren_score": 0.0002504698059055954,
+    "efficientsed_baby_crying_score": 8.806015102891251e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "148074",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/148074.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 1.7002916666666668,
+    "ced_raw_label": "Chink, clink",
+    "ced_mapped_label": "Chink, clink",
+    "ced_confidence": 0.5865216851234436,
+    "ced_top_predictions": [
+      {
+        "label": "Chink, clink",
+        "score": 0.5865216851234436
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5344658493995667
+      },
+      {
+        "label": "Glass",
+        "score": 0.532706618309021
+      },
+      {
+        "label": "Breaking",
+        "score": 0.518413245677948
+      },
+      {
+        "label": "Smash, crash",
+        "score": 0.5097784399986267
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.4531460106372833,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 53.45390000002226,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.4531460106372833,
+    "efficientsed_vehicle_horn_score": 0.0002127935877069831,
+    "efficientsed_fire_score": 0.0008509827312082052,
+    "efficientsed_siren_score": 0.00023716945725027472,
+    "efficientsed_baby_crying_score": 6.1030208598822355e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "148075",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/148075.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 1.7021458333333332,
+    "ced_raw_label": "Chink, clink",
+    "ced_mapped_label": "Chink, clink",
+    "ced_confidence": 0.5673332214355469,
+    "ced_top_predictions": [
+      {
+        "label": "Chink, clink",
+        "score": 0.5673332214355469
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5578022003173828
+      },
+      {
+        "label": "Breaking",
+        "score": 0.5375348329544067
+      },
+      {
+        "label": "Glass",
+        "score": 0.5337130427360535
+      },
+      {
+        "label": "Jingle bell",
+        "score": 0.5328614115715027
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.7914295792579651,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 57.16269999538781,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.7914295792579651,
+    "efficientsed_vehicle_horn_score": 8.346125832758844e-05,
+    "efficientsed_fire_score": 0.0008145606843754649,
+    "efficientsed_siren_score": 0.0002921929117292166,
+    "efficientsed_baby_crying_score": 8.836264169076458e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "164054",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/164054.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 56.7353125,
+    "ced_raw_label": "Chink, clink",
+    "ced_mapped_label": "Chink, clink",
+    "ced_confidence": 0.5908421874046326,
+    "ced_top_predictions": [
+      {
+        "label": "Chink, clink",
+        "score": 0.5908421874046326
+      },
+      {
+        "label": "Breaking",
+        "score": 0.5537658333778381
+      },
+      {
+        "label": "Smash, crash",
+        "score": 0.5469183921813965
+      },
+      {
+        "label": "Glass",
+        "score": 0.5392242670059204
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5313060879707336
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.22902463376522064,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 65.07299999793759,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.22902463376522064,
+    "efficientsed_vehicle_horn_score": 0.0001581410033395514,
+    "efficientsed_fire_score": 0.0007168148295022547,
+    "efficientsed_siren_score": 0.00046182857477106154,
+    "efficientsed_baby_crying_score": 7.529924187110737e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "170749",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/170749.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 171.36314583333333,
+    "ced_raw_label": "Laughter",
+    "ced_mapped_label": "Laughter",
+    "ced_confidence": 0.6256075501441956,
+    "ced_top_predictions": [
+      {
+        "label": "Laughter",
+        "score": 0.6256075501441956
+      },
+      {
+        "label": "Baby laughter",
+        "score": 0.594484269618988
+      },
+      {
+        "label": "Belly laugh",
+        "score": 0.5221195220947266
+      },
+      {
+        "label": "Speech",
+        "score": 0.5192411541938782
+      },
+      {
+        "label": "Babbling",
+        "score": 0.5175144076347351
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": false,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.003993596415966749,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 58.76700000226265,
+    "combined_emergency_prediction": false,
+    "predicted_category": "non_emergency",
+    "category_source": "none",
+    "efficientsed_glass_breaking_score": 0.003993596415966749,
+    "efficientsed_vehicle_horn_score": 0.0010176774812862277,
+    "efficientsed_fire_score": 0.0028948215767741203,
+    "efficientsed_siren_score": 0.001237579621374607,
+    "efficientsed_baby_crying_score": 0.0015030346112325788,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "199906",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/199906.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.048888888888889,
+    "ced_raw_label": "Sound effect",
+    "ced_mapped_label": "Sound effect",
+    "ced_confidence": 0.5766682028770447,
+    "ced_top_predictions": [
+      {
+        "label": "Sound effect",
+        "score": 0.5766682028770447
+      },
+      {
+        "label": "Breaking",
+        "score": 0.548271894454956
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.5320056676864624
+      },
+      {
+        "label": "Glass",
+        "score": 0.5273707509040833
+      },
+      {
+        "label": "Ding",
+        "score": 0.5211318135261536
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.8907298445701599,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 62.11120000079973,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.8907298445701599,
+    "efficientsed_vehicle_horn_score": 0.00010875183943426237,
+    "efficientsed_fire_score": 0.001078292727470398,
+    "efficientsed_siren_score": 0.00026235610130243003,
+    "efficientsed_baby_crying_score": 0.0001116679995902814,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "202730",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/202730.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 17.355354166666668,
+    "ced_raw_label": "Wheeze",
+    "ced_mapped_label": "Wheeze",
+    "ced_confidence": 0.5669268369674683,
+    "ced_top_predictions": [
+      {
+        "label": "Wheeze",
+        "score": 0.5669268369674683
+      },
+      {
+        "label": "Babbling",
+        "score": 0.5454660654067993
+      },
+      {
+        "label": "Speech",
+        "score": 0.5215190649032593
+      },
+      {
+        "label": "Child singing",
+        "score": 0.516442060470581
+      },
+      {
+        "label": "Inside, small room",
+        "score": 0.5133552551269531
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.051184799522161484,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 63.86210000346182,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 5.6199380196630955e-05,
+    "efficientsed_vehicle_horn_score": 0.000301718944683671,
+    "efficientsed_fire_score": 0.00022241698752623051,
+    "efficientsed_siren_score": 8.415919728577137e-05,
+    "efficientsed_baby_crying_score": 0.051184799522161484,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "216282",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/216282.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.999604166666667,
+    "ced_raw_label": "Breaking",
+    "ced_mapped_label": "Breaking",
+    "ced_confidence": 0.5967465043067932,
+    "ced_top_predictions": [
+      {
+        "label": "Breaking",
+        "score": 0.5967465043067932
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.5552124977111816
+      },
+      {
+        "label": "Glass",
+        "score": 0.5471911430358887
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5390344858169556
+      },
+      {
+        "label": "Shatter",
+        "score": 0.5290671586990356
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.6372514963150024,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 67.46440000279108,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.6372514963150024,
+    "efficientsed_vehicle_horn_score": 0.00021614223078358918,
+    "efficientsed_fire_score": 0.0006880196160636842,
+    "efficientsed_siren_score": 0.00011454015475464985,
+    "efficientsed_baby_crying_score": 6.31406219326891e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "216283",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/216283.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.999604166666667,
+    "ced_raw_label": "Breaking",
+    "ced_mapped_label": "Breaking",
+    "ced_confidence": 0.6043187379837036,
+    "ced_top_predictions": [
+      {
+        "label": "Breaking",
+        "score": 0.6043187379837036
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.5698143243789673
+      },
+      {
+        "label": "Shatter",
+        "score": 0.5535145401954651
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5475054979324341
+      },
+      {
+        "label": "Smash, crash",
+        "score": 0.5452043414115906
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.6334669589996338,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 67.87839999742573,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.6334669589996338,
+    "efficientsed_vehicle_horn_score": 0.00018382610869593918,
+    "efficientsed_fire_score": 0.0006889937212690711,
+    "efficientsed_siren_score": 0.0002044394495896995,
+    "efficientsed_baby_crying_score": 7.882826321292669e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "216285",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/216285.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 1.9996041666666666,
+    "ced_raw_label": "Chink, clink",
+    "ced_mapped_label": "Chink, clink",
+    "ced_confidence": 0.577505350112915,
+    "ced_top_predictions": [
+      {
+        "label": "Chink, clink",
+        "score": 0.577505350112915
+      },
+      {
+        "label": "Glass",
+        "score": 0.5348819494247437
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5296505093574524
+      },
+      {
+        "label": "Breaking",
+        "score": 0.5259021520614624
+      },
+      {
+        "label": "Music",
+        "score": 0.5227221250534058
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.5567072629928589,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 60.793499993451405,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.5567072629928589,
+    "efficientsed_vehicle_horn_score": 0.00016080167551990598,
+    "efficientsed_fire_score": 0.0005697314045391977,
+    "efficientsed_siren_score": 0.00012645503738895059,
+    "efficientsed_baby_crying_score": 7.505664689233527e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "216286",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/216286.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 1.9996041666666666,
+    "ced_raw_label": "Breaking",
+    "ced_mapped_label": "Breaking",
+    "ced_confidence": 0.620904266834259,
+    "ced_top_predictions": [
+      {
+        "label": "Breaking",
+        "score": 0.620904266834259
+      },
+      {
+        "label": "Glass",
+        "score": 0.5801956057548523
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.5562292337417603
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5517526865005493
+      },
+      {
+        "label": "Smash, crash",
+        "score": 0.5454497337341309
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.4792689383029938,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 62.91339999734191,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.4792689383029938,
+    "efficientsed_vehicle_horn_score": 0.00015752905164845288,
+    "efficientsed_fire_score": 0.0004780179006047547,
+    "efficientsed_siren_score": 0.00011423300747992471,
+    "efficientsed_baby_crying_score": 5.783264714409597e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "216287",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/216287.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.999604166666667,
+    "ced_raw_label": "Chink, clink",
+    "ced_mapped_label": "Chink, clink",
+    "ced_confidence": 0.5587447285652161,
+    "ced_top_predictions": [
+      {
+        "label": "Chink, clink",
+        "score": 0.5587447285652161
+      },
+      {
+        "label": "Breaking",
+        "score": 0.550357460975647
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5436416864395142
+      },
+      {
+        "label": "Shatter",
+        "score": 0.5303164124488831
+      },
+      {
+        "label": "Smash, crash",
+        "score": 0.5255575776100159
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.09475289285182953,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 62.34479999693576,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.09475289285182953,
+    "efficientsed_vehicle_horn_score": 0.0003600443887989968,
+    "efficientsed_fire_score": 0.00046007626224309206,
+    "efficientsed_siren_score": 0.0002636411809362471,
+    "efficientsed_baby_crying_score": 6.548193050548434e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "216288",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/216288.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.999604166666667,
+    "ced_raw_label": "Breaking",
+    "ced_mapped_label": "Breaking",
+    "ced_confidence": 0.5963682532310486,
+    "ced_top_predictions": [
+      {
+        "label": "Breaking",
+        "score": 0.5963682532310486
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.5657053589820862
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.544196605682373
+      },
+      {
+        "label": "Smash, crash",
+        "score": 0.5315627455711365
+      },
+      {
+        "label": "Shatter",
+        "score": 0.5257916450500488
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.35128214955329895,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 63.76109999837354,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.35128214955329895,
+    "efficientsed_vehicle_horn_score": 0.00031774831586517394,
+    "efficientsed_fire_score": 0.0007042234065011144,
+    "efficientsed_siren_score": 0.0001136240825871937,
+    "efficientsed_baby_crying_score": 3.9123082387959585e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "216289",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/216289.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.999604166666667,
+    "ced_raw_label": "Chink, clink",
+    "ced_mapped_label": "Chink, clink",
+    "ced_confidence": 0.6246690154075623,
+    "ced_top_predictions": [
+      {
+        "label": "Chink, clink",
+        "score": 0.6246690154075623
+      },
+      {
+        "label": "Breaking",
+        "score": 0.6108390688896179
+      },
+      {
+        "label": "Glass",
+        "score": 0.552186906337738
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5335021018981934
+      },
+      {
+        "label": "Shatter",
+        "score": 0.5197901129722595
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.7418111562728882,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 61.83249999594409,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.7418111562728882,
+    "efficientsed_vehicle_horn_score": 0.00012202253128634766,
+    "efficientsed_fire_score": 0.0005291320849210024,
+    "efficientsed_siren_score": 0.0002189634251408279,
+    "efficientsed_baby_crying_score": 8.717950549907982e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "216291",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/216291.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.999604166666667,
+    "ced_raw_label": "Chink, clink",
+    "ced_mapped_label": "Chink, clink",
+    "ced_confidence": 0.6059432625770569,
+    "ced_top_predictions": [
+      {
+        "label": "Chink, clink",
+        "score": 0.6059432625770569
+      },
+      {
+        "label": "Breaking",
+        "score": 0.6015735864639282
+      },
+      {
+        "label": "Glass",
+        "score": 0.5698893070220947
+      },
+      {
+        "label": "Shatter",
+        "score": 0.5679048299789429
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5359556078910828
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.7557222843170166,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 62.95989999489393,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.7557222843170166,
+    "efficientsed_vehicle_horn_score": 0.00016943675291258842,
+    "efficientsed_fire_score": 0.000499387679155916,
+    "efficientsed_siren_score": 0.00023405278625432402,
+    "efficientsed_baby_crying_score": 0.00010415412543807179,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "216292",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/216292.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.999604166666667,
+    "ced_raw_label": "Chink, clink",
+    "ced_mapped_label": "Chink, clink",
+    "ced_confidence": 0.6026554107666016,
+    "ced_top_predictions": [
+      {
+        "label": "Chink, clink",
+        "score": 0.6026554107666016
+      },
+      {
+        "label": "Breaking",
+        "score": 0.5787891745567322
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.534977912902832
+      },
+      {
+        "label": "Smash, crash",
+        "score": 0.5275035500526428
+      },
+      {
+        "label": "Glass",
+        "score": 0.5260483622550964
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.2771773636341095,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 59.61329999990994,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.2771773636341095,
+    "efficientsed_vehicle_horn_score": 0.00019604091357905418,
+    "efficientsed_fire_score": 0.0003266281564719975,
+    "efficientsed_siren_score": 0.0001958559441845864,
+    "efficientsed_baby_crying_score": 6.858840788481757e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "216293",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/216293.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.999604166666667,
+    "ced_raw_label": "Chink, clink",
+    "ced_mapped_label": "Chink, clink",
+    "ced_confidence": 0.5800332427024841,
+    "ced_top_predictions": [
+      {
+        "label": "Chink, clink",
+        "score": 0.5800332427024841
+      },
+      {
+        "label": "Ding",
+        "score": 0.5405181050300598
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5403100252151489
+      },
+      {
+        "label": "Clang",
+        "score": 0.5247945189476013
+      },
+      {
+        "label": "Ping",
+        "score": 0.5203438997268677
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.27225226163864136,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 66.03750000067521,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.27225226163864136,
+    "efficientsed_vehicle_horn_score": 0.00019871705444529653,
+    "efficientsed_fire_score": 0.0003233742027077824,
+    "efficientsed_siren_score": 0.000207271717954427,
+    "efficientsed_baby_crying_score": 5.200118903303519e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "216294",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/216294.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.999604166666667,
+    "ced_raw_label": "Breaking",
+    "ced_mapped_label": "Breaking",
+    "ced_confidence": 0.6061692833900452,
+    "ced_top_predictions": [
+      {
+        "label": "Breaking",
+        "score": 0.6061692833900452
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.5896238684654236
+      },
+      {
+        "label": "Glass",
+        "score": 0.5444231629371643
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5376509428024292
+      },
+      {
+        "label": "Smash, crash",
+        "score": 0.5202924609184265
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.7187236547470093,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 63.0105000018375,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.7187236547470093,
+    "efficientsed_vehicle_horn_score": 0.00011639652075245976,
+    "efficientsed_fire_score": 0.0004570709716062993,
+    "efficientsed_siren_score": 0.00022234086645767093,
+    "efficientsed_baby_crying_score": 6.433002999983728e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "216295",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/216295.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.999604166666667,
+    "ced_raw_label": "Chink, clink",
+    "ced_mapped_label": "Chink, clink",
+    "ced_confidence": 0.617489755153656,
+    "ced_top_predictions": [
+      {
+        "label": "Chink, clink",
+        "score": 0.617489755153656
+      },
+      {
+        "label": "Breaking",
+        "score": 0.597695529460907
+      },
+      {
+        "label": "Glass",
+        "score": 0.548466682434082
+      },
+      {
+        "label": "Shatter",
+        "score": 0.5350660085678101
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5327652096748352
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.2936890721321106,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 62.54849999822909,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.2936890721321106,
+    "efficientsed_vehicle_horn_score": 0.0002278161991853267,
+    "efficientsed_fire_score": 0.0004317150451242924,
+    "efficientsed_siren_score": 0.0003050934465136379,
+    "efficientsed_baby_crying_score": 7.585244748042896e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "216299",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/216299.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.999604166666667,
+    "ced_raw_label": "Breaking",
+    "ced_mapped_label": "Breaking",
+    "ced_confidence": 0.6297749280929565,
+    "ced_top_predictions": [
+      {
+        "label": "Breaking",
+        "score": 0.6297749280929565
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.5961689949035645
+      },
+      {
+        "label": "Glass",
+        "score": 0.5558591485023499
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5381579399108887
+      },
+      {
+        "label": "Shatter",
+        "score": 0.5219281315803528
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.686168372631073,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 58.45779999799561,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.686168372631073,
+    "efficientsed_vehicle_horn_score": 0.00036429736064746976,
+    "efficientsed_fire_score": 0.00048328438424505293,
+    "efficientsed_siren_score": 0.0002259566681459546,
+    "efficientsed_baby_crying_score": 7.895125600043684e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "218898",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/218898.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 77.73866213151928,
+    "ced_raw_label": "Crying, sobbing",
+    "ced_mapped_label": "Crying, sobbing",
+    "ced_confidence": 0.5783087015151978,
+    "ced_top_predictions": [
+      {
+        "label": "Crying, sobbing",
+        "score": 0.5783087015151978
+      },
+      {
+        "label": "Speech",
+        "score": 0.5751785635948181
+      },
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.5496729612350464
+      },
+      {
+        "label": "Inside, small room",
+        "score": 0.5364621877670288
+      },
+      {
+        "label": "Whimper",
+        "score": 0.5173487663269043
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.07343313843011856,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 64.58910000219475,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.00014129598275758326,
+    "efficientsed_vehicle_horn_score": 0.027428193017840385,
+    "efficientsed_fire_score": 0.001237223157659173,
+    "efficientsed_siren_score": 0.001192446448840201,
+    "efficientsed_baby_crying_score": 0.07343313843011856,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "223552",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/223552.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 1.5401666666666667,
+    "ced_raw_label": "Glass",
+    "ced_mapped_label": "glass_breaking",
+    "ced_confidence": 0.6473917365074158,
+    "ced_top_predictions": [
+      {
+        "label": "Glass",
+        "score": 0.6473917365074158
+      },
+      {
+        "label": "Fireworks",
+        "score": 0.5223777890205383
+      },
+      {
+        "label": "Firecracker",
+        "score": 0.5134662389755249
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5129466652870178
+      },
+      {
+        "label": "Smash, crash",
+        "score": 0.5127673149108887
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.264707088470459,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 60.40329999814276,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.264707088470459,
+    "efficientsed_vehicle_horn_score": 0.00043038619332946837,
+    "efficientsed_fire_score": 0.022314146161079407,
+    "efficientsed_siren_score": 0.00013191298057790846,
+    "efficientsed_baby_crying_score": 6.53237002552487e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "232176",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/232176.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 6.231333333333334,
+    "ced_raw_label": "Breaking",
+    "ced_mapped_label": "Breaking",
+    "ced_confidence": 0.6899027824401855,
+    "ced_top_predictions": [
+      {
+        "label": "Breaking",
+        "score": 0.6899027824401855
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.5621472001075745
+      },
+      {
+        "label": "Glass",
+        "score": 0.559332013130188
+      },
+      {
+        "label": "Shatter",
+        "score": 0.5312496423721313
+      },
+      {
+        "label": "Silence",
+        "score": 0.5239967107772827
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.7712151408195496,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 64.2428999999538,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.7712151408195496,
+    "efficientsed_vehicle_horn_score": 0.00021524268959183246,
+    "efficientsed_fire_score": 0.0008363461238332093,
+    "efficientsed_siren_score": 0.00035668417694978416,
+    "efficientsed_baby_crying_score": 5.702672206098214e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "33669",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/33669.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 37.18546485260771,
+    "ced_raw_label": "Baby cry, infant cry",
+    "ced_mapped_label": "baby_crying",
+    "ced_confidence": 0.6664040684700012,
+    "ced_top_predictions": [
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.6664040684700012
+      },
+      {
+        "label": "Crying, sobbing",
+        "score": 0.6148219108581543
+      },
+      {
+        "label": "Whimper",
+        "score": 0.5341089963912964
+      },
+      {
+        "label": "Speech",
+        "score": 0.5073361396789551
+      },
+      {
+        "label": "Inside, small room",
+        "score": 0.505277693271637
+      }
+    ],
+    "v2_dangerous": true,
+    "v2_alert_level": "MEDIUM",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.5885050296783447,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 61.59569999726955,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "ced_tiny_v2",
+    "efficientsed_glass_breaking_score": 0.0014562266878783703,
+    "efficientsed_vehicle_horn_score": 0.00023866206174716353,
+    "efficientsed_fire_score": 0.0006617582985199988,
+    "efficientsed_siren_score": 0.0005340864881873131,
+    "efficientsed_baby_crying_score": 0.5885050296783447,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "33670",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/33670.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 3.1546031746031744,
+    "ced_raw_label": "Baby cry, infant cry",
+    "ced_mapped_label": "baby_crying",
+    "ced_confidence": 0.6370401978492737,
+    "ced_top_predictions": [
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.6370401978492737
+      },
+      {
+        "label": "Crying, sobbing",
+        "score": 0.6274716258049011
+      },
+      {
+        "label": "Whimper",
+        "score": 0.5302848815917969
+      },
+      {
+        "label": "Inside, small room",
+        "score": 0.5096576809883118
+      },
+      {
+        "label": "Babbling",
+        "score": 0.506527841091156
+      }
+    ],
+    "v2_dangerous": true,
+    "v2_alert_level": "MEDIUM",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.5110028386116028,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 70.30119999399176,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "ced_tiny_v2",
+    "efficientsed_glass_breaking_score": 0.0002789733116514981,
+    "efficientsed_vehicle_horn_score": 0.0001634793443372473,
+    "efficientsed_fire_score": 0.0003938625450246036,
+    "efficientsed_siren_score": 0.0003824945888482034,
+    "efficientsed_baby_crying_score": 0.5110028386116028,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "33671",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/33671.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 5.888616780045352,
+    "ced_raw_label": "Baby cry, infant cry",
+    "ced_mapped_label": "baby_crying",
+    "ced_confidence": 0.6595960259437561,
+    "ced_top_predictions": [
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.6595960259437561
+      },
+      {
+        "label": "Crying, sobbing",
+        "score": 0.6341423392295837
+      },
+      {
+        "label": "Whimper",
+        "score": 0.533015787601471
+      },
+      {
+        "label": "Inside, small room",
+        "score": 0.5052943229675293
+      },
+      {
+        "label": "Speech",
+        "score": 0.5037479400634766
+      }
+    ],
+    "v2_dangerous": true,
+    "v2_alert_level": "MEDIUM",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.4570389986038208,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 76.58229999651667,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "ced_tiny_v2",
+    "efficientsed_glass_breaking_score": 0.00014146530884318054,
+    "efficientsed_vehicle_horn_score": 9.1000554675702e-05,
+    "efficientsed_fire_score": 0.0008267344674095511,
+    "efficientsed_siren_score": 0.00036071534850634634,
+    "efficientsed_baby_crying_score": 0.4570389986038208,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "33672",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/33672.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 8.307142857142857,
+    "ced_raw_label": "Baby cry, infant cry",
+    "ced_mapped_label": "baby_crying",
+    "ced_confidence": 0.6514686942100525,
+    "ced_top_predictions": [
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.6514686942100525
+      },
+      {
+        "label": "Crying, sobbing",
+        "score": 0.6098988652229309
+      },
+      {
+        "label": "Whimper",
+        "score": 0.5376060605049133
+      },
+      {
+        "label": "Hiccup",
+        "score": 0.5108050107955933
+      },
+      {
+        "label": "Speech",
+        "score": 0.508284866809845
+      }
+    ],
+    "v2_dangerous": true,
+    "v2_alert_level": "MEDIUM",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.5276684165000916,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 64.3664000017452,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "ced_tiny_v2",
+    "efficientsed_glass_breaking_score": 0.00013040818157605827,
+    "efficientsed_vehicle_horn_score": 0.0003921305760741234,
+    "efficientsed_fire_score": 0.0010700413258746266,
+    "efficientsed_siren_score": 0.0006175381131470203,
+    "efficientsed_baby_crying_score": 0.5276684165000916,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "34201",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/34201.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.3690208333333334,
+    "ced_raw_label": "Glass",
+    "ced_mapped_label": "glass_breaking",
+    "ced_confidence": 0.6281837224960327,
+    "ced_top_predictions": [
+      {
+        "label": "Glass",
+        "score": 0.6281837224960327
+      },
+      {
+        "label": "Breaking",
+        "score": 0.604637622833252
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.584988534450531
+      },
+      {
+        "label": "Shatter",
+        "score": 0.5313096642494202
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5298552513122559
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.6888474225997925,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 60.6335000047693,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.6888474225997925,
+    "efficientsed_vehicle_horn_score": 0.0001438656181562692,
+    "efficientsed_fire_score": 0.000480391550809145,
+    "efficientsed_siren_score": 0.000722807424608618,
+    "efficientsed_baby_crying_score": 8.625624468550086e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "368944",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/368944.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 27.73825,
+    "ced_raw_label": "Hammer",
+    "ced_mapped_label": "Hammer",
+    "ced_confidence": 0.5359490513801575,
+    "ced_top_predictions": [
+      {
+        "label": "Hammer",
+        "score": 0.5359490513801575
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.5338422656059265
+      },
+      {
+        "label": "Dishes, pots, and pans",
+        "score": 0.5237957239151001
+      },
+      {
+        "label": "Cutlery, silverware",
+        "score": 0.5219947695732117
+      },
+      {
+        "label": "Glass",
+        "score": 0.5139212012290955
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.14679183065891266,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 62.36260000150651,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.14679183065891266,
+    "efficientsed_vehicle_horn_score": 0.002504979493096471,
+    "efficientsed_fire_score": 0.0005716168670915067,
+    "efficientsed_siren_score": 0.00030644197249785066,
+    "efficientsed_baby_crying_score": 8.03004513727501e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "369798",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/369798.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 65.42657596371882,
+    "ced_raw_label": "Crying, sobbing",
+    "ced_mapped_label": "Crying, sobbing",
+    "ced_confidence": 0.5577330589294434,
+    "ced_top_predictions": [
+      {
+        "label": "Crying, sobbing",
+        "score": 0.5577330589294434
+      },
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.5208582282066345
+      },
+      {
+        "label": "Whimper",
+        "score": 0.5157535076141357
+      },
+      {
+        "label": "Babbling",
+        "score": 0.5152185559272766
+      },
+      {
+        "label": "Speech",
+        "score": 0.5140555500984192
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.14091582596302032,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 60.780899999372195,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.00021584586647804826,
+    "efficientsed_vehicle_horn_score": 0.0012274214532226324,
+    "efficientsed_fire_score": 0.0017793221632018685,
+    "efficientsed_siren_score": 0.0005538906552828848,
+    "efficientsed_baby_crying_score": 0.14091582596302032,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "376462",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/376462.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 6.627645833333333,
+    "ced_raw_label": "Breaking",
+    "ced_mapped_label": "Breaking",
+    "ced_confidence": 0.6194143891334534,
+    "ced_top_predictions": [
+      {
+        "label": "Breaking",
+        "score": 0.6194143891334534
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.6000086665153503
+      },
+      {
+        "label": "Smash, crash",
+        "score": 0.5458849668502808
+      },
+      {
+        "label": "Glass",
+        "score": 0.5423561334609985
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.524360716342926
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.6929088234901428,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 60.92460000218125,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.6929088234901428,
+    "efficientsed_vehicle_horn_score": 0.00014050208847038448,
+    "efficientsed_fire_score": 0.0015565553912892938,
+    "efficientsed_siren_score": 0.0006293901824392378,
+    "efficientsed_baby_crying_score": 4.7848454414634034e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "58741",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/58741.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 82.46857142857142,
+    "ced_raw_label": "Baby cry, infant cry",
+    "ced_mapped_label": "baby_crying",
+    "ced_confidence": 0.6342644095420837,
+    "ced_top_predictions": [
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.6342644095420837
+      },
+      {
+        "label": "Crying, sobbing",
+        "score": 0.6055570244789124
+      },
+      {
+        "label": "Whimper",
+        "score": 0.5450855493545532
+      },
+      {
+        "label": "Speech",
+        "score": 0.5105336904525757
+      },
+      {
+        "label": "Inside, small room",
+        "score": 0.5083267092704773
+      }
+    ],
+    "v2_dangerous": true,
+    "v2_alert_level": "MEDIUM",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.7525951266288757,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 67.11019999784185,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "ced_tiny_v2",
+    "efficientsed_glass_breaking_score": 6.36219119769521e-05,
+    "efficientsed_vehicle_horn_score": 0.0002188780636060983,
+    "efficientsed_fire_score": 0.0002727312676142901,
+    "efficientsed_siren_score": 0.00033106899354606867,
+    "efficientsed_baby_crying_score": 0.7525951266288757,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "60083",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/60083.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 60.793174603174606,
+    "ced_raw_label": "Baby cry, infant cry",
+    "ced_mapped_label": "baby_crying",
+    "ced_confidence": 0.5571844577789307,
+    "ced_top_predictions": [
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.5571844577789307
+      },
+      {
+        "label": "Crying, sobbing",
+        "score": 0.5219382047653198
+      },
+      {
+        "label": "Whimper",
+        "score": 0.5126795768737793
+      },
+      {
+        "label": "Speech",
+        "score": 0.5035318732261658
+      },
+      {
+        "label": "Inside, small room",
+        "score": 0.5033048391342163
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.5049316883087158,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 60.521600003994536,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.0001094359322451055,
+    "efficientsed_vehicle_horn_score": 0.0008214464760385454,
+    "efficientsed_fire_score": 0.00023955687356647104,
+    "efficientsed_siren_score": 0.00039567286148667336,
+    "efficientsed_baby_crying_score": 0.5049316883087158,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "61262",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/61262.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 54.08358276643991,
+    "ced_raw_label": "Baby cry, infant cry",
+    "ced_mapped_label": "baby_crying",
+    "ced_confidence": 0.6690450310707092,
+    "ced_top_predictions": [
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.6690450310707092
+      },
+      {
+        "label": "Crying, sobbing",
+        "score": 0.5732040405273438
+      },
+      {
+        "label": "Whimper",
+        "score": 0.552269697189331
+      },
+      {
+        "label": "Inside, small room",
+        "score": 0.5083832144737244
+      },
+      {
+        "label": "Speech",
+        "score": 0.5065344572067261
+      }
+    ],
+    "v2_dangerous": true,
+    "v2_alert_level": "MEDIUM",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.4466715455055237,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 67.31160000344971,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "ced_tiny_v2",
+    "efficientsed_glass_breaking_score": 5.994278035359457e-05,
+    "efficientsed_vehicle_horn_score": 0.0003790798073168844,
+    "efficientsed_fire_score": 0.0004228713223710656,
+    "efficientsed_siren_score": 0.00035203382140025496,
+    "efficientsed_baby_crying_score": 0.4466715455055237,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "71193",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/71193.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 8.290385487528345,
+    "ced_raw_label": "Baby cry, infant cry",
+    "ced_mapped_label": "baby_crying",
+    "ced_confidence": 0.6426196694374084,
+    "ced_top_predictions": [
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.6426196694374084
+      },
+      {
+        "label": "Crying, sobbing",
+        "score": 0.6081626415252686
+      },
+      {
+        "label": "Speech",
+        "score": 0.5547317266464233
+      },
+      {
+        "label": "Whimper",
+        "score": 0.5395167469978333
+      },
+      {
+        "label": "Outside, rural or natural",
+        "score": 0.5110793709754944
+      }
+    ],
+    "v2_dangerous": true,
+    "v2_alert_level": "MEDIUM",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.49890366196632385,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 70.03249999979744,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "ced_tiny_v2",
+    "efficientsed_glass_breaking_score": 0.0003693494072649628,
+    "efficientsed_vehicle_horn_score": 0.0015887756599113345,
+    "efficientsed_fire_score": 0.0031362115405499935,
+    "efficientsed_siren_score": 0.0002087198372464627,
+    "efficientsed_baby_crying_score": 0.49890366196632385,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "82497",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/82497.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 51.523219954648525,
+    "ced_raw_label": "Baby cry, infant cry",
+    "ced_mapped_label": "baby_crying",
+    "ced_confidence": 0.5622612833976746,
+    "ced_top_predictions": [
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.5622612833976746
+      },
+      {
+        "label": "Crying, sobbing",
+        "score": 0.5306069254875183
+      },
+      {
+        "label": "Whimper",
+        "score": 0.5249327421188354
+      },
+      {
+        "label": "Speech",
+        "score": 0.5186865329742432
+      },
+      {
+        "label": "Inside, small room",
+        "score": 0.5099256038665771
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.4750082790851593,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 68.26880000153324,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.00043275111238472164,
+    "efficientsed_vehicle_horn_score": 0.003130056196823716,
+    "efficientsed_fire_score": 0.00021979489247314632,
+    "efficientsed_siren_score": 0.000579375890083611,
+    "efficientsed_baby_crying_score": 0.4750082790851593,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "86240",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/babycry/86240.wav",
+    "true_label": "baby_crying",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 17.655215419501133,
+    "ced_raw_label": "Baby cry, infant cry",
+    "ced_mapped_label": "baby_crying",
+    "ced_confidence": 0.6045060753822327,
+    "ced_top_predictions": [
+      {
+        "label": "Baby cry, infant cry",
+        "score": 0.6045060753822327
+      },
+      {
+        "label": "Crying, sobbing",
+        "score": 0.5733129978179932
+      },
+      {
+        "label": "Whimper",
+        "score": 0.5477577447891235
+      },
+      {
+        "label": "Speech",
+        "score": 0.5292946696281433
+      },
+      {
+        "label": "Inside, small room",
+        "score": 0.525357186794281
+      }
+    ],
+    "v2_dangerous": true,
+    "v2_alert_level": "MEDIUM",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "baby_crying",
+    "efficientsed_top_score": 0.48034781217575073,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 71.26029999926686,
+    "combined_emergency_prediction": true,
+    "predicted_category": "baby_crying",
+    "category_source": "ced_tiny_v2",
+    "efficientsed_glass_breaking_score": 0.0002004950074478984,
+    "efficientsed_vehicle_horn_score": 0.00038445257814601064,
+    "efficientsed_fire_score": 0.0002451763139106333,
+    "efficientsed_siren_score": 0.0002830655430443585,
+    "efficientsed_baby_crying_score": 0.48034781217575073,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": true
+  },
+  {
+    "sample_id": "93299",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/93299.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 1.9044444444444444,
+    "ced_raw_label": "Music",
+    "ced_mapped_label": "Music",
+    "ced_confidence": 0.6133756041526794,
+    "ced_top_predictions": [
+      {
+        "label": "Music",
+        "score": 0.6133756041526794
+      },
+      {
+        "label": "Musical instrument",
+        "score": 0.5321590900421143
+      },
+      {
+        "label": "Tambourine",
+        "score": 0.528226375579834
+      },
+      {
+        "label": "Jingle bell",
+        "score": 0.5228069424629211
+      },
+      {
+        "label": "Bell",
+        "score": 0.5149396061897278
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.06865794211626053,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 68.47229999402771,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.06865794211626053,
+    "efficientsed_vehicle_horn_score": 0.0002589952200651169,
+    "efficientsed_fire_score": 0.0006716630305163562,
+    "efficientsed_siren_score": 0.00011811084550572559,
+    "efficientsed_baby_crying_score": 0.00019568981952033937,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "96927",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/96927.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 3.3395691609977325,
+    "ced_raw_label": "Chink, clink",
+    "ced_mapped_label": "Chink, clink",
+    "ced_confidence": 0.5653806924819946,
+    "ced_top_predictions": [
+      {
+        "label": "Chink, clink",
+        "score": 0.5653806924819946
+      },
+      {
+        "label": "Glass",
+        "score": 0.5464547276496887
+      },
+      {
+        "label": "Crumpling, crinkling",
+        "score": 0.5336893796920776
+      },
+      {
+        "label": "Speech",
+        "score": 0.5216390490531921
+      },
+      {
+        "label": "Chewing, mastication",
+        "score": 0.5210726857185364
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": false,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.01665094867348671,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 68.68699999904493,
+    "combined_emergency_prediction": false,
+    "predicted_category": "non_emergency",
+    "category_source": "none",
+    "efficientsed_glass_breaking_score": 0.01665094867348671,
+    "efficientsed_vehicle_horn_score": 0.0006114478455856442,
+    "efficientsed_fire_score": 0.001420326647348702,
+    "efficientsed_siren_score": 0.00045307620894163847,
+    "efficientsed_baby_crying_score": 0.0002609628136269748,
+    "predict_glass_breaking": false,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "97669",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/97669.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 3.951020408163265,
+    "ced_raw_label": "Glass",
+    "ced_mapped_label": "glass_breaking",
+    "ced_confidence": 0.6578824520111084,
+    "ced_top_predictions": [
+      {
+        "label": "Glass",
+        "score": 0.6578824520111084
+      },
+      {
+        "label": "Breaking",
+        "score": 0.5929725170135498
+      },
+      {
+        "label": "Smash, crash",
+        "score": 0.5783572196960449
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.5731146335601807
+      },
+      {
+        "label": "Shatter",
+        "score": 0.5080433487892151
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.36838769912719727,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 66.81840000237571,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.36838769912719727,
+    "efficientsed_vehicle_horn_score": 0.0004788049845956266,
+    "efficientsed_fire_score": 0.001483010477386415,
+    "efficientsed_siren_score": 0.00016708254406694323,
+    "efficientsed_baby_crying_score": 3.8207170291570947e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "98055",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/98055.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.0093650793650792,
+    "ced_raw_label": "Breaking",
+    "ced_mapped_label": "Breaking",
+    "ced_confidence": 0.5596410632133484,
+    "ced_top_predictions": [
+      {
+        "label": "Breaking",
+        "score": 0.5596410632133484
+      },
+      {
+        "label": "Glass",
+        "score": 0.5389671325683594
+      },
+      {
+        "label": "Crushing",
+        "score": 0.5217891335487366
+      },
+      {
+        "label": "Chink, clink",
+        "score": 0.5206630825996399
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.510035514831543
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.26956257224082947,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 62.63380000018515,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.26956257224082947,
+    "efficientsed_vehicle_horn_score": 0.0003540395409800112,
+    "efficientsed_fire_score": 0.0019231773912906647,
+    "efficientsed_siren_score": 0.00023980686091817915,
+    "efficientsed_baby_crying_score": 4.277919651940465e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "98378",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/98378.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 2.5166666666666666,
+    "ced_raw_label": "Chink, clink",
+    "ced_mapped_label": "Chink, clink",
+    "ced_confidence": 0.5280235409736633,
+    "ced_top_predictions": [
+      {
+        "label": "Chink, clink",
+        "score": 0.5280235409736633
+      },
+      {
+        "label": "Gunshot, gunfire",
+        "score": 0.5232022404670715
+      },
+      {
+        "label": "Breaking",
+        "score": 0.5144607424736023
+      },
+      {
+        "label": "Cap gun",
+        "score": 0.5141453146934509
+      },
+      {
+        "label": "Sound effect",
+        "score": 0.5138225555419922
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.256322979927063,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 67.77979999606032,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.256322979927063,
+    "efficientsed_vehicle_horn_score": 0.0002064708824036643,
+    "efficientsed_fire_score": 0.0046099284663796425,
+    "efficientsed_siren_score": 0.00012581553892232478,
+    "efficientsed_baby_crying_score": 7.504669338231906e-05,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  },
+  {
+    "sample_id": "98650",
+    "source_dataset": "DCASE2017_source_events",
+    "audio_path": "benchmark_data/external/computer_holdout_audio/TUT-rare-sound-events-2017-evaluation/data/source_data/events/glassbreak/98650.wav",
+    "true_label": "glass_breaking",
+    "is_target": true,
+    "is_hard_negative": false,
+    "duration": 8.129160997732427,
+    "ced_raw_label": "Breaking",
+    "ced_mapped_label": "Breaking",
+    "ced_confidence": 0.5465062260627747,
+    "ced_top_predictions": [
+      {
+        "label": "Breaking",
+        "score": 0.5465062260627747
+      },
+      {
+        "label": "Smash, crash",
+        "score": 0.5350456833839417
+      },
+      {
+        "label": "Glass",
+        "score": 0.523554801940918
+      },
+      {
+        "label": "Gunshot, gunfire",
+        "score": 0.5160591006278992
+      },
+      {
+        "label": "Cap gun",
+        "score": 0.5146870017051697
+      }
+    ],
+    "v2_dangerous": false,
+    "v2_alert_level": "LOW",
+    "efficientsed_detected": true,
+    "efficientsed_top_category": "glass_breaking",
+    "efficientsed_top_score": 0.2859118580818176,
+    "efficientsed_threshold": 0.05,
+    "efficientsed_inference_ms": 67.30249999964144,
+    "combined_emergency_prediction": true,
+    "predicted_category": "glass_breaking",
+    "category_source": "efficientsed",
+    "efficientsed_glass_breaking_score": 0.2859118580818176,
+    "efficientsed_vehicle_horn_score": 0.0004994614864699543,
+    "efficientsed_fire_score": 0.00302818208001554,
+    "efficientsed_siren_score": 0.0008392187301069498,
+    "efficientsed_baby_crying_score": 0.0001856677990872413,
+    "predict_glass_breaking": true,
+    "predict_vehicle_horn": false,
+    "predict_fire": false,
+    "predict_siren": false,
+    "predict_baby_crying": false
+  }
+]

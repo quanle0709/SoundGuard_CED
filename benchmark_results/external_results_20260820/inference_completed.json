@@ -1,0 +1,7 @@
+{
+  "completed_at": "2026-08-20T23:51:54.180693+07:00",
+  "sample_count": 3938,
+  "freeze_manifest_sha256": "5e3036d0f8e12ea5e3c3007360f946b80996f5325fa301af08ad5dd652552f1a",
+  "post_hoc_threshold_tuning": false,
+  "selective_rerun": false
+}

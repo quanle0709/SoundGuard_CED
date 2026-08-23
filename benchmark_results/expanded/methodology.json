@@ -1,0 +1,81 @@
+{
+  "benchmark": "SoundGuard expanded PC benchmark",
+  "seed": 42,
+  "git_commit": "24346d879634f65eeb8a647bdba0ac84e249c63d",
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "ced_model": "mispeech/ced-tiny",
+  "ced_training_dataset": "AudioSet",
+  "ced_clean": {
+    "dataset": "ESC-50",
+    "samples": 280,
+    "classes": 7,
+    "samples_per_class": 40
+  },
+  "ced_synthetic_noise": {
+    "samples_per_snr": 280,
+    "snr_db": [
+      20,
+      15,
+      10,
+      5,
+      0
+    ],
+    "seeded_gaussian": true
+  },
+  "ced_real_noise": {
+    "balanced_source_clips": 70,
+    "environments": 4,
+    "samples_per_snr": 280,
+    "snr_db": [
+      20,
+      15,
+      10,
+      5,
+      0
+    ]
+  },
+  "dtln_ced": {
+    "balanced_source_clips": 35,
+    "environments": 4,
+    "snr_db": [
+      20,
+      15,
+      10,
+      5,
+      0
+    ],
+    "paired_samples": 700,
+    "alignment": "cross-correlation; measured fixed lag retained per row"
+  },
+  "stt_clean": {
+    "dataset": "VIVOS test",
+    "utterances": 100,
+    "speakers": 19
+  },
+  "stt_robustness": {
+    "fixed_utterances": 30,
+    "snr_db": [
+      20,
+      15,
+      10,
+      5,
+      0
+    ],
+    "protocols": [
+      "Gaussian",
+      "DEMAND"
+    ],
+    "filters": [
+      "unfiltered",
+      "DTLN"
+    ]
+  },
+  "text_normalization": "Unicode NFC, lowercase, punctuation-to-space, whitespace collapse; Vietnamese diacritics preserved",
+  "leakage_status": {
+    "ESC-50": "POSSIBLE SOURCE OVERLAP",
+    "VIVOS": "provider training unknown",
+    "DEMAND": "no known CED overlap"
+  },
+  "production_changes_for_benchmark": false
+}

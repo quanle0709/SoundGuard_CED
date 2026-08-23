@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "purpose": "Content-addressed post-run evidence index for the frozen external evaluation",
+  "freeze_manifest": "benchmark_results/external_decontamination_20260820/freeze_manifest/final_external_freeze_manifest.json",
+  "freeze_manifest_sha256": "5e3036d0f8e12ea5e3c3007360f946b80996f5325fa301af08ad5dd652552f1a",
+  "sample_count": 3938,
+  "post_hoc_threshold_tuning": false,
+  "selective_rerun": false,
+  "artifacts": [
+    {"path": "benchmark_results/external_results_20260820/raw_predictions.jsonl", "bytes": 4946665, "sha256": "bb5beb681476b72778e7b23ab7a49ea0abff7cb44686631bd5c73db8660a13d9"},
+    {"path": "benchmark_results/external_results_20260820/raw_predictions.csv", "bytes": 2699405, "sha256": "e9c6d5b2f2c2e33dd60bc4a79bed6fdc35ff112f69452f1e0551c47a82cd842f"},
+    {"path": "benchmark_results/external_results_20260820/metrics.json", "bytes": 7470, "sha256": "b20b0e9ecd418c59985d041250f2dd3b608ec11598febd72c8f1b0acbd51a5cc"},
+    {"path": "benchmark_results/external_results_20260820/per_class_metrics.csv", "bytes": 717, "sha256": "ea61e30f3aab4a4f09cad56752bb80b9d1fe3ffe81693d75e1cd61b7789fa588"},
+    {"path": "benchmark_results/external_results_20260820/confusion_matrix.csv", "bytes": 291, "sha256": "b540e0f67da113a3d42044d78a4895bd31254b652ff4eb3f2986ff8e1397ee1e"},
+    {"path": "benchmark_results/external_results_20260820/internal_vs_external.csv", "bytes": 495, "sha256": "71abc143d3be7397b740d54f687577f22372bd6106c42adb267afdf85e804250"},
+    {"path": "benchmark_results/external_results_20260820/FINAL_EXTERNAL_REPORT.md", "bytes": 2644, "sha256": "938cfaaf257da0faba327004242254ac2ceb80fe81583f8bc764d11dcccd8a59"},
+    {"path": "benchmark_results/external_results_20260820/FINAL_KHKT_EXTERNAL_VALIDATION.md", "bytes": 10708, "sha256": "417829f16a1ecca1fc94f40d1bc30797ba6076b8db34815c5ce4d8c781f2d504"},
+    {"path": "benchmark_results/external_results_20260820/pytest_final.xml", "bytes": 19345, "sha256": "b2f534e3dd6d72c28048f86269df76f3bf688a08774774076f05244e9a8243ce"},
+    {"path": "benchmark_results/external_results_20260820/figures/external_per_class_precision_recall_f1.png", "bytes": 42126, "sha256": "bdb52f8c67b0b08fd8fad4c2f2017c6de7471f3547a4194cdef39a4129073682"},
+    {"path": "benchmark_results/external_results_20260820/figures/external_confusion_matrix.png", "bytes": 98393, "sha256": "8c4e8faee49bb2ed00c60892238de2df0dac558ba2d08519b7f2c929ee78805d"},
+    {"path": "benchmark_results/external_results_20260820/figures/internal_vs_external_f1.png", "bytes": 41478, "sha256": "71d1e3d530d6c7f21d42fa18cd9b711c8f2258d40f63aa0a436a294fd5bf6f40"},
+    {"path": "benchmark_results/external_results_20260820/figures/hard_negative_false_positive_rate.png", "bytes": 30006, "sha256": "7c842450f3ea6c4c1fece6a4d7d29538429e2ffecb8cac2ae193bbd5ab7defd0"}
+  ]
+}

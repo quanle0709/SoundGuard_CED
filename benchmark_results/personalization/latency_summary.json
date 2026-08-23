@@ -1,0 +1,17 @@
+{
+  "deterministic": {
+    "count": 8,
+    "mean_ms": 1.1403749958844855,
+    "std_ms": 1.3828939213586366,
+    "median_ms": 0.5898000090382993,
+    "p90_ms": 2.0458699844311914,
+    "p95_ms": 3.4178349800640695,
+    "p99_ms": 4.5154069765703735,
+    "min_ms": 0.5486999871209264,
+    "max_ms": 4.789799975696951
+  },
+  "remote": {
+    "status": "SKIPPED",
+    "reason": "No API credential available to benchmark process"
+  }
+}

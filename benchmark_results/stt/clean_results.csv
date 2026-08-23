@@ -1,0 +1,2 @@
+file,condition,filter,reference,hypothesis,wer,cer,substitutions,deletions,insertions,reference_words,reference_characters,processing_seconds,audio_duration_seconds,real_time_factor,status,error
+samples/test_speech.wav,clean,unfiltered,xin chào đây là thử nghiệm giọng nói tiếng việt,xin chào đây là thử nghiệm giọng nói tiếng việt,0.0,0.0,0,0,0,10,47,1.503368399979081,5.6106875,0.26794727027286425,PASS,

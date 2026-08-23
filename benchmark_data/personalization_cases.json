@@ -1,0 +1,10 @@
+[
+  {"id":"driver","text":"I am a professional driver in busy road traffic.","roles":["driver"],"contexts":["road"],"priorities":{"siren":5,"vehicle_horn":5,"explosion":5,"dog_barking":1,"door_activity":1}},
+  {"id":"student_motorcyclist","text":"I am a student and ride a motorbike to school every day.","roles":["student","motorcyclist_cyclist"],"contexts":["road","school"],"priorities":{"vehicle_horn":5,"siren":5,"speech":3}},
+  {"id":"parent_home","text":"I stay home and care for my infant.","roles":["parent_infant_caregiver"],"contexts":["home"],"priorities":{"baby_crying":5,"smoke_alarm":5,"door_activity":4}},
+  {"id":"construction","text":"I am a construction worker at a building site and workplace.","roles":["construction_worker"],"contexts":["construction_site","workplace"],"priorities":{"explosion":5,"fire":5,"vehicle_horn":4}},
+  {"id":"explicit_pedestrian","text":"I walk to work on foot through road traffic.","roles":["pedestrian_commuter"],"contexts":["road"],"priorities":{"vehicle_horn":5,"siren":5}},
+  {"id":"explicit_public_transport","text":"I use the bus and metro for public transport.","roles":[],"contexts":["public_transport"],"priorities":{"gunshot":5,"smoke_alarm":5}},
+  {"id":"negation","text":"I do not drive, never use a bus, and am not around construction.","roles":[],"contexts":[],"priorities":{"vehicle_horn":3,"dog_barking":2}},
+  {"id":"contrast","text":"I do not drive, but I walk to school on foot through road traffic.","roles":["pedestrian_commuter","student"],"contexts":["road","school"],"priorities":{"vehicle_horn":5,"siren":5}}
+]

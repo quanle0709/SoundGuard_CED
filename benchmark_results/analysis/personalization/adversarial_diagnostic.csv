@@ -1,0 +1,13 @@
+id,text,normalized_text,expected_roles,actual_roles,actual_contexts,matched_evidence,passed
+factory-method,A factory-method pattern is software.,a factory method pattern is software,[],"[""factory_warehouse_worker""]","[""factory_warehouse""]",role:factory_warehouse_worker<-factory; context:factory_warehouse<-factory,False
+baby-blue,The baby-blue color is bright.,the baby blue color is bright,[],"[""parent_infant_caregiver""]",[],role:parent_infant_caregiver<-baby,False
+driver-side,A driver-side CSS selector is documented.,a driver side css selector is documented,[],"[""driver""]",[],role:driver<-driver,False
+student-t,Use Student-t statistics.,use student t statistics,[],"[""student""]","[""school""]",role:student<-student; context:school<-student,False
+school-bus,A school-bus paint code is listed.,a school bus paint code is listed,[],"[""student""]","[""public_transport"", ""school""]",role:student<-school; context:public_transport<-bus; context:school<-school,False
+hospital-grade,Hospital-grade plastic is durable.,hospital grade plastic is durable,[],"[""healthcare_care_worker""]","[""healthcare""]",role:healthcare_care_worker<-hospital; context:healthcare<-hospital,False
+parent-child,A parent-child process relationship exists.,a parent child process relationship exists,[],"[""parent_infant_caregiver""]",[],role:parent_infant_caregiver<-parent,False
+construction-time,This is a construction-time option.,this is a construction time option,[],"[""construction_worker""]","[""construction_site""]",role:construction_worker<-construction; context:construction_site<-construction,False
+warehouse-native,The warehouse-native SQL feature is experimental.,the warehouse native sql feature is experimental,[],"[""factory_warehouse_worker""]","[""factory_warehouse""]",role:factory_warehouse_worker<-warehouse; context:factory_warehouse<-warehouse,False
+babyproof,This material is babyproof.,this material is babyproof,[],[],[],,True
+factorymade,This item is factorymade.,this item is factorymade,[],[],[],,True
+university-level,This is a university-level course.,this is a university level course,[],"[""student""]","[""school""]",role:student<-university; context:school<-university,False

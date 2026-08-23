@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-08-20T15:44:18.345800+07:00",
+  "root_cause": "Transformers 5.14 probed optional processor_config.json on the Hugging Face Hub when the model was addressed only by mutable model ID. A restricted network interrupted fallback even though the frozen snapshot contained preprocessor_config.json and model weights.",
+  "fix": "Pin the immutable CED revision and prefer model-ID loading with local_files_only=true whenever that exact snapshot is present; retain pinned online fallback only for a fresh installation.",
+  "behavior_changes": {
+    "model": false,
+    "checkpoint": false,
+    "preprocessing": false,
+    "prediction_logic": false,
+    "threshold": false,
+    "expected_golden_output": false
+  },
+  "model_id": "mispeech/ced-tiny",
+  "model_revision": "ace276d29dd0bb3f3517b0fa8cf300738c409019",
+  "tests": {
+    "command": ".\\.venv\\Scripts\\python.exe -m pytest -q --junitxml=benchmark_results\\frozen_baseline_20260820\\pytest_full_after_fix.xml",
+    "passed": 153,
+    "failed": 0,
+    "subtests_passed": 5,
+    "warnings": 4,
+    "junit": "pytest_full_after_fix.xml"
+  }
+}

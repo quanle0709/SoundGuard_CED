@@ -1,0 +1,14 @@
+{
+  "name": "SYNTHETIC CONTROL-PATH STABILITY SOAK",
+  "target_seconds": 3600,
+  "actual_seconds": 3600.0079113999964,
+  "processed_events": 48704800,
+  "exceptions": 0,
+  "crashes": 0,
+  "peak_rss_mb": null,
+  "traced_peak_mb": 1.9981412887573242,
+  "rss_growth_mb": null,
+  "traced_allocation_growth_mb": 1.77626132965088,
+  "rss_note": "Windows process RSS was unavailable from inside the benchmark process; no RSS claim is made.",
+  "limitation": "No microphone, model inference, serial hardware, HUD, vibration, or physical glasses."
+}

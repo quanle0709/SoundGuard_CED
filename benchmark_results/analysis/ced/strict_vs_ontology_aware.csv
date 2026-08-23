@@ -1,0 +1,3 @@
+metric_variant,sample_count,accuracy,macro_f1,additional_correct_vs_strict
+STRICT BASELINE,280,0.45,0.5525488037155136,0
+ONTOLOGY-AWARE — DIAGNOSTIC ONLY,280,0.5321428571428571,0.6579665394770975,23

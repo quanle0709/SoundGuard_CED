@@ -1,0 +1,11 @@
+{
+  "target_seconds": 3600.0,
+  "event_interval_seconds": 5.0,
+  "input": "deterministic prerecorded ESC-50/VIVOS playlist",
+  "ced": "production CED-Tiny + frozen EfficientSED specialist",
+  "stt_local_preprocessing": "production DTLN + speech optimization",
+  "stt_backend": "deterministic transcript fixture; Google service intentionally excluded",
+  "transport": "production frame serialization into an in-memory stream",
+  "KHKT_CLAIM": "Computer-only evidence for local real-time performance and stability.",
+  "REPORT_USE": "Layer 2 latency, resource, reliability, and stability tables."
+}

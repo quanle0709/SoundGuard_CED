@@ -1,0 +1,32 @@
+{
+  "version": "candidate-v1",
+  "basis": "AudioSet/CED ontology semantics and SoundGuard intended categories; defined before transition scoring",
+  "rules": [
+    {"raw_label": "Baby cry", "soundguard_category": "baby_crying", "mapping_type": "EXACT", "justification": "Same acoustic event.", "safety_relevance": "high"},
+    {"raw_label": "Baby cry, infant cry", "soundguard_category": "baby_crying", "mapping_type": "EXACT", "justification": "Same acoustic event and age group.", "safety_relevance": "high"},
+    {"raw_label": "Crying, sobbing", "soundguard_category": null, "mapping_type": "TOO_BROAD", "justification": "May describe an adult or child and cannot establish an infant.", "safety_relevance": "high"},
+    {"raw_label": "Bark", "soundguard_category": "dog_barking", "mapping_type": "EXACT", "justification": "SoundGuard's dog category represents barking.", "safety_relevance": "low"},
+    {"raw_label": "Bow-wow", "soundguard_category": "dog_barking", "mapping_type": "EXACT", "justification": "Unambiguous dog bark vocalization.", "safety_relevance": "low"},
+    {"raw_label": "Dog", "soundguard_category": "dog_barking", "mapping_type": "STRONG_SEMANTIC_ALIAS", "justification": "CED's Dog acoustic ontology is a specific parent of dog vocalizations; SoundGuard has one coarse dog-audio category.", "safety_relevance": "low"},
+    {"raw_label": "Animal", "soundguard_category": null, "mapping_type": "TOO_BROAD", "justification": "Does not identify a dog or barking.", "safety_relevance": "low"},
+    {"raw_label": "Knock", "soundguard_category": "door_activity", "mapping_type": "EXACT", "justification": "The benchmark source is a door knock and SoundGuard explicitly includes knocks.", "safety_relevance": "low"},
+    {"raw_label": "Door", "soundguard_category": null, "mapping_type": "TOO_BROAD", "justification": "A generic door sound does not necessarily indicate a knock or arrival.", "safety_relevance": "low"},
+    {"raw_label": "Fire", "soundguard_category": "fire", "mapping_type": "EXACT", "justification": "Same event category.", "safety_relevance": "critical"},
+    {"raw_label": "Crackle", "soundguard_category": "fire", "mapping_type": "STRONG_SEMANTIC_ALIAS", "justification": "Crackle is the AudioSet child label paired with Fire and matches SoundGuard's fire-crackling acoustic event.", "safety_relevance": "critical"},
+    {"raw_label": "Glass", "soundguard_category": "glass_breaking", "mapping_type": "STRONG_SEMANTIC_ALIAS", "justification": "CED's material-specific Glass acoustic label is the closest coarse SoundGuard glass event; retained as a separately auditable safety alias.", "safety_relevance": "critical"},
+    {"raw_label": "Shatter", "soundguard_category": "glass_breaking", "mapping_type": "EXACT", "justification": "Shattering is unambiguous breakage.", "safety_relevance": "critical"},
+    {"raw_label": "Breaking", "soundguard_category": null, "mapping_type": "TOO_BROAD", "justification": "The broken material is unknown.", "safety_relevance": "critical"},
+    {"raw_label": "Chink, clink", "soundguard_category": null, "mapping_type": "EXCLUDED", "justification": "Glass contact does not establish breakage.", "safety_relevance": "critical"},
+    {"raw_label": "Smash, crash", "soundguard_category": null, "mapping_type": "TOO_BROAD", "justification": "May describe non-glass collision or impact.", "safety_relevance": "critical"},
+    {"raw_label": "Siren", "soundguard_category": "siren", "mapping_type": "EXACT", "justification": "Same event category.", "safety_relevance": "critical"},
+    {"raw_label": "Civil defense siren", "soundguard_category": "siren", "mapping_type": "STRONG_SEMANTIC_ALIAS", "justification": "Specific emergency siren subtype.", "safety_relevance": "critical"},
+    {"raw_label": "Police car (siren)", "soundguard_category": "siren", "mapping_type": "STRONG_SEMANTIC_ALIAS", "justification": "Specific emergency siren subtype.", "safety_relevance": "critical"},
+    {"raw_label": "Ambulance (siren)", "soundguard_category": "siren", "mapping_type": "STRONG_SEMANTIC_ALIAS", "justification": "Specific emergency siren subtype.", "safety_relevance": "critical"},
+    {"raw_label": "Emergency vehicle", "soundguard_category": "siren", "mapping_type": "STRONG_SEMANTIC_ALIAS", "justification": "AudioSet's acoustic emergency-vehicle node is represented by SoundGuard's siren category; it is not a generic road vehicle.", "safety_relevance": "critical"},
+    {"raw_label": "Vehicle horn", "soundguard_category": "vehicle_horn", "mapping_type": "EXACT", "justification": "Same event category.", "safety_relevance": "high"},
+    {"raw_label": "Toot", "soundguard_category": "vehicle_horn", "mapping_type": "STRONG_SEMANTIC_ALIAS", "justification": "AudioSet child label for a short vehicle-horn sound.", "safety_relevance": "high"},
+    {"raw_label": "Honk", "soundguard_category": "vehicle_horn", "mapping_type": "STRONG_SEMANTIC_ALIAS", "justification": "Unambiguous horn vocalization in the vehicle ontology.", "safety_relevance": "high"},
+    {"raw_label": "Air horn", "soundguard_category": "vehicle_horn", "mapping_type": "STRONG_SEMANTIC_ALIAS", "justification": "Specific horn subtype.", "safety_relevance": "high"},
+    {"raw_label": "Vehicle", "soundguard_category": null, "mapping_type": "TOO_BROAD", "justification": "Vehicle presence does not imply a horn.", "safety_relevance": "high"}
+  ]
+}

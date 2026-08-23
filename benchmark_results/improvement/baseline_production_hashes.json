@@ -1,0 +1,68 @@
+{
+  "git_commit": "24346d879634f65eeb8a647bdba0ac84e249c63d",
+  "branch": "main",
+  "production_files": {
+    "app.py": {
+      "sha256": "7b6fd7f74b98cc44189b6c2899db5bcdeb8eee981f64a47115160090913f16ff",
+      "size_bytes": 20485
+    },
+    "audio_pipeline.py": {
+      "sha256": "357f69e2aa1c3c2197142d853b9aa92aef733d79cfdc20b4e0ffabdf4788d91a",
+      "size_bytes": 19079
+    },
+    "display_transport.py": {
+      "sha256": "b46827107b6041628b98705ac862cc2d2ab4bc05770e0b5e502eb396ed0a8eaa",
+      "size_bytes": 4533
+    },
+    "emergency_system.py": {
+      "sha256": "d2813fca63304f4d53f23eee14928836ef974fe70570541090702000de363f79",
+      "size_bytes": 17573
+    },
+    "fusion_engine.py": {
+      "sha256": "767fd6af263869b283e50f5914d42eea753ec3f1dcbefbf1705cecf42cf31701",
+      "size_bytes": 1609
+    },
+    "sound_classifier.py": {
+      "sha256": "ee829f2e2ae9667faa2abfe8f4143e9f6e5a22a34c1b9f06932687a92a024be5",
+      "size_bytes": 1591
+    },
+    "speech_enhancer.py": {
+      "sha256": "f1ec7fba4ee6284a8ea924456d18a0fc8741416e47feaa2091b73b8810f58fb0",
+      "size_bytes": 6409
+    },
+    "speech_recognizer.py": {
+      "sha256": "486a89a950169413e9b3443ba28f85e02703396dbdb5a074ebae154594f79768",
+      "size_bytes": 930
+    },
+    "personalization/profile_generator.py": {
+      "sha256": "826c7736a9212769bd5156532b53cd43ab2c2d7c3b0e53dae42716c02ea756c4",
+      "size_bytes": 22906
+    },
+    "personalization/profile_validator.py": {
+      "sha256": "b2594009b8e7aedf19c8ed0ed96d39f11b3c10ba4f569844dcaaea121dc5e3ad",
+      "size_bytes": 1549
+    },
+    "personalization/profile_manager.py": {
+      "sha256": "3e78789b2c92360186f6005012369af4266ada3589f0d53aa7f92b711609124e",
+      "size_bytes": 2037
+    },
+    "personalization/sound_labels.py": {
+      "sha256": "614afc2c3ff7ea19ca94d3b2755af2f30dfe7cea89e9b68c5b053a112760f4cf",
+      "size_bytes": 2357
+    },
+    "personalization/role_knowledge.py": {
+      "sha256": "6c5df39a0f3188c74631552dd0280424af5808bd1b76e14be3c9d6250987bbb9",
+      "size_bytes": 2156
+    },
+    "personalization/schemas.py": {
+      "sha256": "c7712f4808a1f73514fd99b2b32ef7245db9fd53d13dab0a92b4d1c54bc1c396",
+      "size_bytes": 4873
+    },
+    "personalization/web_server.py": {
+      "sha256": "249e1f4a4a82cb3350a18d899663f7477cdb3292bc865513163858d4446f5d78",
+      "size_bytes": 5870
+    }
+  },
+  "archive": "baseline_source_snapshot.zip",
+  "archive_sha256": "e3f2a6d4342d4c6b99495c920d9f51f082d8c8597e84e464cf12b02dbfcdaf53"
+}

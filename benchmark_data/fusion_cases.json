@@ -1,0 +1,8 @@
+[
+  {"id":"help_repairs_benign_ced","label":"Speech","confidence":0.90,"category":"speech","dangerous":false,"transcript":"giúp tôi với","expected":true},
+  {"id":"siren_stays_emergency","label":"Siren","confidence":0.85,"category":"siren","dangerous":true,"transcript":"","expected":true},
+  {"id":"glass_stays_emergency","label":"Glass breaking","confidence":0.80,"category":"glass breaking","dangerous":true,"transcript":"","expected":true},
+  {"id":"bark_stays_benign","label":"Bark","confidence":0.85,"category":"bark","dangerous":true,"transcript":"","expected":false},
+  {"id":"speech_stays_benign","label":"Speech","confidence":0.90,"category":"speech","dangerous":false,"transcript":"hello","expected":false},
+  {"id":"low_confidence_suppressed","label":"Siren","confidence":0.20,"category":"siren","dangerous":true,"transcript":"","expected":false}
+]

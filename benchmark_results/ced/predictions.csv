@@ -1,0 +1,13 @@
+file,sample_id,condition,true_label,predicted_label,raw_predicted_label,confidence,correct,latency_ms
+samples/audio_1-100032-A-0.wav,esc50_bark_100032,clean,dog_barking,dog_barking,Bark,0.6253823041915894,True,11724.957200000063
+samples/test_speech.wav,local_vi_speech,clean,speech,speech_synthesizer,Speech synthesizer,0.6811856031417847,False,22.082699986640364
+benchmark_data/generated_audio/esc50_bark_100032_20db.wav,esc50_bark_100032,20 dB,dog_barking,animal,Animal,0.6682975888252258,False,20.360000024084002
+benchmark_data/generated_audio/local_vi_speech_20db.wav,local_vi_speech,20 dB,speech,speech,Speech,0.6676409244537354,True,22.48360001249239
+benchmark_data/generated_audio/esc50_bark_100032_15db.wav,esc50_bark_100032,15 dB,dog_barking,animal,Animal,0.6571226119995117,False,22.928600024897605
+benchmark_data/generated_audio/local_vi_speech_15db.wav,local_vi_speech,15 dB,speech,speech,Speech,0.6662598252296448,True,21.431899978779256
+benchmark_data/generated_audio/esc50_bark_100032_10db.wav,esc50_bark_100032,10 dB,dog_barking,dog_barking,Bark,0.6432488560676575,True,22.41370000410825
+benchmark_data/generated_audio/local_vi_speech_10db.wav,local_vi_speech,10 dB,speech,speech,Speech,0.6628316044807434,True,19.501700007822365
+benchmark_data/generated_audio/esc50_bark_100032_5db.wav,esc50_bark_100032,5 dB,dog_barking,animal,Animal,0.6421995162963867,False,22.762499982491136
+benchmark_data/generated_audio/local_vi_speech_5db.wav,local_vi_speech,5 dB,speech,speech,Speech,0.6571584343910217,True,20.516400050837547
+benchmark_data/generated_audio/esc50_bark_100032_0db.wav,esc50_bark_100032,0 dB,dog_barking,animal,Animal,0.6179781556129456,False,22.651200008112937
+benchmark_data/generated_audio/local_vi_speech_0db.wav,local_vi_speech,0 dB,speech,speech,Speech,0.6512973308563232,True,20.827599975746125

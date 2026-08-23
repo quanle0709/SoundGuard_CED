@@ -1,0 +1,12 @@
+source_dataset,source_label,soundguard_label,decision,reason
+FSD50K_eval,Fire,fire,INCLUDE_TARGET,direct ontology concept with a real frozen SoundGuard V3 capability
+FSD50K_eval,Siren,siren,INCLUDE_TARGET,direct ontology concept with a real frozen SoundGuard V3 capability
+FSD50K_eval,Vehicle_horn_and_car_horn_and_honking,vehicle_horn,INCLUDE_TARGET,direct ontology concept with a real frozen SoundGuard V3 capability
+DCASE2017_source_events,babycry,baby_crying,INCLUDE_TARGET,direct event class with a real frozen SoundGuard V3 capability
+DCASE2017_source_events,glassbreak,glass_breaking,INCLUDE_TARGET,direct event class with a real frozen SoundGuard V3 capability
+FSD50K_eval,Crackle,,EXCLUDE_AMBIGUOUS_MAPPING,generic crackle is not sufficient evidence of fire
+FSD50K_eval,Alarm,,EXCLUDE_AMBIGUOUS_MAPPING,broad alarm is not specific to fire/smoke or another frozen target
+FSD50K_eval,Glass,,EXCLUDE_AMBIGUOUS_MAPPING,glass presence does not necessarily mean glass breaking
+FSD50K_eval,Shatter,,OUTSIDE_PREREGISTERED_FSD_TARGETS,baby/glass external targets were preregistered against DCASE source events
+FSD50K_eval,Crying_and_sobbing,,EXCLUDE_AMBIGUOUS_MAPPING,does not establish that the speaker is a baby
+DCASE2017_source_events,gunshot,gunshot,OUTSIDE_PREREGISTERED_TARGETS_NOT_NEGATIVE,"valid emergency category, but outside requested DCASE baby/glass scope"

@@ -1,0 +1,841 @@
+sample_id,true_label,method,raw_label,confidence,window_count,window_seconds
+1-100032-A-0,dog_barking,max_1s,Silence,0.6334817409515381,5,1.0
+1-100032-A-0,dog_barking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-100032-A-0,dog_barking,p90_1s,Silence,0.6334817409515381,5,1.0
+1-101336-A-30,door_activity,max_1s,Knock,0.674964189529419,5,1.0
+1-101336-A-30,door_activity,top2_mean_1s,Knock,0.6454687118530273,5,1.0
+1-101336-A-30,door_activity,p90_1s,Knock,0.6513678073883057,5,1.0
+1-103995-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+1-103995-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-103995-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+1-103999-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+1-103999-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-103999-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+1-110389-A-0,dog_barking,max_1s,Silence,0.6334817409515381,5,1.0
+1-110389-A-0,dog_barking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-110389-A-0,dog_barking,p90_1s,Silence,0.6334817409515381,5,1.0
+1-17124-A-43,vehicle_horn,max_1s,"Vehicle horn, car horn, honking",0.6837614178657532,5,1.0
+1-17124-A-43,vehicle_horn,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-17124-A-43,vehicle_horn,p90_1s,Silence,0.6334817409515381,5,1.0
+1-17150-A-12,fire,max_1s,Vehicle,0.5983532667160034,5,1.0
+1-17150-A-12,fire,top2_mean_1s,Vehicle,0.5738535225391388,5,1.0
+1-17150-A-12,fire,p90_1s,Vehicle,0.5787534713745117,5,1.0
+1-17565-A-12,fire,max_1s,Music,0.6353393197059631,5,1.0
+1-17565-A-12,fire,top2_mean_1s,Music,0.5685772895812988,5,1.0
+1-17565-A-12,fire,p90_1s,Music,0.5819296956062316,5,1.0
+1-17742-A-12,fire,max_1s,Patter,0.6467848420143127,5,1.0
+1-17742-A-12,fire,top2_mean_1s,Patter,0.5954464972019196,5,1.0
+1-17742-A-12,fire,p90_1s,Patter,0.6057141661643982,5,1.0
+1-17808-A-12,fire,max_1s,Engine,0.5640627145767212,5,1.0
+1-17808-A-12,fire,top2_mean_1s,Vehicle,0.5586289167404175,5,1.0
+1-17808-A-12,fire,p90_1s,Vehicle,0.5590112566947937,5,1.0
+1-17808-B-12,fire,max_1s,Vehicle,0.5800504088401794,5,1.0
+1-17808-B-12,fire,top2_mean_1s,Vehicle,0.5743160545825958,5,1.0
+1-17808-B-12,fire,p90_1s,Vehicle,0.5754629254341126,5,1.0
+1-187207-A-20,baby_crying,max_1s,Synthesizer,0.5754375457763672,5,1.0
+1-187207-A-20,baby_crying,top2_mean_1s,Music,0.5658308267593384,5,1.0
+1-187207-A-20,baby_crying,p90_1s,Music,0.5675495028495788,5,1.0
+1-19026-A-43,vehicle_horn,max_1s,Silence,0.6334817409515381,5,1.0
+1-19026-A-43,vehicle_horn,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-19026-A-43,vehicle_horn,p90_1s,Silence,0.6334817409515381,5,1.0
+1-20133-A-39,glass_breaking,max_1s,Machine gun,0.6401432156562805,5,1.0
+1-20133-A-39,glass_breaking,top2_mean_1s,Silence,0.5751240849494934,5,1.0
+1-20133-A-39,glass_breaking,p90_1s,Silence,0.5867956161499024,5,1.0
+1-211527-A-20,baby_crying,max_1s,"Crying, sobbing",0.5765641331672668,5,1.0
+1-211527-A-20,baby_crying,top2_mean_1s,"Crying, sobbing",0.5394765734672546,5,1.0
+1-211527-A-20,baby_crying,p90_1s,"Crying, sobbing",0.546894085407257,5,1.0
+1-211527-B-20,baby_crying,max_1s,"Crying, sobbing",0.6173491477966309,5,1.0
+1-211527-B-20,baby_crying,top2_mean_1s,"Crying, sobbing",0.5916452407836914,5,1.0
+1-211527-B-20,baby_crying,p90_1s,"Crying, sobbing",0.5967860221862793,5,1.0
+1-211527-C-20,baby_crying,max_1s,Theremin,0.5696893334388733,5,1.0
+1-211527-C-20,baby_crying,top2_mean_1s,"Baby cry, infant cry",0.5521601140499115,5,1.0
+1-211527-C-20,baby_crying,p90_1s,"Baby cry, infant cry",0.5534258484840393,5,1.0
+1-22694-A-20,baby_crying,max_1s,"Rodents, rats, mice",0.6525875329971313,5,1.0
+1-22694-A-20,baby_crying,top2_mean_1s,"Rodents, rats, mice",0.6058835983276367,5,1.0
+1-22694-A-20,baby_crying,p90_1s,"Rodents, rats, mice",0.6152243852615357,5,1.0
+1-22694-B-20,baby_crying,max_1s,Music,0.6549363136291504,5,1.0
+1-22694-B-20,baby_crying,top2_mean_1s,Music,0.5855918228626251,5,1.0
+1-22694-B-20,baby_crying,p90_1s,Music,0.5994607210159302,5,1.0
+1-24074-A-43,vehicle_horn,max_1s,Vehicle,0.6575799584388733,5,1.0
+1-24074-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6465858817100525,5,1.0
+1-24074-A-43,vehicle_horn,p90_1s,Vehicle,0.6487846970558167,5,1.0
+1-24076-A-43,vehicle_horn,max_1s,Music,0.6769121885299683,5,1.0
+1-24076-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.665552407503128,5,1.0
+1-24076-A-43,vehicle_horn,p90_1s,Vehicle,0.6658815622329712,5,1.0
+1-254507-A-43,vehicle_horn,max_1s,Vehicle,0.6224796772003174,5,1.0
+1-254507-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6208584904670715,5,1.0
+1-254507-A-43,vehicle_horn,p90_1s,Vehicle,0.6211827278137207,5,1.0
+1-26176-A-43,vehicle_horn,max_1s,Silence,0.6334817409515381,5,1.0
+1-26176-A-43,vehicle_horn,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-26176-A-43,vehicle_horn,p90_1s,Silence,0.6334817409515381,5,1.0
+1-26177-A-43,vehicle_horn,max_1s,Vehicle,0.6737046837806702,5,1.0
+1-26177-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6439864635467529,5,1.0
+1-26177-A-43,vehicle_horn,p90_1s,Vehicle,0.6499301075935364,5,1.0
+1-26188-A-30,door_activity,max_1s,Knock,0.6991363167762756,5,1.0
+1-26188-A-30,door_activity,top2_mean_1s,Knock,0.6788435280323029,5,1.0
+1-26188-A-30,door_activity,p90_1s,Knock,0.6829020857810975,5,1.0
+1-28808-A-43,vehicle_horn,max_1s,Toot,0.6998102068901062,5,1.0
+1-28808-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6825673580169678,5,1.0
+1-28808-A-43,vehicle_horn,p90_1s,Vehicle,0.6828291296958924,5,1.0
+1-30226-A-0,dog_barking,max_1s,Animal,0.6968805193901062,5,1.0
+1-30226-A-0,dog_barking,top2_mean_1s,Animal,0.6884573698043823,5,1.0
+1-30226-A-0,dog_barking,p90_1s,Animal,0.6901419997215271,5,1.0
+1-30344-A-0,dog_barking,max_1s,Animal,0.7074822187423706,5,1.0
+1-30344-A-0,dog_barking,top2_mean_1s,Animal,0.6892817318439484,5,1.0
+1-30344-A-0,dog_barking,p90_1s,Animal,0.6929218292236328,5,1.0
+1-31482-A-42,siren,max_1s,Siren,0.673596203327179,5,1.0
+1-31482-A-42,siren,top2_mean_1s,Siren,0.6518367528915405,5,1.0
+1-31482-A-42,siren,p90_1s,Siren,0.6561886429786682,5,1.0
+1-31482-B-42,siren,max_1s,Emergency vehicle,0.6763712763786316,5,1.0
+1-31482-B-42,siren,top2_mean_1s,Emergency vehicle,0.6683660745620728,5,1.0
+1-31482-B-42,siren,p90_1s,Emergency vehicle,0.6699671149253845,5,1.0
+1-32318-A-0,dog_barking,max_1s,Animal,0.6981117129325867,5,1.0
+1-32318-A-0,dog_barking,top2_mean_1s,Animal,0.6867392957210541,5,1.0
+1-32318-A-0,dog_barking,p90_1s,Animal,0.6890137791633606,5,1.0
+1-4211-A-12,fire,max_1s,Rumble,0.6296091675758362,5,1.0
+1-4211-A-12,fire,top2_mean_1s,Rumble,0.5945922434329987,5,1.0
+1-4211-A-12,fire,p90_1s,Rumble,0.6015956282615662,5,1.0
+1-46272-A-12,fire,max_1s,Clip-clop,0.5762935876846313,5,1.0
+1-46272-A-12,fire,top2_mean_1s,Vehicle,0.5563411116600037,5,1.0
+1-46272-A-12,fire,p90_1s,Vehicle,0.559093713760376,5,1.0
+1-52290-A-30,door_activity,max_1s,Music,0.6821619868278503,5,1.0
+1-52290-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-52290-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+1-54084-A-42,siren,max_1s,Siren,0.7129907011985779,5,1.0
+1-54084-A-42,siren,top2_mean_1s,Siren,0.7128854691982269,5,1.0
+1-54084-A-42,siren,p90_1s,Siren,0.7129065155982971,5,1.0
+1-59513-A-0,dog_barking,max_1s,Animal,0.6827597618103027,5,1.0
+1-59513-A-0,dog_barking,top2_mean_1s,Hoot,0.6529011726379395,5,1.0
+1-59513-A-0,dog_barking,p90_1s,Hoot,0.6571309447288514,5,1.0
+1-60997-A-20,baby_crying,max_1s,"Baby cry, infant cry",0.6739744544029236,5,1.0
+1-60997-A-20,baby_crying,top2_mean_1s,"Baby cry, infant cry",0.6259047091007233,5,1.0
+1-60997-A-20,baby_crying,p90_1s,"Baby cry, infant cry",0.6355186581611634,5,1.0
+1-60997-B-20,baby_crying,max_1s,"Baby cry, infant cry",0.6538844108581543,5,1.0
+1-60997-B-20,baby_crying,top2_mean_1s,"Baby cry, infant cry",0.6088440716266632,5,1.0
+1-60997-B-20,baby_crying,p90_1s,"Baby cry, infant cry",0.6178521394729615,5,1.0
+1-7057-A-12,fire,max_1s,Fire,0.6220012307167053,5,1.0
+1-7057-A-12,fire,top2_mean_1s,Fire,0.581323891878128,5,1.0
+1-7057-A-12,fire,p90_1s,Fire,0.5894593596458435,5,1.0
+1-76831-A-42,siren,max_1s,Siren,0.7031741142272949,5,1.0
+1-76831-A-42,siren,top2_mean_1s,Siren,0.695587545633316,5,1.0
+1-76831-A-42,siren,p90_1s,Siren,0.6971048593521119,5,1.0
+1-76831-B-42,siren,max_1s,Car alarm,0.6923702359199524,5,1.0
+1-76831-B-42,siren,top2_mean_1s,Emergency vehicle,0.689114898443222,5,1.0
+1-76831-B-42,siren,p90_1s,Emergency vehicle,0.6895614743232727,5,1.0
+1-76831-C-42,siren,max_1s,Emergency vehicle,0.6822768449783325,5,1.0
+1-76831-C-42,siren,top2_mean_1s,Emergency vehicle,0.6812356412410736,5,1.0
+1-76831-C-42,siren,p90_1s,Emergency vehicle,0.6814438819885253,5,1.0
+1-76831-D-42,siren,max_1s,Siren,0.7185730934143066,5,1.0
+1-76831-D-42,siren,top2_mean_1s,Siren,0.7126094996929169,5,1.0
+1-76831-D-42,siren,p90_1s,Siren,0.7138022184371948,5,1.0
+1-76831-E-42,siren,max_1s,Siren,0.7049576044082642,5,1.0
+1-76831-E-42,siren,top2_mean_1s,Car alarm,0.6990236341953278,5,1.0
+1-76831-E-42,siren,p90_1s,Car alarm,0.6991410613059997,5,1.0
+1-81001-A-30,door_activity,max_1s,Knock,0.6367598176002502,5,1.0
+1-81001-A-30,door_activity,top2_mean_1s,Knock,0.5777619481086731,5,1.0
+1-81001-A-30,door_activity,p90_1s,Knock,0.5895615220069885,5,1.0
+1-81001-B-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+1-81001-B-30,door_activity,top2_mean_1s,Knock,0.6005520820617676,5,1.0
+1-81001-B-30,door_activity,p90_1s,Knock,0.606967282295227,5,1.0
+1-82817-A-30,door_activity,max_1s,Knock,0.6463569402694702,5,1.0
+1-82817-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-82817-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+1-84536-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+1-84536-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-84536-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+1-84704-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+1-84704-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-84704-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+1-84705-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+1-84705-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-84705-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+1-85168-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+1-85168-A-39,glass_breaking,top2_mean_1s,Silence,0.6297549903392792,5,1.0
+1-85168-A-39,glass_breaking,p90_1s,Silence,0.630500340461731,5,1.0
+1-85184-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+1-85184-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-85184-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+1-85362-A-0,dog_barking,max_1s,Animal,0.6970250606536865,5,1.0
+1-85362-A-0,dog_barking,top2_mean_1s,Animal,0.6932851672172546,5,1.0
+1-85362-A-0,dog_barking,p90_1s,Animal,0.694033145904541,5,1.0
+1-88807-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+1-88807-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-88807-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+1-97392-A-0,dog_barking,max_1s,Animal,0.708950936794281,5,1.0
+1-97392-A-0,dog_barking,top2_mean_1s,Animal,0.7007943689823151,5,1.0
+1-97392-A-0,dog_barking,p90_1s,Animal,0.7024256825447083,5,1.0
+1-977-A-39,glass_breaking,max_1s,"Chink, clink",0.6484339237213135,5,1.0
+1-977-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+1-977-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+2-100648-A-43,vehicle_horn,max_1s,Vehicle,0.6587282419204712,5,1.0
+2-100648-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6447474360466003,5,1.0
+2-100648-A-43,vehicle_horn,p90_1s,Vehicle,0.6475435972213746,5,1.0
+2-106881-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+2-106881-A-39,glass_breaking,top2_mean_1s,Crackle,0.5840681195259094,5,1.0
+2-106881-A-39,glass_breaking,p90_1s,Crackle,0.5914534807205201,5,1.0
+2-107351-A-20,baby_crying,max_1s,Meow,0.6173492074012756,5,1.0
+2-107351-A-20,baby_crying,top2_mean_1s,Music,0.5651082694530487,5,1.0
+2-107351-A-20,baby_crying,p90_1s,Meow,0.5704607844352723,5,1.0
+2-107351-B-20,baby_crying,max_1s,Music,0.6746132969856262,5,1.0
+2-107351-B-20,baby_crying,top2_mean_1s,Music,0.6667249500751495,5,1.0
+2-107351-B-20,baby_crying,p90_1s,Music,0.6683026194572449,5,1.0
+2-112213-A-39,glass_breaking,max_1s,Music,0.6580100059509277,5,1.0
+2-112213-A-39,glass_breaking,top2_mean_1s,Music,0.6235817670822144,5,1.0
+2-112213-A-39,glass_breaking,p90_1s,Music,0.630467414855957,5,1.0
+2-112213-B-39,glass_breaking,max_1s,Tambourine,0.6400067210197449,5,1.0
+2-112213-B-39,glass_breaking,top2_mean_1s,Tambourine,0.6212745010852814,5,1.0
+2-112213-B-39,glass_breaking,p90_1s,Tambourine,0.6250209450721741,5,1.0
+2-114254-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+2-114254-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+2-114254-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+2-114280-A-0,dog_barking,max_1s,Animal,0.6910693049430847,5,1.0
+2-114280-A-0,dog_barking,top2_mean_1s,Dog,0.6808109283447266,5,1.0
+2-114280-A-0,dog_barking,p90_1s,Dog,0.6820867776870727,5,1.0
+2-114587-A-0,dog_barking,max_1s,Animal,0.7091995477676392,5,1.0
+2-114587-A-0,dog_barking,top2_mean_1s,Animal,0.7076010704040527,5,1.0
+2-114587-A-0,dog_barking,p90_1s,Animal,0.70792076587677,5,1.0
+2-116400-A-0,dog_barking,max_1s,Dog,0.6813505291938782,5,1.0
+2-116400-A-0,dog_barking,top2_mean_1s,Animal,0.6781961917877197,5,1.0
+2-116400-A-0,dog_barking,p90_1s,Animal,0.6782293677330017,5,1.0
+2-117271-A-0,dog_barking,max_1s,Animal,0.7029504776000977,5,1.0
+2-117271-A-0,dog_barking,top2_mean_1s,Animal,0.6939836740493774,5,1.0
+2-117271-A-0,dog_barking,p90_1s,Animal,0.6957770347595215,5,1.0
+2-118072-A-0,dog_barking,max_1s,Animal,0.6522053480148315,5,1.0
+2-118072-A-0,dog_barking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+2-118072-A-0,dog_barking,p90_1s,Silence,0.6334817409515381,5,1.0
+2-118624-A-30,door_activity,max_1s,Music,0.638216495513916,5,1.0
+2-118624-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+2-118624-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+2-118625-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+2-118625-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+2-118625-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+2-118964-A-0,dog_barking,max_1s,Animal,0.6887974143028259,5,1.0
+2-118964-A-0,dog_barking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+2-118964-A-0,dog_barking,p90_1s,Silence,0.6334817409515381,5,1.0
+2-120218-A-30,door_activity,max_1s,Knock,0.7013189792633057,5,1.0
+2-120218-A-30,door_activity,top2_mean_1s,Knock,0.68397656083107,5,1.0
+2-120218-A-30,door_activity,p90_1s,Knock,0.6874450445175171,5,1.0
+2-120218-B-30,door_activity,max_1s,Knock,0.713336706161499,5,1.0
+2-120218-B-30,door_activity,top2_mean_1s,Knock,0.7111465036869049,5,1.0
+2-120218-B-30,door_activity,p90_1s,Knock,0.7115845441818237,5,1.0
+2-122104-A-0,dog_barking,max_1s,Animal,0.6916002631187439,5,1.0
+2-122104-A-0,dog_barking,top2_mean_1s,Animal,0.6792441606521606,5,1.0
+2-122104-A-0,dog_barking,p90_1s,Animal,0.6817153811454773,5,1.0
+2-122104-B-0,dog_barking,max_1s,Animal,0.6995060443878174,5,1.0
+2-122104-B-0,dog_barking,top2_mean_1s,Animal,0.6931121945381165,5,1.0
+2-122104-B-0,dog_barking,p90_1s,Animal,0.6943909645080566,5,1.0
+2-125520-A-43,vehicle_horn,max_1s,"Vehicle horn, car horn, honking",0.7033950686454773,5,1.0
+2-125520-A-43,vehicle_horn,top2_mean_1s,"Vehicle horn, car horn, honking",0.7006881535053253,5,1.0
+2-125520-A-43,vehicle_horn,p90_1s,"Vehicle horn, car horn, honking",0.7012295365333557,5,1.0
+2-128465-A-43,vehicle_horn,max_1s,Vehicle,0.6494193077087402,5,1.0
+2-128465-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6360527276992798,5,1.0
+2-128465-A-43,vehicle_horn,p90_1s,Vehicle,0.6387260437011719,5,1.0
+2-128465-B-43,vehicle_horn,max_1s,Vehicle,0.6570573449134827,5,1.0
+2-128465-B-43,vehicle_horn,top2_mean_1s,Vehicle,0.6471626460552216,5,1.0
+2-128465-B-43,vehicle_horn,p90_1s,Vehicle,0.6491415858268738,5,1.0
+2-133889-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+2-133889-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+2-133889-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+2-134915-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+2-134915-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+2-134915-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+2-138465-A-43,vehicle_horn,max_1s,Vehicle,0.6724563241004944,5,1.0
+2-138465-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6668919324874878,5,1.0
+2-138465-A-43,vehicle_horn,p90_1s,Vehicle,0.6680048108100891,5,1.0
+2-140841-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+2-140841-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+2-140841-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+2-141563-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+2-141563-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+2-141563-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+2-144137-A-43,vehicle_horn,max_1s,"Vehicle horn, car horn, honking",0.7138876914978027,5,1.0
+2-144137-A-43,vehicle_horn,top2_mean_1s,"Vehicle horn, car horn, honking",0.708031952381134,5,1.0
+2-144137-A-43,vehicle_horn,p90_1s,"Vehicle horn, car horn, honking",0.7092031002044678,5,1.0
+2-151079-A-20,baby_crying,max_1s,Plop,0.630480945110321,5,1.0
+2-151079-A-20,baby_crying,top2_mean_1s,Plop,0.565252959728241,5,1.0
+2-151079-A-20,baby_crying,p90_1s,Plop,0.578298556804657,5,1.0
+2-173559-A-39,glass_breaking,max_1s,Silence,0.7043770551681519,5,1.0
+2-173559-A-39,glass_breaking,top2_mean_1s,Silence,0.6640468537807465,5,1.0
+2-173559-A-39,glass_breaking,p90_1s,Silence,0.6721128940582275,5,1.0
+2-173607-A-39,glass_breaking,max_1s,Silence,0.6421340703964233,5,1.0
+2-173607-A-39,glass_breaking,top2_mean_1s,Silence,0.6284742951393127,5,1.0
+2-173607-A-39,glass_breaking,p90_1s,Silence,0.6312062501907348,5,1.0
+2-173618-A-39,glass_breaking,max_1s,Music,0.6778135895729065,5,1.0
+2-173618-A-39,glass_breaking,top2_mean_1s,Music,0.6730302274227142,5,1.0
+2-173618-A-39,glass_breaking,p90_1s,Music,0.6739868998527527,5,1.0
+2-18766-A-12,fire,max_1s,Music,0.5379459261894226,5,1.0
+2-18766-A-12,fire,top2_mean_1s,Music,0.5372826159000397,5,1.0
+2-18766-A-12,fire,p90_1s,Music,0.5374152779579162,5,1.0
+2-18766-B-12,fire,max_1s,Music,0.5811685919761658,5,1.0
+2-18766-B-12,fire,top2_mean_1s,Music,0.5669368505477905,5,1.0
+2-18766-B-12,fire,p90_1s,Music,0.5697831988334656,5,1.0
+2-250710-A-39,glass_breaking,max_1s,Music,0.6989923119544983,5,1.0
+2-250710-A-39,glass_breaking,top2_mean_1s,Music,0.6366014182567596,5,1.0
+2-250710-A-39,glass_breaking,p90_1s,Music,0.6490795969963074,5,1.0
+2-28314-A-12,fire,max_1s,Rattle,0.6230102181434631,5,1.0
+2-28314-A-12,fire,top2_mean_1s,Rattle,0.5752285122871399,5,1.0
+2-28314-A-12,fire,p90_1s,Rattle,0.5847848534584046,5,1.0
+2-28314-B-12,fire,max_1s,Patter,0.603264331817627,5,1.0
+2-28314-B-12,fire,top2_mean_1s,Patter,0.5636866986751556,5,1.0
+2-28314-B-12,fire,p90_1s,Patter,0.5716022253036499,5,1.0
+2-30322-A-12,fire,max_1s,Rattle,0.6169273257255554,5,1.0
+2-30322-A-12,fire,top2_mean_1s,Rattle,0.5634020268917084,5,1.0
+2-30322-A-12,fire,p90_1s,Rattle,0.5741070866584778,5,1.0
+2-30322-B-12,fire,max_1s,Patter,0.5630307197570801,5,1.0
+2-30322-B-12,fire,top2_mean_1s,Patter,0.5569391250610352,5,1.0
+2-30322-B-12,fire,p90_1s,Patter,0.5581574440002441,5,1.0
+2-42101-A-43,vehicle_horn,max_1s,Vehicle,0.6807407736778259,5,1.0
+2-42101-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6697092354297638,5,1.0
+2-42101-A-43,vehicle_horn,p90_1s,Vehicle,0.6719155430793762,5,1.0
+2-43802-A-42,siren,max_1s,Civil defense siren,0.703798234462738,5,1.0
+2-43802-A-42,siren,top2_mean_1s,Civil defense siren,0.7003220915794373,5,1.0
+2-43802-A-42,siren,p90_1s,Civil defense siren,0.7010173201560974,5,1.0
+2-43806-A-42,siren,max_1s,Emergency vehicle,0.6777154207229614,5,1.0
+2-43806-A-42,siren,top2_mean_1s,Siren,0.6519231498241425,5,1.0
+2-43806-A-42,siren,p90_1s,Emergency vehicle,0.6567802667617798,5,1.0
+2-50665-A-20,baby_crying,max_1s,Silence,0.6334817409515381,5,1.0
+2-50665-A-20,baby_crying,top2_mean_1s,Silence,0.5986276865005493,5,1.0
+2-50665-A-20,baby_crying,p90_1s,Silence,0.6055984973907471,5,1.0
+2-50666-A-20,baby_crying,max_1s,Music,0.6553701162338257,5,1.0
+2-50666-A-20,baby_crying,top2_mean_1s,Music,0.6111369132995605,5,1.0
+2-50666-A-20,baby_crying,p90_1s,Music,0.6199835538864136,5,1.0
+2-54086-A-43,vehicle_horn,max_1s,"Vehicle horn, car horn, honking",0.6897997260093689,5,1.0
+2-54086-A-43,vehicle_horn,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+2-54086-A-43,vehicle_horn,p90_1s,Silence,0.6334817409515381,5,1.0
+2-61311-A-12,fire,max_1s,Typewriter,0.6796153783798218,5,1.0
+2-61311-A-12,fire,top2_mean_1s,"Slap, smack",0.5957490503787994,5,1.0
+2-61311-A-12,fire,p90_1s,Typewriter,0.6085808992385864,5,1.0
+2-65747-A-12,fire,max_1s,Engine,0.5774887204170227,5,1.0
+2-65747-A-12,fire,top2_mean_1s,Engine,0.563697099685669,5,1.0
+2-65747-A-12,fire,p90_1s,Engine,0.5664554238319397,5,1.0
+2-66637-A-20,baby_crying,max_1s,"Baby cry, infant cry",0.6629807353019714,5,1.0
+2-66637-A-20,baby_crying,top2_mean_1s,"Baby cry, infant cry",0.6413370072841644,5,1.0
+2-66637-A-20,baby_crying,p90_1s,"Baby cry, infant cry",0.6456657528877259,5,1.0
+2-66637-B-20,baby_crying,max_1s,Animal,0.6566711664199829,5,1.0
+2-66637-B-20,baby_crying,top2_mean_1s,Animal,0.5907928645610809,5,1.0
+2-66637-B-20,baby_crying,p90_1s,Animal,0.6039685249328614,5,1.0
+2-70052-A-42,siren,max_1s,Siren,0.6992979645729065,5,1.0
+2-70052-A-42,siren,top2_mean_1s,Siren,0.6830700635910034,5,1.0
+2-70052-A-42,siren,p90_1s,Siren,0.6863156437873841,5,1.0
+2-70052-B-42,siren,max_1s,Siren,0.6770216226577759,5,1.0
+2-70052-B-42,siren,top2_mean_1s,Siren,0.6433859467506409,5,1.0
+2-70052-B-42,siren,p90_1s,Siren,0.6501130819320678,5,1.0
+2-70936-A-42,siren,max_1s,Siren,0.7121286988258362,5,1.0
+2-70936-A-42,siren,top2_mean_1s,Siren,0.7026785612106323,5,1.0
+2-70936-A-42,siren,p90_1s,Siren,0.7045685887336731,5,1.0
+2-70938-A-42,siren,max_1s,Siren,0.7160309553146362,5,1.0
+2-70938-A-42,siren,top2_mean_1s,Siren,0.7012641727924347,5,1.0
+2-70938-A-42,siren,p90_1s,Siren,0.704217529296875,5,1.0
+2-70939-A-42,siren,max_1s,Emergency vehicle,0.6977437138557434,5,1.0
+2-70939-A-42,siren,top2_mean_1s,Emergency vehicle,0.696713387966156,5,1.0
+2-70939-A-42,siren,p90_1s,Emergency vehicle,0.6969194531440734,5,1.0
+2-72688-A-42,siren,max_1s,Siren,0.7133031487464905,5,1.0
+2-72688-A-42,siren,top2_mean_1s,Siren,0.7130883932113647,5,1.0
+2-72688-A-42,siren,p90_1s,Siren,0.7131313443183899,5,1.0
+2-80482-A-20,baby_crying,max_1s,"Baby cry, infant cry",0.6600949168205261,5,1.0
+2-80482-A-20,baby_crying,top2_mean_1s,"Baby cry, infant cry",0.6368202567100525,5,1.0
+2-80482-A-20,baby_crying,p90_1s,"Baby cry, infant cry",0.6414751887321473,5,1.0
+3-104632-A-12,fire,max_1s,Scissors,0.5576632022857666,5,1.0
+3-104632-A-12,fire,top2_mean_1s,Scissors,0.5422410070896149,5,1.0
+3-104632-A-12,fire,p90_1s,Scissors,0.5453254461288453,5,1.0
+3-104958-A-12,fire,max_1s,Static,0.5773283839225769,5,1.0
+3-104958-A-12,fire,top2_mean_1s,Static,0.5469239950180054,5,1.0
+3-104958-A-12,fire,p90_1s,Static,0.5530048727989196,5,1.0
+3-120644-A-12,fire,max_1s,Patter,0.5811434388160706,5,1.0
+3-120644-A-12,fire,top2_mean_1s,Patter,0.5519679486751556,5,1.0
+3-120644-A-12,fire,p90_1s,Patter,0.5578030467033386,5,1.0
+3-136288-A-0,dog_barking,max_1s,Music,0.6213825345039368,5,1.0
+3-136288-A-0,dog_barking,top2_mean_1s,Dog,0.6142464876174927,5,1.0
+3-136288-A-0,dog_barking,p90_1s,Dog,0.6144644021987915,5,1.0
+3-144028-A-0,dog_barking,max_1s,Animal,0.666412889957428,5,1.0
+3-144028-A-0,dog_barking,top2_mean_1s,Animal,0.6541810929775238,5,1.0
+3-144028-A-0,dog_barking,p90_1s,Animal,0.6566274523735046,5,1.0
+3-144510-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+3-144510-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-144510-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+3-145577-A-43,vehicle_horn,max_1s,Silence,0.6334817409515381,5,1.0
+3-145577-A-43,vehicle_horn,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-145577-A-43,vehicle_horn,p90_1s,Silence,0.6334817409515381,5,1.0
+3-145774-A-12,fire,max_1s,Fire,0.5758886933326721,5,1.0
+3-145774-A-12,fire,top2_mean_1s,Fire,0.5511070787906647,5,1.0
+3-145774-A-12,fire,p90_1s,Fire,0.5560634016990662,5,1.0
+3-146697-A-43,vehicle_horn,max_1s,Vehicle,0.6790436506271362,5,1.0
+3-146697-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6735858619213104,5,1.0
+3-146697-A-43,vehicle_horn,p90_1s,Vehicle,0.6746774196624756,5,1.0
+3-147965-A-12,fire,max_1s,Horse,0.6338950991630554,5,1.0
+3-147965-A-12,fire,top2_mean_1s,Vehicle,0.5721083879470825,5,1.0
+3-147965-A-12,fire,p90_1s,Horse,0.5804144501686096,5,1.0
+3-151080-A-20,baby_crying,max_1s,Quack,0.6328659653663635,5,1.0
+3-151080-A-20,baby_crying,top2_mean_1s,Groan,0.5912041664123535,5,1.0
+3-151080-A-20,baby_crying,p90_1s,Groan,0.5946141123771668,5,1.0
+3-151081-A-20,baby_crying,max_1s,"Baby cry, infant cry",0.6614882946014404,5,1.0
+3-151081-A-20,baby_crying,top2_mean_1s,"Baby cry, infant cry",0.589519590139389,5,1.0
+3-151081-A-20,baby_crying,p90_1s,"Baby cry, infant cry",0.6039133310317993,5,1.0
+3-151081-B-20,baby_crying,max_1s,"Chicken, rooster",0.5478384494781494,5,1.0
+3-151081-B-20,baby_crying,top2_mean_1s,Animal,0.5296445786952972,5,1.0
+3-151081-B-20,baby_crying,p90_1s,"Chicken, rooster",0.5308268070220947,5,1.0
+3-151089-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+3-151089-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-151089-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+3-152007-A-20,baby_crying,max_1s,"Air horn, truck horn",0.6599630117416382,5,1.0
+3-152007-A-20,baby_crying,top2_mean_1s,Music,0.5816949605941772,5,1.0
+3-152007-A-20,baby_crying,p90_1s,"Air horn, truck horn",0.5967137098312378,5,1.0
+3-152007-B-20,baby_crying,max_1s,"Wail, moan",0.6121811270713806,5,1.0
+3-152007-B-20,baby_crying,top2_mean_1s,Groan,0.5819606781005859,5,1.0
+3-152007-B-20,baby_crying,p90_1s,Groan,0.583853018283844,5,1.0
+3-152007-C-20,baby_crying,max_1s,Music,0.6261232495307922,5,1.0
+3-152007-C-20,baby_crying,top2_mean_1s,Music,0.5738461017608643,5,1.0
+3-152007-C-20,baby_crying,p90_1s,Music,0.5843015313148499,5,1.0
+3-152007-D-20,baby_crying,max_1s,"Baby cry, infant cry",0.6701450943946838,5,1.0
+3-152007-D-20,baby_crying,top2_mean_1s,Siren,0.6514601409435272,5,1.0
+3-152007-D-20,baby_crying,p90_1s,Siren,0.6515082359313965,5,1.0
+3-152007-E-20,baby_crying,max_1s,Music,0.6935396194458008,5,1.0
+3-152007-E-20,baby_crying,top2_mean_1s,"Baby cry, infant cry",0.6120782494544983,5,1.0
+3-152007-E-20,baby_crying,p90_1s,Music,0.6263900756835937,5,1.0
+3-152594-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+3-152594-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-152594-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+3-153057-A-43,vehicle_horn,max_1s,Silence,0.6334817409515381,5,1.0
+3-153057-A-43,vehicle_horn,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-153057-A-43,vehicle_horn,p90_1s,Silence,0.6334817409515381,5,1.0
+3-154378-A-30,door_activity,max_1s,Knock,0.6410545706748962,5,1.0
+3-154378-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-154378-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+3-155130-A-43,vehicle_horn,max_1s,Vehicle,0.684271514415741,5,1.0
+3-155130-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6524782180786133,5,1.0
+3-155130-A-43,vehicle_horn,p90_1s,Vehicle,0.6588368773460388,5,1.0
+3-155234-A-43,vehicle_horn,max_1s,Vehicle,0.6318624019622803,5,1.0
+3-155234-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6289481222629547,5,1.0
+3-155234-A-43,vehicle_horn,p90_1s,Vehicle,0.6295309782028198,5,1.0
+3-155312-A-0,dog_barking,max_1s,Animal,0.7129645347595215,5,1.0
+3-155312-A-0,dog_barking,top2_mean_1s,Animal,0.7127295732498169,5,1.0
+3-155312-A-0,dog_barking,p90_1s,Animal,0.7127765655517578,5,1.0
+3-157187-A-12,fire,max_1s,Silence,0.6334817409515381,5,1.0
+3-157187-A-12,fire,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-157187-A-12,fire,p90_1s,Silence,0.6334817409515381,5,1.0
+3-157695-A-0,dog_barking,max_1s,Quack,0.5846194624900818,5,1.0
+3-157695-A-0,dog_barking,top2_mean_1s,Sound effect,0.546199232339859,5,1.0
+3-157695-A-0,dog_barking,p90_1s,Quack,0.5521461606025696,5,1.0
+3-158476-A-12,fire,max_1s,Animal,0.6235718131065369,5,1.0
+3-158476-A-12,fire,top2_mean_1s,Animal,0.5764970779418945,5,1.0
+3-158476-A-12,fire,p90_1s,Animal,0.585912024974823,5,1.0
+3-161010-A-43,vehicle_horn,max_1s,Vehicle,0.6387853622436523,5,1.0
+3-161010-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6299235224723816,5,1.0
+3-161010-A-43,vehicle_horn,p90_1s,Vehicle,0.6316958904266358,5,1.0
+3-163459-A-0,dog_barking,max_1s,Bark,0.6774376034736633,5,1.0
+3-163459-A-0,dog_barking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-163459-A-0,dog_barking,p90_1s,Silence,0.6334817409515381,5,1.0
+3-170015-A-0,dog_barking,max_1s,Animal,0.7078908085823059,5,1.0
+3-170015-A-0,dog_barking,top2_mean_1s,Silence,0.6315992474555969,5,1.0
+3-170015-A-0,dog_barking,p90_1s,Silence,0.6319757461547851,5,1.0
+3-170574-A-30,door_activity,max_1s,Knock,0.6656180024147034,5,1.0
+3-170574-A-30,door_activity,top2_mean_1s,Knock,0.6414345502853394,5,1.0
+3-170574-A-30,door_activity,p90_1s,Knock,0.6462712407112121,5,1.0
+3-174840-A-43,vehicle_horn,max_1s,Echo,0.6371854543685913,5,1.0
+3-174840-A-43,vehicle_horn,top2_mean_1s,Music,0.5993573665618896,5,1.0
+3-174840-A-43,vehicle_horn,p90_1s,Music,0.6051430463790893,5,1.0
+3-180147-A-30,door_activity,max_1s,Knock,0.6582373976707458,5,1.0
+3-180147-A-30,door_activity,top2_mean_1s,Music,0.6340047121047974,5,1.0
+3-180147-A-30,door_activity,p90_1s,Music,0.6376965641975403,5,1.0
+3-180256-A-0,dog_barking,max_1s,Animal,0.6596408486366272,5,1.0
+3-180256-A-0,dog_barking,top2_mean_1s,Animal,0.6337530016899109,5,1.0
+3-180256-A-0,dog_barking,p90_1s,Animal,0.6389305710792541,5,1.0
+3-180977-A-0,dog_barking,max_1s,Animal,0.7156485915184021,5,1.0
+3-180977-A-0,dog_barking,top2_mean_1s,Animal,0.7143519222736359,5,1.0
+3-180977-A-0,dog_barking,p90_1s,Animal,0.7146112561225891,5,1.0
+3-182023-A-30,door_activity,max_1s,Knock,0.6352728605270386,5,1.0
+3-182023-A-30,door_activity,top2_mean_1s,Music,0.590037077665329,5,1.0
+3-182023-A-30,door_activity,p90_1s,Knock,0.596245288848877,5,1.0
+3-182025-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+3-182025-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-182025-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+3-203371-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+3-203371-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-203371-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+3-203373-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+3-203373-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-203373-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+3-203374-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+3-203374-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-203374-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+3-203375-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+3-203375-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-203375-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+3-203377-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+3-203377-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-203377-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+3-216280-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+3-216280-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-216280-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+3-216281-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+3-216281-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-216281-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+3-216284-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+3-216284-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+3-216284-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+3-243726-A-43,vehicle_horn,max_1s,Vehicle,0.6608031392097473,5,1.0
+3-243726-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6515879333019257,5,1.0
+3-243726-A-43,vehicle_horn,p90_1s,Vehicle,0.65343097448349,5,1.0
+3-51376-A-42,siren,max_1s,Siren,0.7101240158081055,5,1.0
+3-51376-A-42,siren,top2_mean_1s,Siren,0.709214448928833,5,1.0
+3-51376-A-42,siren,p90_1s,Siren,0.7093963623046875,5,1.0
+3-51731-A-42,siren,max_1s,Vehicle,0.6417465209960938,5,1.0
+3-51731-A-42,siren,top2_mean_1s,Vehicle,0.6414387226104736,5,1.0
+3-51731-A-42,siren,p90_1s,Vehicle,0.6415002822875977,5,1.0
+3-51731-B-42,siren,max_1s,Emergency vehicle,0.6872012615203857,5,1.0
+3-51731-B-42,siren,top2_mean_1s,Emergency vehicle,0.6649705469608307,5,1.0
+3-51731-B-42,siren,p90_1s,Emergency vehicle,0.6694166898727417,5,1.0
+3-51909-A-42,siren,max_1s,Siren,0.7129347324371338,5,1.0
+3-51909-A-42,siren,top2_mean_1s,Siren,0.7083753049373627,5,1.0
+3-51909-A-42,siren,p90_1s,Siren,0.7092871904373169,5,1.0
+3-51909-B-42,siren,max_1s,Siren,0.7125402092933655,5,1.0
+3-51909-B-42,siren,top2_mean_1s,Siren,0.7109414339065552,5,1.0
+3-51909-B-42,siren,p90_1s,Siren,0.7112611889839172,5,1.0
+3-58772-A-42,siren,max_1s,Siren,0.709604799747467,5,1.0
+3-58772-A-42,siren,top2_mean_1s,Siren,0.7024460434913635,5,1.0
+3-58772-A-42,siren,p90_1s,Siren,0.7038777947425843,5,1.0
+3-62878-A-42,siren,max_1s,Siren,0.701209545135498,5,1.0
+3-62878-A-42,siren,top2_mean_1s,Siren,0.7000905573368073,5,1.0
+3-62878-A-42,siren,p90_1s,Siren,0.7003143548965454,5,1.0
+3-62878-B-42,siren,max_1s,Siren,0.6962434649467468,5,1.0
+3-62878-B-42,siren,top2_mean_1s,Siren,0.6875579655170441,5,1.0
+3-62878-B-42,siren,p90_1s,Siren,0.6892950654029846,5,1.0
+3-65748-A-12,fire,max_1s,Patter,0.6195917725563049,5,1.0
+3-65748-A-12,fire,top2_mean_1s,Patter,0.5626086890697479,5,1.0
+3-65748-A-12,fire,p90_1s,Patter,0.5740053057670593,5,1.0
+4-102871-A-42,siren,max_1s,Siren,0.6797589063644409,5,1.0
+4-102871-A-42,siren,top2_mean_1s,Siren,0.6621562838554382,5,1.0
+4-102871-A-42,siren,p90_1s,Siren,0.6656768083572387,5,1.0
+4-111671-A-42,siren,max_1s,Siren,0.7023940086364746,5,1.0
+4-111671-A-42,siren,top2_mean_1s,Siren,0.6949202120304108,5,1.0
+4-111671-A-42,siren,p90_1s,Siren,0.6964149713516236,5,1.0
+4-111671-B-42,siren,max_1s,Siren,0.693135678768158,5,1.0
+4-111671-B-42,siren,top2_mean_1s,Siren,0.6928974688053131,5,1.0
+4-111671-B-42,siren,p90_1s,Siren,0.6929451107978821,5,1.0
+4-121532-A-42,siren,max_1s,Civil defense siren,0.7103115916252136,5,1.0
+4-121532-A-42,siren,top2_mean_1s,Siren,0.7029940485954285,5,1.0
+4-121532-A-42,siren,p90_1s,Civil defense siren,0.7040865540504455,5,1.0
+4-164661-A-12,fire,max_1s,Vehicle,0.6141318082809448,5,1.0
+4-164661-A-12,fire,top2_mean_1s,Vehicle,0.6039356887340546,5,1.0
+4-164661-A-12,fire,p90_1s,Vehicle,0.6059749126434326,5,1.0
+4-164661-B-12,fire,max_1s,Silence,0.6334817409515381,5,1.0
+4-164661-B-12,fire,top2_mean_1s,Rattle,0.5778876543045044,5,1.0
+4-164661-B-12,fire,p90_1s,Music,0.5844054222106934,5,1.0
+4-167077-A-20,baby_crying,max_1s,Owl,0.6568354964256287,5,1.0
+4-167077-A-20,baby_crying,top2_mean_1s,Owl,0.5789438188076019,5,1.0
+4-167077-A-20,baby_crying,p90_1s,Owl,0.5945221543312073,5,1.0
+4-167077-B-20,baby_crying,max_1s,Groan,0.60416179895401,5,1.0
+4-167077-B-20,baby_crying,top2_mean_1s,Groan,0.5572560727596283,5,1.0
+4-167077-B-20,baby_crying,p90_1s,Groan,0.5666372179985046,5,1.0
+4-167077-C-20,baby_crying,max_1s,Owl,0.6121723055839539,5,1.0
+4-167077-C-20,baby_crying,top2_mean_1s,Owl,0.5586718320846558,5,1.0
+4-167077-C-20,baby_crying,p90_1s,Owl,0.5693719267845154,5,1.0
+4-170247-A-12,fire,max_1s,Car,0.5646243095397949,5,1.0
+4-170247-A-12,fire,top2_mean_1s,Car,0.5511637628078461,5,1.0
+4-170247-A-12,fire,p90_1s,Car,0.5538558721542358,5,1.0
+4-170247-B-12,fire,max_1s,Vehicle,0.6167106032371521,5,1.0
+4-170247-B-12,fire,top2_mean_1s,Vehicle,0.5927545130252838,5,1.0
+4-170247-B-12,fire,p90_1s,Vehicle,0.5975457310676575,5,1.0
+4-171207-A-12,fire,max_1s,Vehicle,0.6484003067016602,5,1.0
+4-171207-A-12,fire,top2_mean_1s,Vehicle,0.6373673379421234,5,1.0
+4-171207-A-12,fire,p90_1s,Vehicle,0.6395739316940308,5,1.0
+4-175845-A-43,vehicle_horn,max_1s,Vehicle,0.6614295244216919,5,1.0
+4-175845-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6613674461841583,5,1.0
+4-175845-A-43,vehicle_horn,p90_1s,Vehicle,0.6613798618316651,5,1.0
+4-175846-A-43,vehicle_horn,max_1s,"Vehicle horn, car horn, honking",0.6551692485809326,5,1.0
+4-175846-A-43,vehicle_horn,top2_mean_1s,"Vehicle horn, car horn, honking",0.6449074447154999,5,1.0
+4-175846-A-43,vehicle_horn,p90_1s,"Vehicle horn, car horn, honking",0.6469598054885864,5,1.0
+4-175855-A-43,vehicle_horn,max_1s,Vehicle,0.6688637733459473,5,1.0
+4-175855-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6666676700115204,5,1.0
+4-175855-A-43,vehicle_horn,p90_1s,Vehicle,0.6671068906784058,5,1.0
+4-175856-A-43,vehicle_horn,max_1s,Vehicle,0.6916328072547913,5,1.0
+4-175856-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6725870370864868,5,1.0
+4-175856-A-43,vehicle_horn,p90_1s,Vehicle,0.6763961911201477,5,1.0
+4-176631-A-43,vehicle_horn,max_1s,Vehicle,0.6622887849807739,5,1.0
+4-176631-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6533011496067047,5,1.0
+4-176631-A-43,vehicle_horn,p90_1s,Vehicle,0.6550986766815186,5,1.0
+4-176638-A-43,vehicle_horn,max_1s,Music,0.6289292573928833,5,1.0
+4-176638-A-43,vehicle_horn,top2_mean_1s,Music,0.6207965314388275,5,1.0
+4-176638-A-43,vehicle_horn,p90_1s,Music,0.6224230766296387,5,1.0
+4-178402-A-43,vehicle_horn,max_1s,Silence,0.6978115439414978,5,1.0
+4-178402-A-43,vehicle_horn,top2_mean_1s,Silence,0.6515495181083679,5,1.0
+4-178402-A-43,vehicle_horn,p90_1s,Silence,0.6608019232749939,5,1.0
+4-181563-A-12,fire,max_1s,Vehicle,0.6039730906486511,5,1.0
+4-181563-A-12,fire,top2_mean_1s,Vehicle,0.5976505279541016,5,1.0
+4-181563-A-12,fire,p90_1s,Vehicle,0.5989150404930115,5,1.0
+4-182034-A-30,door_activity,max_1s,Knock,0.6836857795715332,5,1.0
+4-182034-A-30,door_activity,top2_mean_1s,Knock,0.6268389225006104,5,1.0
+4-182034-A-30,door_activity,p90_1s,Knock,0.6382082939147949,5,1.0
+4-182039-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+4-182039-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+4-182039-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+4-182041-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+4-182041-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+4-182041-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+4-182368-A-12,fire,max_1s,Horse,0.5983354449272156,5,1.0
+4-182368-A-12,fire,top2_mean_1s,Computer keyboard,0.5617362260818481,5,1.0
+4-182368-A-12,fire,p90_1s,Computer keyboard,0.569030475616455,5,1.0
+4-182369-A-12,fire,max_1s,Horse,0.6567032933235168,5,1.0
+4-182369-A-12,fire,top2_mean_1s,Horse,0.5889585316181183,5,1.0
+4-182369-A-12,fire,p90_1s,Horse,0.602507483959198,5,1.0
+4-182395-A-0,dog_barking,max_1s,Silence,0.6334817409515381,5,1.0
+4-182395-A-0,dog_barking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+4-182395-A-0,dog_barking,p90_1s,Silence,0.6334817409515381,5,1.0
+4-183992-A-0,dog_barking,max_1s,Dog,0.6890072226524353,5,1.0
+4-183992-A-0,dog_barking,top2_mean_1s,Animal,0.6826512515544891,5,1.0
+4-183992-A-0,dog_barking,p90_1s,Animal,0.6835894465446473,5,1.0
+4-184575-A-0,dog_barking,max_1s,Animal,0.70390784740448,5,1.0
+4-184575-A-0,dog_barking,top2_mean_1s,Animal,0.6873963475227356,5,1.0
+4-184575-A-0,dog_barking,p90_1s,Animal,0.6906986474990845,5,1.0
+4-185575-A-20,baby_crying,max_1s,Sawing,0.6393495202064514,5,1.0
+4-185575-A-20,baby_crying,top2_mean_1s,Rub,0.590765118598938,5,1.0
+4-185575-A-20,baby_crying,p90_1s,Rub,0.5939405679702758,5,1.0
+4-185575-B-20,baby_crying,max_1s,Music,0.6172940135002136,5,1.0
+4-185575-B-20,baby_crying,top2_mean_1s,Music,0.5924277007579803,5,1.0
+4-185575-B-20,baby_crying,p90_1s,Music,0.597400963306427,5,1.0
+4-185575-C-20,baby_crying,max_1s,Music,0.5947611927986145,5,1.0
+4-185575-C-20,baby_crying,top2_mean_1s,Music,0.5783869028091431,5,1.0
+4-185575-C-20,baby_crying,p90_1s,Music,0.5816617608070374,5,1.0
+4-186518-A-30,door_activity,max_1s,Silence,0.6937350630760193,5,1.0
+4-186518-A-30,door_activity,top2_mean_1s,Knock,0.651851624250412,5,1.0
+4-186518-A-30,door_activity,p90_1s,Knock,0.6523126363754272,5,1.0
+4-187284-A-30,door_activity,max_1s,Vehicle,0.5998743176460266,5,1.0
+4-187284-A-30,door_activity,top2_mean_1s,Vehicle,0.5676423907279968,5,1.0
+4-187284-A-30,door_activity,p90_1s,Vehicle,0.5740887761116028,5,1.0
+4-188878-A-30,door_activity,max_1s,Knock,0.6566412448883057,5,1.0
+4-188878-A-30,door_activity,top2_mean_1s,Knock,0.6020050346851349,5,1.0
+4-188878-A-30,door_activity,p90_1s,Knock,0.612932276725769,5,1.0
+4-191015-A-43,vehicle_horn,max_1s,Vehicle,0.6832637786865234,5,1.0
+4-191015-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6498302519321442,5,1.0
+4-191015-A-43,vehicle_horn,p90_1s,Vehicle,0.6565169572830201,5,1.0
+4-191687-A-0,dog_barking,max_1s,Animal,0.699425458908081,5,1.0
+4-191687-A-0,dog_barking,top2_mean_1s,Animal,0.6894534528255463,5,1.0
+4-191687-A-0,dog_barking,p90_1s,Animal,0.6914478540420532,5,1.0
+4-192236-A-0,dog_barking,max_1s,Animal,0.7163642644882202,5,1.0
+4-192236-A-0,dog_barking,top2_mean_1s,Animal,0.7095314860343933,5,1.0
+4-192236-A-0,dog_barking,p90_1s,Animal,0.7108980417251587,5,1.0
+4-194754-A-0,dog_barking,max_1s,Animal,0.6698115468025208,5,1.0
+4-194754-A-0,dog_barking,top2_mean_1s,Animal,0.6630269587039948,5,1.0
+4-194754-A-0,dog_barking,p90_1s,Animal,0.6643838763237,5,1.0
+4-199261-A-0,dog_barking,max_1s,Owl,0.7197073101997375,5,1.0
+4-199261-A-0,dog_barking,top2_mean_1s,Animal,0.6719218790531158,5,1.0
+4-199261-A-0,dog_barking,p90_1s,Animal,0.6750049948692322,5,1.0
+4-204115-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+4-204115-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+4-204115-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+4-204119-A-39,glass_breaking,max_1s,Music,0.7028154134750366,5,1.0
+4-204119-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+4-204119-A-39,glass_breaking,p90_1s,Music,0.6351170539855957,5,1.0
+4-204121-A-39,glass_breaking,max_1s,Music,0.6696357131004333,5,1.0
+4-204121-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+4-204121-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+4-204123-A-39,glass_breaking,max_1s,Music,0.6676462292671204,5,1.0
+4-204123-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+4-204123-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+4-204777-A-39,glass_breaking,max_1s,Sound effect,0.5784808397293091,5,1.0
+4-204777-A-39,glass_breaking,top2_mean_1s,Sound effect,0.5699480473995209,5,1.0
+4-204777-A-39,glass_breaking,p90_1s,Sound effect,0.5716546058654786,5,1.0
+4-204777-B-39,glass_breaking,max_1s,Music,0.6493374109268188,5,1.0
+4-204777-B-39,glass_breaking,top2_mean_1s,Music,0.6234927773475647,5,1.0
+4-204777-B-39,glass_breaking,p90_1s,Music,0.6286617040634155,5,1.0
+4-204777-C-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+4-204777-C-39,glass_breaking,top2_mean_1s,Silence,0.5689134001731873,5,1.0
+4-204777-C-39,glass_breaking,p90_1s,Silence,0.5818270683288574,5,1.0
+4-207124-A-0,dog_barking,max_1s,Animal,0.6875660419464111,5,1.0
+4-207124-A-0,dog_barking,top2_mean_1s,Animal,0.6829915046691895,5,1.0
+4-207124-A-0,dog_barking,p90_1s,Animal,0.6839064121246338,5,1.0
+4-211502-A-30,door_activity,max_1s,Music,0.6754316091537476,5,1.0
+4-211502-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+4-211502-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+4-212698-A-39,glass_breaking,max_1s,Cap gun,0.6663870215415955,5,1.0
+4-212698-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+4-212698-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+4-261068-A-30,door_activity,max_1s,Knock,0.6948188543319702,5,1.0
+4-261068-A-30,door_activity,top2_mean_1s,Knock,0.6718382239341736,5,1.0
+4-261068-A-30,door_activity,p90_1s,Knock,0.6764343500137329,5,1.0
+4-59579-A-20,baby_crying,max_1s,Siren,0.6086081862449646,5,1.0
+4-59579-A-20,baby_crying,top2_mean_1s,Fire alarm,0.5594045519828796,5,1.0
+4-59579-A-20,baby_crying,p90_1s,Fire alarm,0.5692434310913086,5,1.0
+4-59579-B-20,baby_crying,max_1s,Silence,0.6334817409515381,5,1.0
+4-59579-B-20,baby_crying,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+4-59579-B-20,baby_crying,p90_1s,Silence,0.6334817409515381,5,1.0
+4-67358-A-42,siren,max_1s,Siren,0.7093386650085449,5,1.0
+4-67358-A-42,siren,top2_mean_1s,Siren,0.7019959688186646,5,1.0
+4-67358-A-42,siren,p90_1s,Siren,0.7034645080566406,5,1.0
+4-80761-A-42,siren,max_1s,Siren,0.7005451321601868,5,1.0
+4-80761-A-42,siren,top2_mean_1s,Siren,0.6908492743968964,5,1.0
+4-80761-A-42,siren,p90_1s,Siren,0.6927884459495545,5,1.0
+4-90014-A-42,siren,max_1s,Ambulance (siren),0.686230480670929,5,1.0
+4-90014-A-42,siren,top2_mean_1s,Siren,0.6748649179935455,5,1.0
+4-90014-A-42,siren,p90_1s,Siren,0.6750923871994019,5,1.0
+4-90014-B-42,siren,max_1s,Emergency vehicle,0.6760534644126892,5,1.0
+4-90014-B-42,siren,top2_mean_1s,Siren,0.658087819814682,5,1.0
+4-90014-B-42,siren,p90_1s,Siren,0.6594966650009155,5,1.0
+5-117118-A-42,siren,max_1s,Siren,0.7097969651222229,5,1.0
+5-117118-A-42,siren,top2_mean_1s,Siren,0.7093711197376251,5,1.0
+5-117118-A-42,siren,p90_1s,Siren,0.7094562888145447,5,1.0
+5-117120-A-42,siren,max_1s,Siren,0.7178739905357361,5,1.0
+5-117120-A-42,siren,top2_mean_1s,Siren,0.7144699096679688,5,1.0
+5-117120-A-42,siren,p90_1s,Siren,0.7151507258415222,5,1.0
+5-117122-A-42,siren,max_1s,Siren,0.7115601301193237,5,1.0
+5-117122-A-42,siren,top2_mean_1s,Siren,0.7110249698162079,5,1.0
+5-117122-A-42,siren,p90_1s,Siren,0.711132001876831,5,1.0
+5-133989-A-42,siren,max_1s,Siren,0.708839476108551,5,1.0
+5-133989-A-42,siren,top2_mean_1s,Siren,0.7077490389347076,5,1.0
+5-133989-A-42,siren,p90_1s,Siren,0.7079671263694763,5,1.0
+5-133989-B-42,siren,max_1s,Siren,0.704693615436554,5,1.0
+5-133989-B-42,siren,top2_mean_1s,Siren,0.7045281827449799,5,1.0
+5-133989-B-42,siren,p90_1s,Siren,0.7045612692832947,5,1.0
+5-150409-A-42,siren,max_1s,Siren,0.6942832469940186,5,1.0
+5-150409-A-42,siren,top2_mean_1s,Siren,0.6807386577129364,5,1.0
+5-150409-A-42,siren,p90_1s,Siren,0.6834475755691528,5,1.0
+5-151085-A-20,baby_crying,max_1s,Music,0.5824300646781921,5,1.0
+5-151085-A-20,baby_crying,top2_mean_1s,"Baby cry, infant cry",0.561190277338028,5,1.0
+5-151085-A-20,baby_crying,p90_1s,"Baby cry, infant cry",0.5620771646499634,5,1.0
+5-160551-A-42,siren,max_1s,Train,0.5936166644096375,5,1.0
+5-160551-A-42,siren,top2_mean_1s,Vehicle,0.579730361700058,5,1.0
+5-160551-A-42,siren,p90_1s,Vehicle,0.5818697929382324,5,1.0
+5-179860-A-43,vehicle_horn,max_1s,Vehicle,0.6863499283790588,5,1.0
+5-179860-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6422784328460693,5,1.0
+5-179860-A-43,vehicle_horn,p90_1s,Vehicle,0.6510927319526673,5,1.0
+5-179863-A-43,vehicle_horn,max_1s,Silence,0.6334817409515381,5,1.0
+5-179863-A-43,vehicle_horn,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+5-179863-A-43,vehicle_horn,p90_1s,Silence,0.6334817409515381,5,1.0
+5-179865-A-43,vehicle_horn,max_1s,Vehicle,0.6883935928344727,5,1.0
+5-179865-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6436303853988647,5,1.0
+5-179865-A-43,vehicle_horn,p90_1s,Vehicle,0.6525830268859864,5,1.0
+5-179866-A-43,vehicle_horn,max_1s,Vehicle,0.682188868522644,5,1.0
+5-179866-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6454070806503296,5,1.0
+5-179866-A-43,vehicle_horn,p90_1s,Vehicle,0.6527634382247924,5,1.0
+5-179868-A-43,vehicle_horn,max_1s,Vehicle,0.6602082848548889,5,1.0
+5-179868-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6456559002399445,5,1.0
+5-179868-A-43,vehicle_horn,p90_1s,Vehicle,0.6485663771629333,5,1.0
+5-180156-A-43,vehicle_horn,max_1s,Vehicle,0.6958249807357788,5,1.0
+5-180156-A-43,vehicle_horn,top2_mean_1s,Vehicle,0.6816371083259583,5,1.0
+5-180156-A-43,vehicle_horn,p90_1s,Vehicle,0.6844746828079223,5,1.0
+5-180156-B-43,vehicle_horn,max_1s,Vehicle,0.6962095499038696,5,1.0
+5-180156-B-43,vehicle_horn,top2_mean_1s,Vehicle,0.6878198683261871,5,1.0
+5-180156-B-43,vehicle_horn,p90_1s,Vehicle,0.6894978046417236,5,1.0
+5-180156-C-43,vehicle_horn,max_1s,Vehicle,0.6642088294029236,5,1.0
+5-180156-C-43,vehicle_horn,top2_mean_1s,Vehicle,0.6401827037334442,5,1.0
+5-180156-C-43,vehicle_horn,p90_1s,Vehicle,0.6449879288673401,5,1.0
+5-184323-A-42,siren,max_1s,Siren,0.7186923027038574,5,1.0
+5-184323-A-42,siren,top2_mean_1s,Siren,0.7185280025005341,5,1.0
+5-184323-A-42,siren,p90_1s,Siren,0.7185608625411988,5,1.0
+5-186924-A-12,fire,max_1s,Vehicle,0.6270649433135986,5,1.0
+5-186924-A-12,fire,top2_mean_1s,Vehicle,0.5895628333091736,5,1.0
+5-186924-A-12,fire,p90_1s,Vehicle,0.5970632553100585,5,1.0
+5-189212-A-12,fire,max_1s,Vehicle,0.5974187850952148,5,1.0
+5-189212-A-12,fire,top2_mean_1s,Vehicle,0.5882651805877686,5,1.0
+5-189212-A-12,fire,p90_1s,Vehicle,0.5900959014892578,5,1.0
+5-189237-A-12,fire,max_1s,Hands,0.5878841876983643,5,1.0
+5-189237-A-12,fire,top2_mean_1s,Hands,0.5521337985992432,5,1.0
+5-189237-A-12,fire,p90_1s,Hands,0.5592838764190674,5,1.0
+5-193473-A-12,fire,max_1s,Fire,0.6419028043746948,5,1.0
+5-193473-A-12,fire,top2_mean_1s,Fire,0.604131817817688,5,1.0
+5-193473-A-12,fire,p90_1s,Fire,0.6116860151290894,5,1.0
+5-193473-B-12,fire,max_1s,Sizzle,0.5607147812843323,5,1.0
+5-193473-B-12,fire,top2_mean_1s,Fire,0.5441071689128876,5,1.0
+5-193473-B-12,fire,p90_1s,Fire,0.5444901943206787,5,1.0
+5-198411-A-20,baby_crying,max_1s,Siren,0.6642528176307678,5,1.0
+5-198411-A-20,baby_crying,top2_mean_1s,Siren,0.5862165987491608,5,1.0
+5-198411-A-20,baby_crying,p90_1s,Siren,0.6018238425254822,5,1.0
+5-198411-B-20,baby_crying,max_1s,Theremin,0.7101608514785767,5,1.0
+5-198411-B-20,baby_crying,top2_mean_1s,Theremin,0.6184007525444031,5,1.0
+5-198411-B-20,baby_crying,p90_1s,Theremin,0.6367527723312378,5,1.0
+5-198411-C-20,baby_crying,max_1s,Beatboxing,0.531684935092926,5,1.0
+5-198411-C-20,baby_crying,top2_mean_1s,Whimper,0.5239619612693787,5,1.0
+5-198411-C-20,baby_crying,p90_1s,Whimper,0.5247145652770996,5,1.0
+5-198411-D-20,baby_crying,max_1s,"Baby cry, infant cry",0.6057487726211548,5,1.0
+5-198411-D-20,baby_crying,top2_mean_1s,Music,0.5553490221500397,5,1.0
+5-198411-D-20,baby_crying,p90_1s,"Baby cry, infant cry",0.5643669366836548,5,1.0
+5-198411-E-20,baby_crying,max_1s,Siren,0.6382296681404114,5,1.0
+5-198411-E-20,baby_crying,top2_mean_1s,Music,0.6310121119022369,5,1.0
+5-198411-E-20,baby_crying,p90_1s,Music,0.6322218537330627,5,1.0
+5-198411-F-20,baby_crying,max_1s,Screaming,0.6366193294525146,5,1.0
+5-198411-F-20,baby_crying,top2_mean_1s,Screaming,0.5758578777313232,5,1.0
+5-198411-F-20,baby_crying,p90_1s,Screaming,0.5880101680755615,5,1.0
+5-198411-G-20,baby_crying,max_1s,Animal,0.6933562755584717,5,1.0
+5-198411-G-20,baby_crying,top2_mean_1s,Animal,0.6123403906822205,5,1.0
+5-198411-G-20,baby_crying,p90_1s,Animal,0.6285435676574707,5,1.0
+5-203128-A-0,dog_barking,max_1s,Bark,0.7042431831359863,5,1.0
+5-203128-A-0,dog_barking,top2_mean_1s,Bark,0.6985156834125519,5,1.0
+5-203128-A-0,dog_barking,p90_1s,Bark,0.6996611833572388,5,1.0
+5-203128-B-0,dog_barking,max_1s,Animal,0.7149547338485718,5,1.0
+5-203128-B-0,dog_barking,top2_mean_1s,Animal,0.713308572769165,5,1.0
+5-203128-B-0,dog_barking,p90_1s,Animal,0.7136378049850464,5,1.0
+5-208030-A-0,dog_barking,max_1s,Animal,0.715127170085907,5,1.0
+5-208030-A-0,dog_barking,top2_mean_1s,Animal,0.7136548161506653,5,1.0
+5-208030-A-0,dog_barking,p90_1s,Animal,0.7139492869377136,5,1.0
+5-212454-A-0,dog_barking,max_1s,Hoot,0.7023018598556519,5,1.0
+5-212454-A-0,dog_barking,top2_mean_1s,Animal,0.6943868100643158,5,1.0
+5-212454-A-0,dog_barking,p90_1s,Animal,0.6956906795501709,5,1.0
+5-213802-A-12,fire,max_1s,Helicopter,0.6939408779144287,5,1.0
+5-213802-A-12,fire,top2_mean_1s,Helicopter,0.6398589313030243,5,1.0
+5-213802-A-12,fire,p90_1s,Helicopter,0.6506753206253052,5,1.0
+5-213855-A-0,dog_barking,max_1s,Animal,0.6933591365814209,5,1.0
+5-213855-A-0,dog_barking,top2_mean_1s,Animal,0.686933159828186,5,1.0
+5-213855-A-0,dog_barking,p90_1s,Animal,0.688218355178833,5,1.0
+5-215658-A-12,fire,max_1s,Throbbing,0.5965771079063416,5,1.0
+5-215658-A-12,fire,top2_mean_1s,Throbbing,0.583360105752945,5,1.0
+5-215658-A-12,fire,p90_1s,Throbbing,0.5860035061836243,5,1.0
+5-215658-B-12,fire,max_1s,Vehicle,0.5679672956466675,5,1.0
+5-215658-B-12,fire,top2_mean_1s,Vehicle,0.5535740852355957,5,1.0
+5-215658-B-12,fire,p90_1s,Vehicle,0.55645272731781,5,1.0
+5-217158-A-0,dog_barking,max_1s,Animal,0.6622598171234131,5,1.0
+5-217158-A-0,dog_barking,top2_mean_1s,Music,0.603969156742096,5,1.0
+5-217158-A-0,dog_barking,p90_1s,Music,0.607236123085022,5,1.0
+5-218980-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+5-218980-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+5-218980-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+5-218981-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+5-218981-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+5-218981-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+5-221528-A-39,glass_breaking,max_1s,Glass,0.6656478047370911,5,1.0
+5-221528-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+5-221528-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+5-221529-A-39,glass_breaking,max_1s,Tambourine,0.6727864146232605,5,1.0
+5-221529-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+5-221529-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+5-231762-A-0,dog_barking,max_1s,Dog,0.666555643081665,5,1.0
+5-231762-A-0,dog_barking,top2_mean_1s,Animal,0.6356810331344604,5,1.0
+5-231762-A-0,dog_barking,p90_1s,Dog,0.6415791749954224,5,1.0
+5-233605-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+5-233605-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+5-233605-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+5-233607-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+5-233607-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+5-233607-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+5-235644-A-30,door_activity,max_1s,Silence,0.6334817409515381,5,1.0
+5-235644-A-30,door_activity,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+5-235644-A-30,door_activity,p90_1s,Silence,0.6334817409515381,5,1.0
+5-250026-A-30,door_activity,max_1s,Knock,0.7173007130622864,5,1.0
+5-250026-A-30,door_activity,top2_mean_1s,Knock,0.7159938812255859,5,1.0
+5-250026-A-30,door_activity,p90_1s,Knock,0.716255247592926,5,1.0
+5-250026-B-30,door_activity,max_1s,Knock,0.6143999695777893,5,1.0
+5-250026-B-30,door_activity,top2_mean_1s,Typewriter,0.596505731344223,5,1.0
+5-250026-B-30,door_activity,p90_1s,Typewriter,0.5999781489372253,5,1.0
+5-251426-A-30,door_activity,max_1s,Knock,0.6966317296028137,5,1.0
+5-251426-A-30,door_activity,top2_mean_1s,Knock,0.6505495309829712,5,1.0
+5-251426-A-30,door_activity,p90_1s,Knock,0.6597659707069397,5,1.0
+5-251426-B-30,door_activity,max_1s,Silence,0.7089864611625671,5,1.0
+5-251426-B-30,door_activity,top2_mean_1s,Knock,0.6362659335136414,5,1.0
+5-251426-B-30,door_activity,p90_1s,Silence,0.644151484966278,5,1.0
+5-256512-A-30,door_activity,max_1s,Knock,0.6868466734886169,5,1.0
+5-256512-A-30,door_activity,top2_mean_1s,Knock,0.6735691726207733,5,1.0
+5-256512-A-30,door_activity,p90_1s,Knock,0.6762246727943421,5,1.0
+5-257642-A-39,glass_breaking,max_1s,Sound effect,0.6339021325111389,5,1.0
+5-257642-A-39,glass_breaking,top2_mean_1s,Sound effect,0.610193282365799,5,1.0
+5-257642-A-39,glass_breaking,p90_1s,Sound effect,0.6149350523948669,5,1.0
+5-260432-A-39,glass_breaking,max_1s,Jingle bell,0.6473589539527893,5,1.0
+5-260432-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+5-260432-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+5-260433-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+5-260433-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+5-260433-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+5-260434-A-39,glass_breaking,max_1s,Silence,0.6334817409515381,5,1.0
+5-260434-A-39,glass_breaking,top2_mean_1s,Silence,0.6334817409515381,5,1.0
+5-260434-A-39,glass_breaking,p90_1s,Silence,0.6334817409515381,5,1.0
+5-9032-A-0,dog_barking,max_1s,"Domestic animals, pets",0.6521565914154053,5,1.0
+5-9032-A-0,dog_barking,top2_mean_1s,Silence,0.6299322247505188,5,1.0
+5-9032-A-0,dog_barking,p90_1s,Silence,0.6306421279907226,5,1.0

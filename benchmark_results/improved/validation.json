@@ -1,0 +1,9 @@
+{
+  "pytest_passed": 136,
+  "pytest_failed": 0,
+  "subtests_passed": 5,
+  "warnings": 4,
+  "compileall": "PASS",
+  "imports": "PASS",
+  "frozen_stability_crashes": 0
+}
