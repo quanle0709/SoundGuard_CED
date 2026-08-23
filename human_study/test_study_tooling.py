@@ -13,7 +13,11 @@ from human_study.analyze_results import (
     discover_real_sessions,
     write_outputs,
 )
-from human_study.run_study import ProductMonitor, reserve_session_dir
+from human_study.run_study import (
+    ProductMonitor,
+    confirm_preflight_subtitle,
+    reserve_session_dir,
+)
 from human_study.study_core import (
     QUESTIONNAIRE_FIELDS,
     STUDY_VERSION,
@@ -128,6 +132,38 @@ def make_synthetic_complete_session(parent: Path, participant: str, with_bonus: 
 
 
 class StudyCoreTests(unittest.TestCase):
+    def test_preflight_subtitle_uses_persistent_partial_and_always_clears(self):
+        class RecordingHUD:
+            def __init__(self):
+                self.calls = []
+
+            def set_partial_subtitle(self, text):
+                self.calls.append(("P", text))
+
+            def set_subtitle(self, text):
+                self.calls.append(("S", text))
+
+        for answer in (True, False):
+            with self.subTest(answer=answer):
+                hud = RecordingHUD()
+
+                def confirm(prompt):
+                    self.assertEqual(
+                        prompt,
+                        "Researcher: is PREFLIGHT visible as a subtitle on the OLED?",
+                    )
+                    self.assertEqual(hud.calls, [("P", "PREFLIGHT")])
+                    return answer
+
+                self.assertEqual(
+                    confirm_preflight_subtitle(hud, confirm),
+                    answer,
+                )
+                self.assertEqual(
+                    hud.calls,
+                    [("P", "PREFLIGHT"), ("S", "")],
+                )
+
     def test_manifest_and_csv_schema(self):
         manifest = load_manifest()
         self.assertEqual(len(manifest), 38)

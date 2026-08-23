@@ -146,6 +146,18 @@ def write_preflight_report(report: dict) -> Path:
     return path
 
 
+def confirm_preflight_subtitle(
+    hud: HUDTransport,
+    confirm: Callable[[str], bool],
+) -> bool:
+    """Hold the visual-check subtitle until the researcher answers."""
+    hud.set_partial_subtitle("PREFLIGHT")
+    try:
+        return confirm("Researcher: is PREFLIGHT visible as a subtitle on the OLED?")
+    finally:
+        hud.set_subtitle("")
+
+
 def run_preflight(
     hud_port: str,
     researcher_test_wav: str | None,
@@ -231,9 +243,12 @@ def run_preflight(
         report["checks"]["esp32_com"] = {"passed": True, "port": port}
 
         stage = "subtitle_hud"
-        hud.set_subtitle("PREFLIGHT")
-        subtitle_ok = confirm("Researcher: is PREFLIGHT visible as a subtitle on the OLED?")
-        report["checks"]["subtitle_hud"] = {"passed": subtitle_ok}
+        subtitle_ok = confirm_preflight_subtitle(hud, confirm)
+        report["checks"]["subtitle_hud"] = {
+            "passed": subtitle_ok,
+            "frame_type": "P",
+            "payload": "PREFLIGHT",
+        }
         if not subtitle_ok:
             raise RuntimeError("Subtitle HUD visual confirmation failed.")
 
