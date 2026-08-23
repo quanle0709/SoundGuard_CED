@@ -16,7 +16,9 @@ from human_study.analyze_results import (
 from human_study.run_study import (
     ProductMonitor,
     confirm_preflight_subtitle,
+    frozen_product_command,
     reserve_session_dir,
+    stt_failure_type,
 )
 from human_study.study_core import (
     QUESTIONNAIRE_FIELDS,
@@ -132,6 +134,25 @@ def make_synthetic_complete_session(parent: Path, participant: str, with_bonus: 
 
 
 class StudyCoreTests(unittest.TestCase):
+    def test_live_stt_preflight_uses_locked_device_and_product_command(self):
+        config = {"frozen_product_command": ["app.py", "--live-stt"]}
+        self.assertEqual(
+            frozen_product_command(config, "COM9", 1),
+            ["app.py", "--live-stt", "--device", "1", "--hud-port", "COM9"],
+        )
+
+    def test_stt_failure_classification_requires_production_evidence(self):
+        self.assertEqual(stt_failure_type({"stt_timing": [{}]}), "")
+        self.assertEqual(
+            stt_failure_type({"stt_timing": [], "network_error": True}),
+            "network_STT_failure",
+        )
+        self.assertEqual(
+            stt_failure_type({"stt_timing": [], "stt_no_result": True}),
+            "recognition_no_result",
+        )
+        self.assertEqual(stt_failure_type({"stt_timing": []}), "no_STT_evidence")
+
     def test_preflight_subtitle_uses_persistent_partial_and_always_clears(self):
         class RecordingHUD:
             def __init__(self):

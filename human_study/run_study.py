@@ -158,11 +158,100 @@ def confirm_preflight_subtitle(
         hud.set_subtitle("")
 
 
+def resolve_audio_devices(
+    input_device: int | None,
+    output_device: int | None,
+) -> dict[str, int | str]:
+    """Resolve defaults once so preflight and the session use identical devices."""
+    import sounddevice as sd
+
+    defaults = sd.default.device
+    resolved_input = int(input_device if input_device is not None else defaults[0])
+    resolved_output = int(output_device if output_device is not None else defaults[1])
+    input_info = sd.query_devices(resolved_input)
+    output_info = sd.query_devices(resolved_output)
+    if int(input_info["max_input_channels"]) < 1:
+        raise RuntimeError(f"Audio device {resolved_input} has no input channels.")
+    if int(output_info["max_output_channels"]) < 1:
+        raise RuntimeError(f"Audio device {resolved_output} has no output channels.")
+    return {
+        "input_device_index": resolved_input,
+        "input_device_name": str(input_info["name"]),
+        "output_device_index": resolved_output,
+        "output_device_name": str(output_info["name"]),
+    }
+
+
+def frozen_product_command(config: dict, port: str, input_device: int) -> list[str]:
+    return (
+        list(config["frozen_product_command"])
+        + ["--device", str(input_device), "--hud-port", port]
+    )
+
+
+def stt_failure_type(evidence: dict) -> str:
+    if evidence.get("stt_timing"):
+        return ""
+    if evidence.get("network_error"):
+        return "network_STT_failure"
+    if evidence.get("stt_no_result"):
+        return "recognition_no_result"
+    return "no_STT_evidence"
+
+
+def check_live_stt_audio_route(
+    test_path: Path,
+    *,
+    port: str,
+    input_device: int,
+    output_device: int,
+    config: dict,
+) -> dict:
+    """Exercise speaker -> microphone -> frozen live STT without retaining text."""
+    import sounddevice as sd
+
+    monitor = ProductMonitor(
+        [sys.executable] + frozen_product_command(config, port, input_device),
+        None,
+        float(config["product_start_timeout_seconds"]),
+    )
+    playback_success = False
+    try:
+        monitor.start()
+        mark = monitor.mark()
+        audio, sample_rate = load_audio(test_path)
+        started = time.perf_counter()
+        sd.play(audio, sample_rate, blocking=False, device=output_device)
+        sd.wait()
+        playback_success = True
+        playback_duration = time.perf_counter() - started
+        evidence = monitor.await_evidence(
+            mark,
+            needs_stt=True,
+            needs_ced=False,
+            timeout=float(config["stt_evidence_window_seconds"]),
+        )
+        failure = stt_failure_type(evidence)
+        return {
+            "passed": not failure,
+            "playback_success": playback_success,
+            "playback_duration_seconds": round(playback_duration, 3),
+            "production_process_alive": monitor.alive,
+            "stt_evidence_count": len(evidence.get("stt_timing", [])),
+            "failure_type": failure,
+            "transcript_retained": False,
+        }
+    finally:
+        sd.stop()
+        monitor.stop(float(config["product_stop_timeout_seconds"]))
+
+
 def run_preflight(
     hud_port: str,
     researcher_test_wav: str | None,
     *,
     input_device: int | None = None,
+    output_device: int | None = None,
     confirm: Callable[[str], bool] = yes_no,
 ) -> tuple[bool, dict, Path]:
     """Run mandatory real-service/hardware preflight without participant data."""
@@ -174,6 +263,7 @@ def run_preflight(
         "researcher_test_audio_copied_or_saved_by_platform": False,
         "researcher_test_transcript_retained": False,
         "input_device_index": input_device,
+        "output_device_index": output_device,
         "checks": {},
         "result": "PREFLIGHT FAIL",
     }
@@ -203,6 +293,15 @@ def run_preflight(
                 "version before preflight."
             )
 
+        stage = "audio_devices"
+        audio_devices = resolve_audio_devices(input_device, output_device)
+        report["input_device_index"] = audio_devices["input_device_index"]
+        report["output_device_index"] = audio_devices["output_device_index"]
+        report["checks"]["audio_devices"] = {
+            "passed": True,
+            **audio_devices,
+        }
+
         stage = "internet"
         started = time.perf_counter()
         with socket.create_connection(
@@ -220,7 +319,9 @@ def run_preflight(
         test_path = (
             Path(researcher_test_wav)
             if researcher_test_wav
-            else record_researcher_test_wav(input_device)
+            else record_researcher_test_wav(
+                int(audio_devices["input_device_index"])
+            )
         )
         temporary_audio = researcher_test_wav is None
         if not test_path.is_file():
@@ -235,8 +336,24 @@ def run_preflight(
             "provider": "Google Speech Recognition", "recognized_nonempty": True,
         }
 
-        stage = "esp32_com"
+        stage = "live_stt_audio_route"
         port = detect_esp32_port(hud_port)
+        route_check = check_live_stt_audio_route(
+            test_path,
+            port=port,
+            input_device=int(audio_devices["input_device_index"]),
+            output_device=int(audio_devices["output_device_index"]),
+            config=config,
+        )
+        report["checks"]["live_stt_audio_route"] = route_check
+        if not route_check["passed"]:
+            raise RuntimeError(
+                "Frozen live STT acoustic route failed: "
+                f"{route_check['failure_type']}. Check the locked speaker, "
+                "microphone, playback volume, and physical placement."
+            )
+
+        stage = "esp32_com"
         hud = HUDTransport(port)
         if not hud.enabled:
             raise RuntimeError(f"HUD transport did not open on {port}.")
@@ -368,7 +485,8 @@ class ChoiceUI:
 class ProductMonitor:
     """Runs the unchanged product and timestamps its existing stdout evidence."""
 
-    def __init__(self, command: list[str], log_path: Path, start_timeout: float) -> None:
+    def __init__(self, command: list[str], log_path: Path | None,
+                 start_timeout: float) -> None:
         self.command = command
         self.log_path = log_path
         self.start_timeout = start_timeout
@@ -384,7 +502,10 @@ class ProductMonitor:
         env = dict(os.environ)
         env["PYTHONUNBUFFERED"] = "1"
         env["PYTHONUTF8"] = "1"
-        self._log_handle = self.log_path.open("a", encoding="utf-8", buffering=1)
+        if self.log_path is not None:
+            self._log_handle = self.log_path.open(
+                "a", encoding="utf-8", buffering=1
+            )
         self.process = subprocess.Popen(
             self.command, cwd=ROOT, stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT, text=True, encoding="utf-8",
@@ -705,11 +826,7 @@ def execute_trial(
     stt_error_type = ""
     network_failure = bool(evidence["network_error"])
     if stt_attempted and not stt_success:
-        stt_error_type = (
-            "network_STT_failure" if network_failure
-            else "recognition_no_result" if evidence.get("stt_no_result")
-            else "no_STT_evidence"
-        )
+        stt_error_type = stt_failure_type(evidence)
 
     hud_timestamp = ""
     hud_source = ""
@@ -879,7 +996,10 @@ def run_session(args: argparse.Namespace) -> int:
         return 2
 
     passed, report, report_path = run_preflight(
-        args.hud_port, args.researcher_test_wav, input_device=args.input_device
+        args.hud_port,
+        args.researcher_test_wav,
+        input_device=args.input_device,
+        output_device=args.output_device,
     )
     print(report["result"])
     print(f"Preflight report: {report_path}")
@@ -888,9 +1008,11 @@ def run_session(args: argparse.Namespace) -> int:
         return 2
 
     port = report["checks"]["esp32_com"]["port"]
+    resolved_input_device = int(report["input_device_index"])
+    resolved_output_device = int(report["output_device_index"])
     base_seed = int(args.seed if args.seed is not None else config["default_base_seed"])
     config = dict(config)
-    config["runtime_output_device"] = args.output_device
+    config["runtime_output_device"] = resolved_output_device
     participant_seed = derive_seed(participant_id, base_seed)
     path = session_directory(participant_id, pilot)
     reserve_session_dir(path, resume=args.resume, force=args.force)
@@ -907,9 +1029,9 @@ def run_session(args: argparse.Namespace) -> int:
                 raise RuntimeError(f"Resume blocked by protocol lock mismatch: {key}")
         if session.get("status") == "complete":
             raise RuntimeError("Completed sessions are immutable; --resume is not permitted.")
-        if session.get("input_device_index") != args.input_device:
+        if session.get("input_device_index") != resolved_input_device:
             raise RuntimeError("Resume blocked: input device differs from the original session.")
-        if session.get("output_device_index") != args.output_device:
+        if session.get("output_device_index") != resolved_output_device:
             raise RuntimeError("Resume blocked: output device differs from the original session.")
     else:
         session = {
@@ -924,13 +1046,11 @@ def run_session(args: argparse.Namespace) -> int:
             "condition_stimulus_sets": condition_set_map(participant_id),
             "preflight_report": str(report_path.relative_to(STUDY_DIR)),
             "stimulus_asset_bundle_sha256": report["checks"]["stimuli_and_provenance"]["asset_bundle_sha256"],
-            "frozen_product_command": (
-                config["frozen_product_command"]
-                + (["--device", str(args.input_device)] if args.input_device is not None else [])
-                + ["--hud-port", port]
+            "frozen_product_command": frozen_product_command(
+                config, port, resolved_input_device
             ),
-            "input_device_index": args.input_device,
-            "output_device_index": args.output_device,
+            "input_device_index": resolved_input_device,
+            "output_device_index": resolved_output_device,
             "optional_metadata": {
                 "age_band": input("Optional age band (blank to omit): ").strip(),
                 "hearing_difficulty_category": input("Optional self-reported hearing difficulty category: ").strip(),
@@ -973,10 +1093,8 @@ def run_session(args: argparse.Namespace) -> int:
                     f"Researcher: prepare condition {active_condition}. Confirm the participant's usual hearing assistance is unchanged.",
                 )
                 if active_condition == "WITH":
-                    command = (
-                        [sys.executable] + config["frozen_product_command"]
-                        + (["--device", str(args.input_device)] if args.input_device is not None else [])
-                        + ["--hud-port", port]
+                    command = [sys.executable] + frozen_product_command(
+                        config, port, resolved_input_device
                     )
                     monitor = ProductMonitor(command, runtime_path, float(config["product_start_timeout_seconds"]))
                     monitor.start()
@@ -1065,7 +1183,10 @@ def main() -> int:
     args = parse_args()
     if args.preflight_only:
         passed, report, path = run_preflight(
-            args.hud_port, args.researcher_test_wav, input_device=args.input_device
+            args.hud_port,
+            args.researcher_test_wav,
+            input_device=args.input_device,
+            output_device=args.output_device,
         )
         print(report["result"])
         print(path)
