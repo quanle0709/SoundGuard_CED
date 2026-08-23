@@ -49,3 +49,16 @@ samples/*.m4a
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Layer 3 raw human-study and derived outputs are local-only. Keep directory
+# sentinels and study code under version control; never commit participant data.
+human_study/participant_data/**
+!human_study/participant_data/.gitkeep
+human_study/preflight_logs/
+human_study/results/**
+!human_study/results/.gitkeep
+human_study/stimuli/originals/
+human_study/stimuli/help_A.wav
+human_study/stimuli/help_B.wav
+human_study/stimuli/RECORDING_PROVENANCE.md
+researcher_test.wav
