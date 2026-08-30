@@ -80,8 +80,14 @@ human_study/participant_data/**
 human_study/preflight_logs/
 human_study/results/**
 !human_study/results/.gitkeep
+human_study/synthetic_demo/
 human_study/stimuli/originals/
 human_study/stimuli/help_A.wav
 human_study/stimuli/help_B.wav
 human_study/stimuli/RECORDING_PROVENANCE.md
 researcher_test.wav
+
+# Repository-refresh staging and paper drafts are never public artifacts.
+tmp/
+docs/paper/*draft*.pdf
+docs/paper/*Draft*.pdf
