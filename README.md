@@ -14,16 +14,22 @@ Speech captions alone do not describe everything happening around a listener. He
 
 The project emphasizes explicit system boundaries and reproducible, configuration-specific measurements. It does not publish a single generic "HearVis accuracy" score.
 
-## What HearVis Does
+## Feature Status
 
-| Capability | Current implementation | Important boundary |
+| Capability | Status | What that means |
 | --- | --- | --- |
-| Live Vietnamese captions | Silero VAD, utterance segmentation, optional DTLN enhancement, Google `vi-VN` recognition, partial/final handling | Google STT requires Internet and sends speech audio to an external service. |
-| Environmental awareness | CED-Tiny window-level audio tagging, candidate ranking, filtering, and display policy | This is window-level classification, not verified event onset/offset detection. |
-| Priority alerts | Deterministic priority and display preemption | Not certified emergency detection and not a safety guarantee. |
-| HELP | Triggered only from an accepted final Vietnamese transcript | Separate from environmental classification. |
-| Personalization | Opt-in, rule-based priority adjustment after recognition | No personalized model training, familiar-voice recognition, or acoustic retraining. |
-| HUD | HOME, SUBTITLE, CED, and ALERT states over CRC-protected framed USB serial | The wearable performs frame validation and rendering, not AI inference. |
+| Vietnamese live captions | **Current / default speech path** | One microphone stream, Silero VAD, utterance segmentation, Google `vi-VN` STT, and partial/final HUD updates. Internet is required. |
+| CED-Tiny environmental awareness | **Current / default** | Host-side window-level audio tagging, top-candidate filtering, and compact environmental labels. |
+| Emergency and priority policy | **Current / default** | Deterministic host rules apply category thresholds, severity, context, temporal confirmation, cooldowns, and display priority. |
+| Transcript-derived HELP | **Current / default** | Accepted final transcript text is checked independently of environmental classification and can activate ALERT. |
+| ESP32-C3/OLED HUD | **Current / evaluated hardware path** | With `--hud-port`, the controller validates frames and renders HOME, SUBTITLE/CED, and ALERT states. |
+| DTLN speech enhancement | **Optional / configurable** | The CLI uses it unless `--no-dtln` is supplied, but authorized local weights are required and are not distributed here. |
+| Rule-based personalization | **Implemented / optional / default-off** | `--personalized-alerts` injects a validated profile into post-recognition priority selection. |
+| EfficientSED combined V3 | **Optional / default-off / evaluated separately** | Isolated host-side specialist enabled explicitly; default V2 continues if it is unavailable. |
+| Semantic CED mapping | **Experimental / default-off** | Compatibility environment flag used only in named evaluation configurations. |
+| Sound localization or haptic output | **Future / not implemented** | No direction estimate or vibration path exists in the frozen system. |
+| Standalone on-glasses AI or offline Vietnamese STT | **Future / not implemented** | The evaluated prototype requires a laptop; Google STT is an online service. |
+| Familiar-voice learning or personalized acoustic models | **Not implemented** | Profiles do not learn voices, retrain CED, or fine-tune recognition models. |
 
 ## Current ISIF 2026 Prototype
 
@@ -33,7 +39,7 @@ The frozen evaluation boundary is **HearSafe, default V2**:
 - CED-Tiny for environmental audio tagging;
 - Silero VAD and optional DTLN on the speech branch;
 - Google Speech Recognition configured for Vietnamese (`vi-VN`);
-- host-side HELP, emergency, priority, personalization, and display policy;
+- host-side HELP, emergency, and display-priority policy, with optional rule-based personalization;
 - USB serial framing with CRC-16-CCITT;
 - ESP32-C3 SuperMini development board and a 0.49-inch, 64 x 32, SSD1306-compatible I2C OLED.
 
@@ -45,7 +51,21 @@ EfficientSED is an optional combined V3 specialist. It is disabled by default, r
 
 *Detailed ISIF architecture: the laptop host performs audio processing, AI inference, and policy; the ESP32-C3 validates frames and renders the OLED.*
 
-The microphone stream is copied into independent bounded queues. Raw audio windows feed CED-Tiny; the speech branch uses VAD, utterance boundaries, optional DTLN, and network-dependent Google STT. Accepted results enter a deterministic host policy before serialization. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for module and protocol details.
+The compute boundary is:
+
+```text
+MICROPHONE
+  -> LAPTOP: one capture stream and two bounded queues
+     -> local environmental branch: CED-Tiny ------------------+
+     -> local speech segmentation: Silero VAD -> optional DTLN |
+        -> online service: Google vi-VN STT --------------------+
+  -> LAPTOP: HELP / emergency / priority policy
+  -> CRC-framed USB serial
+  -> ESP32-C3: validate frame and render
+  -> 64 x 32 OLED
+```
+
+In the evaluated audio path, Google recognition is the only cloud step shown here. All policy runs on the host laptop; the ESP32-C3 performs no AI inference. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for module and protocol details.
 
 ## Prototype
 
@@ -74,14 +94,61 @@ The frozen evidence contains no implemented sound localization or haptic output.
 
 ## Software Pipeline
 
-1. `streaming_audio.py` captures one 16 kHz mono stream and feeds bounded speech and environmental queues.
-2. `sound_classifier.py` applies CED-Tiny to rolling audio windows and returns ranked tags.
-3. `voice_activity_detector.py`, `live_speech_to_text.py`, and `speech_recognizer.py` form utterances and request Vietnamese recognition. `speech_enhancer.py` provides optional two-stage DTLN enhancement.
-4. `emergency_system.py`, `fusion_engine.py`, and `alert_mapper.py` apply deterministic evidence and priority rules. Accepted final transcript text can trigger HELP.
-5. `display_transport.py` normalizes text and sends framed, CRC-protected serial messages to the firmware.
-6. `firmware/` validates frames, maintains display state, and renders the OLED.
+### Live Vietnamese captions
 
-The default/deployed V2 path uses CED-Tiny and leaves EfficientSED off. Optional V3 adds a narrowly scoped host-side specialist without replacing normal CED output.
+`streaming_audio.py` opens one 16 kHz mono microphone stream and copies each 512-sample frame into independent bounded speech and environmental queues. On the speech branch, Silero VAD drives an utterance state machine with configurable pre-roll, end silence, post-roll, partial interval, and maximum duration. The default live values are 250 ms pre-roll, 700 ms end silence, 500 ms post-roll, and partial recognition every 1.5 seconds.
+
+Partial and final utterance snapshots are recognized through Google Speech Recognition with language `vi-VN`; accepted results become PARTIAL or FINAL subtitle frames. Google STT requires Internet and sends speech audio to an external service. DTLN is an optional speech-only preprocessing stage: it does not replace the raw audio used by CED.
+
+### Environmental awareness
+
+CED-Tiny analyzes host-side audio windows and returns its five highest-scoring candidates. The ordinary HUD-awareness policy scans those candidates, suppresses speech-like and alert-only labels, applies an independent 0.52 presentation threshold, and selects the strongest accepted compact label such as DOG, HORN, DOOR, BABY, or ANIMAL. A displayed label is retained briefly (5.5-second TTL) and refreshed by accepted evidence.
+
+This Screen 2 presentation filter is separate from emergency decisions. CED provides window-level audio tags; the implementation does not estimate event onset, offset, or direction.
+
+### Emergency, HELP, and priority rules
+
+`emergency_system.py` maps recognized categories to explicit thresholds, base severity, stable tie-breaking priority, and cooldowns:
+
+| Category | Neutral threshold | Base severity | Emission cooldown |
+| --- | ---: | --- | ---: |
+| Gunshot / explosion | 0.45 | CRITICAL | 120 s |
+| Fire | 0.50 | HIGH | 90 s |
+| Smoke alarm | 0.50 | HIGH | 60 s |
+| Glass breaking | 0.55 | HIGH | 60 s |
+| Screaming / siren | 0.55 | HIGH | 45 s |
+| Vehicle horn | 0.60 | MEDIUM | 20 s |
+| Baby crying | 0.60 | MEDIUM | 30 s |
+| Door activity | 0.65 | LOW | 15 s |
+| Dog barking | 0.65 | LOW | 20 s |
+| Speech | 0.70 | LOW | 10 s |
+
+Indoor/outdoor context can adjust configured thresholds by 0.05 and configured severity by one level. In continuous microphone modes, an actionable sound must appear in at least two of the last three CED decisions; one-shot file/microphone mode evaluates its single window directly. Category cooldowns suppress repeated alert emissions without changing the underlying event lifecycle.
+
+HELP follows a separate path. Only a non-empty accepted FINAL transcript is checked for bounded Vietnamese help/fire phrases. A match activates a CRITICAL HELP state, uses a 20-second emission cooldown, and can remain active through one subsequent non-matching final before ending on the second. These are deterministic research-prototype rules, not certified emergency detection.
+
+### Optional rule-based personalization
+
+Personalization is **implemented but default-off**. Its versioned JSON schema stores roles, contexts, responsibilities, supported-label priorities from 1 to 5, and short reasons. `ProfileManager` loads a requested user profile, falls back to `default_profile.json`, and finally to a built-in safe profile; strict validation rejects unknown fields, unsupported labels, invalid priorities, and conflicting aliases. The validator also preserves universal minimum priority for the defined critical categories.
+
+The local interview interface can generate and review a profile using configured provider support or a deterministic role/keyword fallback. `PriorityAdapter` then reloads the validated profile when it changes and maps its priorities to LOW/MEDIUM/HIGH/CRITICAL **after recognition**. It does not change CED thresholds, train a model, learn a voice, recognize familiar people, or fine-tune STT.
+
+### Optional EfficientSED V3 and display transport
+
+The default/deployed V2 path uses CED-Tiny and leaves EfficientSED off. Optional combined V3 starts an isolated host-side EfficientSED worker lazily, supplies only its approved specialist categories to the existing emergency policy, preserves normal CED presentation, and falls back to V2 after missing dependencies or worker failure. Its results are reported separately from V2.
+
+`display_transport.py` NFC-normalizes text and sends length-delimited, CRC-16-CCITT frames over USB serial. Firmware accepts only complete valid frames, stores subtitle/environment/alert state, and renders the OLED. ALERT preempts SUBTITLE/CED; when it clears, an interrupted final-subtitle page resumes with a fresh reading interval. HOME appears when no subtitle, environmental label, or alert is active.
+
+## Example Interaction
+
+| Input | Conceptual path | Display outcome |
+| --- | --- | --- |
+| Spoken Vietnamese | VAD -> utterance -> Google `vi-VN` STT | PARTIAL/FINAL -> SUBTITLE |
+| Vehicle horn candidate | CED-Tiny -> HUD-awareness filter | HORN in the environmental area |
+| Confirmed high-priority sound | category threshold -> severity/voting/cooldown policy | ALERT |
+| Accepted final help phrase | FINAL transcript -> HELP phrase rule | HELP through ALERT |
+
+These examples describe control flow only; they do not add a performance or safety claim.
 
 ## Display and Priority Logic
 
@@ -227,6 +294,8 @@ python app.py --continuous --duration 5 --no-dtln
 python app.py --live-stt --end-silence-ms 700 --post-roll-ms 500 --no-dtln
 ```
 
+These examples use `--no-dtln` so they do not require the separately obtained weights. When both authorized DTLN model files are installed, omit that flag to use the configured speech-enhancement stage. Change the emergency context explicitly with `--context indoor`, `--context outdoor`, or the default `--context neutral`.
+
 Send deterministic HUD test frames, then run live captions with the display:
 
 ```powershell
@@ -234,12 +303,30 @@ python app.py --hud-port COM5 --hud-test
 python app.py --live-stt --hud-port COM5 --no-dtln
 ```
 
+Create and apply an optional personalization profile through the local interface:
+
+```powershell
+python -m personalization.web_server
+# Open http://127.0.0.1:8765, review the profile, then select Apply.
+python app.py --live-stt --hud-port COM5 --no-dtln --personalized-alerts
+```
+
+Use a specific validated profile instead of the default user-profile location:
+
+```powershell
+python app.py --live-stt --no-dtln --personalized-alerts --profile-path .\path\to\profile.json
+```
+
+Without `--personalized-alerts`, profile files do not affect runtime priority.
+
 Only enable optional V3 when its isolated dependencies and audited checkpoint are available:
 
 ```powershell
 $env:SOUNDGUARD_ENABLE_SEMANTIC_CED_MAPPING = '1'
 python app.py --mic --duration 5 --no-dtln --emergency-v3
 ```
+
+This example explicitly enables both the named semantic-mapping evaluation setting and V3; neither is part of an ordinary default V2 run.
 
 Environment-variable and protocol names containing `SOUNDGUARD` are preserved for compatibility and provenance.
 
