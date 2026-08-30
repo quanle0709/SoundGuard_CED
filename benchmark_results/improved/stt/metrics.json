@@ -1,0 +1,35 @@
+{
+  "selected_route": "raw",
+  "clean": {
+    "utterances": 100,
+    "total_words": 1033,
+    "total_characters": 4375,
+    "substitutions": 88,
+    "deletions": 21,
+    "insertions": 2,
+    "wer": 0.1074540174249758,
+    "cer": 0.05942857142857143
+  },
+  "real_demand_all_snrs": {
+    "utterances": 150,
+    "total_words": 1420,
+    "total_characters": 5950,
+    "substitutions": 117,
+    "deletions": 45,
+    "insertions": 0,
+    "wer": 0.11408450704225352,
+    "cer": 0.066890756302521
+  },
+  "network_latency": {
+    "count": 100,
+    "mean_ms": 1109.5881110039772,
+    "std_ms": 443.6018769889177,
+    "median_ms": 1000.2242000191472,
+    "p90_ms": 1530.7153800094968,
+    "p95_ms": 1804.088669957127,
+    "p99_ms": 2846.4133360038995,
+    "min_ms": 520.287100051064,
+    "max_ms": 3241.7140000034124,
+    "mean_real_time_factor": 0.309986335312994
+  }
+}

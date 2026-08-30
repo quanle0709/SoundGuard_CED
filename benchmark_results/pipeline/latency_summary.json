@@ -1,0 +1,20 @@
+{
+  "count": 2,
+  "mean_ms": 22.752200020477176,
+  "std_ms": 2.4772000033408403,
+  "median_ms": 22.752200020477176,
+  "p90_ms": 24.733960023149848,
+  "p95_ms": 24.981680023483932,
+  "p99_ms": 25.1798560237512,
+  "min_ms": 20.275000017136335,
+  "max_ms": 25.229400023818016,
+  "name": "PC SOFTWARE END-TO-END LATENCY",
+  "excludes": [
+    "microphone capture",
+    "network STT",
+    "serial transport",
+    "ESP32",
+    "OLED",
+    "vibration"
+  ]
+}

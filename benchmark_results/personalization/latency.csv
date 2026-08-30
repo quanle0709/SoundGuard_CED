@@ -1,0 +1,9 @@
+case_id,deterministic_ms
+driver,4.789799975696951
+student_motorcyclist,0.8698999881744385
+parent_home,0.5678000161424279
+construction,0.6118000019341707
+explicit_pedestrian,0.5511000053957105
+explicit_public_transport,0.5486999871209264
+negation,0.6203000084497035
+contrast,0.5635999841615558

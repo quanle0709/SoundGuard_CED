@@ -1,0 +1,2 @@
+count,accuracy,macro_precision,macro_recall,macro_f1,weighted_f1,bootstrap_repetitions,accuracy_ci95_low,accuracy_ci95_high,macro_f1_ci95_low,macro_f1_ci95_high
+2,0.5,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.5,1000,0.0,1.0,0.0,1.0

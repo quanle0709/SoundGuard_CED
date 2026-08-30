@@ -1,0 +1,89 @@
+{
+  "n": 3891,
+  "target_n": 234,
+  "hard_negative_n": 3657,
+  "binary": {
+    "n": 3891,
+    "tp": 122,
+    "fp": 207,
+    "tn": 3450,
+    "fn": 112,
+    "precision": 0.3708206686930091,
+    "recall": 0.5213675213675214,
+    "f1": 0.433392539964476,
+    "false_negative_rate": 0.47863247863247865,
+    "false_positive_rate": 0.05660377358490566
+  },
+  "per_class": [
+    {
+      "class": "glass_breaking",
+      "support": 0,
+      "n": 3891,
+      "tp": 0,
+      "fp": 32,
+      "tn": 3859,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_negative_rate": 0.0,
+      "false_positive_rate": 0.008224106913389874
+    },
+    {
+      "class": "vehicle_horn",
+      "support": 64,
+      "n": 3891,
+      "tp": 48,
+      "fp": 135,
+      "tn": 3692,
+      "fn": 16,
+      "precision": 0.26229508196721313,
+      "recall": 0.75,
+      "f1": 0.388663967611336,
+      "false_negative_rate": 0.25,
+      "false_positive_rate": 0.03527567285079697
+    },
+    {
+      "class": "fire",
+      "support": 121,
+      "n": 3891,
+      "tp": 30,
+      "fp": 22,
+      "tn": 3748,
+      "fn": 91,
+      "precision": 0.5769230769230769,
+      "recall": 0.24793388429752067,
+      "f1": 0.34682080924855485,
+      "false_negative_rate": 0.7520661157024794,
+      "false_positive_rate": 0.005835543766578249
+    },
+    {
+      "class": "siren",
+      "support": 49,
+      "n": 3891,
+      "tp": 37,
+      "fp": 40,
+      "tn": 3802,
+      "fn": 12,
+      "precision": 0.4805194805194805,
+      "recall": 0.7551020408163265,
+      "f1": 0.5873015873015873,
+      "false_negative_rate": 0.24489795918367346,
+      "false_positive_rate": 0.010411244143675169
+    },
+    {
+      "class": "baby_crying",
+      "support": 0,
+      "n": 3891,
+      "tp": 0,
+      "fp": 2,
+      "tn": 3889,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_negative_rate": 0.0,
+      "false_positive_rate": 0.0005140066820868671
+    }
+  ]
+}

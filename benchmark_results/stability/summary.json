@@ -1,0 +1,11 @@
+{
+  "target_seconds": 3600,
+  "actual_seconds": 60.00759380002273,
+  "processed_events": 820400,
+  "exceptions": 0,
+  "crashes": 0,
+  "dropped_events": "not measurable in synthetic control-path soak",
+  "peak_rss_mb": null,
+  "traced_peak_mb": 0.33930397033691406,
+  "limitation": "bounded synthetic control-path soak; no microphone, model inference, serial hardware, or hour-long run"
+}

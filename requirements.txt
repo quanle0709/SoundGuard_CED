@@ -1,5 +1,7 @@
 librosa
+matplotlib
 numpy
+pyserial
 scipy
 silero-vad
 sounddevice

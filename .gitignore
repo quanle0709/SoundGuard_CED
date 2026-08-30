@@ -21,6 +21,7 @@ test_outputs/
 *.pem
 credentials.json
 service-account*.json
+personalization/user_profile.json
 
 *.log
 *.tmp
@@ -39,6 +40,28 @@ checkpoints/
 *.safetensors
 *.ckpt
 external/DTLN-master/pretrained_model/
+benchmark_data/external/
+benchmark_data/expanded_generated/
+benchmark_data/generated_audio/
+
+# PlatformIO outputs are reproducible build artifacts; firmware source and
+# platformio.ini remain versioned.
+firmware/.pio/
+
+# Keep canonical benchmark evidence, but exclude resumable checkpoints,
+# superseded hardware attempts, and local recovery/probe artifacts.
+benchmark_results/**/checkpoint.json
+benchmark_results/baseline_git_status.txt
+benchmark_results/concurrency_probe_raw/
+benchmark_results/corrected_harness_probe_soak_2/
+benchmark_results/layer2_hardware/20260822_204620/
+benchmark_results/layer2_hardware/20260822_204750/
+benchmark_results/layer2_hardware/20260822_205436/
+benchmark_results/layer2_hardware/20260822_210550/
+benchmark_results/improvement/baseline_source_snapshot.zip
+benchmark_results/improvement/baseline_staged.patch
+benchmark_results/improvement/baseline_unstaged.patch
+benchmark_results/improvement/baseline_worktree_snapshot.md
 
 # Audio samples are excluded pending privacy and redistribution-rights review.
 samples/*.wav
@@ -49,3 +72,22 @@ samples/*.m4a
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Layer 3 raw human-study and derived outputs are local-only. Keep directory
+# sentinels and study code under version control; never commit participant data.
+human_study/participant_data/**
+!human_study/participant_data/.gitkeep
+human_study/preflight_logs/
+human_study/results/**
+!human_study/results/.gitkeep
+human_study/synthetic_demo/
+human_study/stimuli/originals/
+human_study/stimuli/help_A.wav
+human_study/stimuli/help_B.wav
+human_study/stimuli/RECORDING_PROVENANCE.md
+researcher_test.wav
+
+# Repository-refresh staging and paper drafts are never public artifacts.
+tmp/
+docs/paper/*draft*.pdf
+docs/paper/*Draft*.pdf

@@ -1,0 +1,42 @@
+{
+  "internal_scope": "ESC-50 development audio; same frozen combined class-decision rule reconstructed from saved predictions",
+  "external_scope": "Decontaminated external holdout derived from official FSD50K/DCASE evaluation data",
+  "comparison": [
+    {
+      "metric": "target_macro_precision",
+      "internal_development": 0.9585284280936455,
+      "external_decontaminated": 0.5368072728728466,
+      "delta_external_minus_internal": -0.4217211552207989
+    },
+    {
+      "metric": "target_macro_recall",
+      "internal_development": 0.975,
+      "external_decontaminated": 0.73217581247375,
+      "delta_external_minus_internal": -0.24282418752625
+    },
+    {
+      "metric": "target_macro_f1",
+      "internal_development": 0.9657933470709448,
+      "external_decontaminated": 0.5748869431619659,
+      "delta_external_minus_internal": -0.3909064039089789
+    },
+    {
+      "metric": "emergency_recall",
+      "internal_development": 0.975,
+      "external_decontaminated": 0.594306049822064,
+      "delta_external_minus_internal": -0.38069395017793595
+    },
+    {
+      "metric": "false_negative_rate",
+      "internal_development": 0.025,
+      "external_decontaminated": 0.40569395017793597,
+      "delta_external_minus_internal": 0.38069395017793595
+    },
+    {
+      "metric": "hard_negative_fpr",
+      "internal_development": 0.0,
+      "external_decontaminated": 0.05660377358490566,
+      "delta_external_minus_internal": 0.05660377358490566
+    }
+  ]
+}

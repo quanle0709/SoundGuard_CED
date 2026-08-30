@@ -1,0 +1,13 @@
+{
+  "baseline_priority_accuracy": 1.0,
+  "candidate_priority_accuracy": 1.0,
+  "baseline_universal_critical": 1.0,
+  "candidate_universal_critical": 1.0,
+  "baseline_fixed_safety": 0.96,
+  "candidate_fixed_safety": 1.0,
+  "fixed_safety_passed": 50,
+  "fixed_safety_count": 50,
+  "adversarial_passed": 12,
+  "adversarial_count": 12,
+  "compound_failures_remaining": 0
+}

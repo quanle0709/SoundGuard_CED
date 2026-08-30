@@ -1,0 +1,343 @@
+{
+  "schema_version": 1,
+  "feature_flags": {
+    "SOUNDGUARD_ENABLE_SEMANTIC_CED_MAPPING": false,
+    "SOUNDGUARD_ENABLE_TEMPORAL_POOLING_V2": false,
+    "SOUNDGUARD_SAFE_COMPOUND_EVIDENCE": false
+  },
+  "ced": [
+    {
+      "path": "benchmark_data/external/esc50/audio/1-100032-A-0.wav",
+      "label": "Bark",
+      "confidence": 0.6253823041915894,
+      "top_predictions": [
+        {
+          "label": "Bark",
+          "score": 0.6253823041915894
+        },
+        {
+          "label": "Dog",
+          "score": 0.6189069747924805
+        },
+        {
+          "label": "Animal",
+          "score": 0.6046827435493469
+        },
+        {
+          "label": "Domestic animals, pets",
+          "score": 0.5998693704605103
+        },
+        {
+          "label": "Bow-wow",
+          "score": 0.5908209085464478
+        }
+      ]
+    },
+    {
+      "path": "benchmark_data/external/esc50/audio/1-101336-A-30.wav",
+      "label": "Knock",
+      "confidence": 0.6385424137115479,
+      "top_predictions": [
+        {
+          "label": "Knock",
+          "score": 0.6385424137115479
+        },
+        {
+          "label": "Whack, thwack",
+          "score": 0.5108754634857178
+        },
+        {
+          "label": "Speech",
+          "score": 0.5080062747001648
+        },
+        {
+          "label": "Music",
+          "score": 0.5077981948852539
+        },
+        {
+          "label": "Sound effect",
+          "score": 0.5067704319953918
+        }
+      ]
+    },
+    {
+      "path": "benchmark_data/external/esc50/audio/1-110389-A-0.wav",
+      "label": "Dog",
+      "confidence": 0.6231082081794739,
+      "top_predictions": [
+        {
+          "label": "Dog",
+          "score": 0.6231082081794739
+        },
+        {
+          "label": "Bark",
+          "score": 0.6173360347747803
+        },
+        {
+          "label": "Bow-wow",
+          "score": 0.6089164018630981
+        },
+        {
+          "label": "Animal",
+          "score": 0.5994749665260315
+        },
+        {
+          "label": "Domestic animals, pets",
+          "score": 0.5934128761291504
+        }
+      ]
+    }
+  ],
+  "stt_mocked_interface": "xin chào",
+  "emergency": [
+    {
+      "context": "neutral",
+      "decision_mode": "single_shot",
+      "history_window": [
+        "siren"
+      ],
+      "missing_cycles": 0,
+      "help_missing_cycles": 0,
+      "evidence_type": "sound",
+      "temporal_confirmation": false,
+      "category": "siren",
+      "alert_level": "HIGH",
+      "event_state": "EVENT_STARTED",
+      "alert": true,
+      "alert_text": "Còi báo động",
+      "emitted_this_cycle": true,
+      "help_request_detected": false,
+      "sound_label": "Siren",
+      "sound_confidence": 0.85,
+      "mapped_sound": {
+        "matched": true,
+        "category": "siren",
+        "message_vi": "Còi báo động",
+        "is_dangerous": true,
+        "confidence": 0.85,
+        "threshold": 0.55,
+        "level": "HIGH"
+      }
+    },
+    {
+      "context": "neutral",
+      "decision_mode": "single_shot",
+      "history_window": [
+        "glass_breaking"
+      ],
+      "missing_cycles": 0,
+      "help_missing_cycles": 0,
+      "evidence_type": "sound",
+      "temporal_confirmation": false,
+      "category": "glass_breaking",
+      "alert_level": "HIGH",
+      "event_state": "EVENT_STARTED",
+      "alert": true,
+      "alert_text": "Kính vỡ",
+      "emitted_this_cycle": true,
+      "help_request_detected": false,
+      "sound_label": "Glass breaking",
+      "sound_confidence": 0.8,
+      "mapped_sound": {
+        "matched": true,
+        "category": "glass_breaking",
+        "message_vi": "Kính vỡ",
+        "is_dangerous": true,
+        "confidence": 0.8,
+        "threshold": 0.55,
+        "level": "HIGH"
+      }
+    },
+    {
+      "context": "neutral",
+      "decision_mode": "single_shot",
+      "history_window": [
+        "dog_barking"
+      ],
+      "missing_cycles": 0,
+      "help_missing_cycles": 0,
+      "evidence_type": "sound",
+      "temporal_confirmation": false,
+      "category": "none",
+      "alert_level": "LOW",
+      "event_state": "NO_EVENT",
+      "alert": false,
+      "alert_text": "",
+      "emitted_this_cycle": false,
+      "help_request_detected": false,
+      "sound_label": "Bark",
+      "sound_confidence": 0.85,
+      "mapped_sound": {
+        "matched": true,
+        "category": "dog_barking",
+        "message_vi": "Tiếng chó sủa",
+        "is_dangerous": false,
+        "confidence": 0.85,
+        "threshold": 0.65,
+        "level": "LOW"
+      }
+    },
+    {
+      "context": "neutral",
+      "decision_mode": "single_shot",
+      "history_window": [
+        null
+      ],
+      "missing_cycles": 1,
+      "help_missing_cycles": 0,
+      "evidence_type": "sound",
+      "temporal_confirmation": false,
+      "category": "none",
+      "alert_level": "LOW",
+      "event_state": "NO_EVENT",
+      "alert": false,
+      "alert_text": "",
+      "emitted_this_cycle": false,
+      "help_request_detected": false,
+      "sound_label": "Siren",
+      "sound_confidence": 0.2,
+      "mapped_sound": {
+        "matched": false,
+        "category": "low_confidence",
+        "candidate_category": "siren",
+        "message_vi": "",
+        "is_dangerous": false,
+        "confidence": 0.2,
+        "threshold": 0.55,
+        "level": "LOW"
+      }
+    }
+  ],
+  "fusion": {
+    "timestamp": "golden",
+    "transcript": "",
+    "sound_label": "Siren",
+    "sound_confidence": 0.85,
+    "sound_category": "siren",
+    "alert_level": "HIGH",
+    "alert": true,
+    "alert_text": "golden",
+    "help_request_detected": false
+  },
+  "noise_filter_interface": {
+    "input_sha256": "b7efc76e27ecaa57d1e89394e6699a460c73b1569d4056c74b1cda90370a3d25",
+    "output_sha256": "d5ea1b8c065d0212d91882ee4b819973d90540c6c4f924da71a83463452d4fe9",
+    "output_size": 160044
+  },
+  "personalization": [
+    {
+      "profile_version": "1.0",
+      "roles": [
+        "driver"
+      ],
+      "contexts": [
+        "road"
+      ],
+      "responsibilities": [],
+      "priority_profile": {
+        "gunshot": 5,
+        "explosion": 5,
+        "fire": 5,
+        "smoke_alarm": 5,
+        "glass_breaking": 4,
+        "screaming": 4,
+        "siren": 5,
+        "vehicle_horn": 5,
+        "baby_crying": 3,
+        "door_activity": 1,
+        "dog_barking": 1,
+        "speech": 3
+      },
+      "reasoning_summary": {
+        "gunshot": "SoundGuard safe default.",
+        "explosion": "Set by the combined driver role and context.",
+        "fire": "SoundGuard safe default.",
+        "smoke_alarm": "SoundGuard safe default.",
+        "glass_breaking": "SoundGuard safe default.",
+        "screaming": "Set by the combined driver role and context.",
+        "siren": "Set by the combined driver role and context.",
+        "vehicle_horn": "Set by the combined driver role and context.",
+        "baby_crying": "SoundGuard safe default.",
+        "door_activity": "Set by the combined driver role and context.",
+        "dog_barking": "Set by the combined driver role and context.",
+        "speech": "Set by the combined driver role and context."
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "roles": [
+        "factory_warehouse_worker"
+      ],
+      "contexts": [
+        "factory_warehouse"
+      ],
+      "responsibilities": [],
+      "priority_profile": {
+        "gunshot": 5,
+        "explosion": 5,
+        "fire": 5,
+        "smoke_alarm": 5,
+        "glass_breaking": 4,
+        "screaming": 4,
+        "siren": 5,
+        "vehicle_horn": 4,
+        "baby_crying": 3,
+        "door_activity": 2,
+        "dog_barking": 2,
+        "speech": 3
+      },
+      "reasoning_summary": {
+        "gunshot": "SoundGuard safe default.",
+        "explosion": "Set by the combined factory warehouse worker role and context.",
+        "fire": "Set by the combined factory warehouse worker role and context.",
+        "smoke_alarm": "SoundGuard safe default.",
+        "glass_breaking": "SoundGuard safe default.",
+        "screaming": "Set by the combined factory warehouse worker role and context.",
+        "siren": "Set by the combined factory warehouse worker role and context.",
+        "vehicle_horn": "Set by the combined factory warehouse worker role and context.",
+        "baby_crying": "SoundGuard safe default.",
+        "door_activity": "SoundGuard safe default.",
+        "dog_barking": "SoundGuard safe default.",
+        "speech": "Set by the combined factory warehouse worker role and context."
+      }
+    },
+    {
+      "profile_version": "1.0",
+      "roles": [
+        "parent_infant_caregiver"
+      ],
+      "contexts": [],
+      "responsibilities": [
+        "care for an infant or younger child"
+      ],
+      "priority_profile": {
+        "gunshot": 5,
+        "explosion": 5,
+        "fire": 5,
+        "smoke_alarm": 5,
+        "glass_breaking": 4,
+        "screaming": 4,
+        "siren": 5,
+        "vehicle_horn": 1,
+        "baby_crying": 5,
+        "door_activity": 4,
+        "dog_barking": 2,
+        "speech": 3
+      },
+      "reasoning_summary": {
+        "gunshot": "SoundGuard safe default.",
+        "explosion": "SoundGuard safe default.",
+        "fire": "Set by the combined parent infant caregiver role and context.",
+        "smoke_alarm": "Set by the combined parent infant caregiver role and context.",
+        "glass_breaking": "Set by the combined parent infant caregiver role and context.",
+        "screaming": "Set by the combined parent infant caregiver role and context.",
+        "siren": "SoundGuard safe default.",
+        "vehicle_horn": "Set by the combined parent infant caregiver role and context.",
+        "baby_crying": "Set by the combined parent infant caregiver role and context.",
+        "door_activity": "Set by the combined parent infant caregiver role and context.",
+        "dog_barking": "SoundGuard safe default.",
+        "speech": "Set by the combined parent infant caregiver role and context."
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+id,label,confidence,transcript,expected,predicted,correct,category,alert_level,latency_ms
+gunshot_positive,Gunshot,0.9,,True,True,True,gunshot,CRITICAL,0.058500037994235754
+siren_positive,Siren,0.9,,True,True,True,siren,HIGH,0.027499976567924023
+horn_positive,Vehicle horn,0.9,,True,True,True,vehicle_horn,MEDIUM,0.017900019884109497
+help_positive,Speech,0.9,giúp tôi với,True,True,True,help_request,CRITICAL,0.033999967854470015
+low_confidence_negative,Gunshot,0.1,,False,False,True,none,LOW,0.009200011845678091
+bark_negative,Bark,0.9,,False,False,True,none,LOW,0.01160003012046218
+speech_negative,Speech,0.9,xin chào,False,False,True,none,LOW,0.05229999078437686
+unknown_negative,Music,0.9,,False,False,True,none,LOW,0.009199953638017178

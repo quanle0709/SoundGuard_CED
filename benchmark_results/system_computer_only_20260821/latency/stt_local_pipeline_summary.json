@@ -1,0 +1,31 @@
+{
+  "scope": "prerecorded utterance available to application through transport-ready subtitle frame",
+  "backend": "Google Speech Recognition vi-VN (network-dependent) with production DTLN preprocessing",
+  "partial": {
+    "count": 10,
+    "mean_ms": 517.2503800014965,
+    "median_ms": 487.1924000035506,
+    "p95_ms": 914.447699993616,
+    "min_ms": 400.41430000565015,
+    "max_ms": 914.447699993616
+  },
+  "final": {
+    "count": 20,
+    "mean_ms": 1044.4543600002362,
+    "median_ms": 1013.958100003947,
+    "p95_ms": 1373.3044999971753,
+    "min_ms": 716.897100006463,
+    "max_ms": 1871.918300006655
+  },
+  "final_stt_processing": {
+    "count": 20,
+    "mean_ms": 1043.821855000715,
+    "median_ms": 1013.2519000035245,
+    "p95_ms": 1373.0261999880895,
+    "min_ms": 715.5404000077397,
+    "max_ms": 1871.1855000001378
+  },
+  "empty_transcripts": 0,
+  "KHKT_CLAIM": "SoundGuard's current STT path reaches transport-ready output with measured network-dependent latency.",
+  "REPORT_USE": "Main KHKT Layer 2 latency table with an explicit external-service caveat."
+}

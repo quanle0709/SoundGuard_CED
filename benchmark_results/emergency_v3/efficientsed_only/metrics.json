@@ -1,0 +1,44 @@
+{
+  "selected_threshold": 0.05,
+  "selection_split": "ESC-50 folds 1-4",
+  "holdout_split": "ESC-50 fold 5; inspected only after threshold freeze",
+  "maximum_acceptable_development_fpr": 0.05,
+  "splits": {
+    "development_folds_1_4": {
+      "tp": 155,
+      "fp": 0,
+      "tn": 64,
+      "fn": 5,
+      "precision": 1.0,
+      "recall": 0.96875,
+      "f1": 0.9841269841269841,
+      "false_negative_rate": 0.03125,
+      "false_positive_rate": 0.0,
+      "n": 224
+    },
+    "holdout_fold_5": {
+      "tp": 38,
+      "fp": 0,
+      "tn": 16,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.95,
+      "f1": 0.9743589743589743,
+      "false_negative_rate": 0.05,
+      "false_positive_rate": 0.0,
+      "n": 56
+    },
+    "all_development_audio": {
+      "tp": 193,
+      "fp": 0,
+      "tn": 80,
+      "fn": 7,
+      "precision": 1.0,
+      "recall": 0.965,
+      "f1": 0.9821882951653944,
+      "false_negative_rate": 0.035,
+      "false_positive_rate": 0.0,
+      "n": 280
+    }
+  }
+}

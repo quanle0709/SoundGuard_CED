@@ -1,0 +1,33 @@
+{
+  "ontology": "EfficientSED AudioSet strong (447 classes)",
+  "frozen_before_scoring": true,
+  "entries": [
+    {"raw_label": "Glass shatter", "soundguard_category": "glass_breaking", "classification": "EXACT", "justification": "Explicitly identifies glass shattering."},
+    {"raw_label": "Glass", "soundguard_category": null, "classification": "TOO_BROAD", "justification": "May be intact glass or handling rather than breakage."},
+    {"raw_label": "Glass chink, clink", "soundguard_category": null, "classification": "EXCLUDED", "justification": "Glass contact is not glass breakage."},
+    {"raw_label": "Breaking", "soundguard_category": null, "classification": "TOO_BROAD", "justification": "Does not identify the broken material."},
+    {"raw_label": "Crockery breaking and smashing", "soundguard_category": null, "classification": "EXCLUDED", "justification": "Crockery is not necessarily glass."},
+    {"raw_label": "Vehicle horn, car horn, honking, toot", "soundguard_category": "vehicle_horn", "classification": "EXACT", "justification": "Explicit vehicle/car horn class."},
+    {"raw_label": "Air horn, truck horn", "soundguard_category": "vehicle_horn", "classification": "STRONG_SEMANTIC_ALIAS", "justification": "A truck horn is a safety-relevant vehicle horn."},
+    {"raw_label": "Train horn", "soundguard_category": "vehicle_horn", "classification": "STRONG_SEMANTIC_ALIAS", "justification": "A train horn is a safety-relevant vehicle warning horn."},
+    {"raw_label": "Honk", "soundguard_category": null, "classification": "TOO_BROAD", "justification": "Could be a goose or another non-vehicle honk."},
+    {"raw_label": "Vehicle", "soundguard_category": null, "classification": "TOO_BROAD", "justification": "Vehicle presence does not imply a horn."},
+    {"raw_label": "Fire", "soundguard_category": "fire", "classification": "EXACT", "justification": "Explicit fire sound class."},
+    {"raw_label": "Wildfire", "soundguard_category": "fire", "classification": "EXACT", "justification": "Explicit fire subtype."},
+    {"raw_label": "Fire alarm", "soundguard_category": "fire", "classification": "STRONG_SEMANTIC_ALIAS", "justification": "An explicit alarm for fire danger."},
+    {"raw_label": "Smoke detector, smoke alarm", "soundguard_category": "fire", "classification": "STRONG_SEMANTIC_ALIAS", "justification": "An explicit smoke/fire warning alarm."},
+    {"raw_label": "Crackle", "soundguard_category": null, "classification": "TOO_BROAD", "justification": "Crackle can originate from non-fire sources."},
+    {"raw_label": "Firecracker", "soundguard_category": null, "classification": "EXCLUDED", "justification": "A firecracker is not evidence of an active fire."},
+    {"raw_label": "Fireworks", "soundguard_category": null, "classification": "EXCLUDED", "justification": "Fireworks are not evidence of an active fire."},
+    {"raw_label": "Siren", "soundguard_category": "siren", "classification": "EXACT", "justification": "Explicit siren class."},
+    {"raw_label": "Ambulance (siren)", "soundguard_category": "siren", "classification": "EXACT", "justification": "Explicit emergency siren subtype."},
+    {"raw_label": "Civil defense siren", "soundguard_category": "siren", "classification": "EXACT", "justification": "Explicit emergency siren subtype."},
+    {"raw_label": "Fire engine, fire truck (siren)", "soundguard_category": "siren", "classification": "EXACT", "justification": "Explicit emergency siren subtype."},
+    {"raw_label": "Police car (siren)", "soundguard_category": "siren", "classification": "EXACT", "justification": "Explicit emergency siren subtype."},
+    {"raw_label": "Emergency vehicle", "soundguard_category": null, "classification": "TOO_BROAD", "justification": "Emergency vehicle audio need not contain a siren."},
+    {"raw_label": "Baby cry, infant cry", "soundguard_category": "baby_crying", "classification": "EXACT", "justification": "Explicit infant crying class."},
+    {"raw_label": "Crying, sobbing", "soundguard_category": null, "classification": "TOO_BROAD", "justification": "Does not identify an infant."},
+    {"raw_label": "Baby laughter", "soundguard_category": null, "classification": "EXCLUDED", "justification": "Laughter is not crying."},
+    {"raw_label": "Animal", "soundguard_category": null, "classification": "TOO_BROAD", "justification": "Generic animal evidence is unrelated to these safety classes."}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "utterances": 100,
+  "total_words": 1033,
+  "total_characters": 4375,
+  "substitutions": 88,
+  "deletions": 21,
+  "insertions": 2,
+  "wer": 0.1074540174249758,
+  "cer": 0.05942857142857143
+}

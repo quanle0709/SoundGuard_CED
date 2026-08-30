@@ -1,0 +1,3 @@
+sample_id,ced_ms,emergency_ms,fusion_ms,total_ms,predicted_label,alert_level,fusion_alert
+esc50_bark_100032,20.18859999952838,0.07920002099126577,0.007199996616691351,20.275000017136335,Bark,LOW,False
+local_vi_speech,25.11460002278909,0.10459998156875372,0.010200019460171461,25.229400023818016,Speech synthesizer,LOW,False

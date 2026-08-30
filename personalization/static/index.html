@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoundGuard Personalization</title>
+  <style>
+    :root { color-scheme: dark; --bg:#07110f; --panel:#0e1d19; --line:#254239; --mint:#57e3ad; --text:#f1f7f4; --muted:#9eb5ad; --amber:#ffc861; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif; color:var(--text); background:radial-gradient(circle at 85% 5%,#153c31 0,transparent 36rem),var(--bg); }
+    main { width:min(920px,calc(100% - 32px)); margin:0 auto; padding:48px 0 72px; }
+    header { display:flex; align-items:center; gap:12px; margin-bottom:48px; letter-spacing:.02em; }
+    .mark { width:38px; height:38px; display:grid; place-items:center; border:1px solid var(--mint); border-radius:12px; color:var(--mint); font-weight:800; }
+    .eyebrow { color:var(--mint); text-transform:uppercase; font-size:.76rem; letter-spacing:.16em; font-weight:700; }
+    h1 { max-width:700px; margin:10px 0 18px; font-size:clamp(2.4rem,8vw,5.6rem); line-height:.94; letter-spacing:-.055em; }
+    .lead { max-width:610px; color:var(--muted); font-size:1.08rem; }
+    button { border:0; border-radius:12px; background:var(--mint); color:#062118; padding:13px 18px; font:inherit; font-weight:800; cursor:pointer; }
+    button:hover { filter:brightness(1.08); } button:focus-visible,input:focus-visible { outline:3px solid var(--amber); outline-offset:3px; }
+    button.secondary { color:var(--text); background:transparent; border:1px solid var(--line); }
+    .card { margin-top:32px; padding:clamp(20px,5vw,36px); border:1px solid var(--line); border-radius:22px; background:color-mix(in srgb,var(--panel) 94%,transparent); box-shadow:0 28px 80px #0005; }
+    .hidden { display:none !important; }
+    .progress { color:var(--muted); font-size:.85rem; }
+    .question { margin:16px 0 22px; font-size:clamp(1.35rem,4vw,2rem); font-weight:720; max-width:720px; }
+    form { display:flex; gap:10px; }
+    input { min-width:0; flex:1; border:1px solid var(--line); border-radius:12px; background:#071410; color:var(--text); padding:14px 16px; font:inherit; }
+    .messages { display:grid; gap:12px; max-height:290px; overflow:auto; margin-bottom:20px; }
+    .bubble { width:fit-content; max-width:80%; padding:10px 14px; border-radius:14px; background:#152822; }
+    .bubble.user { justify-self:end; background:#214c3e; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 24px; }
+    .chip { border:1px solid var(--line); border-radius:999px; padding:5px 10px; color:var(--muted); }
+    table { width:100%; border-collapse:collapse; }
+    th,td { text-align:left; padding:12px 8px; border-bottom:1px solid var(--line); }
+    th { color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.1em; }
+    .priority { font-weight:900; color:var(--mint); }
+    .actions { display:flex; align-items:center; gap:12px; margin-top:24px; }
+    .status { color:var(--mint); font-weight:700; }
+    @media (max-width:600px) { main{padding-top:28px} header{margin-bottom:32px} form{flex-direction:column} th:nth-child(3),td:nth-child(3){display:none} }
+  </style>
+</head>
+<body>
+<main>
+  <header><div class="mark" aria-hidden="true">SG</div><div><strong>SoundGuard</strong><div class="eyebrow">Personal alert setup</div></div></header>
+  <section id="intro">
+    <div class="eyebrow">Built around your real life</div>
+    <h1>Hear what matters first.</h1>
+    <p class="lead">A short conversation combines your roles, routines, and environments into a safe alert-priority profile. SoundGuard—not the AI—remains in control of your glasses.</p>
+    <button id="start">Start personalization</button>
+  </section>
+
+  <section id="chat" class="card hidden" aria-live="polite">
+    <div class="progress" id="progress">Question 1 · usually 5–7 total</div>
+    <div class="messages" id="messages"></div>
+    <div class="question" id="question"></div>
+    <form id="answer-form"><label class="hidden" for="answer">Your answer</label><input id="answer" maxlength="1000" autocomplete="off" placeholder="Tell SoundGuard about your routine…" required><button>Continue</button></form>
+  </section>
+
+  <section id="result" class="card hidden">
+    <div class="eyebrow">Profile ready</div><h2>Your personalized alert priorities</h2>
+    <p class="lead" id="provider"></p><div class="chips" id="roles"></div><div class="chips" id="contexts"></div>
+    <table><thead><tr><th>Sound</th><th>Priority</th><th>Why</th></tr></thead><tbody id="priorities"></tbody></table>
+    <div class="actions"><button id="apply">Apply to SoundGuard</button><button class="secondary" id="restart">Start over</button><span id="status" class="status" role="status"></span></div>
+  </section>
+</main>
+<script>
+  const $ = id => document.getElementById(id); let sessionId = null;
+  async function api(path, body) { const response = await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}); const data=await response.json(); if(!response.ok) throw new Error(data.error||'Request failed'); return data; }
+  function bubble(text,kind='ai'){const el=document.createElement('div');el.className=`bubble ${kind}`;el.textContent=text;$('messages').append(el);el.scrollIntoView({block:'nearest'});}
+  function showProfile(profile, provider){$('chat').classList.add('hidden');$('result').classList.remove('hidden');const generatedByAI=provider==='openai'||provider==='openrouter';$('provider').textContent=generatedByAI?`Created with ${provider} contextual inference, then safety-validated.`:`Created with SoundGuard’s offline multi-role fallback (${provider.split(':')[1]||'unknown'}), then safety-validated.`;$('roles').innerHTML=profile.roles.map(x=>`<span class="chip">Role · ${x.replaceAll('_',' ')}</span>`).join('')||'<span class="chip">No specific role required</span>';$('contexts').innerHTML=profile.contexts.map(x=>`<span class="chip">Context · ${x.replaceAll('_',' ')}</span>`).join('');$('priorities').innerHTML=Object.entries(profile.priority_profile).sort((a,b)=>b[1]-a[1]).map(([label,value])=>`<tr><td>${label.replaceAll('_',' ')}</td><td class="priority">${value}/5</td><td>${profile.reasoning_summary[label]||'Validated SoundGuard rule.'}</td></tr>`).join('');}
+  $('start').onclick=async()=>{try{const data=await api('/api/start',{});sessionId=data.session_id;$('intro').classList.add('hidden');$('chat').classList.remove('hidden');$('question').textContent=data.question;bubble(data.question);$('answer').focus();}catch(e){alert(e.message)}};
+  $('answer-form').onsubmit=async event=>{event.preventDefault();const answer=$('answer').value.trim();if(!answer)return;bubble(answer,'user');$('answer').value='';$('answer').disabled=true;try{const data=await api('/api/chat',{session_id:sessionId,answer});if(data.complete)showProfile(data.profile,data.provider);else{$('question').textContent=data.question;$('progress').textContent=`Question ${data.progress} · usually 5–7 total`;bubble(data.question);}}catch(e){alert(e.message)}finally{$('answer').disabled=false;$('answer').focus();}};
+  $('apply').onclick=async()=>{try{await api('/api/apply',{session_id:sessionId});$('status').textContent='Applied safely';$('apply').disabled=true;}catch(e){$('status').textContent=e.message}};
+  $('restart').onclick=()=>location.reload();
+</script>
+</body>
+</html>

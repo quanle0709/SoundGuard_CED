@@ -1,0 +1,21 @@
+{
+  "profile_cases": 20,
+  "priority_assertions": 128,
+  "exact_priority_accuracy": 1.0,
+  "mean_absolute_error": 0.0,
+  "within_one_accuracy": 1.0,
+  "safety_cases": 50,
+  "safety_pass_rate": 0.96,
+  "contrast_pass_rate": 1.0,
+  "contrast_count": 5,
+  "fallback_pass_rate": 1.0,
+  "fallback_count": 5,
+  "malformed_pass_rate": 1.0,
+  "malformed_count": 5,
+  "negation_pass_rate": 1.0,
+  "negation_count": 10,
+  "substring_pass_rate": 0.6,
+  "substring_count": 5,
+  "universal_critical_pass_rate": 1.0,
+  "universal_critical_count": 20
+}

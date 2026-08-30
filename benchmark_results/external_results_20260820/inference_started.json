@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-08-20T23:39:32.924662+07:00",
+  "freeze_manifest": "benchmark_results/external_decontamination_20260820/freeze_manifest/final_external_freeze_manifest.json",
+  "freeze_manifest_sha256": "5e3036d0f8e12ea5e3c3007360f946b80996f5325fa301af08ad5dd652552f1a",
+  "baseline": {
+    "policy": "V2 OR EfficientSED approved-safety evidence",
+    "ced_model": "mispeech/ced-tiny",
+    "ced_revision": "ace276d29dd0bb3f3517b0fa8cf300738c409019",
+    "semantic_mapping": "soundguard_taxonomy_v1",
+    "efficientsed_checkpoint_sha256": "92a5c1dc5aa21620e262420c4cc657d2f699bdfa20a748de506c354a2fe2770a",
+    "efficientsed_threshold": 0.05,
+    "target_classes": [
+      "fire",
+      "siren",
+      "vehicle_horn",
+      "baby_crying",
+      "glass_breaking"
+    ]
+  },
+  "rule": "This marker is written before the first external model call; completed rows may only be resumed, never retuned or selectively rerun."
+}

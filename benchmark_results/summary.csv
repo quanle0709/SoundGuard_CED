@@ -1,0 +1,44 @@
+benchmark,feature,metric,value,unit,sample_count,condition,status,notes
+STT,Speech-to-Text,WER,0.0,ratio,1,clean,PASS,
+STT,Speech-to-Text,CER,0.0,ratio,1,clean,PASS,
+Emergency,Emergency Detection,Recall,1.0,ratio,8,,PASS,
+Emergency,Emergency Detection,False Negative Rate,0.0,ratio,8,,PASS,
+Fusion,Fusion Engine,Delta F1,0.33333333333333337,ratio,6,,PASS,
+Pipeline,PC Software Pipeline,P95 Latency,24.981680023483932,ms,2,warm fixed-file,PASS,
+Stability,Software Stability,Crash Count,0,count,820400,60.0 seconds,PASS,"bounded synthetic control-path soak; no microphone, model inference, serial hardware, or hour-long run"
+CED,Environmental Sound Detection,Accuracy,0.5,ratio,2,clean,PASS,Preliminary: only two labeled clips
+CED,Environmental Sound Detection,Macro F1,0.3333333333333333,ratio,2,clean,PASS,
+CED,CED noise robustness,Macro F1,0.3333333333333333,ratio,2,20 dB,PASS,
+CED,CED noise robustness,Macro F1,0.3333333333333333,ratio,2,15 dB,PASS,
+CED,CED noise robustness,Macro F1,1.0,ratio,2,10 dB,PASS,
+CED,CED noise robustness,Macro F1,0.3333333333333333,ratio,2,5 dB,PASS,
+CED,CED noise robustness,Macro F1,0.3333333333333333,ratio,2,0 dB,PASS,
+CED,CED latency,P95 latency,18.28365000837948,ms,8,warm,PASS,
+Personalization,AI Personalization,Priority Accuracy,1.0,ratio,22,,PASS,
+Personalization,AI Personalization,Critical Invariant Pass Rate,1.0,ratio,8,,PASS,
+NoiseFilter,Noise filtering,Mean Delta SNR,6.770421367897822,dB,10,,PASS,
+NoiseFilter,CED effect,Mean Delta F1,-0.39999999999999997,ratio,10,,PASS,Experimental: production CED intentionally uses raw audio
+NoiseFilter,CED effect,Delta F1,-0.3333333333333333,ratio,2,20 dB,PASS,
+NoiseFilter,CED effect,Delta F1,-0.3333333333333333,ratio,2,15 dB,PASS,
+NoiseFilter,CED effect,Delta F1,-1.0,ratio,2,10 dB,PASS,
+NoiseFilter,CED effect,Delta F1,-0.3333333333333333,ratio,2,5 dB,PASS,
+NoiseFilter,CED effect,Delta F1,0.0,ratio,2,0 dB,PASS,
+STT,STT noise robustness,WER,0.0,ratio,1,20 dB,PASS,
+STT,STT noise robustness,CER,0.0,ratio,1,20 dB,PASS,
+STT,STT noise robustness,WER,0.0,ratio,1,15 dB,PASS,
+STT,STT noise robustness,CER,0.0,ratio,1,15 dB,PASS,
+STT,STT noise robustness,WER,0.0,ratio,1,10 dB,PASS,
+STT,STT noise robustness,CER,0.0,ratio,1,10 dB,PASS,
+STT,STT noise robustness,WER,0.0,ratio,1,5 dB,PASS,
+STT,STT noise robustness,CER,0.0,ratio,1,5 dB,PASS,
+STT,STT noise robustness,WER,0.0,ratio,1,0 dB,PASS,
+STT,STT noise robustness,CER,0.0,ratio,1,0 dB,PASS,
+Emergency,Emergency False Alarms,False alerts per clip,0.0,ratio,4,non-emergency,PASS,
+Personalization,AI Personalization,Mean Absolute Priority Error,0.0,priority levels,22,,PASS,
+Personalization,AI Personalization,Role Exact Accuracy,1.0,ratio,8,,PASS,
+Personalization,AI Personalization,Context Exact Accuracy,1.0,ratio,8,,PASS,
+Speaker,Speaker/family voice recognition,benchmark status,,,0,,NOT_IMPLEMENTED,NOT IMPLEMENTED in repository
+SpeakerNoise,Speaker recognition noise robustness,benchmark status,,,0,,NOT_IMPLEMENTED,NOT IMPLEMENTED in repository
+AIAssistant,Separate AI assistant,benchmark status,,,0,,NOT_IMPLEMENTED,NOT IMPLEMENTED; personalization is not counted twice
+Direction,Sound direction/vibration,benchmark status,,,0,,NOT_IMPLEMENTED,NOT IMPLEMENTED; no localization algorithm or multichannel ground truth
+HUDHardware,Physical HUD/hardware,benchmark status,,,0,,SKIPPED,Requires physical glasses; software framing is unit-tested only

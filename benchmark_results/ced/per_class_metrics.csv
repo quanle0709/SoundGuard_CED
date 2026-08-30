@@ -1,0 +1,4 @@
+label,precision,recall,f1,support,tp,fp,fn
+dog_barking,1.0,1.0,1.0,1,1,0,0
+speech,0.0,0.0,0.0,1,0,0,1
+speech_synthesizer,0.0,0.0,0.0,0,0,1,0

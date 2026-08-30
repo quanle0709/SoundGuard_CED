@@ -1,0 +1,100 @@
+{
+  "verified_at": "2026-08-20T23:33:24.048999+07:00",
+  "archives": [
+    {
+      "dataset": "DCASE2017",
+      "official_record": "https://zenodo.org/records/1160455",
+      "source_url": "https://zenodo.org/record/1160455/files/TUT-rare-sound-events-2017-evaluation.source_data_events.zip",
+      "archive_name": "TUT-rare-sound-events-2017-evaluation.source_data_events.zip",
+      "archive_size_bytes": 139074956,
+      "local_file_mtime": "2026-08-20T15:50:34.591446+07:00",
+      "md5_expected": "5c037df9c1012411a1f2c1325fe20163",
+      "md5_actual": "5c037df9c1012411a1f2c1325fe20163",
+      "verified": true
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "official_record": "https://zenodo.org/records/4060432",
+      "source_url": "https://zenodo.org/records/4060432/files/FSD50K.eval_audio.z01?download=1",
+      "archive_name": "FSD50K.eval_audio.z01",
+      "archive_size_bytes": 3221225472,
+      "local_file_mtime": "2026-08-20T23:29:20.688859+07:00",
+      "md5_expected": "3090670eaeecc013ca1ff84fe4442aeb",
+      "md5_actual": "3090670eaeecc013ca1ff84fe4442aeb",
+      "verified": true
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "official_record": "https://zenodo.org/records/4060432",
+      "source_url": "https://zenodo.org/records/4060432/files/FSD50K.eval_audio.zip?download=1",
+      "archive_name": "FSD50K.eval_audio.zip",
+      "archive_size_bytes": 3037675767,
+      "local_file_mtime": "2026-08-20T18:21:15.194504+07:00",
+      "md5_expected": "6fa47636c3a3ad5c7dfeba99f2637982",
+      "md5_actual": "6fa47636c3a3ad5c7dfeba99f2637982",
+      "verified": true
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "official_record": "https://zenodo.org/records/4060432",
+      "source_url": "https://zenodo.org/records/4060432/files/FSD50K.doc.zip?download=1",
+      "archive_name": "FSD50K.doc.zip",
+      "archive_size_bytes": 6984,
+      "local_file_mtime": "2026-08-19T22:45:39.791519+07:00",
+      "md5_expected": "3516162b82dc2945d3e7feba0904e800",
+      "md5_actual": "3516162b82dc2945d3e7feba0904e800",
+      "verified": true
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "official_record": "https://zenodo.org/records/4060432",
+      "source_url": "https://zenodo.org/records/4060432/files/FSD50K.ground_truth.zip?download=1",
+      "archive_name": "FSD50K.ground_truth.zip",
+      "archive_size_bytes": 334701,
+      "local_file_mtime": "2026-08-19T22:45:39.491806+07:00",
+      "md5_expected": "ca27382c195e37d2269c4c866dd73485",
+      "md5_actual": "ca27382c195e37d2269c4c866dd73485",
+      "verified": true
+    },
+    {
+      "dataset": "FSD50K_eval",
+      "official_record": "https://zenodo.org/records/4060432",
+      "source_url": "https://zenodo.org/records/4060432/files/FSD50K.metadata.zip?download=1",
+      "archive_name": "FSD50K.metadata.zip",
+      "archive_size_bytes": 6700838,
+      "local_file_mtime": "2026-08-19T22:45:54.438655+07:00",
+      "md5_expected": "b9ea0c829a411c1d42adb9da539ed237",
+      "md5_actual": "b9ea0c829a411c1d42adb9da539ed237",
+      "verified": true
+    }
+  ],
+  "fsd50k_eval_clip_license_counts": {
+    "http://creativecommons.org/licenses/by-nc/3.0/": 1425,
+    "http://creativecommons.org/licenses/by/3.0/": 3489,
+    "http://creativecommons.org/licenses/sampling+/1.0/": 403,
+    "http://creativecommons.org/publicdomain/zero/1.0/": 4914
+  },
+  "supporting_license_and_credit_files": [
+    {
+      "path": "benchmark_data/external/emergency_v3_final/DCASE_LICENSE.txt",
+      "size_bytes": 1008,
+      "sha256": "c450c1be716cfbdf1cd4687fef3792c2286167ee14ec844e8a9f77be9abd231c"
+    },
+    {
+      "path": "benchmark_data/external/emergency_v3_final/DCASE_FREESOUNDCREDITS.txt",
+      "size_bytes": 17933,
+      "sha256": "c6acdb55095bcfaa78030bcb81bb0c6e303eea7a32ca06be8d128b57640fe1f7"
+    }
+  ],
+  "download_integrity_incidents": [
+    {
+      "dataset": "FSD50K_eval",
+      "file": "benchmark_data/external/computer_holdout_downloads/FSD50K.eval_audio.z01.corrupt-md5-3b4f938d3b828931baf8ea14d8a8ac53",
+      "size_bytes": 3221225472,
+      "observed_md5": "3b4f938d3b828931baf8ea14d8a8ac53",
+      "expected_md5": "3090670eaeecc013ca1ff84fe4442aeb",
+      "decision": "QUARANTINED_NOT_USED",
+      "resolution": "full byte-range redownload to a separate file; replacement only after official MD5 matched"
+    }
+  ]
+}

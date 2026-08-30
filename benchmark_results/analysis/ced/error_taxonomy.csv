@@ -1,0 +1,281 @@
+sample_id,true_label,prediction,confidence,correct,error_category,evidence,category_count,percent_of_all_samples,percent_of_errors
+1-100032-A-0,dog_barking,Bark,0.6253823041915894,True,correct,strict top-1 match,126,45.0,0
+1-101336-A-30,door_activity,Knock,0.6385424137115479,True,correct,strict top-1 match,126,45.0,0
+1-103995-A-30,door_activity,Knock,0.7098401188850403,True,correct,strict top-1 match,126,45.0,0
+1-103999-A-30,door_activity,Knock,0.7142820358276367,True,correct,strict top-1 match,126,45.0,0
+1-110389-A-0,dog_barking,Dog,0.6231082081794739,False,ontology/label mismatch,Dog is a documented equivalent,23,8.214285714285714,14.935064935064934
+1-17124-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.7162976264953613,True,correct,strict top-1 match,126,45.0,0
+1-17150-A-12,fire,Fire,0.6504863500595093,True,correct,strict top-1 match,126,45.0,0
+1-17565-A-12,fire,"Crumpling, crinkling",0.5569571256637573,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+1-17742-A-12,fire,Patter,0.5535062551498413,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+1-17808-A-12,fire,Rain on surface,0.5407716035842896,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+1-17808-B-12,fire,Fire,0.5333807468414307,True,correct,strict top-1 match,126,45.0,0
+1-187207-A-20,baby_crying,Laughter,0.610967755317688,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+1-19026-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.7195093631744385,True,correct,strict top-1 match,126,45.0,0
+1-20133-A-39,glass_breaking,Breaking,0.6422007083892822,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+1-211527-A-20,baby_crying,"Baby cry, infant cry",0.6049343943595886,True,correct,strict top-1 match,126,45.0,0
+1-211527-B-20,baby_crying,"Crying, sobbing",0.6304613351821899,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+1-211527-C-20,baby_crying,"Baby cry, infant cry",0.6493192911148071,True,correct,strict top-1 match,126,45.0,0
+1-22694-A-20,baby_crying,"Crying, sobbing",0.6585046648979187,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+1-22694-B-20,baby_crying,"Crying, sobbing",0.6504919528961182,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+1-24074-A-43,vehicle_horn,Vehicle,0.6793633103370667,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+1-24076-A-43,vehicle_horn,Vehicle,0.6848150491714478,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+1-254507-A-43,vehicle_horn,Music,0.571916937828064,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+1-26176-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.6707643270492554,True,correct,strict top-1 match,126,45.0,0
+1-26177-A-43,vehicle_horn,Vehicle,0.6697713732719421,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+1-26188-A-30,door_activity,Knock,0.7218550443649292,True,correct,strict top-1 match,126,45.0,0
+1-28808-A-43,vehicle_horn,Toot,0.7022253274917603,False,ontology/label mismatch,Toot is a documented equivalent,23,8.214285714285714,14.935064935064934
+1-30226-A-0,dog_barking,Animal,0.6955667734146118,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+1-30344-A-0,dog_barking,Dog,0.7032626271247864,False,ontology/label mismatch,Dog is a documented equivalent,23,8.214285714285714,14.935064935064934
+1-31482-A-42,siren,Siren,0.6195546984672546,True,correct,strict top-1 match,126,45.0,0
+1-31482-B-42,siren,Emergency vehicle,0.678929328918457,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+1-32318-A-0,dog_barking,Animal,0.6996122002601624,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+1-4211-A-12,fire,Fire,0.5322495102882385,True,correct,strict top-1 match,126,45.0,0
+1-46272-A-12,fire,Fire,0.6692807674407959,True,correct,strict top-1 match,126,45.0,0
+1-52290-A-30,door_activity,Knock,0.6373239755630493,True,correct,strict top-1 match,126,45.0,0
+1-54084-A-42,siren,Siren,0.6986021399497986,True,correct,strict top-1 match,126,45.0,0
+1-59513-A-0,dog_barking,Animal,0.6937968730926514,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+1-60997-A-20,baby_crying,"Crying, sobbing",0.657921552658081,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+1-60997-B-20,baby_crying,"Baby cry, infant cry",0.634234607219696,True,correct,strict top-1 match,126,45.0,0
+1-7057-A-12,fire,Fire,0.6912358403205872,True,correct,strict top-1 match,126,45.0,0
+1-76831-A-42,siren,Police car (siren),0.7081062197685242,False,ontology/label mismatch,Police car (siren) is a documented equivalent,23,8.214285714285714,14.935064935064934
+1-76831-B-42,siren,Siren,0.6857609152793884,True,correct,strict top-1 match,126,45.0,0
+1-76831-C-42,siren,Siren,0.6853029131889343,True,correct,strict top-1 match,126,45.0,0
+1-76831-D-42,siren,Siren,0.711489737033844,True,correct,strict top-1 match,126,45.0,0
+1-76831-E-42,siren,Siren,0.7089418172836304,True,correct,strict top-1 match,126,45.0,0
+1-81001-A-30,door_activity,Chopping (food),0.5544090270996094,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+1-81001-B-30,door_activity,Knock,0.5450127124786377,True,correct,strict top-1 match,126,45.0,0
+1-82817-A-30,door_activity,Knock,0.6891883611679077,True,correct,strict top-1 match,126,45.0,0
+1-84536-A-39,glass_breaking,Breaking,0.6587580442428589,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+1-84704-A-39,glass_breaking,Breaking,0.6422986388206482,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+1-84705-A-39,glass_breaking,"Smash, crash",0.5436896085739136,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+1-85168-A-39,glass_breaking,Breaking,0.654688835144043,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+1-85184-A-39,glass_breaking,Breaking,0.6587942838668823,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+1-85362-A-0,dog_barking,Animal,0.6959073543548584,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+1-88807-A-39,glass_breaking,"Chink, clink",0.599907398223877,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+1-97392-A-0,dog_barking,Animal,0.6963436603546143,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+1-977-A-39,glass_breaking,"Chink, clink",0.6266515254974365,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+2-100648-A-43,vehicle_horn,Vehicle,0.6771644949913025,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+2-106881-A-39,glass_breaking,Crackle,0.5867802500724792,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+2-107351-A-20,baby_crying,"Crying, sobbing",0.6570410132408142,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+2-107351-B-20,baby_crying,"Baby cry, infant cry",0.6430341005325317,True,correct,strict top-1 match,126,45.0,0
+2-112213-A-39,glass_breaking,Glass,0.7007136344909668,False,ontology/label mismatch,Glass is a documented equivalent,23,8.214285714285714,14.935064935064934
+2-112213-B-39,glass_breaking,Glass,0.672457218170166,False,ontology/label mismatch,Glass is a documented equivalent,23,8.214285714285714,14.935064935064934
+2-114254-A-30,door_activity,Knock,0.6165563464164734,True,correct,strict top-1 match,126,45.0,0
+2-114280-A-0,dog_barking,Animal,0.6964837908744812,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+2-114587-A-0,dog_barking,Animal,0.7170587182044983,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+2-116400-A-0,dog_barking,Animal,0.6896010637283325,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+2-117271-A-0,dog_barking,Animal,0.7071551084518433,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+2-118072-A-0,dog_barking,Bow-wow,0.6322854161262512,False,ontology/label mismatch,Bow-wow is a documented equivalent,23,8.214285714285714,14.935064935064934
+2-118624-A-30,door_activity,Knock,0.6755468249320984,True,correct,strict top-1 match,126,45.0,0
+2-118625-A-30,door_activity,Knock,0.6382719874382019,True,correct,strict top-1 match,126,45.0,0
+2-118964-A-0,dog_barking,Dog,0.6562652587890625,False,ontology/label mismatch,Dog is a documented equivalent,23,8.214285714285714,14.935064935064934
+2-120218-A-30,door_activity,Knock,0.6892527937889099,True,correct,strict top-1 match,126,45.0,0
+2-120218-B-30,door_activity,Knock,0.6430111527442932,True,correct,strict top-1 match,126,45.0,0
+2-122104-A-0,dog_barking,Animal,0.6867651343345642,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+2-122104-B-0,dog_barking,Animal,0.6927394866943359,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+2-125520-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.6836609840393066,True,correct,strict top-1 match,126,45.0,0
+2-128465-A-43,vehicle_horn,Vehicle,0.6476535797119141,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+2-128465-B-43,vehicle_horn,Vehicle,0.6804361343383789,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+2-133889-A-30,door_activity,Knock,0.5439158082008362,True,correct,strict top-1 match,126,45.0,0
+2-134915-A-30,door_activity,Knock,0.5458449125289917,True,correct,strict top-1 match,126,45.0,0
+2-138465-A-43,vehicle_horn,Music,0.5688939690589905,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+2-140841-A-30,door_activity,Knock,0.6625474095344543,True,correct,strict top-1 match,126,45.0,0
+2-141563-A-39,glass_breaking,"Chink, clink",0.6269675493240356,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+2-144137-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.7105281949043274,True,correct,strict top-1 match,126,45.0,0
+2-151079-A-20,baby_crying,"Baby cry, infant cry",0.6700964570045471,True,correct,strict top-1 match,126,45.0,0
+2-173559-A-39,glass_breaking,Breaking,0.619610071182251,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+2-173607-A-39,glass_breaking,Breaking,0.6193497180938721,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+2-173618-A-39,glass_breaking,Glass,0.5892844796180725,False,ontology/label mismatch,Glass is a documented equivalent,23,8.214285714285714,14.935064935064934
+2-18766-A-12,fire,Fire,0.6134812235832214,True,correct,strict top-1 match,126,45.0,0
+2-18766-B-12,fire,Fire,0.5261296033859253,True,correct,strict top-1 match,126,45.0,0
+2-250710-A-39,glass_breaking,"Chink, clink",0.5458612442016602,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+2-28314-A-12,fire,Fire,0.6271076798439026,True,correct,strict top-1 match,126,45.0,0
+2-28314-B-12,fire,Whip,0.549264669418335,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+2-30322-A-12,fire,Fire,0.634678065776825,True,correct,strict top-1 match,126,45.0,0
+2-30322-B-12,fire,Fire,0.6262653470039368,True,correct,strict top-1 match,126,45.0,0
+2-42101-A-43,vehicle_horn,Vehicle,0.6820052266120911,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+2-43802-A-42,siren,Siren,0.6617250442504883,True,correct,strict top-1 match,126,45.0,0
+2-43806-A-42,siren,Emergency vehicle,0.6787448525428772,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+2-50665-A-20,baby_crying,"Baby cry, infant cry",0.6503474712371826,True,correct,strict top-1 match,126,45.0,0
+2-50666-A-20,baby_crying,Child singing,0.6245274543762207,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+2-54086-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.6029453873634338,True,correct,strict top-1 match,126,45.0,0
+2-61311-A-12,fire,"Slap, smack",0.5802309513092041,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+2-65747-A-12,fire,Patter,0.5509771108627319,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+2-66637-A-20,baby_crying,"Crying, sobbing",0.678965151309967,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+2-66637-B-20,baby_crying,"Baby cry, infant cry",0.6424083709716797,True,correct,strict top-1 match,126,45.0,0
+2-70052-A-42,siren,Emergency vehicle,0.7027578353881836,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+2-70052-B-42,siren,Emergency vehicle,0.6902459859848022,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+2-70936-A-42,siren,Siren,0.7108388543128967,True,correct,strict top-1 match,126,45.0,0
+2-70938-A-42,siren,Siren,0.7118971347808838,True,correct,strict top-1 match,126,45.0,0
+2-70939-A-42,siren,Emergency vehicle,0.6968838572502136,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+2-72688-A-42,siren,Siren,0.7039804458618164,True,correct,strict top-1 match,126,45.0,0
+2-80482-A-20,baby_crying,"Baby cry, infant cry",0.6871262192726135,True,correct,strict top-1 match,126,45.0,0
+3-104632-A-12,fire,Tearing,0.5319837331771851,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+3-104958-A-12,fire,Crackle,0.587339460849762,False,ontology/label mismatch,Crackle is a documented equivalent,23,8.214285714285714,14.935064935064934
+3-120644-A-12,fire,Animal,0.5939489006996155,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+3-136288-A-0,dog_barking,Animal,0.681969404220581,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+3-144028-A-0,dog_barking,Animal,0.7045944333076477,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+3-144510-A-30,door_activity,Knock,0.7071053981781006,True,correct,strict top-1 match,126,45.0,0
+3-145577-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.6496291756629944,True,correct,strict top-1 match,126,45.0,0
+3-145774-A-12,fire,Fire,0.5376675724983215,True,correct,strict top-1 match,126,45.0,0
+3-146697-A-43,vehicle_horn,Vehicle,0.6596954464912415,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+3-147965-A-12,fire,Boiling,0.6206125020980835,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+3-151080-A-20,baby_crying,"Baby cry, infant cry",0.6494714617729187,True,correct,strict top-1 match,126,45.0,0
+3-151081-A-20,baby_crying,"Baby cry, infant cry",0.6232219338417053,True,correct,strict top-1 match,126,45.0,0
+3-151081-B-20,baby_crying,"Baby cry, infant cry",0.6262281537055969,True,correct,strict top-1 match,126,45.0,0
+3-151089-A-30,door_activity,Knock,0.6103403568267822,True,correct,strict top-1 match,126,45.0,0
+3-152007-A-20,baby_crying,"Baby cry, infant cry",0.658744215965271,True,correct,strict top-1 match,126,45.0,0
+3-152007-B-20,baby_crying,"Baby cry, infant cry",0.6524450182914734,True,correct,strict top-1 match,126,45.0,0
+3-152007-C-20,baby_crying,"Baby cry, infant cry",0.6306049227714539,True,correct,strict top-1 match,126,45.0,0
+3-152007-D-20,baby_crying,"Baby cry, infant cry",0.6387611627578735,True,correct,strict top-1 match,126,45.0,0
+3-152007-E-20,baby_crying,"Baby cry, infant cry",0.6991137862205505,True,correct,strict top-1 match,126,45.0,0
+3-152594-A-30,door_activity,Knock,0.6153110265731812,True,correct,strict top-1 match,126,45.0,0
+3-153057-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.6919952034950256,True,correct,strict top-1 match,126,45.0,0
+3-154378-A-30,door_activity,Knock,0.666164755821228,True,correct,strict top-1 match,126,45.0,0
+3-155130-A-43,vehicle_horn,Vehicle,0.6875668168067932,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+3-155234-A-43,vehicle_horn,Vehicle,0.6160370707511902,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+3-155312-A-0,dog_barking,Animal,0.7154205441474915,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+3-157187-A-12,fire,Fire,0.5479868650436401,True,correct,strict top-1 match,126,45.0,0
+3-157695-A-0,dog_barking,Animal,0.5499885082244873,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+3-158476-A-12,fire,Animal,0.5911495089530945,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+3-161010-A-43,vehicle_horn,Vehicle,0.6398831605911255,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+3-163459-A-0,dog_barking,Bark,0.6619614362716675,True,correct,strict top-1 match,126,45.0,0
+3-170015-A-0,dog_barking,Dog,0.6793336272239685,False,ontology/label mismatch,Dog is a documented equivalent,23,8.214285714285714,14.935064935064934
+3-170574-A-30,door_activity,Knock,0.6359358429908752,True,correct,strict top-1 match,126,45.0,0
+3-174840-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.6581592559814453,True,correct,strict top-1 match,126,45.0,0
+3-180147-A-30,door_activity,Knock,0.6781901717185974,True,correct,strict top-1 match,126,45.0,0
+3-180256-A-0,dog_barking,Animal,0.6566168069839478,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+3-180977-A-0,dog_barking,Animal,0.7075738310813904,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+3-182023-A-30,door_activity,Knock,0.7149810194969177,True,correct,strict top-1 match,126,45.0,0
+3-182025-A-30,door_activity,Knock,0.681353747844696,True,correct,strict top-1 match,126,45.0,0
+3-203371-A-39,glass_breaking,Breaking,0.6218697428703308,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+3-203373-A-39,glass_breaking,Breaking,0.6514564752578735,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+3-203374-A-39,glass_breaking,Breaking,0.6536749601364136,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+3-203375-A-39,glass_breaking,Breaking,0.665103554725647,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+3-203377-A-39,glass_breaking,Breaking,0.5926232933998108,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+3-216280-A-39,glass_breaking,Breaking,0.5974894165992737,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+3-216281-A-39,glass_breaking,"Chink, clink",0.6430759429931641,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+3-216284-A-39,glass_breaking,"Chink, clink",0.6339840888977051,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+3-243726-A-43,vehicle_horn,Toot,0.6656010150909424,False,ontology/label mismatch,Toot is a documented equivalent,23,8.214285714285714,14.935064935064934
+3-51376-A-42,siren,Siren,0.707667350769043,True,correct,strict top-1 match,126,45.0,0
+3-51731-A-42,siren,Emergency vehicle,0.6946187615394592,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+3-51731-B-42,siren,Emergency vehicle,0.6880602836608887,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+3-51909-A-42,siren,Siren,0.7016452550888062,True,correct,strict top-1 match,126,45.0,0
+3-51909-B-42,siren,Siren,0.714445173740387,True,correct,strict top-1 match,126,45.0,0
+3-58772-A-42,siren,Siren,0.7055160403251648,True,correct,strict top-1 match,126,45.0,0
+3-62878-A-42,siren,Siren,0.7010191082954407,True,correct,strict top-1 match,126,45.0,0
+3-62878-B-42,siren,Police car (siren),0.6995037794113159,False,ontology/label mismatch,Police car (siren) is a documented equivalent,23,8.214285714285714,14.935064935064934
+3-65748-A-12,fire,Fire,0.570309579372406,True,correct,strict top-1 match,126,45.0,0
+4-102871-A-42,siren,Emergency vehicle,0.6832640767097473,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+4-111671-A-42,siren,Siren,0.697741687297821,True,correct,strict top-1 match,126,45.0,0
+4-111671-B-42,siren,Siren,0.6900690793991089,True,correct,strict top-1 match,126,45.0,0
+4-121532-A-42,siren,Siren,0.7144401669502258,True,correct,strict top-1 match,126,45.0,0
+4-164661-A-12,fire,Vehicle,0.5890183448791504,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+4-164661-B-12,fire,Sizzle,0.5256965756416321,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+4-167077-A-20,baby_crying,"Crying, sobbing",0.6306555867195129,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+4-167077-B-20,baby_crying,"Baby cry, infant cry",0.6491277813911438,True,correct,strict top-1 match,126,45.0,0
+4-167077-C-20,baby_crying,"Baby cry, infant cry",0.6605081558227539,True,correct,strict top-1 match,126,45.0,0
+4-170247-A-12,fire,Fire,0.5332506895065308,True,correct,strict top-1 match,126,45.0,0
+4-170247-B-12,fire,Crackle,0.5360779762268066,False,ontology/label mismatch,Crackle is a documented equivalent,23,8.214285714285714,14.935064935064934
+4-171207-A-12,fire,Vehicle,0.6121729016304016,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+4-175845-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.6892819404602051,True,correct,strict top-1 match,126,45.0,0
+4-175846-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.7066165804862976,True,correct,strict top-1 match,126,45.0,0
+4-175855-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.7174618244171143,True,correct,strict top-1 match,126,45.0,0
+4-175856-A-43,vehicle_horn,Vehicle,0.6868920922279358,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+4-176631-A-43,vehicle_horn,Vehicle,0.6753458976745605,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+4-176638-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.7027219533920288,True,correct,strict top-1 match,126,45.0,0
+4-178402-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.6620245575904846,True,correct,strict top-1 match,126,45.0,0
+4-181563-A-12,fire,Rain on surface,0.5642309784889221,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+4-182034-A-30,door_activity,Knock,0.7075281143188477,True,correct,strict top-1 match,126,45.0,0
+4-182039-A-30,door_activity,Knock,0.7130188941955566,True,correct,strict top-1 match,126,45.0,0
+4-182041-A-30,door_activity,Knock,0.6944817304611206,True,correct,strict top-1 match,126,45.0,0
+4-182368-A-12,fire,Fire,0.5234586596488953,True,correct,strict top-1 match,126,45.0,0
+4-182369-A-12,fire,Fire,0.5564680695533752,True,correct,strict top-1 match,126,45.0,0
+4-182395-A-0,dog_barking,Dog,0.6170189380645752,False,ontology/label mismatch,Dog is a documented equivalent,23,8.214285714285714,14.935064935064934
+4-183992-A-0,dog_barking,Dog,0.6906720995903015,False,ontology/label mismatch,Dog is a documented equivalent,23,8.214285714285714,14.935064935064934
+4-184575-A-0,dog_barking,Animal,0.7091957330703735,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+4-185575-A-20,baby_crying,"Baby cry, infant cry",0.6018319129943848,True,correct,strict top-1 match,126,45.0,0
+4-185575-B-20,baby_crying,Babbling,0.6232777237892151,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+4-185575-C-20,baby_crying,"Crying, sobbing",0.5993543863296509,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+4-186518-A-30,door_activity,Knock,0.5716354846954346,True,correct,strict top-1 match,126,45.0,0
+4-187284-A-30,door_activity,Machine gun,0.6095433235168457,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+4-188878-A-30,door_activity,Knock,0.6487847566604614,True,correct,strict top-1 match,126,45.0,0
+4-191015-A-43,vehicle_horn,Vehicle,0.663229763507843,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+4-191687-A-0,dog_barking,Animal,0.694878339767456,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+4-192236-A-0,dog_barking,Animal,0.7069580554962158,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+4-194754-A-0,dog_barking,Animal,0.6831022500991821,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+4-199261-A-0,dog_barking,Animal,0.6958242654800415,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+4-204115-A-39,glass_breaking,Breaking,0.5864644646644592,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+4-204119-A-39,glass_breaking,Breaking,0.5376596450805664,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+4-204121-A-39,glass_breaking,Breaking,0.5833755731582642,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+4-204123-A-39,glass_breaking,Breaking,0.5906325578689575,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+4-204777-A-39,glass_breaking,Glass,0.712471067905426,False,ontology/label mismatch,Glass is a documented equivalent,23,8.214285714285714,14.935064935064934
+4-204777-B-39,glass_breaking,Glass,0.6760464310646057,False,ontology/label mismatch,Glass is a documented equivalent,23,8.214285714285714,14.935064935064934
+4-204777-C-39,glass_breaking,Breaking,0.643675684928894,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+4-207124-A-0,dog_barking,Animal,0.703928530216217,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+4-211502-A-30,door_activity,Drum,0.6188387274742126,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+4-212698-A-39,glass_breaking,Breaking,0.5559374690055847,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+4-261068-A-30,door_activity,Knock,0.6707547307014465,True,correct,strict top-1 match,126,45.0,0
+4-59579-A-20,baby_crying,"Baby cry, infant cry",0.6261044144630432,True,correct,strict top-1 match,126,45.0,0
+4-59579-B-20,baby_crying,"Baby cry, infant cry",0.6748812794685364,True,correct,strict top-1 match,126,45.0,0
+4-67358-A-42,siren,Police car (siren),0.6802909970283508,False,ontology/label mismatch,Police car (siren) is a documented equivalent,23,8.214285714285714,14.935064935064934
+4-80761-A-42,siren,Civil defense siren,0.7076021432876587,False,ontology/label mismatch,Civil defense siren is a documented equivalent,23,8.214285714285714,14.935064935064934
+4-90014-A-42,siren,Ambulance (siren),0.6856417059898376,False,ontology/label mismatch,Ambulance (siren) is a documented equivalent,23,8.214285714285714,14.935064935064934
+4-90014-B-42,siren,Emergency vehicle,0.683841347694397,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+5-117118-A-42,siren,Siren,0.7154073715209961,True,correct,strict top-1 match,126,45.0,0
+5-117120-A-42,siren,Siren,0.714868426322937,True,correct,strict top-1 match,126,45.0,0
+5-117122-A-42,siren,Siren,0.7143098711967468,True,correct,strict top-1 match,126,45.0,0
+5-133989-A-42,siren,Siren,0.7099875211715698,True,correct,strict top-1 match,126,45.0,0
+5-133989-B-42,siren,Siren,0.7089088559150696,True,correct,strict top-1 match,126,45.0,0
+5-150409-A-42,siren,Train,0.6849544048309326,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+5-151085-A-20,baby_crying,"Baby cry, infant cry",0.657472550868988,True,correct,strict top-1 match,126,45.0,0
+5-160551-A-42,siren,Emergency vehicle,0.6671088337898254,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+5-179860-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.7037228941917419,True,correct,strict top-1 match,126,45.0,0
+5-179863-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.6886006593704224,True,correct,strict top-1 match,126,45.0,0
+5-179865-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.7016436457633972,True,correct,strict top-1 match,126,45.0,0
+5-179866-A-43,vehicle_horn,"Vehicle horn, car horn, honking",0.7192997932434082,True,correct,strict top-1 match,126,45.0,0
+5-179868-A-43,vehicle_horn,Speech,0.7077141404151917,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+5-180156-A-43,vehicle_horn,Vehicle,0.6598629951477051,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+5-180156-B-43,vehicle_horn,Vehicle,0.6733166575431824,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+5-180156-C-43,vehicle_horn,Vehicle,0.6500197052955627,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+5-184323-A-42,siren,Siren,0.7191858887672424,True,correct,strict top-1 match,126,45.0,0
+5-186924-A-12,fire,Rain on surface,0.5616651773452759,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+5-189212-A-12,fire,Vehicle,0.5592584013938904,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+5-189237-A-12,fire,Fire,0.5491878390312195,True,correct,strict top-1 match,126,45.0,0
+5-193473-A-12,fire,Fire,0.7071459293365479,True,correct,strict top-1 match,126,45.0,0
+5-193473-B-12,fire,Fire,0.5388051867485046,True,correct,strict top-1 match,126,45.0,0
+5-198411-A-20,baby_crying,"Crying, sobbing",0.674088180065155,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+5-198411-B-20,baby_crying,"Baby cry, infant cry",0.598366379737854,True,correct,strict top-1 match,126,45.0,0
+5-198411-C-20,baby_crying,"Baby cry, infant cry",0.6690431237220764,True,correct,strict top-1 match,126,45.0,0
+5-198411-D-20,baby_crying,"Baby cry, infant cry",0.6732393503189087,True,correct,strict top-1 match,126,45.0,0
+5-198411-E-20,baby_crying,"Baby cry, infant cry",0.6632596850395203,True,correct,strict top-1 match,126,45.0,0
+5-198411-F-20,baby_crying,"Crying, sobbing",0.6407173275947571,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+5-198411-G-20,baby_crying,"Crying, sobbing",0.6289346218109131,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+5-203128-A-0,dog_barking,Animal,0.7115992307662964,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+5-203128-B-0,dog_barking,Animal,0.7082089781761169,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+5-208030-A-0,dog_barking,Animal,0.7136249542236328,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+5-212454-A-0,dog_barking,Animal,0.6958757042884827,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+5-213802-A-12,fire,Vehicle,0.6021798849105835,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+5-213855-A-0,dog_barking,Animal,0.6835505962371826,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792
+5-215658-A-12,fire,Fire,0.6652213931083679,True,correct,strict top-1 match,126,45.0,0
+5-215658-B-12,fire,Raindrop,0.5532183647155762,False,sustained-noise confusion,sustained source class confused at intermediate confidence,29,10.357142857142858,18.83116883116883
+5-217158-A-0,dog_barking,Dog,0.6059903502464294,False,ontology/label mismatch,Dog is a documented equivalent,23,8.214285714285714,14.935064935064934
+5-218980-A-30,door_activity,Knock,0.5632996559143066,True,correct,strict top-1 match,126,45.0,0
+5-218981-A-30,door_activity,Door,0.5588560700416565,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+5-221528-A-39,glass_breaking,Breaking,0.6747610569000244,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+5-221529-A-39,glass_breaking,"Smash, crash",0.6203521490097046,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+5-231762-A-0,dog_barking,Dog,0.6796698570251465,False,ontology/label mismatch,Dog is a documented equivalent,23,8.214285714285714,14.935064935064934
+5-233605-A-39,glass_breaking,"Slap, smack",0.64656001329422,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+5-233607-A-39,glass_breaking,Hammer,0.5500695109367371,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+5-235644-A-30,door_activity,Knock,0.6880557537078857,True,correct,strict top-1 match,126,45.0,0
+5-250026-A-30,door_activity,Knock,0.7035389542579651,True,correct,strict top-1 match,126,45.0,0
+5-250026-B-30,door_activity,Knock,0.6204671859741211,True,correct,strict top-1 match,126,45.0,0
+5-251426-A-30,door_activity,Knock,0.6387242078781128,True,correct,strict top-1 match,126,45.0,0
+5-251426-B-30,door_activity,Knock,0.6882731318473816,True,correct,strict top-1 match,126,45.0,0
+5-256512-A-30,door_activity,Knock,0.6878576278686523,True,correct,strict top-1 match,126,45.0,0
+5-257642-A-39,glass_breaking,Breaking,0.6191167235374451,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+5-260432-A-39,glass_breaking,Breaking,0.6239890456199646,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+5-260433-A-39,glass_breaking,Breaking,0.5927470922470093,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+5-260434-A-39,glass_breaking,"Chink, clink",0.6233423948287964,False,transient-event failure,transient source event; no direct preprocessing defect proven,59,21.071428571428573,38.311688311688314
+5-9032-A-0,dog_barking,Animal,0.6908507943153381,False,unknown,available evidence is insufficient for a narrower causal label,43,15.357142857142858,27.92207792207792

@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-20T15:41:46.3902013+07:00",
+  "purpose": "Pre-external-holdout immutable computer benchmark baseline",
+  "freeze_rule": "Do not change models, checkpoints, preprocessing, mappings, thresholds, rules, or evaluator behavior in response to external holdout results.",
+  "git": {
+    "commit": "24346d879634f65eeb8a647bdba0ac84e249c63d",
+    "branch": "experiment/emergency-ced-v3",
+    "dirty": true,
+    "note": "Relevant working-tree files are content-addressed below; repository had pre-existing modified and untracked work."
+  },
+  "random_seeds": {
+    "primary": 42,
+    "source": "benchmark/config.py",
+    "snr_levels_db": [20, 15, 10, 5, 0]
+  },
+  "ced": {
+    "model_id": "mispeech/ced-tiny",
+    "huggingface_revision": "ace276d29dd0bb3f3517b0fa8cf300738c409019",
+    "model_safetensors_sha256": "0e086f0cd62814c6def89001f3f25193f75955696f6975ef6800af31d00d6dd7",
+    "model_safetensors_bytes": 22028820,
+    "config_sha256": "3a060c57c28b8138cf66bbab2c0dcab79f07c871b600f52a06f2652bf3cad2bd",
+    "preprocessor_config_sha256": "668fbf4f00f9e3915de04fc07a621434ef1746b933662840623a9701291ca55a",
+    "feature_extraction_code_sha256": "d2eff0a8cbc563196f8ccef4180d9e9299d643bfee087a545e97e9c4a9e64cb4",
+    "configuration_code_sha256": "147ac3602c1b35c3309d68575e3f19eb22cc2afe088897397991613e68a82a64",
+    "modeling_code_sha256": "c8a8e8b865e4e3dcebffefb40215d6778bfa380ecea388f11806e33521a29327",
+    "pipeline_task": "audio-classification",
+    "trust_remote_code": true,
+    "function_to_apply": "sigmoid",
+    "top_k": null,
+    "input_preprocessing": {
+      "decoder": "librosa.load",
+      "preserve_source_sample_rate": true,
+      "mono": true,
+      "dtype": "float32",
+      "peak_normalization": true,
+      "empty_audio_rejected": true
+    },
+    "semantic_mapping": {
+      "default_enabled": false,
+      "improved_v2_enabled_by": "SOUNDGUARD_ENABLE_SEMANTIC_CED_MAPPING=1",
+      "version": "soundguard_taxonomy_v1",
+      "aliases_file": "sound_taxonomy.py",
+      "broad_labels_rejected": ["Animal", "Vehicle", "Breaking", "Crying"]
+    }
+  },
+  "emergency_v3": {
+    "default_enabled": false,
+    "model": "EfficientSED fmn10_strong",
+    "upstream_commit": "e3449bfd1f4922b81d82410ed842653f462bfca8",
+    "checkpoint_sha256": "92a5c1dc5aa21620e262420c4cc657d2f699bdfa20a748de506c354a2fe2770a",
+    "checkpoint_bytes": 15538778,
+    "threshold": 0.05,
+    "threshold_selection": "ESC-50 folds 1-4 development only",
+    "policy": "V2 OR EfficientSED approved-safety evidence",
+    "approved_categories": ["glass_breaking", "vehicle_horn", "fire", "siren", "baby_crying"],
+    "taxonomy_sha256": "3dafb2e5fa6ced1fbc3a15335576ad62a9de04a12b2bb972db4da636566aa97a"
+  },
+  "emergency_rules": {
+    "help_request": {"threshold": 0.0, "level": "CRITICAL", "cooldown_seconds": 20.0},
+    "gunshot": {"threshold": 0.45, "level": "CRITICAL", "cooldown_seconds": 120.0},
+    "explosion": {"threshold": 0.45, "level": "CRITICAL", "cooldown_seconds": 120.0},
+    "fire": {"threshold": 0.5, "level": "HIGH", "cooldown_seconds": 90.0},
+    "smoke_alarm": {"threshold": 0.5, "level": "HIGH", "cooldown_seconds": 60.0},
+    "glass_breaking": {"threshold": 0.55, "level": "HIGH", "cooldown_seconds": 60.0},
+    "screaming": {"threshold": 0.55, "level": "HIGH", "cooldown_seconds": 45.0},
+    "siren": {"threshold": 0.55, "level": "HIGH", "cooldown_seconds": 45.0},
+    "vehicle_horn": {"threshold": 0.6, "level": "MEDIUM", "cooldown_seconds": 20.0},
+    "baby_crying": {"threshold": 0.6, "level": "MEDIUM", "cooldown_seconds": 30.0},
+    "door_activity": {"threshold": 0.65, "level": "LOW", "cooldown_seconds": 15.0},
+    "dog_barking": {"threshold": 0.65, "level": "LOW", "cooldown_seconds": 20.0},
+    "speech": {"threshold": 0.7, "level": "LOW", "cooldown_seconds": 10.0},
+    "fusion_confidence_floor": 0.45
+  },
+  "noise_processing": {
+    "dtln_sample_rate_hz": 16000,
+    "dtln_block_length": 512,
+    "dtln_block_shift": 128,
+    "model_1_sha256": "91281a38e80fe9fd330e28eda7e16fe4e483ee5199a3e687a099939013c25de0",
+    "model_2_sha256": "7ae37ec802862d8a65b5cdabfbcbbe22caaf7cd39e79adf574d15837d1520830",
+    "ced_route": "raw audio",
+    "improved_stt_route": "raw audio",
+    "noise_mixing": "seeded Gaussian or fixed DEMAND source; source-grouped paired comparisons"
+  },
+  "stt": {
+    "backend": "Google Speech Recognition",
+    "language": "vi-VN",
+    "normalization": "Unicode NFC, lowercase, punctuation-to-space, whitespace collapse; Vietnamese diacritics preserved",
+    "provider_model_version": null,
+    "network_required": true
+  },
+  "vad": {
+    "model": "Silero VAD",
+    "sample_rate_hz": 16000,
+    "frame_samples": 512,
+    "threshold": 0.5
+  },
+  "source_hashes": {
+    "sound_classifier.py": "30f5beb37201d5108f45ad605917010a00d9670441861734bdb8e219fbcf87ad",
+    "sound_taxonomy.py": "d16ba3c8d0050f14d04852524ea87e051705bf33bf1ebdaf187059ea2a137958",
+    "emergency_system.py": "d2813fca63304f4d53f23eee14928836ef974fe70570541090702000de363f79",
+    "fusion_engine.py": "767fd6af263869b283e50f5914d42eea753ec3f1dcbefbf1705cecf42cf31701",
+    "speech_enhancer.py": "f1ec7fba4ee6284a8ea924456d18a0fc8741416e47feaa2091b73b8810f58fb0",
+    "speech_recognizer.py": "486a89a950169413e9b3443ba28f85e02703396dbdb5a074ebae154594f79768",
+    "benchmark/metrics.py": "a3b92c1d45f0065302ee7e913c8ae9af3161dd6f62a539cfcda32ed63f5381d3",
+    "benchmark/run_expanded_benchmark.py": "d04bf7344f5e14aa70176e276e81c9f270071126ea4cd210a2704c30351e09f7",
+    "benchmark_results/emergency_v3_final/FROZEN_V3_MANIFEST.json": "992f7f4917a411cd1e4db2f232a72cf9e2f5dd04ab65f779185a33bd99d6b80e"
+  },
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "requirements_snapshot": "requirements_snapshot.txt"
+  },
+  "external_holdout_status_at_freeze": {
+    "fsd50k": "metadata and ground truth only; no audio; not evaluated",
+    "dcase_2017": "license and credits only; no audio; not evaluated"
+  }
+}

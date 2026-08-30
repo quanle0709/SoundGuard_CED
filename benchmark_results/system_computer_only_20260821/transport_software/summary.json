@@ -1,0 +1,23 @@
+{
+  "scope": "software transport serialization reliability; no physical serial link",
+  "generated": 2000,
+  "serialized": 2000,
+  "missing": 0,
+  "duplicates": 0,
+  "malformed": 0,
+  "ordering_errors": 0,
+  "exceptions": 0,
+  "success_rate": 1.0,
+  "duplicate_suppression_passed": true,
+  "write_failure_handled_without_raise": true,
+  "latency": {
+    "count": 2000,
+    "mean_ms": 0.13660485015861923,
+    "median_ms": 0.05560000136028975,
+    "p95_ms": 0.12329999299254268,
+    "min_ms": 0.025599991204217076,
+    "max_ms": 27.141099999425933
+  },
+  "KHKT_CLAIM": "The software event path deterministically prepares ordered, CRC-valid HUD frames.",
+  "REPORT_USE": "Supporting Layer 2 transport reliability and serialization overhead evidence."
+}

@@ -1,0 +1,528 @@
+{
+  "state_flow": {
+    "cycles": 10,
+    "steps": 70,
+    "passed": true,
+    "failures": []
+  },
+  "clock": {
+    "automatic_k_after_connection": true,
+    "home_host_minute": "09:31",
+    "home_displayed_minute": "09:31",
+    "home_minute_matches": true,
+    "k_during_subtitle_preserved_screen": true,
+    "k_during_alert_preserved_screen": true,
+    "advanced_without_resync": true,
+    "advance_start": "09:31",
+    "advance_end": "09:32",
+    "wait_seconds": 60.12433195114136
+  },
+  "reconnect": {
+    "label": "serial-session reconnect",
+    "before_ok": true,
+    "reopen_ok": true,
+    "clock_resynchronized": true,
+    "normal_hud_after_reconnect": true,
+    "physical_usb_unplug_replug": "NOT MEASURED"
+  },
+  "concurrency": {
+    "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV01\\VIVOSDEV01_R002.wav",
+    "environment_source": "benchmark_data\\external\\esc50\\audio\\1-100032-A-0.wav",
+    "duration_audio_seconds": 16.0,
+    "wall_seconds": 43.76600000000326,
+    "counters": {
+      "raw_frames_captured": 500,
+      "ced_frames_produced": 500,
+      "speech_frames_dropped": 14,
+      "ced_frames_dropped": 0,
+      "speech_frames_produced": 174,
+      "speech_events_dropped": 0,
+      "recognition_jobs_dropped": 0,
+      "recognition_results_dropped": 0,
+      "ced_frames_consumed": 500,
+      "ced_events_dropped": 0,
+      "ced_windows_processed": 4,
+      "ced_windows_dropped": 0,
+      "ced_window_queue_max_depth": 3,
+      "ced_inference_seconds_total": 37.90600000001723,
+      "ced_inference_seconds_max": 37.375,
+      "ced_events_dispatched": 4,
+      "ced_top_k_recoveries": 2,
+      "ced_held_label_refreshes": 2,
+      "ced_ttl_expirations": 0,
+      "ced_clear_requests": 0,
+      "stt_partial_count": 0,
+      "stt_final_count": 0,
+      "C_frames_sent": 3
+    },
+    "serial_frames": 9,
+    "serial_failures": 0,
+    "ced_audits": [
+      {
+        "active_hud_label": "DOG",
+        "c_frame_sent": true,
+        "clear_requested": false,
+        "hud_evaluations": [
+          {
+            "accepted": true,
+            "category": "dog_barking",
+            "display_label": "DOG",
+            "emergency_threshold": 0.65,
+            "label": "Bark",
+            "passes_emergency_threshold": false,
+            "reason": "accepted",
+            "score": 0.6231867671012878,
+            "source": "top1",
+            "threshold": 0.52
+          },
+          {
+            "accepted": true,
+            "category": "dog_barking",
+            "display_label": "DOG",
+            "emergency_threshold": 0.65,
+            "label": "Dog",
+            "passes_emergency_threshold": false,
+            "reason": "accepted",
+            "score": 0.6199265718460083,
+            "source": "top_k",
+            "threshold": 0.52
+          },
+          {
+            "accepted": true,
+            "category": "animal",
+            "display_label": "ANIMAL",
+            "emergency_threshold": null,
+            "label": "Animal",
+            "passes_emergency_threshold": false,
+            "reason": "accepted",
+            "score": 0.606243371963501,
+            "source": "top_k",
+            "threshold": 0.52
+          },
+          {
+            "accepted": true,
+            "category": "animal",
+            "display_label": "ANIMAL",
+            "emergency_threshold": null,
+            "label": "Domestic animals, pets",
+            "passes_emergency_threshold": false,
+            "reason": "accepted",
+            "score": 0.6011565327644348,
+            "source": "top_k",
+            "threshold": 0.52
+          },
+          {
+            "accepted": true,
+            "category": null,
+            "display_label": "DOG",
+            "emergency_threshold": null,
+            "label": "Bow-wow",
+            "passes_emergency_threshold": false,
+            "reason": "accepted",
+            "score": 0.589719295501709,
+            "source": "top_k",
+            "threshold": 0.52
+          }
+        ],
+        "inference_end": 1787452376.385588,
+        "inference_seconds": 37.375,
+        "inference_start": 1787452339.0247293,
+        "last_confirmed_at": 242227.515,
+        "previous_confirmed_at": null,
+        "previous_hud_label": "",
+        "selected_hud_label": "DOG",
+        "top1": "Bark",
+        "top1_score": 0.6231867671012878,
+        "top5": [
+          {
+            "label": "Bark",
+            "score": 0.6231867671012878
+          },
+          {
+            "label": "Dog",
+            "score": 0.6199265718460083
+          },
+          {
+            "label": "Animal",
+            "score": 0.606243371963501
+          },
+          {
+            "label": "Domestic animals, pets",
+            "score": 0.6011565327644348
+          },
+          {
+            "label": "Bow-wow",
+            "score": 0.589719295501709
+          }
+        ],
+        "ttl_remaining": 5.5,
+        "window_end": 1787452338.31828,
+        "window_start": 1787452333.31828
+      },
+      {
+        "active_hud_label": "DOG",
+        "c_frame_sent": true,
+        "clear_requested": false,
+        "hud_evaluations": [
+          {
+            "accepted": false,
+            "category": "speech",
+            "display_label": "",
+            "emergency_threshold": 0.7,
+            "label": "Speech",
+            "passes_emergency_threshold": false,
+            "reason": "speech_suppressed",
+            "score": 0.6980352997779846,
+            "source": "top1",
+            "threshold": null
+          },
+          {
+            "accepted": true,
+            "category": "dog_barking",
+            "display_label": "DOG",
+            "emergency_threshold": 0.65,
+            "label": "Bark",
+            "passes_emergency_threshold": false,
+            "reason": "accepted",
+            "score": 0.6479286551475525,
+            "source": "top_k",
+            "threshold": 0.52
+          },
+          {
+            "accepted": true,
+            "category": "dog_barking",
+            "display_label": "DOG",
+            "emergency_threshold": 0.65,
+            "label": "Dog",
+            "passes_emergency_threshold": false,
+            "reason": "accepted",
+            "score": 0.6414333581924438,
+            "source": "top_k",
+            "threshold": 0.52
+          },
+          {
+            "accepted": true,
+            "category": "animal",
+            "display_label": "ANIMAL",
+            "emergency_threshold": null,
+            "label": "Animal",
+            "passes_emergency_threshold": false,
+            "reason": "accepted",
+            "score": 0.6280440092086792,
+            "source": "top_k",
+            "threshold": 0.52
+          },
+          {
+            "accepted": true,
+            "category": "animal",
+            "display_label": "ANIMAL",
+            "emergency_threshold": null,
+            "label": "Domestic animals, pets",
+            "passes_emergency_threshold": false,
+            "reason": "accepted",
+            "score": 0.6273231506347656,
+            "source": "top_k",
+            "threshold": 0.52
+          }
+        ],
+        "inference_end": 1787452376.6359541,
+        "inference_seconds": 0.25,
+        "inference_start": 1787452376.385588,
+        "last_confirmed_at": 242227.531,
+        "previous_confirmed_at": 242227.515,
+        "previous_hud_label": "DOG",
+        "selected_hud_label": "DOG",
+        "top1": "Speech",
+        "top1_score": 0.6980352997779846,
+        "top5": [
+          {
+            "label": "Speech",
+            "score": 0.6980352997779846
+          },
+          {
+            "label": "Bark",
+            "score": 0.6479286551475525
+          },
+          {
+            "label": "Dog",
+            "score": 0.6414333581924438
+          },
+          {
+            "label": "Animal",
+            "score": 0.6280440092086792
+          },
+          {
+            "label": "Domestic animals, pets",
+            "score": 0.6273231506347656
+          }
+        ],
+        "ttl_remaining": 5.48499999998603,
+        "window_end": 1787452343.31828,
+        "window_start": 1787452338.31828
+      },
+      {
+        "active_hud_label": "DOG",
+        "c_frame_sent": true,
+        "clear_requested": false,
+        "hud_evaluations": [
+          {
+            "accepted": false,
+            "category": "speech",
+            "display_label": "",
+            "emergency_threshold": 0.7,
+            "label": "Speech",
+            "passes_emergency_threshold": false,
+            "reason": "speech_suppressed",
+            "score": 0.6941126585006714,
+            "source": "top1",
+            "threshold": null
+          },
+          {
+            "accepted": true,
+            "category": "dog_barking",
+            "display_label": "DOG",
+            "emergency_threshold": 0.65,
+            "label": "Dog",
+            "passes_emergency_threshold": false,
+            "reason": "accepted",
+            "score": 0.6226301789283752,
+            "source": "top_k",
+            "threshold": 0.52
+          },
+          {
+            "accepted": true,
+            "category": "animal",
+            "display_label": "ANIMAL",
+            "emergency_threshold": null,
+            "label": "Animal",
+            "passes_emergency_threshold": false,
+            "reason": "accepted",
+            "score": 0.612921953201294,
+            "source": "top_k",
+            "threshold": 0.52
+          },
+          {
+            "accepted": true,
+            "category": "dog_barking",
+            "display_label": "DOG",
+            "emergency_threshold": 0.65,
+            "label": "Bark",
+            "passes_emergency_threshold": false,
+            "reason": "accepted",
+            "score": 0.6025210022926331,
+            "source": "top_k",
+            "threshold": 0.52
+          },
+          {
+            "accepted": true,
+            "category": "animal",
+            "display_label": "ANIMAL",
+            "emergency_threshold": null,
+            "label": "Domestic animals, pets",
+            "passes_emergency_threshold": false,
+            "reason": "accepted",
+            "score": 0.6016303896903992,
+            "source": "top_k",
+            "threshold": 0.52
+          }
+        ],
+        "inference_end": 1787452376.8008542,
+        "inference_seconds": 0.15600000001722947,
+        "inference_start": 1787452376.6359541,
+        "last_confirmed_at": 242227.546,
+        "previous_confirmed_at": 242227.531,
+        "previous_hud_label": "DOG",
+        "selected_hud_label": "DOG",
+        "top1": "Speech",
+        "top1_score": 0.6941126585006714,
+        "top5": [
+          {
+            "label": "Speech",
+            "score": 0.6941126585006714
+          },
+          {
+            "label": "Dog",
+            "score": 0.6226301789283752
+          },
+          {
+            "label": "Animal",
+            "score": 0.612921953201294
+          },
+          {
+            "label": "Bark",
+            "score": 0.6025210022926331
+          },
+          {
+            "label": "Domestic animals, pets",
+            "score": 0.6016303896903992
+          }
+        ],
+        "ttl_remaining": 5.48399999999674,
+        "window_end": 1787452348.31828,
+        "window_start": 1787452343.31828
+      },
+      {
+        "active_hud_label": "DOG",
+        "c_frame_sent": false,
+        "clear_requested": false,
+        "hud_evaluations": [
+          {
+            "accepted": false,
+            "category": null,
+            "display_label": "",
+            "emergency_threshold": null,
+            "label": "Silence",
+            "passes_emergency_threshold": false,
+            "reason": "unsupported_or_alert_only",
+            "score": 0.6334816813468933,
+            "source": "top1",
+            "threshold": null
+          },
+          {
+            "accepted": false,
+            "category": null,
+            "display_label": "",
+            "emergency_threshold": null,
+            "label": "Music",
+            "passes_emergency_threshold": false,
+            "reason": "unsupported_or_alert_only",
+            "score": 0.5335695147514343,
+            "source": "top_k",
+            "threshold": null
+          },
+          {
+            "accepted": false,
+            "category": null,
+            "display_label": "",
+            "emergency_threshold": null,
+            "label": "Sound effect",
+            "passes_emergency_threshold": false,
+            "reason": "unsupported_or_alert_only",
+            "score": 0.5090154409408569,
+            "source": "top_k",
+            "threshold": null
+          },
+          {
+            "accepted": false,
+            "category": null,
+            "display_label": "",
+            "emergency_threshold": null,
+            "label": "Sine wave",
+            "passes_emergency_threshold": false,
+            "reason": "unsupported_or_alert_only",
+            "score": 0.5069735050201416,
+            "source": "top_k",
+            "threshold": null
+          },
+          {
+            "accepted": false,
+            "category": null,
+            "display_label": "",
+            "emergency_threshold": null,
+            "label": "Musical instrument",
+            "passes_emergency_threshold": false,
+            "reason": "unsupported_or_alert_only",
+            "score": 0.5039905309677124,
+            "source": "top_k",
+            "threshold": null
+          }
+        ],
+        "inference_end": 1787452376.9284563,
+        "inference_seconds": 0.125,
+        "inference_start": 1787452376.8008542,
+        "last_confirmed_at": 242227.546,
+        "previous_confirmed_at": 242227.546,
+        "previous_hud_label": "DOG",
+        "selected_hud_label": "",
+        "top1": "Silence",
+        "top1_score": 0.6334816813468933,
+        "top5": [
+          {
+            "label": "Silence",
+            "score": 0.6334816813468933
+          },
+          {
+            "label": "Music",
+            "score": 0.5335695147514343
+          },
+          {
+            "label": "Sound effect",
+            "score": 0.5090154409408569
+          },
+          {
+            "label": "Sine wave",
+            "score": 0.5069735050201416
+          },
+          {
+            "label": "Musical instrument",
+            "score": 0.5039905309677124
+          }
+        ],
+        "ttl_remaining": 5.48399999999674,
+        "window_end": 1787452350.7880614,
+        "window_start": 1787452348.31828
+      }
+    ],
+    "subtitle_updates": 0,
+    "subtitle_and_ced_coexisted": true,
+    "ced_processed_while_speech": true,
+    "ced_processed_while_stt_idle": true,
+    "idle_ced_windows": 1,
+    "speech_ced_windows": 3,
+    "ced_present_across_multiple_mixed_windows": true,
+    "personalization_adapter_active": true,
+    "personalization_profile_source": "user",
+    "emergency_v3_enabled": true,
+    "display_log": [
+      "[SPEECH STARTED]",
+      "VAD speech start: 1787452339.837440",
+      "[SPEECH STARTED]",
+      "VAD speech start: 1787452348.394261",
+      "STT partial error: RuntimeError: Speech recognition request failed: recognition connection failed: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions",
+      "STT final error: RuntimeError: Speech recognition request failed: recognition connection failed: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions",
+      "STT partial error: RuntimeError: Speech recognition request failed: recognition connection failed: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions",
+      "STT final error: RuntimeError: Speech recognition request failed: recognition connection failed: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions",
+      "Detected sound: Bark",
+      "Confidence: 0.6231867671012878",
+      "Emergency V3: source=ced_tiny_v2, detected=False, category=vehicle_horn",
+      "Help request: False",
+      "Alert level: LOW",
+      "Alert message: [none]",
+      "Event state: NO_EVENT",
+      "Context: neutral",
+      "Emitted this cycle: False",
+      "CED window audit: {\"active_hud_label\": \"DOG\", \"c_frame_sent\": true, \"clear_requested\": false, \"hud_evaluations\": [{\"accepted\": true, \"category\": \"dog_barking\", \"display_label\": \"DOG\", \"emergency_threshold\": 0.65, \"label\": \"Bark\", \"passes_emergency_threshold\": false, \"reason\": \"accepted\", \"score\": 0.6231867671012878, \"source\": \"top1\", \"threshold\": 0.52}, {\"accepted\": true, \"category\": \"dog_barking\", \"display_label\": \"DOG\", \"emergency_threshold\": 0.65, \"label\": \"Dog\", \"passes_emergency_threshold\": false, \"reason\": \"accepted\", \"score\": 0.6199265718460083, \"source\": \"top_k\", \"threshold\": 0.52}, {\"accepted\": true, \"category\": \"animal\", \"display_label\": \"ANIMAL\", \"emergency_threshold\": null, \"label\": \"Animal\", \"passes_emergency_threshold\": false, \"reason\": \"accepted\", \"score\": 0.606243371963501, \"source\": \"top_k\", \"threshold\": 0.52}, {\"accepted\": true, \"category\": \"animal\", \"display_label\": \"ANIMAL\", \"emergency_threshold\": null, \"label\": \"Domestic animals, pets\", \"passes_emergency_threshold\": false, \"reason\": \"accepted\", \"score\": 0.6011565327644348, \"source\": \"top_k\", \"threshold\": 0.52}, {\"accepted\": true, \"category\": null, \"display_label\": \"DOG\", \"emergency_threshold\": null, \"label\": \"Bow-wow\", \"passes_emergency_threshold\": false, \"reason\": \"accepted\", \"score\": 0.589719295501709, \"source\": \"top_k\", \"threshold\": 0.52}], \"inference_end\": 1787452376.385588, \"inference_seconds\": 37.375, \"inference_start\": 1787452339.0247293, \"last_confirmed_at\": 242227.515, \"previous_confirmed_at\": null, \"previous_hud_label\": \"\", \"selected_hud_label\": \"DOG\", \"top1\": \"Bark\", \"top1_score\": 0.6231867671012878, \"top5\": [{\"label\": \"Bark\", \"score\": 0.6231867671012878}, {\"label\": \"Dog\", \"score\": 0.6199265718460083}, {\"label\": \"Animal\", \"score\": 0.606243371963501}, {\"label\": \"Domestic animals, pets\", \"score\": 0.6011565327644348}, {\"label\": \"Bow-wow\", \"score\": 0.589719295501709}], \"ttl_remaining\": 5.5, \"window_end\": 1787452338.31828, \"window_start\": 1787452333.31828}",
+      "Detected sound: Speech",
+      "Confidence: 0.6980352997779846",
+      "Emergency V3: source=ced_tiny_v2, detected=False, category=baby_crying",
+      "Help request: False",
+      "Alert level: LOW",
+      "Alert message: [none]",
+      "Event state: NO_EVENT",
+      "Context: neutral",
+      "Emitted this cycle: False",
+      "CED window audit: {\"active_hud_label\": \"DOG\", \"c_frame_sent\": true, \"clear_requested\": false, \"hud_evaluations\": [{\"accepted\": false, \"category\": \"speech\", \"display_label\": \"\", \"emergency_threshold\": 0.7, \"label\": \"Speech\", \"passes_emergency_threshold\": false, \"reason\": \"speech_suppressed\", \"score\": 0.6980352997779846, \"source\": \"top1\", \"threshold\": null}, {\"accepted\": true, \"category\": \"dog_barking\", \"display_label\": \"DOG\", \"emergency_threshold\": 0.65, \"label\": \"Bark\", \"passes_emergency_threshold\": false, \"reason\": \"accepted\", \"score\": 0.6479286551475525, \"source\": \"top_k\", \"threshold\": 0.52}, {\"accepted\": true, \"category\": \"dog_barking\", \"display_label\": \"DOG\", \"emergency_threshold\": 0.65, \"label\": \"Dog\", \"passes_emergency_threshold\": false, \"reason\": \"accepted\", \"score\": 0.6414333581924438, \"source\": \"top_k\", \"threshold\": 0.52}, {\"accepted\": true, \"category\": \"animal\", \"display_label\": \"ANIMAL\", \"emergency_threshold\": null, \"label\": \"Animal\", \"passes_emergency_threshold\": false, \"reason\": \"accepted\", \"score\": 0.6280440092086792, \"source\": \"top_k\", \"threshold\": 0.52}, {\"accepted\": true, \"category\": \"animal\", \"display_label\": \"ANIMAL\", \"emergency_threshold\": null, \"label\": \"Domestic animals, pets\", \"passes_emergency_threshold\": false, \"reason\": \"accepted\", \"score\": 0.6273231506347656, \"source\": \"top_k\", \"threshold\": 0.52}], \"inference_end\": 1787452376.6359541, \"inference_seconds\": 0.25, \"inference_start\": 1787452376.385588, \"last_confirmed_at\": 242227.531, \"previous_confirmed_at\": 242227.515, \"previous_hud_label\": \"DOG\", \"selected_hud_label\": \"DOG\", \"top1\": \"Speech\", \"top1_score\": 0.6980352997779846, \"top5\": [{\"label\": \"Speech\", \"score\": 0.6980352997779846}, {\"label\": \"Bark\", \"score\": 0.6479286551475525}, {\"label\": \"Dog\", \"score\": 0.6414333581924438}, {\"label\": \"Animal\", \"score\": 0.6280440092086792}, {\"label\": \"Domestic animals, pets\", \"score\": 0.6273231506347656}], \"ttl_remaining\": 5.48499999998603, \"window_end\": 1787452343.31828, \"window_start\": 1787452338.31828}",
+      "Detected sound: Speech",
+      "Confidence: 0.6941126585006714",
+      "Emergency V3: source=ced_tiny_v2, detected=False, category=siren",
+      "Help request: False",
+      "Alert level: LOW",
+      "Alert message: [none]",
+      "Event state: NO_EVENT",
+      "Context: neutral",
+      "Emitted this cycle: False",
+      "CED window audit: {\"active_hud_label\": \"DOG\", \"c_frame_sent\": true, \"clear_requested\": false, \"hud_evaluations\": [{\"accepted\": false, \"category\": \"speech\", \"display_label\": \"\", \"emergency_threshold\": 0.7, \"label\": \"Speech\", \"passes_emergency_threshold\": false, \"reason\": \"speech_suppressed\", \"score\": 0.6941126585006714, \"source\": \"top1\", \"threshold\": null}, {\"accepted\": true, \"category\": \"dog_barking\", \"display_label\": \"DOG\", \"emergency_threshold\": 0.65, \"label\": \"Dog\", \"passes_emergency_threshold\": false, \"reason\": \"accepted\", \"score\": 0.6226301789283752, \"source\": \"top_k\", \"threshold\": 0.52}, {\"accepted\": true, \"category\": \"animal\", \"display_label\": \"ANIMAL\", \"emergency_threshold\": null, \"label\": \"Animal\", \"passes_emergency_threshold\": false, \"reason\": \"accepted\", \"score\": 0.612921953201294, \"source\": \"top_k\", \"threshold\": 0.52}, {\"accepted\": true, \"category\": \"dog_barking\", \"display_label\": \"DOG\", \"emergency_threshold\": 0.65, \"label\": \"Bark\", \"passes_emergency_threshold\": false, \"reason\": \"accepted\", \"score\": 0.6025210022926331, \"source\": \"top_k\", \"threshold\": 0.52}, {\"accepted\": true, \"category\": \"animal\", \"display_label\": \"ANIMAL\", \"emergency_threshold\": null, \"label\": \"Domestic animals, pets\", \"passes_emergency_threshold\": false, \"reason\": \"accepted\", \"score\": 0.6016303896903992, \"source\": \"top_k\", \"threshold\": 0.52}], \"inference_end\": 1787452376.8008542, \"inference_seconds\": 0.15600000001722947, \"inference_start\": 1787452376.6359541, \"last_confirmed_at\": 242227.546, \"previous_confirmed_at\": 242227.531, \"previous_hud_label\": \"DOG\", \"selected_hud_label\": \"DOG\", \"top1\": \"Speech\", \"top1_score\": 0.6941126585006714, \"top5\": [{\"label\": \"Speech\", \"score\": 0.6941126585006714}, {\"label\": \"Dog\", \"score\": 0.6226301789283752}, {\"label\": \"Animal\", \"score\": 0.612921953201294}, {\"label\": \"Bark\", \"score\": 0.6025210022926331}, {\"label\": \"Domestic animals, pets\", \"score\": 0.6016303896903992}], \"ttl_remaining\": 5.48399999999674, \"window_end\": 1787452348.31828, \"window_start\": 1787452343.31828}",
+      "Detected sound: Silence",
+      "Confidence: 0.6334816813468933",
+      "Emergency V3: source=ced_tiny_v2, detected=False, category=siren",
+      "Help request: False",
+      "Alert level: LOW",
+      "Alert message: [none]",
+      "Event state: NO_EVENT",
+      "Context: neutral",
+      "Emitted this cycle: False",
+      "CED window audit: {\"active_hud_label\": \"DOG\", \"c_frame_sent\": false, \"clear_requested\": false, \"hud_evaluations\": [{\"accepted\": false, \"category\": null, \"display_label\": \"\", \"emergency_threshold\": null, \"label\": \"Silence\", \"passes_emergency_threshold\": false, \"reason\": \"unsupported_or_alert_only\", \"score\": 0.6334816813468933, \"source\": \"top1\", \"threshold\": null}, {\"accepted\": false, \"category\": null, \"display_label\": \"\", \"emergency_threshold\": null, \"label\": \"Music\", \"passes_emergency_threshold\": false, \"reason\": \"unsupported_or_alert_only\", \"score\": 0.5335695147514343, \"source\": \"top_k\", \"threshold\": null}, {\"accepted\": false, \"category\": null, \"display_label\": \"\", \"emergency_threshold\": null, \"label\": \"Sound effect\", \"passes_emergency_threshold\": false, \"reason\": \"unsupported_or_alert_only\", \"score\": 0.5090154409408569, \"source\": \"top_k\", \"threshold\": null}, {\"accepted\": false, \"category\": null, \"display_label\": \"\", \"emergency_threshold\": null, \"label\": \"Sine wave\", \"passes_emergency_threshold\": false, \"reason\": \"unsupported_or_alert_only\", \"score\": 0.5069735050201416, \"source\": \"top_k\", \"threshold\": null}, {\"accepted\": false, \"category\": null, \"display_label\": \"\", \"emergency_threshold\": null, \"label\": \"Musical instrument\", \"passes_emergency_threshold\": false, \"reason\": \"unsupported_or_alert_only\", \"score\": 0.5039905309677124, \"source\": \"top_k\", \"threshold\": null}], \"inference_end\": 1787452376.9284563, \"inference_seconds\": 0.125, \"inference_start\": 1787452376.8008542, \"last_confirmed_at\": 242227.546, \"previous_confirmed_at\": 242227.546, \"previous_hud_label\": \"DOG\", \"selected_hud_label\": \"\", \"top1\": \"Silence\", \"top1_score\": 0.6334816813468933, \"top5\": [{\"label\": \"Silence\", \"score\": 0.6334816813468933}, {\"label\": \"Music\", \"score\": 0.5335695147514343}, {\"label\": \"Sound effect\", \"score\": 0.5090154409408569}, {\"label\": \"Sine wave\", \"score\": 0.5069735050201416}, {\"label\": \"Musical instrument\", \"score\": 0.5039905309677124}], \"ttl_remaining\": 5.48399999999674, \"window_end\": 1787452350.7880614, \"window_start\": 1787452348.31828}"
+    ],
+    "partial_log": []
+  }
+}

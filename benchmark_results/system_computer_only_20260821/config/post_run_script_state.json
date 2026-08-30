@@ -1,0 +1,6 @@
+{
+  "benchmark_execution_sha256": "ab6d5c0569bde860f668bfa73b291d5e27610a7563218378635ee980c3f289db",
+  "current_sha256": "d346d7e0d1b7c7cc40f49d2a01e710ff72b9d7c1b61acf96edaf2c7a5a34a0c9",
+  "post_execution_change": "Figure labels/annotations only; benchmark workload, measurements, and summaries were not changed.",
+  "benchmark_logic_changed_after_execution": false
+}

@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-08-20T15:52:40.8309580+07:00",
+  "status": "STOPPED_BEFORE_METRICS",
+  "reason": "Exact Freesound source-ID overlap found with ESC-50 before external manifest freeze or prediction.",
+  "comparison_sources": [
+    "FSD50K official evaluation ground truth",
+    "DCASE 2017 official evaluation source events",
+    "ESC-50 official metadata (all 2000 clips, stricter than only the 280 SoundGuard development clips)"
+  ],
+  "fsd50k_eval": {
+    "total_rows": 10231,
+    "exact_id_overlap_with_esc50": 152,
+    "remaining_after_exact_id_exclusion": 10079,
+    "target_support": {
+      "Fire": {"total": 124, "overlap": 3, "remaining": 121},
+      "Crackle": {"total": 107, "overlap": 4, "remaining": 103},
+      "Siren": {"total": 55, "overlap": 6, "remaining": 49},
+      "Vehicle_horn_and_car_horn_and_honking": {"total": 68, "overlap": 4, "remaining": 64}
+    },
+    "candidate_negative_support": {
+      "Dog": {"total": 178, "overlap": 8, "remaining": 170},
+      "Bark": {"total": 122, "overlap": 7, "remaining": 115},
+      "Door": {"total": 466, "overlap": 7, "remaining": 459},
+      "Knock": {"total": 103, "overlap": 5, "remaining": 98},
+      "Speech": {"total": 785, "overlap": 8, "remaining": 777},
+      "Music": {"total": 1972, "overlap": 0, "remaining": 1972}
+    }
+  },
+  "dcase_2017_source_events": {
+    "archive_md5_expected": "5c037df9c1012411a1f2c1325fe20163",
+    "archive_md5_actual": "5c037df9c1012411a1f2c1325fe20163",
+    "total_wav": 83,
+    "glassbreak": {"total": 35, "overlap": 4, "remaining": 31, "overlap_ids": ["260434", "216284", "216281", "216280"]},
+    "babycry": {"total": 19, "overlap": 2, "remaining": 17, "overlap_ids": ["50666", "50665"]},
+    "gunshot": {"total": 29, "overlap": 0, "remaining": 29}
+  },
+  "recommended_resolution": "Exclude every exact ESC-50 Freesound ID before deterministic sample selection, then perform file-hash and acoustic-fingerprint duplicate checks after audio extraction. Stop again if non-ID acoustic duplicates are found.",
+  "metrics_run": false,
+  "thresholds_changed": false
+}

@@ -1,0 +1,60 @@
+{
+  "modes": [
+    {
+      "mode": "idle",
+      "duration_seconds": 15.035123499998008,
+      "ced_operations": 0,
+      "stt_operations": 0,
+      "errors": [],
+      "samples": 10,
+      "average_cpu_total_capacity_percent": 0.23969136708737754,
+      "peak_cpu_total_capacity_percent": 1.0200401161366859,
+      "average_ram_mb": 1175.6890625,
+      "peak_ram_mb": 1175.90625,
+      "display_name": "idle_initialized"
+    },
+    {
+      "mode": "ced_active",
+      "duration_seconds": 15.655158399997163,
+      "ced_operations": 108,
+      "stt_operations": 0,
+      "errors": [],
+      "samples": 9,
+      "average_cpu_total_capacity_percent": 64.74451308753281,
+      "peak_cpu_total_capacity_percent": 74.14764662798824,
+      "average_ram_mb": 1180.1866319444443,
+      "peak_ram_mb": 1181.9296875,
+      "display_name": "ced_active"
+    },
+    {
+      "mode": "stt_active",
+      "duration_seconds": 16.176246500006528,
+      "ced_operations": 0,
+      "stt_operations": 12,
+      "errors": [],
+      "samples": 11,
+      "average_cpu_total_capacity_percent": 1.1335097344505507,
+      "peak_cpu_total_capacity_percent": 2.359621284670471,
+      "average_ram_mb": 1175.6125710227273,
+      "peak_ram_mb": 1175.71484375,
+      "display_name": "stt_active"
+    },
+    {
+      "mode": "combined",
+      "duration_seconds": 17.98223809999763,
+      "ced_operations": 66,
+      "stt_operations": 10,
+      "errors": [],
+      "samples": 10,
+      "average_cpu_total_capacity_percent": 33.350577933673875,
+      "peak_cpu_total_capacity_percent": 62.89940367343979,
+      "average_ram_mb": 1172.487890625,
+      "peak_ram_mb": 1183.4375,
+      "display_name": "combined"
+    }
+  ],
+  "cpu_definition": "process-tree CPU divided by logical CPU capacity; sampled over each workload",
+  "ram_definition": "current process plus EfficientSED worker working set",
+  "KHKT_CLAIM": "Quantifies host computational cost for initialized, CED, STT, and combined modes.",
+  "REPORT_USE": "Layer 2 CPU/RAM table and operating-mode figure."
+}

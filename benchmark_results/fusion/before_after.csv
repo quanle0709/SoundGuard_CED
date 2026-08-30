@@ -1,0 +1,7 @@
+id,label,confidence,category,dangerous,transcript,expected,raw_prediction,fusion_prediction,raw_correct,fusion_correct,error_category
+help_repairs_benign_ced,Speech,0.9,speech,False,giúp tôi với,True,False,True,False,True,A_raw_wrong_fusion_correct
+siren_stays_emergency,Siren,0.85,siren,True,,True,True,True,True,True,B_raw_correct_fusion_correct
+glass_stays_emergency,Glass breaking,0.8,glass breaking,True,,True,True,True,True,True,B_raw_correct_fusion_correct
+bark_stays_benign,Bark,0.85,bark,True,,False,True,False,False,True,A_raw_wrong_fusion_correct
+speech_stays_benign,Speech,0.9,speech,False,hello,False,False,False,True,True,B_raw_correct_fusion_correct
+low_confidence_suppressed,Siren,0.2,siren,True,,False,False,False,True,True,B_raw_correct_fusion_correct

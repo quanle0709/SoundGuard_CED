@@ -1,0 +1,11 @@
+snr_db,filter,wer,cer,status
+20,unfiltered,0.0,0.0,PASS
+20,dtln,0.0,0.0,PASS
+15,unfiltered,0.0,0.0,PASS
+15,dtln,0.0,0.0,PASS
+10,unfiltered,0.0,0.0,PASS
+10,dtln,0.1,0.0425531914893617,PASS
+5,unfiltered,0.0,0.0,PASS
+5,dtln,0.2,0.0851063829787234,PASS
+0,unfiltered,0.0,0.0,PASS
+0,dtln,0.4,0.3404255319148936,PASS

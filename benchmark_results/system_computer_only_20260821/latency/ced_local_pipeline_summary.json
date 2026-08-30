@@ -1,0 +1,54 @@
+{
+  "scope": "audio file available to application through transport-ready frame; hardware excluded",
+  "N": 30,
+  "preprocessing": {
+    "count": 30,
+    "mean_ms": 1.446520001142441,
+    "median_ms": 1.3215000071795657,
+    "p95_ms": 2.022100001340732,
+    "min_ms": 1.1985000019194558,
+    "max_ms": 2.2735999955330044
+  },
+  "ced_tiny_inference": {
+    "count": 30,
+    "mean_ms": 37.30206999947162,
+    "median_ms": 36.37034999701427,
+    "p95_ms": 42.620599997462705,
+    "min_ms": 34.467399993445724,
+    "max_ms": 49.62070001056418
+  },
+  "efficientsed_roundtrip": {
+    "count": 30,
+    "mean_ms": 87.48453333294795,
+    "median_ms": 86.49695000349311,
+    "p95_ms": 98.2784000079846,
+    "min_ms": 78.73280000058003,
+    "max_ms": 113.74110000906512
+  },
+  "fusion_decision": {
+    "count": 30,
+    "mean_ms": 0.15276999959799772,
+    "median_ms": 0.14644999464508146,
+    "p95_ms": 0.17810000281315297,
+    "min_ms": 0.11999999696854502,
+    "max_ms": 0.28839999868068844
+  },
+  "serialization": {
+    "count": 30,
+    "mean_ms": 0.04008999967481941,
+    "median_ms": 0.036650002584792674,
+    "p95_ms": 0.06079999729990959,
+    "min_ms": 0.02540000423323363,
+    "max_ms": 0.06350000330712646
+  },
+  "total_local_pipeline": {
+    "count": 30,
+    "mean_ms": 126.7496099996303,
+    "median_ms": 124.72054999670945,
+    "p95_ms": 149.86900000076275,
+    "min_ms": 115.21770000399556,
+    "max_ms": 150.03129999968223
+  },
+  "KHKT_CLAIM": "SoundGuard's local CED path reaches transport-ready output at practical real-time latency.",
+  "REPORT_USE": "Main KHKT Layer 2 latency table and latency comparison figure."
+}

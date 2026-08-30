@@ -1,0 +1,13 @@
+{
+  "sample_count": 280,
+  "tp": 115,
+  "fp": 0,
+  "tn": 80,
+  "fn": 85,
+  "accuracy": 0.6964285714285714,
+  "precision": 1.0,
+  "recall": 0.575,
+  "f1": 0.7301587301587301,
+  "false_negative_rate": 0.425,
+  "specificity": 1.0
+}

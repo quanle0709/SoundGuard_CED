@@ -1,0 +1,89 @@
+{
+  "n": 47,
+  "target_n": 47,
+  "hard_negative_n": 0,
+  "binary": {
+    "n": 47,
+    "tp": 45,
+    "fp": 0,
+    "tn": 0,
+    "fn": 2,
+    "precision": 1.0,
+    "recall": 0.9574468085106383,
+    "f1": 0.9782608695652174,
+    "false_negative_rate": 0.0425531914893617,
+    "false_positive_rate": 0.0
+  },
+  "per_class": [
+    {
+      "class": "glass_breaking",
+      "support": 30,
+      "n": 47,
+      "tp": 29,
+      "fp": 0,
+      "tn": 17,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.9666666666666667,
+      "f1": 0.983050847457627,
+      "false_negative_rate": 0.03333333333333333,
+      "false_positive_rate": 0.0
+    },
+    {
+      "class": "vehicle_horn",
+      "support": 0,
+      "n": 47,
+      "tp": 0,
+      "fp": 0,
+      "tn": 47,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_negative_rate": 0.0,
+      "false_positive_rate": 0.0
+    },
+    {
+      "class": "fire",
+      "support": 0,
+      "n": 47,
+      "tp": 0,
+      "fp": 0,
+      "tn": 47,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_negative_rate": 0.0,
+      "false_positive_rate": 0.0
+    },
+    {
+      "class": "siren",
+      "support": 0,
+      "n": 47,
+      "tp": 0,
+      "fp": 0,
+      "tn": 47,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_negative_rate": 0.0,
+      "false_positive_rate": 0.0
+    },
+    {
+      "class": "baby_crying",
+      "support": 17,
+      "n": 47,
+      "tp": 16,
+      "fp": 0,
+      "tn": 30,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.9411764705882353,
+      "f1": 0.9696969696969697,
+      "false_negative_rate": 0.058823529411764705,
+      "false_positive_rate": 0.0
+    }
+  ]
+}

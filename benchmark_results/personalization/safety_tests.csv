@@ -1,0 +1,17 @@
+test,category,passed
+universal_driver,universal_critical,True
+universal_student_motorcyclist,universal_critical,True
+universal_parent_home,universal_critical,True
+universal_construction,universal_critical,True
+universal_explicit_pedestrian,universal_critical,True
+universal_explicit_public_transport,universal_critical,True
+universal_negation,universal_critical,True
+universal_contrast,universal_critical,True
+negation_roles,negation,True
+negation_contexts,negation,True
+contrast_scope,contrast,True
+whole_phrase_matching,substring,True
+reasoning_priority_normalization,normalization,True
+invalid_priority_rejected,malformed,True
+missing_field_rejected,strict_schema,True
+deterministic_fallback,fallback,True

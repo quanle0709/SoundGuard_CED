@@ -1,0 +1,7 @@
+actual,glass_breaking,vehicle_horn,fire,siren,baby_crying,non_emergency
+glass_breaking,40,0,0,0,0,0
+vehicle_horn,0,39,1,0,0,0
+fire,0,0,34,0,0,6
+siren,0,1,0,39,0,0
+baby_crying,0,0,0,0,39,1
+non_emergency,0,0,0,0,0,80

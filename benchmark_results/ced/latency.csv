@@ -1,0 +1,9 @@
+run,file,total_ms
+1,samples/audio_1-100032-A-0.wav,17.876099969726056
+2,samples/test_speech.wav,17.332400020677596
+3,samples/audio_1-100032-A-0.wav,17.814099963288754
+4,samples/test_speech.wav,17.469100013840944
+5,samples/audio_1-100032-A-0.wav,17.431800020858645
+6,samples/test_speech.wav,17.476299952249974
+7,samples/audio_1-100032-A-0.wav,17.735100002028048
+8,samples/test_speech.wav,18.503100029192865

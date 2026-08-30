@@ -1,0 +1,9 @@
+{
+  "transport_unavailable_noop": true,
+  "write_exception_disables_transport_without_raise": true,
+  "duplicate_subtitle_suppressed": true,
+  "core_processing_continues_after_transport_failure": true,
+  "physical_disconnect_reconnect_tested": false,
+  "status": "PASSED",
+  "scope": "software fault-handling regression only"
+}

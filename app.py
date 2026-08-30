@@ -13,7 +13,14 @@ from audio_capture import (
     record_audio,
 )
 from fusion_engine import fuse_result
+from display_transport import (
+    HUDTransport,
+    get_alert_display_state,
+    get_screen2_ced_label,
+)
 from emergency_system import CONTEXTS, EmergencySystem
+from emergency_v3 import create_emergency_v3_specialist, select_emergency_evidence
+from personalization import PriorityAdapter, ProfileManager
 from sound_classifier import classify_audio_file
 from speech_enhancer import enhance_audio_file
 from speech_recognizer import transcribe_audio_file
@@ -23,6 +30,21 @@ from voice_activity_detector import detect_speech
 DTLN_TEMP_PATH = (
     Path(tempfile.gettempdir()) / "soundguard_dtln_recording.wav"
 )
+
+HUD_TEST_SUBTITLES = (
+    "Xin chào",
+    "Tôi đang ở ngoài đường.",
+    "Mẹ nói con nhớ mang áo mưa nhé.",
+    "Có một chiếc xe đang đến gần.",
+    "Cảnh báo: còi xe.",
+    "CẢNH BÁO NGUY HIỂM",
+    "Tiếng còi phát ra từ bên trái.",
+    "ă â ê ô ơ ư Ă Â Ê Ô Ơ Ư đ Đ",
+    "á à ả ã ạ ấ ầ ẩ ẫ ậ ế ề ể ễ ệ ố ồ ổ ỗ ộ ớ ờ ở ỡ ợ ứ ừ ử ữ ự",
+)
+
+# Temporary HUD debugging toggle. Disable after end-to-end CED validation.
+SHOW_ALL_DETECTED_SOUNDS_ON_HUD = True
 
 
 def cleanup_dtln_recording() -> None:
@@ -121,7 +143,10 @@ def run_analysis(
     speech_audio_path: str | None,
     run_speech_to_text: bool,
     emergency_system: EmergencySystem,
+    hud: HUDTransport | None = None,
+    emergency_v3_specialist=None,
 ) -> None:
+    hud = hud or HUDTransport()
     print(f"Audio source: {audio_path}")
 
     transcript = ""
@@ -136,6 +161,7 @@ def run_analysis(
 
         if transcript:
             print(f"Transcript: {transcript}")
+            hud.set_subtitle(transcript)
         else:
             print("Transcript: [empty]")
     else:
@@ -170,6 +196,15 @@ def run_analysis(
     else:
         sound_confidence = 0.0
 
+    specialist_result = (
+        emergency_v3_specialist.analyze_file(audio_path)
+        if emergency_v3_specialist is not None
+        else None
+    )
+    emergency_label, emergency_confidence, emergency_source = select_emergency_evidence(
+        detected_sound, sound_confidence, specialist_result, emergency_system.context
+    )
+
     alert_result = map_alert(
         detected_sound,
         sound_confidence,
@@ -190,13 +225,20 @@ def run_analysis(
 
     emergency_result = emergency_system.evaluate(
         transcript=transcript,
-        sound_label=detected_sound,
-        sound_confidence=sound_confidence,
+        sound_label=emergency_label,
+        sound_confidence=emergency_confidence,
         timestamp=fusion_result["timestamp"],
     )
 
     print(f"Detected sound: {detected_sound}")
     print(f"Confidence: {confidence}")
+    if specialist_result is not None:
+        print(
+            "Emergency V3: "
+            f"source={emergency_source}, detected={specialist_result.get('detected', False)}, "
+            f"category={specialist_result.get('category', 'none')}, "
+            f"score={float(specialist_result.get('score', 0.0)):.4f}"
+        )
 
     vietnamese_sound = alert_result.get(
         "message_vi",
@@ -218,6 +260,25 @@ def run_analysis(
     print(
         "Alert message: "
         f"{emergency_result['alert_text'] or '[none]'}"
+    )
+    active_sound = getattr(emergency_system, "active_sound", None)
+    help_active = bool(getattr(emergency_system, "help_active", False))
+    if not hasattr(emergency_system, "active_sound") and emergency_result["alert_text"]:
+        category = emergency_result.get("category", "alert")
+        if category == "help_request":
+            help_active = True
+        else:
+            active_sound = category
+    event_label, help_active = get_alert_display_state(
+        active_sound, help_active
+    )
+    screen2_label = get_screen2_ced_label(detected_sound, emergency_result)
+    if event_label or help_active:
+        hud.set_alert_state(event_label, help_active)
+    else:
+        hud.set_alert_state()
+    hud.set_environmental_sound(
+        screen2_label if SHOW_ALL_DETECTED_SOUNDS_ON_HUD else ""
     )
     print(f"Context: {emergency_result['context']}")
     print(f"Event state: {emergency_result['event_state']}")
@@ -323,6 +384,8 @@ def process_audio(
     vad_threshold: float,
     use_dtln: bool,
     emergency_system: EmergencySystem,
+    hud: HUDTransport | None = None,
+    emergency_v3_specialist=None,
 ) -> None:
     vad_result = evaluate_voice_activity(
         raw_audio_path=raw_path,
@@ -366,6 +429,8 @@ def process_audio(
         ),
         run_speech_to_text=has_speech,
         emergency_system=emergency_system,
+        hud=hud,
+        emergency_v3_specialist=emergency_v3_specialist,
     )
 
 
@@ -437,10 +502,34 @@ def parse_args() -> argparse.Namespace:
         help="Silero VAD threshold from 0.0 to 1.0",
     )
     parser.add_argument(
+        "--hud-port",
+        help="ESP32 serial port (for example COM5); omitted disables HUD output",
+    )
+    parser.add_argument(
+        "--hud-baud",
+        type=int,
+        default=115200,
+        help="ESP32 HUD serial baud rate (default: 115200)",
+    )
+    parser.add_argument(
+        "--hud-test",
+        action="store_true",
+        help="Send deterministic Vietnamese HUD test messages and exit",
+    )
+    parser.add_argument(
         "--context",
         choices=CONTEXTS,
         default="neutral",
         help="Emergency context mode (default: neutral)",
+    )
+    parser.add_argument(
+        "--personalized-alerts",
+        action="store_true",
+        help="Apply the validated web personalization profile to alert priority",
+    )
+    parser.add_argument(
+        "--profile-path",
+        help="Optional personalized profile JSON path",
     )
     parser.add_argument(
         "--partial-interval",
@@ -497,12 +586,21 @@ def parse_args() -> argparse.Namespace:
         help=("CED rolling-window overlap in seconds (default: 0; overlapping "
               "windows are correlated and can affect 2-of-3 voting)"),
     )
+    parser.add_argument(
+        "--emergency-v3",
+        action="store_true",
+        help="Enable the opt-in EfficientSED emergency specialist",
+    )
 
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
+
+    if args.hud_test and not args.hud_port:
+        print("--hud-test requires --hud-port")
+        return 1
 
     if not 0.0 <= args.vad_threshold <= 1.0:
         print(
@@ -567,15 +665,45 @@ def main() -> int:
 
         return 0
 
+    try:
+        hud = HUDTransport(args.hud_port, args.hud_baud)
+    except Exception as exc:
+        print(f"HUD warning: unable to open {args.hud_port}: {exc}")
+        hud = HUDTransport()
+    if hud.enabled:
+        # Remove the post-flash validation screen before live runtime output.
+        hud.set_subtitle("")
+        hud.set_alert_state()
+        hud.set_environmental_sound("")
+        hud.set_status("LIVE")
+    if args.hud_test:
+        try:
+            for subtitle in HUD_TEST_SUBTITLES:
+                hud.set_subtitle(subtitle)
+                time.sleep(1.0)
+            hud.set_alert_state("siren")
+            print(f"Sent {len(HUD_TEST_SUBTITLES)} Vietnamese HUD test screens.")
+            return 0
+        finally:
+            hud.close()
+
     use_dtln = not args.no_dtln
     use_vad = not args.no_vad
     decision_mode = (
         "continuous" if args.continuous or args.live_stt else "single_shot"
     )
+    priority_adapter = None
+    if args.personalized_alerts:
+        priority_adapter = PriorityAdapter(ProfileManager(args.profile_path))
+        print(f"Personalized alerts: {priority_adapter.source} profile")
     emergency_system = EmergencySystem(
         context=args.context,
         decision_mode=decision_mode,
+        priority_provider=(priority_adapter.get_priority if priority_adapter else None),
     )
+    emergency_v3_specialist = create_emergency_v3_specialist(args.emergency_v3)
+    if emergency_v3_specialist is not None:
+        print("Emergency V3: enabled (EfficientSED fmn10_strong; lazy load)")
 
     if args.live_stt or args.mic or args.continuous:
         from audio_pipeline import MicrophonePipeline
@@ -583,19 +711,29 @@ def main() -> int:
         mode = "live-stt" if args.live_stt else "continuous" if args.continuous else "mic"
         if mode == "continuous":
             print("Continuous mode started. Press Ctrl+C to stop.")
-        pipeline = MicrophonePipeline(
-            mode=mode, emergency_system=emergency_system,
-            device_index=args.device, duration=args.duration,
-            ced_overlap_seconds=args.ced_overlap_seconds,
-            vad_threshold=args.vad_threshold, use_dtln=use_dtln,
-            partial_interval=args.partial_interval,
-            end_silence_ms=args.end_silence_ms,
-            max_utterance_seconds=args.max_utterance_seconds,
-            pre_roll_ms=args.pre_roll_ms, post_roll_ms=args.post_roll_ms,
-            queue_seconds=args.live_queue_seconds,
-            save_live_utterances=args.save_live_utterances,
-        )
-        return pipeline.run()
+        try:
+            pipeline = MicrophonePipeline(
+                mode=mode, emergency_system=emergency_system,
+                device_index=args.device, duration=args.duration,
+                ced_overlap_seconds=args.ced_overlap_seconds,
+                vad_threshold=args.vad_threshold, use_dtln=use_dtln,
+                partial_interval=args.partial_interval,
+                end_silence_ms=args.end_silence_ms,
+                max_utterance_seconds=args.max_utterance_seconds,
+                pre_roll_ms=args.pre_roll_ms, post_roll_ms=args.post_roll_ms,
+                queue_seconds=args.live_queue_seconds,
+                save_live_utterances=args.save_live_utterances,
+                show_all_detected_sounds_on_hud=(
+                    SHOW_ALL_DETECTED_SOUNDS_ON_HUD
+                ),
+                hud=hud,
+                emergency_v3_specialist=emergency_v3_specialist,
+            )
+            return pipeline.run()
+        finally:
+            if emergency_v3_specialist is not None:
+                emergency_v3_specialist.close()
+            hud.close()
 
     if not args.audio_path:
         print(
@@ -619,21 +757,34 @@ def main() -> int:
             "--mic --duration 5 --no-vad"
         )
 
+        if emergency_v3_specialist is not None:
+            emergency_v3_specialist.close()
+        hud.close()
         return 1
 
     input_path = Path(args.audio_path)
 
     if not input_path.exists():
         print(f"Audio file not found: {input_path}")
+        if emergency_v3_specialist is not None:
+            emergency_v3_specialist.close()
+        hud.close()
         return 1
 
-    process_audio(
-        raw_path=input_path,
-        use_vad=use_vad,
-        vad_threshold=args.vad_threshold,
-        use_dtln=use_dtln,
-        emergency_system=emergency_system,
-    )
+    try:
+        process_audio(
+            raw_path=input_path,
+            use_vad=use_vad,
+            vad_threshold=args.vad_threshold,
+            use_dtln=use_dtln,
+            emergency_system=emergency_system,
+            hud=hud,
+            emergency_v3_specialist=emergency_v3_specialist,
+        )
+    finally:
+        if emergency_v3_specialist is not None:
+            emergency_v3_specialist.close()
+        hud.close()
 
     return 0
 

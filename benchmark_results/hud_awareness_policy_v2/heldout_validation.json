@@ -1,0 +1,3000 @@
+{
+  "policy_sha256": "d7ee2431ea0f0c3a0aca9ea0b09689d14ac0aa3e4392b2ac8d53332de10fe08b",
+  "threshold": 0.52,
+  "validation_folds": [
+    4,
+    5
+  ],
+  "validation_speakers": [
+    "VIVOSDEV13",
+    "VIVOSDEV14",
+    "VIVOSDEV15",
+    "VIVOSDEV16",
+    "VIVOSDEV17",
+    "VIVOSDEV18",
+    "VIVOSDEV19"
+  ],
+  "summary": {
+    "threshold": 0.52,
+    "tp": 34,
+    "fp": 1,
+    "fn": 6,
+    "precision": 0.9714285714285714,
+    "recall": 0.85,
+    "f1": 0.9066666666666667,
+    "by_condition": {
+      "background_only": {
+        "threshold": 0.52,
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "environment_only": {
+        "threshold": 0.52,
+        "tp": 16,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "mixed": {
+        "threshold": 0.52,
+        "tp": 18,
+        "fp": 0,
+        "fn": 6,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571
+      },
+      "speech_only": {
+        "threshold": 0.52,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    }
+  },
+  "records": [
+    {
+      "id": "validation:environment:4-175855-A-43",
+      "condition": "environment_only",
+      "expected": [
+        "HORN"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:51.701756+00:00",
+      "inference_seconds": 7.285621100018034,
+      "top_predictions": [
+        {
+          "label": "Vehicle horn, car horn, honking",
+          "score": 0.7173619270324707
+        },
+        {
+          "label": "Vehicle",
+          "score": 0.6824191212654114
+        },
+        {
+          "label": "Car",
+          "score": 0.6618230938911438
+        },
+        {
+          "label": "Outside, urban or manmade",
+          "score": 0.580495297908783
+        },
+        {
+          "label": "Toot",
+          "score": 0.5727301239967346
+        }
+      ],
+      "category": "car_horn",
+      "fold": 4,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-175855-A-43.wav",
+      "selected_hud_label": "HORN",
+      "selection_by_threshold": {
+        "0.52": "HORN"
+      }
+    },
+    {
+      "id": "validation:environment:4-175856-A-43",
+      "condition": "environment_only",
+      "expected": [
+        "HORN"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:58.998920+00:00",
+      "inference_seconds": 0.028392699983669445,
+      "top_predictions": [
+        {
+          "label": "Vehicle",
+          "score": 0.6869727969169617
+        },
+        {
+          "label": "Vehicle horn, car horn, honking",
+          "score": 0.6822616457939148
+        },
+        {
+          "label": "Car",
+          "score": 0.6387400031089783
+        },
+        {
+          "label": "Outside, urban or manmade",
+          "score": 0.5794067978858948
+        },
+        {
+          "label": "Toot",
+          "score": 0.5721257925033569
+        }
+      ],
+      "category": "car_horn",
+      "fold": 4,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-175856-A-43.wav",
+      "selected_hud_label": "HORN",
+      "selection_by_threshold": {
+        "0.52": "HORN"
+      }
+    },
+    {
+      "id": "validation:environment:5-179865-A-43",
+      "condition": "environment_only",
+      "expected": [
+        "HORN"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.041923+00:00",
+      "inference_seconds": 0.033246700011659414,
+      "top_predictions": [
+        {
+          "label": "Vehicle horn, car horn, honking",
+          "score": 0.7009181380271912
+        },
+        {
+          "label": "Vehicle",
+          "score": 0.6739503741264343
+        },
+        {
+          "label": "Car",
+          "score": 0.5985448360443115
+        },
+        {
+          "label": "Outside, urban or manmade",
+          "score": 0.5965739488601685
+        },
+        {
+          "label": "Toot",
+          "score": 0.5619280934333801
+        }
+      ],
+      "category": "car_horn",
+      "fold": 5,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-179865-A-43.wav",
+      "selected_hud_label": "HORN",
+      "selection_by_threshold": {
+        "0.52": "HORN"
+      }
+    },
+    {
+      "id": "validation:environment:5-179866-A-43",
+      "condition": "environment_only",
+      "expected": [
+        "HORN"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.088433+00:00",
+      "inference_seconds": 0.038473599997814745,
+      "top_predictions": [
+        {
+          "label": "Vehicle horn, car horn, honking",
+          "score": 0.718745231628418
+        },
+        {
+          "label": "Vehicle",
+          "score": 0.6801134347915649
+        },
+        {
+          "label": "Car",
+          "score": 0.6404703855514526
+        },
+        {
+          "label": "Outside, urban or manmade",
+          "score": 0.6012900471687317
+        },
+        {
+          "label": "Toot",
+          "score": 0.5340425372123718
+        }
+      ],
+      "category": "car_horn",
+      "fold": 5,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-179866-A-43.wav",
+      "selected_hud_label": "HORN",
+      "selection_by_threshold": {
+        "0.52": "HORN"
+      }
+    },
+    {
+      "id": "validation:environment:4-167077-C-20",
+      "condition": "environment_only",
+      "expected": [
+        "BABY"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.140439+00:00",
+      "inference_seconds": 0.03316280001308769,
+      "top_predictions": [
+        {
+          "label": "Baby cry, infant cry",
+          "score": 0.6609039902687073
+        },
+        {
+          "label": "Crying, sobbing",
+          "score": 0.6326665282249451
+        },
+        {
+          "label": "Whimper",
+          "score": 0.5343785881996155
+        },
+        {
+          "label": "Speech",
+          "score": 0.518151581287384
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.5045072436332703
+        }
+      ],
+      "category": "crying_baby",
+      "fold": 4,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-167077-C-20.wav",
+      "selected_hud_label": "BABY",
+      "selection_by_threshold": {
+        "0.52": "BABY"
+      }
+    },
+    {
+      "id": "validation:environment:4-185575-A-20",
+      "condition": "environment_only",
+      "expected": [
+        "BABY"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.186942+00:00",
+      "inference_seconds": 0.030012400005944073,
+      "top_predictions": [
+        {
+          "label": "Baby cry, infant cry",
+          "score": 0.5974289178848267
+        },
+        {
+          "label": "Crying, sobbing",
+          "score": 0.5860344767570496
+        },
+        {
+          "label": "Whimper",
+          "score": 0.5199905633926392
+        },
+        {
+          "label": "Speech",
+          "score": 0.5090447068214417
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.508456289768219
+        }
+      ],
+      "category": "crying_baby",
+      "fold": 4,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-185575-A-20.wav",
+      "selected_hud_label": "BABY",
+      "selection_by_threshold": {
+        "0.52": "BABY"
+      }
+    },
+    {
+      "id": "validation:environment:5-198411-B-20",
+      "condition": "environment_only",
+      "expected": [
+        "BABY"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.228942+00:00",
+      "inference_seconds": 0.031324699986726046,
+      "top_predictions": [
+        {
+          "label": "Baby cry, infant cry",
+          "score": 0.6003379225730896
+        },
+        {
+          "label": "Crying, sobbing",
+          "score": 0.5433077216148376
+        },
+        {
+          "label": "Laughter",
+          "score": 0.5415376424789429
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.5298957824707031
+        },
+        {
+          "label": "Baby laughter",
+          "score": 0.5234985947608948
+        }
+      ],
+      "category": "crying_baby",
+      "fold": 5,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-198411-B-20.wav",
+      "selected_hud_label": "BABY",
+      "selection_by_threshold": {
+        "0.52": "BABY"
+      }
+    },
+    {
+      "id": "validation:environment:5-198411-C-20",
+      "condition": "environment_only",
+      "expected": [
+        "BABY"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.273461+00:00",
+      "inference_seconds": 0.03309929999522865,
+      "top_predictions": [
+        {
+          "label": "Baby cry, infant cry",
+          "score": 0.6704696416854858
+        },
+        {
+          "label": "Crying, sobbing",
+          "score": 0.6266219615936279
+        },
+        {
+          "label": "Whimper",
+          "score": 0.5775851011276245
+        },
+        {
+          "label": "Speech",
+          "score": 0.5757865905761719
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.5156967043876648
+        }
+      ],
+      "category": "crying_baby",
+      "fold": 5,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-198411-C-20.wav",
+      "selected_hud_label": "BABY",
+      "selection_by_threshold": {
+        "0.52": "BABY"
+      }
+    },
+    {
+      "id": "validation:environment:4-184575-A-0",
+      "condition": "environment_only",
+      "expected": [
+        "DOG",
+        "ANIMAL"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.323239+00:00",
+      "inference_seconds": 0.031764699990162626,
+      "top_predictions": [
+        {
+          "label": "Animal",
+          "score": 0.7089487910270691
+        },
+        {
+          "label": "Dog",
+          "score": 0.7022234797477722
+        },
+        {
+          "label": "Domestic animals, pets",
+          "score": 0.6882832646369934
+        },
+        {
+          "label": "Bark",
+          "score": 0.6413453817367554
+        },
+        {
+          "label": "Bow-wow",
+          "score": 0.5903574228286743
+        }
+      ],
+      "category": "dog",
+      "fold": 4,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-184575-A-0.wav",
+      "selected_hud_label": "ANIMAL",
+      "selection_by_threshold": {
+        "0.52": "ANIMAL"
+      }
+    },
+    {
+      "id": "validation:environment:4-191687-A-0",
+      "condition": "environment_only",
+      "expected": [
+        "DOG",
+        "ANIMAL"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.367760+00:00",
+      "inference_seconds": 0.033224099985091016,
+      "top_predictions": [
+        {
+          "label": "Animal",
+          "score": 0.6963900923728943
+        },
+        {
+          "label": "Dog",
+          "score": 0.6924679279327393
+        },
+        {
+          "label": "Domestic animals, pets",
+          "score": 0.6719418168067932
+        },
+        {
+          "label": "Bark",
+          "score": 0.6578490138053894
+        },
+        {
+          "label": "Bow-wow",
+          "score": 0.5907762050628662
+        }
+      ],
+      "category": "dog",
+      "fold": 4,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-191687-A-0.wav",
+      "selected_hud_label": "ANIMAL",
+      "selection_by_threshold": {
+        "0.52": "ANIMAL"
+      }
+    },
+    {
+      "id": "validation:environment:5-208030-A-0",
+      "condition": "environment_only",
+      "expected": [
+        "DOG",
+        "ANIMAL"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.414759+00:00",
+      "inference_seconds": 0.02888410000014119,
+      "top_predictions": [
+        {
+          "label": "Animal",
+          "score": 0.7135957479476929
+        },
+        {
+          "label": "Dog",
+          "score": 0.7067544460296631
+        },
+        {
+          "label": "Domestic animals, pets",
+          "score": 0.6962013244628906
+        },
+        {
+          "label": "Bark",
+          "score": 0.6847071647644043
+        },
+        {
+          "label": "Bow-wow",
+          "score": 0.5610088109970093
+        }
+      ],
+      "category": "dog",
+      "fold": 5,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-208030-A-0.wav",
+      "selected_hud_label": "ANIMAL",
+      "selection_by_threshold": {
+        "0.52": "ANIMAL"
+      }
+    },
+    {
+      "id": "validation:environment:5-212454-A-0",
+      "condition": "environment_only",
+      "expected": [
+        "DOG",
+        "ANIMAL"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.457273+00:00",
+      "inference_seconds": 0.029457900003762916,
+      "top_predictions": [
+        {
+          "label": "Animal",
+          "score": 0.6961438655853271
+        },
+        {
+          "label": "Dog",
+          "score": 0.6827729940414429
+        },
+        {
+          "label": "Domestic animals, pets",
+          "score": 0.6694573163986206
+        },
+        {
+          "label": "Bark",
+          "score": 0.6679912209510803
+        },
+        {
+          "label": "Bow-wow",
+          "score": 0.5893434882164001
+        }
+      ],
+      "category": "dog",
+      "fold": 5,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-212454-A-0.wav",
+      "selected_hud_label": "ANIMAL",
+      "selection_by_threshold": {
+        "0.52": "ANIMAL"
+      }
+    },
+    {
+      "id": "validation:environment:4-182041-A-30",
+      "condition": "environment_only",
+      "expected": [
+        "DOOR"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.499273+00:00",
+      "inference_seconds": 0.03489759998046793,
+      "top_predictions": [
+        {
+          "label": "Knock",
+          "score": 0.6959869265556335
+        },
+        {
+          "label": "Sound effect",
+          "score": 0.5227399468421936
+        },
+        {
+          "label": "Door",
+          "score": 0.5065393447875977
+        },
+        {
+          "label": "Music",
+          "score": 0.5065352320671082
+        },
+        {
+          "label": "Whack, thwack",
+          "score": 0.5047708749771118
+        }
+      ],
+      "category": "door_wood_knock",
+      "fold": 4,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-182041-A-30.wav",
+      "selected_hud_label": "DOOR",
+      "selection_by_threshold": {
+        "0.52": "DOOR"
+      }
+    },
+    {
+      "id": "validation:environment:4-186518-A-30",
+      "condition": "environment_only",
+      "expected": [
+        "DOOR"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.546276+00:00",
+      "inference_seconds": 0.029262800002470613,
+      "top_predictions": [
+        {
+          "label": "Knock",
+          "score": 0.5728959441184998
+        },
+        {
+          "label": "Wood block",
+          "score": 0.5108131170272827
+        },
+        {
+          "label": "Clapping",
+          "score": 0.5102766156196594
+        },
+        {
+          "label": "Sound effect",
+          "score": 0.5099189877510071
+        },
+        {
+          "label": "Hands",
+          "score": 0.5095258951187134
+        }
+      ],
+      "category": "door_wood_knock",
+      "fold": 4,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-186518-A-30.wav",
+      "selected_hud_label": "DOOR",
+      "selection_by_threshold": {
+        "0.52": "DOOR"
+      }
+    },
+    {
+      "id": "validation:environment:5-235644-A-30",
+      "condition": "environment_only",
+      "expected": [
+        "DOOR"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.587783+00:00",
+      "inference_seconds": 0.03280389998690225,
+      "top_predictions": [
+        {
+          "label": "Knock",
+          "score": 0.6858398914337158
+        },
+        {
+          "label": "Whack, thwack",
+          "score": 0.5138593912124634
+        },
+        {
+          "label": "Sound effect",
+          "score": 0.5119838118553162
+        },
+        {
+          "label": "Tap",
+          "score": 0.507430374622345
+        },
+        {
+          "label": "Wood block",
+          "score": 0.5059415698051453
+        }
+      ],
+      "category": "door_wood_knock",
+      "fold": 5,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-235644-A-30.wav",
+      "selected_hud_label": "DOOR",
+      "selection_by_threshold": {
+        "0.52": "DOOR"
+      }
+    },
+    {
+      "id": "validation:environment:5-250026-A-30",
+      "condition": "environment_only",
+      "expected": [
+        "DOOR"
+      ],
+      "inference_started_utc": "2026-08-22T13:03:59.637786+00:00",
+      "inference_seconds": 0.03198589998646639,
+      "top_predictions": [
+        {
+          "label": "Knock",
+          "score": 0.7000217437744141
+        },
+        {
+          "label": "Whack, thwack",
+          "score": 0.5129309296607971
+        },
+        {
+          "label": "Tap",
+          "score": 0.5128694772720337
+        },
+        {
+          "label": "Music",
+          "score": 0.5081123113632202
+        },
+        {
+          "label": "Sound effect",
+          "score": 0.5078325867652893
+        }
+      ],
+      "category": "door_wood_knock",
+      "fold": 5,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-250026-A-30.wav",
+      "selected_hud_label": "DOOR",
+      "selection_by_threshold": {
+        "0.52": "DOOR"
+      }
+    },
+    {
+      "id": "validation:speech:VIVOSDEV13_026",
+      "condition": "speech_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:03:59.681293+00:00",
+      "inference_seconds": 0.031978299986803904,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6823644042015076
+        },
+        {
+          "label": "Clicking",
+          "score": 0.6563167572021484
+        },
+        {
+          "label": "Narration, monologue",
+          "score": 0.5374360084533691
+        },
+        {
+          "label": "Telephone",
+          "score": 0.522689163684845
+        },
+        {
+          "label": "Female speech, woman speaking",
+          "score": 0.5177449584007263
+        }
+      ],
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV13\\VIVOSDEV13_026.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:speech:VIVOSDEV14_022",
+      "condition": "speech_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:03:59.722294+00:00",
+      "inference_seconds": 0.03130030000465922,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6852176189422607
+        },
+        {
+          "label": "Speech synthesizer",
+          "score": 0.5901626348495483
+        },
+        {
+          "label": "Narration, monologue",
+          "score": 0.5699384808540344
+        },
+        {
+          "label": "Female speech, woman speaking",
+          "score": 0.5463931560516357
+        },
+        {
+          "label": "Child speech, kid speaking",
+          "score": 0.533039391040802
+        }
+      ],
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV14\\VIVOSDEV14_022.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:speech:VIVOSDEV15_013",
+      "condition": "speech_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:03:59.764806+00:00",
+      "inference_seconds": 0.03318389999913052,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.7013440132141113
+        },
+        {
+          "label": "Narration, monologue",
+          "score": 0.6259183883666992
+        },
+        {
+          "label": "Female speech, woman speaking",
+          "score": 0.5552071928977966
+        },
+        {
+          "label": "Clicking",
+          "score": 0.5207667946815491
+        },
+        {
+          "label": "Speech synthesizer",
+          "score": 0.5181590914726257
+        }
+      ],
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV15\\VIVOSDEV15_013.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:speech:VIVOSDEV16_033",
+      "condition": "speech_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:03:59.809050+00:00",
+      "inference_seconds": 0.028489299991633743,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6970750093460083
+        },
+        {
+          "label": "Narration, monologue",
+          "score": 0.5780326724052429
+        },
+        {
+          "label": "Female speech, woman speaking",
+          "score": 0.576278567314148
+        },
+        {
+          "label": "Speech synthesizer",
+          "score": 0.5649828910827637
+        },
+        {
+          "label": "Mantra",
+          "score": 0.5136904716491699
+        }
+      ],
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV16\\VIVOSDEV16_033.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:speech:VIVOSDEV17_024",
+      "condition": "speech_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:03:59.848054+00:00",
+      "inference_seconds": 0.033673099998850375,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6828566789627075
+        },
+        {
+          "label": "Female speech, woman speaking",
+          "score": 0.5860874652862549
+        },
+        {
+          "label": "Narration, monologue",
+          "score": 0.5822511911392212
+        },
+        {
+          "label": "Speech synthesizer",
+          "score": 0.5498917698860168
+        },
+        {
+          "label": "Mantra",
+          "score": 0.5132665634155273
+        }
+      ],
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV17\\VIVOSDEV17_024.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:speech:VIVOSDEV18_012",
+      "condition": "speech_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:03:59.892562+00:00",
+      "inference_seconds": 0.03087379998760298,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.7123201489448547
+        },
+        {
+          "label": "Narration, monologue",
+          "score": 0.6688783168792725
+        },
+        {
+          "label": "Female speech, woman speaking",
+          "score": 0.6462817192077637
+        },
+        {
+          "label": "Speech synthesizer",
+          "score": 0.5344285368919373
+        },
+        {
+          "label": "Mantra",
+          "score": 0.5282801389694214
+        }
+      ],
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV18\\VIVOSDEV18_012.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:speech:VIVOSDEV19_011",
+      "condition": "speech_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:03:59.933562+00:00",
+      "inference_seconds": 0.03285300001152791,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6299578547477722
+        },
+        {
+          "label": "Narration, monologue",
+          "score": 0.6255348920822144
+        },
+        {
+          "label": "Mains hum",
+          "score": 0.6080164313316345
+        },
+        {
+          "label": "Hum",
+          "score": 0.6061137914657593
+        },
+        {
+          "label": "Female speech, woman speaking",
+          "score": 0.5951343774795532
+        }
+      ],
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV19\\VIVOSDEV19_011.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:25908",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.044083+00:00",
+      "inference_seconds": 0.028366500017000362,
+      "top_predictions": [
+        {
+          "label": "Vehicle",
+          "score": 0.5950536131858826
+        },
+        {
+          "label": "Car",
+          "score": 0.5381782650947571
+        },
+        {
+          "label": "Car passing by",
+          "score": 0.5279877781867981
+        },
+        {
+          "label": "Bicycle",
+          "score": 0.5259829759597778
+        },
+        {
+          "label": "Motor vehicle (road)",
+          "score": 0.5237886905670166
+        }
+      ],
+      "source_labels": "Car_passing_by,Traffic_noise_and_roadway_noise,Wind,Engine,Car,Motor_vehicle_(road),Vehicle",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\25908.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:26189",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.091592+00:00",
+      "inference_seconds": 0.029497899988200516,
+      "top_predictions": [
+        {
+          "label": "Thunder",
+          "score": 0.5804615020751953
+        },
+        {
+          "label": "Thunderstorm",
+          "score": 0.5396314859390259
+        },
+        {
+          "label": "Rain",
+          "score": 0.5218086838722229
+        },
+        {
+          "label": "Raindrop",
+          "score": 0.5155686140060425
+        },
+        {
+          "label": "Rustle",
+          "score": 0.5151459574699402
+        }
+      ],
+      "source_labels": "Raindrop,Wind,Rain,Water",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\26189.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:26479",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.143597+00:00",
+      "inference_seconds": 0.032292200019583106,
+      "top_predictions": [
+        {
+          "label": "Computer keyboard",
+          "score": 0.6737704873085022
+        },
+        {
+          "label": "Typing",
+          "score": 0.6541568040847778
+        },
+        {
+          "label": "Music",
+          "score": 0.5109769701957703
+        },
+        {
+          "label": "Hands",
+          "score": 0.5102462768554688
+        },
+        {
+          "label": "Tap",
+          "score": 0.5058991312980652
+        }
+      ],
+      "source_labels": "Computer_keyboard,Typing,Domestic_sounds_and_home_sounds",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\26479.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:26988",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.189105+00:00",
+      "inference_seconds": 0.029628299991600215,
+      "top_predictions": [
+        {
+          "label": "Thunder",
+          "score": 0.6816489696502686
+        },
+        {
+          "label": "Thunderstorm",
+          "score": 0.673433780670166
+        },
+        {
+          "label": "Rain",
+          "score": 0.6475391387939453
+        },
+        {
+          "label": "Rain on surface",
+          "score": 0.5443282127380371
+        },
+        {
+          "label": "Vehicle",
+          "score": 0.5229182839393616
+        }
+      ],
+      "source_labels": "Thunder,Rain,Water,Thunderstorm",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\26988.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:27077",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.241116+00:00",
+      "inference_seconds": 0.029999899998074397,
+      "top_predictions": [
+        {
+          "label": "Tick-tock",
+          "score": 0.6697849631309509
+        },
+        {
+          "label": "Tick",
+          "score": 0.6379092931747437
+        },
+        {
+          "label": "Clock",
+          "score": 0.5613029599189758
+        },
+        {
+          "label": "White noise",
+          "score": 0.5060402154922485
+        },
+        {
+          "label": "Vehicle",
+          "score": 0.5035561919212341
+        }
+      ],
+      "source_labels": "Tick-tock,Clock,Mechanisms",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\27077.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:27086",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.289624+00:00",
+      "inference_seconds": 0.03161940001882613,
+      "top_predictions": [
+        {
+          "label": "Tick-tock",
+          "score": 0.6261885166168213
+        },
+        {
+          "label": "Clock",
+          "score": 0.5969706773757935
+        },
+        {
+          "label": "Tick",
+          "score": 0.5611931681632996
+        },
+        {
+          "label": "Music",
+          "score": 0.5144785642623901
+        },
+        {
+          "label": "Speech",
+          "score": 0.502395510673523
+        }
+      ],
+      "source_labels": "Tick-tock,Clock,Mechanisms",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\27086.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:27148",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.341696+00:00",
+      "inference_seconds": 0.03172579998499714,
+      "top_predictions": [
+        {
+          "label": "Clock",
+          "score": 0.6585056781768799
+        },
+        {
+          "label": "Tick-tock",
+          "score": 0.5785713195800781
+        },
+        {
+          "label": "Tick",
+          "score": 0.547650933265686
+        },
+        {
+          "label": "Glass",
+          "score": 0.5119190812110901
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.5072686076164246
+        }
+      ],
+      "source_labels": "Tick-tock,Human_voice,Respiratory_sounds,Clock,Mechanisms",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\27148.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:29579",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.405204+00:00",
+      "inference_seconds": 0.034311900002649054,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6108114719390869
+        },
+        {
+          "label": "Vehicle",
+          "score": 0.5758661031723022
+        },
+        {
+          "label": "Spray",
+          "score": 0.5390211343765259
+        },
+        {
+          "label": "Traffic noise, roadway noise",
+          "score": 0.5353766679763794
+        },
+        {
+          "label": "Bus",
+          "score": 0.5224200487136841
+        }
+      ],
+      "source_labels": "Car_passing_by,Motorcycle,Traffic_noise_and_roadway_noise,Engine,Car,Motor_vehicle_(road),Vehicle",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\29579.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:30216",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.471715+00:00",
+      "inference_seconds": 0.03184140002122149,
+      "top_predictions": [
+        {
+          "label": "Vehicle",
+          "score": 0.5532284379005432
+        },
+        {
+          "label": "Wind",
+          "score": 0.5514588952064514
+        },
+        {
+          "label": "Ocean",
+          "score": 0.5490086674690247
+        },
+        {
+          "label": "Waves, surf",
+          "score": 0.5373938679695129
+        },
+        {
+          "label": "Fixed-wing aircraft, airplane",
+          "score": 0.5372141599655151
+        }
+      ],
+      "source_labels": "Thunder,Wind,Rain,Water,Thunderstorm",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\30216.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:31776",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.532715+00:00",
+      "inference_seconds": 0.030699099996127188,
+      "top_predictions": [
+        {
+          "label": "Vehicle",
+          "score": 0.6541332602500916
+        },
+        {
+          "label": "Traffic noise, roadway noise",
+          "score": 0.6236782670021057
+        },
+        {
+          "label": "Car",
+          "score": 0.580681324005127
+        },
+        {
+          "label": "Motor vehicle (road)",
+          "score": 0.5504899024963379
+        },
+        {
+          "label": "Waves, surf",
+          "score": 0.5442090630531311
+        }
+      ],
+      "source_labels": "Gurgling,Engine,Boat_and_Water_vehicle,Vehicle,Water",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\31776.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:31939",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.588228+00:00",
+      "inference_seconds": 0.029807600018102676,
+      "top_predictions": [
+        {
+          "label": "Tick-tock",
+          "score": 0.638716459274292
+        },
+        {
+          "label": "Tick",
+          "score": 0.6303202509880066
+        },
+        {
+          "label": "Clock",
+          "score": 0.5836595296859741
+        },
+        {
+          "label": "Typewriter",
+          "score": 0.5028828978538513
+        },
+        {
+          "label": "Camera",
+          "score": 0.5016850233078003
+        }
+      ],
+      "source_labels": "Tick-tock,Clock,Mechanisms",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\31939.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:31949",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.644233+00:00",
+      "inference_seconds": 0.02812070000800304,
+      "top_predictions": [
+        {
+          "label": "Tick-tock",
+          "score": 0.5740877985954285
+        },
+        {
+          "label": "Tick",
+          "score": 0.5443839430809021
+        },
+        {
+          "label": "Oink",
+          "score": 0.537492573261261
+        },
+        {
+          "label": "Heart sounds, heartbeat",
+          "score": 0.5224647521972656
+        },
+        {
+          "label": "Clock",
+          "score": 0.5086365342140198
+        }
+      ],
+      "source_labels": "Tick-tock,Clock,Mechanisms",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\31949.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:34267",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.702737+00:00",
+      "inference_seconds": 0.029849299986381084,
+      "top_predictions": [
+        {
+          "label": "Clicking",
+          "score": 0.581653892993927
+        },
+        {
+          "label": "Tick",
+          "score": 0.5403892397880554
+        },
+        {
+          "label": "Tick-tock",
+          "score": 0.5323584079742432
+        },
+        {
+          "label": "Computer keyboard",
+          "score": 0.5221863389015198
+        },
+        {
+          "label": "Typing",
+          "score": 0.5220525860786438
+        }
+      ],
+      "source_labels": "Raindrop,Drip,Rain,Water,Liquid",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\34267.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:34269",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.755250+00:00",
+      "inference_seconds": 0.033908699988387525,
+      "top_predictions": [
+        {
+          "label": "White noise",
+          "score": 0.5618916749954224
+        },
+        {
+          "label": "Drum machine",
+          "score": 0.5404985547065735
+        },
+        {
+          "label": "Music",
+          "score": 0.5284533500671387
+        },
+        {
+          "label": "Musical instrument",
+          "score": 0.526375412940979
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.5144399404525757
+        }
+      ],
+      "source_labels": "Raindrop,Drip,Rain,Water,Liquid",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\34269.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:35366",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.806258+00:00",
+      "inference_seconds": 0.03177630002028309,
+      "top_predictions": [
+        {
+          "label": "Thunder",
+          "score": 0.7033309936523438
+        },
+        {
+          "label": "Thunderstorm",
+          "score": 0.6951248049736023
+        },
+        {
+          "label": "Rain",
+          "score": 0.6717569828033447
+        },
+        {
+          "label": "Rain on surface",
+          "score": 0.584549605846405
+        },
+        {
+          "label": "Raindrop",
+          "score": 0.576409637928009
+        }
+      ],
+      "source_labels": "Thunder,Rain,Water,Thunderstorm",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\35366.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:35386",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.855769+00:00",
+      "inference_seconds": 0.03431840002303943,
+      "top_predictions": [
+        {
+          "label": "Thunder",
+          "score": 0.7207293510437012
+        },
+        {
+          "label": "Thunderstorm",
+          "score": 0.7155306935310364
+        },
+        {
+          "label": "Rain",
+          "score": 0.6958007216453552
+        },
+        {
+          "label": "Rain on surface",
+          "score": 0.5648893713951111
+        },
+        {
+          "label": "Raindrop",
+          "score": 0.5096651315689087
+        }
+      ],
+      "source_labels": "Thunder,Rain,Water,Thunderstorm",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\35386.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:35627",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.907773+00:00",
+      "inference_seconds": 0.029556099994806573,
+      "top_predictions": [
+        {
+          "label": "Vehicle",
+          "score": 0.6069481372833252
+        },
+        {
+          "label": "Car",
+          "score": 0.5335407853126526
+        },
+        {
+          "label": "Engine",
+          "score": 0.5330834984779358
+        },
+        {
+          "label": "Aircraft",
+          "score": 0.5299195051193237
+        },
+        {
+          "label": "Heavy engine (low frequency)",
+          "score": 0.5278016328811646
+        }
+      ],
+      "source_labels": "Mechanical_fan,Mechanisms",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\35627.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:37618",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:00.968285+00:00",
+      "inference_seconds": 0.031211099994834512,
+      "top_predictions": [
+        {
+          "label": "Rain",
+          "score": 0.662176251411438
+        },
+        {
+          "label": "Rain on surface",
+          "score": 0.6399089097976685
+        },
+        {
+          "label": "Raindrop",
+          "score": 0.5340695977210999
+        },
+        {
+          "label": "Thunderstorm",
+          "score": 0.5084532499313354
+        },
+        {
+          "label": "Gush",
+          "score": 0.5081433653831482
+        }
+      ],
+      "source_labels": "Raindrop,Rain,Water",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\37618.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:37908",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.020281+00:00",
+      "inference_seconds": 0.029969199997140095,
+      "top_predictions": [
+        {
+          "label": "Vehicle",
+          "score": 0.6642605066299438
+        },
+        {
+          "label": "Speech",
+          "score": 0.622373640537262
+        },
+        {
+          "label": "Car",
+          "score": 0.6058874726295471
+        },
+        {
+          "label": "Accelerating, revving, vroom",
+          "score": 0.5501826405525208
+        },
+        {
+          "label": "Car passing by",
+          "score": 0.5443724989891052
+        }
+      ],
+      "source_labels": "Chatter,Motorcycle,Accelerating_and_revving_and_vroom,Human_group_actions,Motor_vehicle_(road),Vehicle,Engine",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\37908.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:37929",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.064794+00:00",
+      "inference_seconds": 0.030957599985413253,
+      "top_predictions": [
+        {
+          "label": "Vehicle",
+          "score": 0.6682087182998657
+        },
+        {
+          "label": "Car",
+          "score": 0.6010998487472534
+        },
+        {
+          "label": "Traffic noise, roadway noise",
+          "score": 0.5698166489601135
+        },
+        {
+          "label": "Motor vehicle (road)",
+          "score": 0.5491333603858948
+        },
+        {
+          "label": "Bus",
+          "score": 0.5478447079658508
+        }
+      ],
+      "source_labels": "Engine,Truck,Motor_vehicle_(road),Vehicle",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\37929.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:38117",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.108794+00:00",
+      "inference_seconds": 0.030285799992270768,
+      "top_predictions": [
+        {
+          "label": "Door",
+          "score": 0.6207161545753479
+        },
+        {
+          "label": "Slam",
+          "score": 0.5898042917251587
+        },
+        {
+          "label": "Thunk",
+          "score": 0.5255042314529419
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.5100334286689758
+        },
+        {
+          "label": "Sliding door",
+          "score": 0.5096913576126099
+        }
+      ],
+      "source_labels": "Tick-tock,Cupboard_open_or_close,Clock,Mechanisms,Domestic_sounds_and_home_sounds",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\38117.wav",
+      "selected_hud_label": "DOOR",
+      "selection_by_threshold": {
+        "0.52": "DOOR"
+      }
+    },
+    {
+      "id": "validation:background:38686",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.149303+00:00",
+      "inference_seconds": 0.04026540002087131,
+      "top_predictions": [
+        {
+          "label": "Vehicle",
+          "score": 0.6029593348503113
+        },
+        {
+          "label": "Car",
+          "score": 0.5355362892150879
+        },
+        {
+          "label": "Accelerating, revving, vroom",
+          "score": 0.5334702730178833
+        },
+        {
+          "label": "Sound effect",
+          "score": 0.515778660774231
+        },
+        {
+          "label": "Whir",
+          "score": 0.5144969820976257
+        }
+      ],
+      "source_labels": "Car_passing_by,Accelerating_and_revving_and_vroom,Car,Motor_vehicle_(road),Vehicle,Engine",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\38686.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:38687",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.202311+00:00",
+      "inference_seconds": 0.08494149998296052,
+      "top_predictions": [
+        {
+          "label": "Sound effect",
+          "score": 0.5526711940765381
+        },
+        {
+          "label": "Vehicle",
+          "score": 0.5384911298751831
+        },
+        {
+          "label": "Music",
+          "score": 0.5246057510375977
+        },
+        {
+          "label": "Car",
+          "score": 0.5182345509529114
+        },
+        {
+          "label": "Accelerating, revving, vroom",
+          "score": 0.5111418962478638
+        }
+      ],
+      "source_labels": "Car_passing_by,Engine,Car,Motor_vehicle_(road),Vehicle",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\38687.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:38688",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.299902+00:00",
+      "inference_seconds": 0.04910329999984242,
+      "top_predictions": [
+        {
+          "label": "Music",
+          "score": 0.631765604019165
+        },
+        {
+          "label": "Sound effect",
+          "score": 0.5528576970100403
+        },
+        {
+          "label": "Scary music",
+          "score": 0.525946855545044
+        },
+        {
+          "label": "Electronic music",
+          "score": 0.5177127718925476
+        },
+        {
+          "label": "Vehicle",
+          "score": 0.5135290622711182
+        }
+      ],
+      "source_labels": "Car_passing_by,Engine,Car,Motor_vehicle_(road),Vehicle",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\38688.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:38689",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.369645+00:00",
+      "inference_seconds": 0.03045590000692755,
+      "top_predictions": [
+        {
+          "label": "Vehicle",
+          "score": 0.6565185785293579
+        },
+        {
+          "label": "Car",
+          "score": 0.5605774521827698
+        },
+        {
+          "label": "Bus",
+          "score": 0.5406649708747864
+        },
+        {
+          "label": "Accelerating, revving, vroom",
+          "score": 0.5320817828178406
+        },
+        {
+          "label": "Truck",
+          "score": 0.5308653712272644
+        }
+      ],
+      "source_labels": "Car_passing_by,Engine,Car,Motor_vehicle_(road),Vehicle",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\38689.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:39858",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.418645+00:00",
+      "inference_seconds": 0.033136599988210946,
+      "top_predictions": [
+        {
+          "label": "Toilet flush",
+          "score": 0.7035808563232422
+        },
+        {
+          "label": "Water",
+          "score": 0.6281934976577759
+        },
+        {
+          "label": "Liquid",
+          "score": 0.5109277963638306
+        },
+        {
+          "label": "Fill (with liquid)",
+          "score": 0.5027647614479065
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.5020667910575867
+        }
+      ],
+      "source_labels": "Trickle_and_dribble,Toilet_flush,Gurgling,Pour,Liquid,Domestic_sounds_and_home_sounds,Water",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\39858.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:40138",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.474160+00:00",
+      "inference_seconds": 0.03197139999247156,
+      "top_predictions": [
+        {
+          "label": "Vehicle",
+          "score": 0.6764349937438965
+        },
+        {
+          "label": "Bus",
+          "score": 0.6187477111816406
+        },
+        {
+          "label": "Speech",
+          "score": 0.5531480312347412
+        },
+        {
+          "label": "Train",
+          "score": 0.54774409532547
+        },
+        {
+          "label": "Rail transport",
+          "score": 0.5228638052940369
+        }
+      ],
+      "source_labels": "Chatter,Hiss,Engine,Boat_and_Water_vehicle,Human_group_actions,Vehicle",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\40138.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:42978",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.521160+00:00",
+      "inference_seconds": 0.0307625999848824,
+      "top_predictions": [
+        {
+          "label": "Drip",
+          "score": 0.6058546900749207
+        },
+        {
+          "label": "Water",
+          "score": 0.5420229434967041
+        },
+        {
+          "label": "Liquid",
+          "score": 0.5347000360488892
+        },
+        {
+          "label": "Plop",
+          "score": 0.533970296382904
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.5249056220054626
+        }
+      ],
+      "source_labels": "Raindrop,Drip,Rain,Water,Liquid",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\42978.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:44099",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.583674+00:00",
+      "inference_seconds": 0.03058789999340661,
+      "top_predictions": [
+        {
+          "label": "Music",
+          "score": 0.5452768206596375
+        },
+        {
+          "label": "Mechanisms",
+          "score": 0.5406882166862488
+        },
+        {
+          "label": "Ratchet, pawl",
+          "score": 0.5318573713302612
+        },
+        {
+          "label": "Musical instrument",
+          "score": 0.5299426317214966
+        },
+        {
+          "label": "Gears",
+          "score": 0.5287856459617615
+        }
+      ],
+      "source_labels": "Chime,Clock,Bell,Mechanisms",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\44099.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:44297",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.628673+00:00",
+      "inference_seconds": 0.0313521999923978,
+      "top_predictions": [
+        {
+          "label": "Computer keyboard",
+          "score": 0.6843019127845764
+        },
+        {
+          "label": "Typing",
+          "score": 0.6765216588973999
+        },
+        {
+          "label": "Tap",
+          "score": 0.522811233997345
+        },
+        {
+          "label": "Speech",
+          "score": 0.5029882192611694
+        },
+        {
+          "label": "Music",
+          "score": 0.5028455257415771
+        }
+      ],
+      "source_labels": "Computer_keyboard,Typing,Domestic_sounds_and_home_sounds",
+      "environmental_source": "benchmark_data\\external\\computer_holdout_audio\\FSD50K.eval_audio\\44297.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:silence",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.660191+00:00",
+      "inference_seconds": 0.031107100017834455,
+      "top_predictions": [
+        {
+          "label": "Silence",
+          "score": 0.6263128519058228
+        },
+        {
+          "label": "Music",
+          "score": 0.5323290228843689
+        },
+        {
+          "label": "Sound effect",
+          "score": 0.5088680386543274
+        },
+        {
+          "label": "Sine wave",
+          "score": 0.5058384537696838
+        },
+        {
+          "label": "Musical instrument",
+          "score": 0.5034607648849487
+        }
+      ],
+      "synthetic": "silence",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:background:static",
+      "condition": "background_only",
+      "expected": [],
+      "inference_started_utc": "2026-08-22T13:04:01.692188+00:00",
+      "inference_seconds": 0.03247919998830184,
+      "top_predictions": [
+        {
+          "label": "White noise",
+          "score": 0.6005166172981262
+        },
+        {
+          "label": "Static",
+          "score": 0.5758121013641357
+        },
+        {
+          "label": "Noise",
+          "score": 0.5206135511398315
+        },
+        {
+          "label": "Speech",
+          "score": 0.511098325252533
+        },
+        {
+          "label": "Pink noise",
+          "score": 0.5092968344688416
+        }
+      ],
+      "synthetic": "white_noise",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:mixed:4-176631-A-43:VIVOSDEV13_026:-6dB",
+      "condition": "mixed",
+      "expected": [
+        "HORN"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:01.756698+00:00",
+      "inference_seconds": 0.02971339999930933,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6328679919242859
+        },
+        {
+          "label": "Vehicle",
+          "score": 0.5615765452384949
+        },
+        {
+          "label": "Car",
+          "score": 0.5301141142845154
+        },
+        {
+          "label": "Train",
+          "score": 0.5236832499504089
+        },
+        {
+          "label": "Vehicle horn, car horn, honking",
+          "score": 0.5236472487449646
+        }
+      ],
+      "category": "car_horn",
+      "fold": 4,
+      "environmental_db": -6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-176631-A-43.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV13\\VIVOSDEV13_026.wav",
+      "selected_hud_label": "HORN",
+      "selection_by_threshold": {
+        "0.52": "HORN"
+      }
+    },
+    {
+      "id": "validation:mixed:4-176631-A-43:VIVOSDEV13_026:+0dB",
+      "condition": "mixed",
+      "expected": [
+        "HORN"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:01.786698+00:00",
+      "inference_seconds": 0.02945299999555573,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6237682104110718
+        },
+        {
+          "label": "Vehicle",
+          "score": 0.5803152918815613
+        },
+        {
+          "label": "Car",
+          "score": 0.5642420053482056
+        },
+        {
+          "label": "Motor vehicle (road)",
+          "score": 0.5274991989135742
+        },
+        {
+          "label": "Car passing by",
+          "score": 0.5234484672546387
+        }
+      ],
+      "category": "car_horn",
+      "fold": 4,
+      "environmental_db": 0.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-176631-A-43.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV13\\VIVOSDEV13_026.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:mixed:4-176631-A-43:VIVOSDEV13_026:+6dB",
+      "condition": "mixed",
+      "expected": [
+        "HORN"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:01.817260+00:00",
+      "inference_seconds": 0.03338249999796972,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6280871033668518
+        },
+        {
+          "label": "Vehicle",
+          "score": 0.6160501837730408
+        },
+        {
+          "label": "Car",
+          "score": 0.6081517338752747
+        },
+        {
+          "label": "Car passing by",
+          "score": 0.5475975275039673
+        },
+        {
+          "label": "Motor vehicle (road)",
+          "score": 0.5408505201339722
+        }
+      ],
+      "category": "car_horn",
+      "fold": 4,
+      "environmental_db": 6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-176631-A-43.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV13\\VIVOSDEV13_026.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:mixed:5-179868-A-43:VIVOSDEV14_022:-6dB",
+      "condition": "mixed",
+      "expected": [
+        "HORN"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:01.866790+00:00",
+      "inference_seconds": 0.061216000001877546,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6902631521224976
+        },
+        {
+          "label": "Music",
+          "score": 0.519909143447876
+        },
+        {
+          "label": "Outside, urban or manmade",
+          "score": 0.5183059573173523
+        },
+        {
+          "label": "Air horn, truck horn",
+          "score": 0.5164330005645752
+        },
+        {
+          "label": "Female speech, woman speaking",
+          "score": 0.5162346363067627
+        }
+      ],
+      "category": "car_horn",
+      "fold": 5,
+      "environmental_db": -6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-179868-A-43.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV14\\VIVOSDEV14_022.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:mixed:5-179868-A-43:VIVOSDEV14_022:+0dB",
+      "condition": "mixed",
+      "expected": [
+        "HORN"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:01.928775+00:00",
+      "inference_seconds": 0.03446499997517094,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6855553984642029
+        },
+        {
+          "label": "Outside, urban or manmade",
+          "score": 0.5332558751106262
+        },
+        {
+          "label": "Vehicle horn, car horn, honking",
+          "score": 0.530700147151947
+        },
+        {
+          "label": "Vehicle",
+          "score": 0.5296922922134399
+        },
+        {
+          "label": "Air horn, truck horn",
+          "score": 0.5296080112457275
+        }
+      ],
+      "category": "car_horn",
+      "fold": 5,
+      "environmental_db": 0.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-179868-A-43.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV14\\VIVOSDEV14_022.wav",
+      "selected_hud_label": "HORN",
+      "selection_by_threshold": {
+        "0.52": "HORN"
+      }
+    },
+    {
+      "id": "validation:mixed:5-179868-A-43:VIVOSDEV14_022:+6dB",
+      "condition": "mixed",
+      "expected": [
+        "HORN"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:01.963289+00:00",
+      "inference_seconds": 0.03494019998470321,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6805458068847656
+        },
+        {
+          "label": "Vehicle",
+          "score": 0.5649670958518982
+        },
+        {
+          "label": "Air horn, truck horn",
+          "score": 0.54412841796875
+        },
+        {
+          "label": "Outside, urban or manmade",
+          "score": 0.5430455207824707
+        },
+        {
+          "label": "Vehicle horn, car horn, honking",
+          "score": 0.5387040972709656
+        }
+      ],
+      "category": "car_horn",
+      "fold": 5,
+      "environmental_db": 6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-179868-A-43.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV14\\VIVOSDEV14_022.wav",
+      "selected_hud_label": "HORN",
+      "selection_by_threshold": {
+        "0.52": "HORN"
+      }
+    },
+    {
+      "id": "validation:mixed:4-185575-B-20:VIVOSDEV15_013:-6dB",
+      "condition": "mixed",
+      "expected": [
+        "BABY"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.012289+00:00",
+      "inference_seconds": 0.0320726000063587,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6891018152236938
+        },
+        {
+          "label": "Baby cry, infant cry",
+          "score": 0.6129395961761475
+        },
+        {
+          "label": "Crying, sobbing",
+          "score": 0.5921035408973694
+        },
+        {
+          "label": "Cough",
+          "score": 0.5800891518592834
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.5303776264190674
+        }
+      ],
+      "category": "crying_baby",
+      "fold": 4,
+      "environmental_db": -6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-185575-B-20.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV15\\VIVOSDEV15_013.wav",
+      "selected_hud_label": "BABY",
+      "selection_by_threshold": {
+        "0.52": "BABY"
+      }
+    },
+    {
+      "id": "validation:mixed:4-185575-B-20:VIVOSDEV15_013:+0dB",
+      "condition": "mixed",
+      "expected": [
+        "BABY"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.045295+00:00",
+      "inference_seconds": 0.04907710000406951,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6877225041389465
+        },
+        {
+          "label": "Cough",
+          "score": 0.6297369599342346
+        },
+        {
+          "label": "Baby cry, infant cry",
+          "score": 0.6076796054840088
+        },
+        {
+          "label": "Crying, sobbing",
+          "score": 0.6060867309570312
+        },
+        {
+          "label": "Child speech, kid speaking",
+          "score": 0.53096604347229
+        }
+      ],
+      "category": "crying_baby",
+      "fold": 4,
+      "environmental_db": 0.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-185575-B-20.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV15\\VIVOSDEV15_013.wav",
+      "selected_hud_label": "BABY",
+      "selection_by_threshold": {
+        "0.52": "BABY"
+      }
+    },
+    {
+      "id": "validation:mixed:4-185575-B-20:VIVOSDEV15_013:+6dB",
+      "condition": "mixed",
+      "expected": [
+        "BABY"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.095805+00:00",
+      "inference_seconds": 0.033659899985650554,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6715646982192993
+        },
+        {
+          "label": "Crying, sobbing",
+          "score": 0.5945563316345215
+        },
+        {
+          "label": "Cough",
+          "score": 0.5925865173339844
+        },
+        {
+          "label": "Baby cry, infant cry",
+          "score": 0.5908551812171936
+        },
+        {
+          "label": "Babbling",
+          "score": 0.5411556363105774
+        }
+      ],
+      "category": "crying_baby",
+      "fold": 4,
+      "environmental_db": 6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-185575-B-20.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV15\\VIVOSDEV15_013.wav",
+      "selected_hud_label": "BABY",
+      "selection_by_threshold": {
+        "0.52": "BABY"
+      }
+    },
+    {
+      "id": "validation:mixed:5-198411-D-20:VIVOSDEV16_033:-6dB",
+      "condition": "mixed",
+      "expected": [
+        "BABY"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.142812+00:00",
+      "inference_seconds": 0.03591150001739152,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6741794943809509
+        },
+        {
+          "label": "Baby cry, infant cry",
+          "score": 0.5942015051841736
+        },
+        {
+          "label": "Crying, sobbing",
+          "score": 0.5643907785415649
+        },
+        {
+          "label": "Speech synthesizer",
+          "score": 0.5503349900245667
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.516736626625061
+        }
+      ],
+      "category": "crying_baby",
+      "fold": 5,
+      "environmental_db": -6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-198411-D-20.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV16\\VIVOSDEV16_033.wav",
+      "selected_hud_label": "BABY",
+      "selection_by_threshold": {
+        "0.52": "BABY"
+      }
+    },
+    {
+      "id": "validation:mixed:5-198411-D-20:VIVOSDEV16_033:+0dB",
+      "condition": "mixed",
+      "expected": [
+        "BABY"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.179325+00:00",
+      "inference_seconds": 0.029635500017320737,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6755840182304382
+        },
+        {
+          "label": "Baby cry, infant cry",
+          "score": 0.6107481122016907
+        },
+        {
+          "label": "Crying, sobbing",
+          "score": 0.5950130224227905
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.5174931883811951
+        },
+        {
+          "label": "Speech synthesizer",
+          "score": 0.5160378813743591
+        }
+      ],
+      "category": "crying_baby",
+      "fold": 5,
+      "environmental_db": 0.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-198411-D-20.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV16\\VIVOSDEV16_033.wav",
+      "selected_hud_label": "BABY",
+      "selection_by_threshold": {
+        "0.52": "BABY"
+      }
+    },
+    {
+      "id": "validation:mixed:5-198411-D-20:VIVOSDEV16_033:+6dB",
+      "condition": "mixed",
+      "expected": [
+        "BABY"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.210318+00:00",
+      "inference_seconds": 0.032718799979193136,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.668043315410614
+        },
+        {
+          "label": "Crying, sobbing",
+          "score": 0.6343945264816284
+        },
+        {
+          "label": "Baby cry, infant cry",
+          "score": 0.6323767900466919
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.5207470059394836
+        },
+        {
+          "label": "Music",
+          "score": 0.5129092931747437
+        }
+      ],
+      "category": "crying_baby",
+      "fold": 5,
+      "environmental_db": 6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-198411-D-20.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV16\\VIVOSDEV16_033.wav",
+      "selected_hud_label": "BABY",
+      "selection_by_threshold": {
+        "0.52": "BABY"
+      }
+    },
+    {
+      "id": "validation:mixed:4-192236-A-0:VIVOSDEV17_024:-6dB",
+      "condition": "mixed",
+      "expected": [
+        "DOG",
+        "ANIMAL"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.255833+00:00",
+      "inference_seconds": 0.030008999980054796,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6725012063980103
+        },
+        {
+          "label": "Bark",
+          "score": 0.6334520578384399
+        },
+        {
+          "label": "Animal",
+          "score": 0.6094603538513184
+        },
+        {
+          "label": "Dog",
+          "score": 0.599731981754303
+        },
+        {
+          "label": "Bow-wow",
+          "score": 0.593638002872467
+        }
+      ],
+      "category": "dog",
+      "fold": 4,
+      "environmental_db": -6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-192236-A-0.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV17\\VIVOSDEV17_024.wav",
+      "selected_hud_label": "DOG",
+      "selection_by_threshold": {
+        "0.52": "DOG"
+      }
+    },
+    {
+      "id": "validation:mixed:4-192236-A-0:VIVOSDEV17_024:+0dB",
+      "condition": "mixed",
+      "expected": [
+        "DOG",
+        "ANIMAL"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.286832+00:00",
+      "inference_seconds": 0.032219499989878386,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6799140572547913
+        },
+        {
+          "label": "Bark",
+          "score": 0.6684475541114807
+        },
+        {
+          "label": "Animal",
+          "score": 0.6482943296432495
+        },
+        {
+          "label": "Dog",
+          "score": 0.6435959935188293
+        },
+        {
+          "label": "Domestic animals, pets",
+          "score": 0.6233642101287842
+        }
+      ],
+      "category": "dog",
+      "fold": 4,
+      "environmental_db": 0.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-192236-A-0.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV17\\VIVOSDEV17_024.wav",
+      "selected_hud_label": "DOG",
+      "selection_by_threshold": {
+        "0.52": "DOG"
+      }
+    },
+    {
+      "id": "validation:mixed:4-192236-A-0:VIVOSDEV17_024:+6dB",
+      "condition": "mixed",
+      "expected": [
+        "DOG",
+        "ANIMAL"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.319781+00:00",
+      "inference_seconds": 0.03309290000470355,
+      "top_predictions": [
+        {
+          "label": "Bark",
+          "score": 0.6872777342796326
+        },
+        {
+          "label": "Animal",
+          "score": 0.6723567247390747
+        },
+        {
+          "label": "Dog",
+          "score": 0.6669284105300903
+        },
+        {
+          "label": "Speech",
+          "score": 0.660149097442627
+        },
+        {
+          "label": "Domestic animals, pets",
+          "score": 0.6486756801605225
+        }
+      ],
+      "category": "dog",
+      "fold": 4,
+      "environmental_db": 6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-192236-A-0.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV17\\VIVOSDEV17_024.wav",
+      "selected_hud_label": "DOG",
+      "selection_by_threshold": {
+        "0.52": "DOG"
+      }
+    },
+    {
+      "id": "validation:mixed:5-213855-A-0:VIVOSDEV18_012:-6dB",
+      "condition": "mixed",
+      "expected": [
+        "DOG",
+        "ANIMAL"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.367953+00:00",
+      "inference_seconds": 0.03304910002043471,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6796851754188538
+        },
+        {
+          "label": "Animal",
+          "score": 0.6188085079193115
+        },
+        {
+          "label": "Dog",
+          "score": 0.6152548789978027
+        },
+        {
+          "label": "Domestic animals, pets",
+          "score": 0.5989421606063843
+        },
+        {
+          "label": "Bark",
+          "score": 0.5632558465003967
+        }
+      ],
+      "category": "dog",
+      "fold": 5,
+      "environmental_db": -6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-213855-A-0.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV18\\VIVOSDEV18_012.wav",
+      "selected_hud_label": "ANIMAL",
+      "selection_by_threshold": {
+        "0.52": "ANIMAL"
+      }
+    },
+    {
+      "id": "validation:mixed:5-213855-A-0:VIVOSDEV18_012:+0dB",
+      "condition": "mixed",
+      "expected": [
+        "DOG",
+        "ANIMAL"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.401954+00:00",
+      "inference_seconds": 0.033358899992890656,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6660658717155457
+        },
+        {
+          "label": "Animal",
+          "score": 0.6427727937698364
+        },
+        {
+          "label": "Dog",
+          "score": 0.6318492293357849
+        },
+        {
+          "label": "Domestic animals, pets",
+          "score": 0.6135354042053223
+        },
+        {
+          "label": "Bark",
+          "score": 0.5836747288703918
+        }
+      ],
+      "category": "dog",
+      "fold": 5,
+      "environmental_db": 0.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-213855-A-0.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV18\\VIVOSDEV18_012.wav",
+      "selected_hud_label": "ANIMAL",
+      "selection_by_threshold": {
+        "0.52": "ANIMAL"
+      }
+    },
+    {
+      "id": "validation:mixed:5-213855-A-0:VIVOSDEV18_012:+6dB",
+      "condition": "mixed",
+      "expected": [
+        "DOG",
+        "ANIMAL"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.435957+00:00",
+      "inference_seconds": 0.034471699997084215,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6605274081230164
+        },
+        {
+          "label": "Animal",
+          "score": 0.6523499488830566
+        },
+        {
+          "label": "Dog",
+          "score": 0.6372900605201721
+        },
+        {
+          "label": "Domestic animals, pets",
+          "score": 0.6198803782463074
+        },
+        {
+          "label": "Bark",
+          "score": 0.5933258533477783
+        }
+      ],
+      "category": "dog",
+      "fold": 5,
+      "environmental_db": 6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-213855-A-0.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV18\\VIVOSDEV18_012.wav",
+      "selected_hud_label": "ANIMAL",
+      "selection_by_threshold": {
+        "0.52": "ANIMAL"
+      }
+    },
+    {
+      "id": "validation:mixed:4-187284-A-30:VIVOSDEV19_011:-6dB",
+      "condition": "mixed",
+      "expected": [
+        "DOOR"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.487470+00:00",
+      "inference_seconds": 0.0329998999950476,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.5714611411094666
+        },
+        {
+          "label": "Knock",
+          "score": 0.5181127190589905
+        },
+        {
+          "label": "Hammer",
+          "score": 0.5135278105735779
+        },
+        {
+          "label": "Whack, thwack",
+          "score": 0.5129048824310303
+        },
+        {
+          "label": "Hum",
+          "score": 0.5100116729736328
+        }
+      ],
+      "category": "door_wood_knock",
+      "fold": 4,
+      "environmental_db": -6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-187284-A-30.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV19\\VIVOSDEV19_011.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:mixed:4-187284-A-30:VIVOSDEV19_011:+0dB",
+      "condition": "mixed",
+      "expected": [
+        "DOOR"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.520473+00:00",
+      "inference_seconds": 0.033210699999472126,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.5641847252845764
+        },
+        {
+          "label": "Hammer",
+          "score": 0.5132420659065247
+        },
+        {
+          "label": "Knock",
+          "score": 0.512606680393219
+        },
+        {
+          "label": "Whack, thwack",
+          "score": 0.5104688405990601
+        },
+        {
+          "label": "Female speech, woman speaking",
+          "score": 0.5089688897132874
+        }
+      ],
+      "category": "door_wood_knock",
+      "fold": 4,
+      "environmental_db": 0.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-187284-A-30.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV19\\VIVOSDEV19_011.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:mixed:4-187284-A-30:VIVOSDEV19_011:+6dB",
+      "condition": "mixed",
+      "expected": [
+        "DOOR"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.554985+00:00",
+      "inference_seconds": 0.03017889999318868,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.554074764251709
+        },
+        {
+          "label": "Gunshot, gunfire",
+          "score": 0.5337232351303101
+        },
+        {
+          "label": "Machine gun",
+          "score": 0.5305152535438538
+        },
+        {
+          "label": "Chopping (food)",
+          "score": 0.513522207736969
+        },
+        {
+          "label": "Female speech, woman speaking",
+          "score": 0.5088616609573364
+        }
+      ],
+      "category": "door_wood_knock",
+      "fold": 4,
+      "environmental_db": 6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\4-187284-A-30.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV19\\VIVOSDEV19_011.wav",
+      "selected_hud_label": "",
+      "selection_by_threshold": {
+        "0.52": ""
+      }
+    },
+    {
+      "id": "validation:mixed:5-250026-B-30:VIVOSDEV13_026:-6dB",
+      "condition": "mixed",
+      "expected": [
+        "DOOR"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.598982+00:00",
+      "inference_seconds": 0.033421399974031374,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6741455793380737
+        },
+        {
+          "label": "Knock",
+          "score": 0.6140556335449219
+        },
+        {
+          "label": "Music",
+          "score": 0.5235821604728699
+        },
+        {
+          "label": "Clip-clop",
+          "score": 0.5149738788604736
+        },
+        {
+          "label": "Ping",
+          "score": 0.5133859515190125
+        }
+      ],
+      "category": "door_wood_knock",
+      "fold": 5,
+      "environmental_db": -6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-250026-B-30.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV13\\VIVOSDEV13_026.wav",
+      "selected_hud_label": "DOOR",
+      "selection_by_threshold": {
+        "0.52": "DOOR"
+      }
+    },
+    {
+      "id": "validation:mixed:5-250026-B-30:VIVOSDEV13_026:+0dB",
+      "condition": "mixed",
+      "expected": [
+        "DOOR"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.632984+00:00",
+      "inference_seconds": 0.03170190000673756,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6552545428276062
+        },
+        {
+          "label": "Knock",
+          "score": 0.623744547367096
+        },
+        {
+          "label": "Music",
+          "score": 0.5257773399353027
+        },
+        {
+          "label": "Tap",
+          "score": 0.5187435150146484
+        },
+        {
+          "label": "Inside, small room",
+          "score": 0.5120462775230408
+        }
+      ],
+      "category": "door_wood_knock",
+      "fold": 5,
+      "environmental_db": 0.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-250026-B-30.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV13\\VIVOSDEV13_026.wav",
+      "selected_hud_label": "DOOR",
+      "selection_by_threshold": {
+        "0.52": "DOOR"
+      }
+    },
+    {
+      "id": "validation:mixed:5-250026-B-30:VIVOSDEV13_026:+6dB",
+      "condition": "mixed",
+      "expected": [
+        "DOOR"
+      ],
+      "inference_started_utc": "2026-08-22T13:04:02.665495+00:00",
+      "inference_seconds": 0.031231900007696822,
+      "top_predictions": [
+        {
+          "label": "Speech",
+          "score": 0.6382516622543335
+        },
+        {
+          "label": "Knock",
+          "score": 0.6297662258148193
+        },
+        {
+          "label": "Tap",
+          "score": 0.5316565036773682
+        },
+        {
+          "label": "Music",
+          "score": 0.5192363858222961
+        },
+        {
+          "label": "Thunk",
+          "score": 0.5116825699806213
+        }
+      ],
+      "category": "door_wood_knock",
+      "fold": 5,
+      "environmental_db": 6.0,
+      "environmental_source": "benchmark_data\\external\\esc50\\audio\\5-250026-B-30.wav",
+      "speech_source": "benchmark_data\\external\\vivos\\selected\\VIVOSDEV13\\VIVOSDEV13_026.wav",
+      "selected_hud_label": "DOOR",
+      "selection_by_threshold": {
+        "0.52": "DOOR"
+      }
+    }
+  ]
+}

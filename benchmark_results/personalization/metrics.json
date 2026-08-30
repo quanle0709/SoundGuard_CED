@@ -1,0 +1,9 @@
+{
+  "case_count": 8,
+  "priority_assertions": 22,
+  "exact_priority_accuracy": 1.0,
+  "mean_absolute_priority_error": 0.0,
+  "within_one_priority_accuracy": 1.0,
+  "role_exact_accuracy": 1.0,
+  "context_exact_accuracy": 1.0
+}

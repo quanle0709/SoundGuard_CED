@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-20T23:38:59.807894+07:00",
+  "prediction_state_at_freeze": "NOT_STARTED",
+  "terminology": "Decontaminated external holdout derived from the official FSD50K/DCASE evaluation data",
+  "methodology_statement": "Contamination auditing and all sample/mapping decisions were completed before prediction. Exact ESC-50 provenance overlaps were removed, exact audio hashes and conservative non-embedding acoustic landmarks were checked against available SoundGuard development audio, and model/thresholds were frozen before external evaluation. No post-hoc tuning is allowed.",
+  "baseline_manifest": "benchmark_results/frozen_baseline_20260820/baseline_manifest.json",
+  "baseline_manifest_sha256": "62754e2bee58dde1db61ffe8cf9f40e09c387c8f3a1141e7fcd1c06648afe11c",
+  "frozen_baseline": {
+    "policy": "V2 OR EfficientSED approved-safety evidence",
+    "ced_model": "mispeech/ced-tiny",
+    "ced_revision": "ace276d29dd0bb3f3517b0fa8cf300738c409019",
+    "semantic_mapping": "soundguard_taxonomy_v1",
+    "efficientsed_checkpoint_sha256": "92a5c1dc5aa21620e262420c4cc657d2f699bdfa20a748de506c354a2fe2770a",
+    "efficientsed_threshold": 0.05,
+    "target_classes": [
+      "fire",
+      "siren",
+      "vehicle_horn",
+      "baby_crying",
+      "glass_breaking"
+    ]
+  },
+  "selection": {
+    "seed": 42,
+    "hard_negative_sampling": "none; all qualifying FSD50K eval clips",
+    "hard_negative_labels": [
+      "Bark",
+      "Bell",
+      "Bicycle_bell",
+      "Child_speech_and_kid_speaking",
+      "Church_bell",
+      "Cowbell",
+      "Dog",
+      "Door",
+      "Doorbell",
+      "Engine",
+      "Engine_starting",
+      "Female_speech_and_woman_speaking",
+      "Knock",
+      "Male_speech_and_man_speaking",
+      "Music",
+      "Musical_instrument",
+      "Sliding_door",
+      "Speech",
+      "Speech_synthesizer"
+    ],
+    "negative_guard_labels": [
+      "Alarm",
+      "Boom",
+      "Crack",
+      "Crackle",
+      "Crying_and_sobbing",
+      "Explosion",
+      "Fire",
+      "Fireworks",
+      "Glass",
+      "Gunshot_and_gunfire",
+      "Screaming",
+      "Shatter",
+      "Shout",
+      "Siren",
+      "Vehicle_horn_and_car_horn_and_honking",
+      "Yell"
+    ],
+    "model_output_used_for_selection": false
+  },
+  "duplicate_checks": {
+    "exact_id": "Freesound ID compared with all 2,000 official ESC-50 metadata rows",
+    "raw_hash": "SHA256 of source file bytes",
+    "canonical_hash": "SHA256 of mono 16 kHz signed-16-bit decoded PCM without peak normalization or trimming",
+    "fingerprint": {
+      "method": "landmark_v1: local STFT spectral peaks with time-offset-consistent pair hashes, verified by aligned waveform NCC",
+      "auto_exclude": "dominant_hits >= 40 AND offset_consistency >= 0.70 AND minimum_coverage >= 0.20 AND aligned overlap >= 1.0 s AND |NCC| >= 0.85",
+      "flag_for_review": "dominant_hits >= 20 AND offset_consistency >= 0.40 AND minimum_coverage >= 0.10",
+      "embedding_only_exclusion": false
+    },
+    "available_development_reference_scope": [
+      "benchmark_data/external/esc50/audio",
+      "benchmark_data/external/vivos/selected",
+      "benchmark_data/external/demand/selected",
+      "samples"
+    ]
+  },
+  "artifact_sha256": {
+    "benchmark_results/external_decontamination_20260820/included_manifests/external_included_manifest.csv": "f211e44ae894435ddaf0c643f9786ad7a9ba579cb5a08b3a1296f732779077d2",
+    "benchmark_results/external_decontamination_20260820/included_manifests/external_included_manifest.json": "1a03c82ac79fe3404d454703ea7f8921819acdea086d2f6af69720b8c2f59b6c",
+    "benchmark_results/external_decontamination_20260820/excluded_manifests/external_excluded_manifest.csv": "b452b41e307bef0ee68fcb51146e2f6ab759b07e5eadf7f103b883109ce52a85",
+    "benchmark_results/external_decontamination_20260820/excluded_manifests/external_excluded_manifest.json": "bfb1c3bd85ab253dad967bfa16743961f6b9c11417a29134c39464a6ba0d0a54",
+    "benchmark_results/external_decontamination_20260820/overlap_checks/full_official_population_audit.csv": "587a4297126f4cd4171860fcf8f54ced5ec2a2b7b547266ee322bbc8284f6561",
+    "benchmark_results/external_decontamination_20260820/decontamination_summary.json": "f7abc7f7abc55084d004d5964e38262376b27638ccffe82abc0e0ed12ac0fed3",
+    "benchmark_results/external_decontamination_20260820/freeze_manifest/class_mapping_audit.csv": "44e8ef82bcd89d03ec7e950c0c287af05fd97266275ea94a3e80d7c0b2694c2a",
+    "benchmark_results/external_decontamination_20260820/source_provenance/official_sources.json": "473477f1403aa535b314c22c4be545c605d419d62461bc9cfa546e1a10a9f540"
+  },
+  "evaluator_code_sha256": {
+    "benchmark/external_holdout_common.py": "1f79333a9a74328c9be04aafb9fe4454ec8c4b07c2fb9d8e1f17445163087da8",
+    "benchmark/download_datasets.py": "00ea7acb0be019c1eb49a8945cb4e22408c56fd417e51c7c7e969ebe5049f7ba",
+    "benchmark/prepare_external_holdout.py": "1c0b66f4b7af3f9e9bd29b920bdb92ad22349eaaad03a652c17360aa0a0750d0",
+    "benchmark/run_external_holdout.py": "4f0a74cc3fc2b488c0cdd8ef5ebfcd6dff710930ad9bde8e73c69370c2726e92",
+    "benchmark/report_external_holdout.py": "77dddec15587cdf54582c1ce44c68e028f317db8f812a6d0191301bbb17042a3",
+    "benchmark/split_zip.py": "6857cb0a5e83e1c24dfd9406d299e7afd4a9a658fb878fb0830e5b66e97d7794",
+    "benchmark/test_external_holdout.py": "23087ffa74e0e392b7ae649c71ff0d12936536f7c2bebfea5942d2fe0645afd8",
+    "sound_classifier.py": "e70c718c70ce0b7ca403d29ee1c16be824d72fb90a541cc905dca1abe65c649b",
+    "sound_taxonomy.py": "d16ba3c8d0050f14d04852524ea87e051705bf33bf1ebdaf187059ea2a137958",
+    "emergency_system.py": "d2813fca63304f4d53f23eee14928836ef974fe70570541090702000de363f79",
+    "emergency_v3.py": "207349ab6b4fe464f20bf32af59f737d9f5f6b9dabe0b70841a88bc4d0165e33",
+    "benchmark/experiments/emergency_v3/efficientsed_worker.py": "df741be342f22c0e64139b7d8d284f5dbfe2ee5022d0040f32346bd51d393e8d",
+    "benchmark/experiments/emergency_v3/efficientsed_safety_taxonomy.json": "3dafb2e5fa6ced1fbc3a15335576ad62a9de04a12b2bb972db4da636566aa97a"
+  },
+  "freeze_rule": "No sample, label mapping, model, threshold, preprocessing, policy, or metric decision may change in response to external results."
+}

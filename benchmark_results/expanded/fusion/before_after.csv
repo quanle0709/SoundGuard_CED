@@ -1,0 +1,7 @@
+id,label,confidence,category,dangerous,transcript,expected,raw_prediction,fusion_prediction
+help_repairs_benign_ced,Speech,0.9,speech,False,giúp tôi với,True,False,True
+siren_stays_emergency,Siren,0.85,siren,True,,True,True,True
+glass_stays_emergency,Glass breaking,0.8,glass breaking,True,,True,True,True
+bark_stays_benign,Bark,0.85,bark,True,,False,True,False
+speech_stays_benign,Speech,0.9,speech,False,hello,False,False,False
+low_confidence_suppressed,Siren,0.2,siren,True,,False,False,False

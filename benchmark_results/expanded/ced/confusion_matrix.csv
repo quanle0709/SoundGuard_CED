@@ -1,0 +1,9 @@
+true_label,baby_crying,dog_barking,door_activity,fire,glass_breaking,siren,vehicle_horn,other
+baby_crying,26,0,0,0,0,0,0,14
+dog_barking,0,2,0,0,0,0,0,38
+door_activity,0,0,36,0,0,0,0,4
+fire,0,0,0,20,0,0,0,20
+glass_breaking,0,0,0,0,0,0,0,40
+siren,0,0,0,0,0,24,0,16
+vehicle_horn,0,0,0,0,0,0,18,22
+other,0,0,0,0,0,0,0,0

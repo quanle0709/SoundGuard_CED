@@ -1,0 +1,86 @@
+{
+  "before": {
+    "label": "parser-before",
+    "failure": "",
+    "rx_bytes": 669421,
+    "completed_frames": 21119,
+    "valid_frames": 21118,
+    "crc_failures": 0,
+    "parser_recoveries": 0,
+    "malformed_benchmark_frames": 0,
+    "ack_attempts": 18919,
+    "ack_bytes_accepted": 756808,
+    "ack_zero_writes": 0,
+    "tx_available": 240,
+    "min_tx_available": 256,
+    "poll_count": 528728,
+    "firmware_ms": 695158,
+    "free_heap": 306728,
+    "minimum_free_heap": 302204,
+    "largest_free_block": 278516,
+    "stack_high_water": 6460,
+    "reset_reason": 0,
+    "display_commits": 16195,
+    "last_display_us": 6625,
+    "max_display_us": 6713,
+    "last_parsed_id": "diag-parser-before",
+    "last_ack_attempt_id": "diag-parser-before"
+  },
+  "summary": {
+    "sent": 0,
+    "received_parsed": 0,
+    "acked": 0,
+    "missing": 0,
+    "duplicate": 0,
+    "unexpected": 0,
+    "out_of_order": 0,
+    "parser_state_corruption": 0,
+    "state_mismatch": 0,
+    "late_ack_reconciled": 0,
+    "invalid_injection": [
+      {
+        "case": "invalid_crc",
+        "injected": true,
+        "expected_ack": false
+      },
+      {
+        "case": "malformed_payload",
+        "injected": true,
+        "expected_ack": false
+      },
+      {
+        "case": "truncated_then_valid",
+        "injected": true,
+        "next_valid_succeeded": true
+      }
+    ],
+    "parser_recovered": true
+  },
+  "after": {
+    "label": "parser-after",
+    "failure": "",
+    "rx_bytes": 669579,
+    "completed_frames": 21125,
+    "valid_frames": 21122,
+    "crc_failures": 2,
+    "parser_recoveries": 2,
+    "malformed_benchmark_frames": 1,
+    "ack_attempts": 18922,
+    "ack_bytes_accepted": 756954,
+    "ack_zero_writes": 0,
+    "tx_available": 246,
+    "min_tx_available": 256,
+    "poll_count": 528739,
+    "firmware_ms": 695173,
+    "free_heap": 306728,
+    "minimum_free_heap": 302204,
+    "largest_free_block": 278516,
+    "stack_high_water": 6460,
+    "reset_reason": 0,
+    "display_commits": 16195,
+    "last_display_us": 6625,
+    "max_display_us": 6713,
+    "last_parsed_id": "diag-parser-after",
+    "last_ack_attempt_id": "diag-parser-after"
+  }
+}

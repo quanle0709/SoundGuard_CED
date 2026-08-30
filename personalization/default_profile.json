@@ -1,0 +1,34 @@
+{
+  "profile_version": "1.0",
+  "roles": [],
+  "contexts": ["home"],
+  "responsibilities": [],
+  "priority_profile": {
+    "gunshot": 5,
+    "explosion": 5,
+    "fire": 5,
+    "smoke_alarm": 5,
+    "glass_breaking": 4,
+    "screaming": 4,
+    "siren": 5,
+    "vehicle_horn": 3,
+    "baby_crying": 3,
+    "door_activity": 2,
+    "dog_barking": 2,
+    "speech": 2
+  },
+  "reasoning_summary": {
+    "gunshot": "Universal safety default.",
+    "explosion": "Universal safety default.",
+    "fire": "Universal safety default.",
+    "smoke_alarm": "Universal safety default.",
+    "glass_breaking": "Potential household safety event.",
+    "screaming": "Potential distress event.",
+    "siren": "Emergency warning default.",
+    "vehicle_horn": "Normal traffic alert.",
+    "baby_crying": "Normal caregiving alert.",
+    "door_activity": "Low-priority entrance activity.",
+    "dog_barking": "Low-priority ambient event.",
+    "speech": "Low-priority ambient speech."
+  }
+}

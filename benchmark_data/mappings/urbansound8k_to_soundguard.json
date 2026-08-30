@@ -1,0 +1,14 @@
+{
+  "dataset": "UrbanSound8K",
+  "version": "official ten-fold release",
+  "leakage_status": "POSSIBLE SOURCE OVERLAP",
+  "selected_by_default": false,
+  "mappings": [
+    {"source_label": "siren", "soundguard_label": "siren", "mapping_type": "exact", "reason": "Same acoustic event."},
+    {"source_label": "car_horn", "soundguard_label": "vehicle_horn", "mapping_type": "compatible", "reason": "Car horn is an unambiguous vehicle horn subtype."},
+    {"source_label": "dog_bark", "soundguard_label": "dog_barking", "mapping_type": "exact", "reason": "Same acoustic event."},
+    {"source_label": "gun_shot", "soundguard_label": "gunshot", "mapping_type": "exact", "reason": "Same acoustic event."},
+    {"source_label": "drilling", "soundguard_label": null, "mapping_type": "excluded", "reason": "No matching SoundGuard category."},
+    {"source_label": "jackhammer", "soundguard_label": null, "mapping_type": "excluded", "reason": "No matching SoundGuard category."}
+  ]
+}

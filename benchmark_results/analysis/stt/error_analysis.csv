@@ -1,0 +1,101 @@
+sample_id,speaker,reference_words,wer,cer,substitutions,deletions,insertions,diacritic_stripped_cer,cer_reduction_when_diacritics_removed,reference,hypothesis
+VIVOSDEV10_017,VIVOSDEV10,7,0.7142857142857143,0.2962962962962963,5,0,0,0.2962962962962963,0.0,nga khi ấy càng thìn nết na,nghe hơi ấy càng nhìn ngớt nga
+VIVOSDEV09_015,VIVOSDEV09,9,0.6666666666666666,0.39473684210526316,5,1,0,0.2631578947368421,0.13157894736842107,làm rờm rợp biển mây lau lách phất phơ,làm ròng rọc biển mây lâu lắc vật
+VIVOSDEV01_R002,VIVOSDEV01,9,0.5555555555555556,0.20930232558139536,5,0,0,0.13953488372093023,0.06976744186046513,tiếng cọc cạch khựng lại của những khớp sắt,tiếng cộc cách thuận lợi của những cướp sắt
+VIVOSDEV10_024,VIVOSDEV10,8,0.5,0.20588235294117646,4,0,0,0.14705882352941177,0.05882352941176469,ngoài trời mưa cứ lay phay rắc hạt,ngoài trời mưa chứ ai phải rách hạt
+VIVOSDEV01_R027,VIVOSDEV01,15,0.4,0.2786885245901639,5,1,0,0.2459016393442623,0.03278688524590162,di tích có bảy phỗng ông và hai phỗng bà được làm bằng gỗ mít,di tích có 7 võng ông và 2 võng và được làm bằng gỗ
+VIVOSDEV09_035,VIVOSDEV09,8,0.375,0.13953488372093023,3,0,0,0.09302325581395349,0.046511627906976744,loáng thoáng trăn trở loáng thoáng buồn vui,loang thoáng trong chợ loáng thoáng buồn vui
+VIVOSDEV10_020,VIVOSDEV10,11,0.36363636363636365,0.2857142857142857,3,1,0,0.2857142857142857,0.0,việc áp dụng cả bàn vá lỗi và công cụ quét,việc áp dụng trảng bàng báo lỗi và công cụ
+VIVOSDEV03_R044,VIVOSDEV03,6,0.3333333333333333,0.19047619047619047,2,0,0,0.09523809523809523,0.09523809523809523,và khi họ vạch tóc ra,và khi họ vận tốc ra
+VIVOSDEV02_R005,VIVOSDEV02,7,0.2857142857142857,0.22580645161290322,1,1,0,0.22580645161290322,0.0,nếu tưởng tượng bảy tám năm nữa,nếu tưởng tượng 78 năm nữa
+VIVOSDEV11_036,VIVOSDEV11,7,0.2857142857142857,0.15384615384615385,2,0,0,0.11538461538461539,0.038461538461538464,tôi có thể căm giận đủ thứ,tôi có thể căn dặn đủ thứ
+VIVOSDEV19_008,VIVOSDEV19,11,0.2727272727272727,0.2127659574468085,2,1,0,0.2127659574468085,0.0,từ đó lại sa đà vào nhiều nghịch cảnh đáng tiếc,từ đó lại xe đè vào nhiều cảnh đáng tiếc
+VIVOSDEV16_049,VIVOSDEV16,15,0.26666666666666666,0.12903225806451613,4,0,0,0.11290322580645161,0.016129032258064516,còn ba cầu thủ văn trương bật hiếu và hải lâm thì sao thưa ông,còn 3 cầu thủ văn thư bất hiếu và hải lâm thì sao thư ông
+VIVOSDEV10_010,VIVOSDEV10,8,0.25,0.1935483870967742,1,1,0,0.16129032258064516,0.03225806451612903,khi bị công an thộp cổ khẩn cấp,khi bị công an họp cổ khẩn
+VIVOSDEV03_R010,VIVOSDEV03,8,0.25,0.05714285714285714,2,0,0,0.05714285714285714,0.0,âm thầm chắt chiu nuôi tôi khôn lớn,âm thầm chắc chiêu nuôi tôi khôn lớn
+VIVOSDEV04_R008,VIVOSDEV04,12,0.25,0.12727272727272726,2,1,0,0.09090909090909091,0.03636363636363635,những ngày đầu vắng bóng ba việt cứ thừ người nghĩ ngợi,những ngày đầu vắng bóng ba miền thứ người nghĩ ngợi
+VIVOSDEV05_037,VIVOSDEV05,4,0.25,0.06666666666666667,1,0,0,0.0,0.06666666666666667,ông nhặt nó lên,ông nhật nó lên
+VIVOSDEV04_R013,VIVOSDEV04,8,0.25,0.09090909090909091,2,0,0,0.06060606060606061,0.030303030303030304,nghĩa là kém cỏi nam tính hay sao,nghĩa là kiếm cỏ nam tính hay sao
+VIVOSDEV15_013,VIVOSDEV15,13,0.23076923076923078,0.16,2,1,0,0.12,0.04000000000000001,cũng đều trong tư thế ngõ nhỏ phố nhỏ phở tôi ở đó,cũng đều trong tư thế ngõ phố phố nhỏ vỡ tôi ở
+VIVOSDEV03_R029,VIVOSDEV03,14,0.21428571428571427,0.12727272727272726,2,1,0,0.12727272727272726,0.0,nên hai mố cầu bị sụp đất khiến lối đi bộ quá nguy hiểm,nên 21 cầu bị sập đất khiến lối đi bộ quá nguy hiểm
+VIVOSDEV15_014,VIVOSDEV15,15,0.2,0.13846153846153847,2,1,0,0.12307692307692308,0.015384615384615385,thành một chiếc lồng đèn khổng lồ tại công viên ở thủ đô bắc kinh,thành một chất lỏng đèn khổng lồ tại công viên ở thủ đô bắc
+VIVOSDEV02_R027,VIVOSDEV02,10,0.2,0.10256410256410256,2,0,0,0.07692307692307693,0.025641025641025633,có thể lành lặn mà không để lại vết sẹo,có thể làm lạnh mà không để lại vết sẹo
+VIVOSDEV07_039,VIVOSDEV07,10,0.2,0.04081632653061224,2,0,0,0.04081632653061224,0.0,gió trời không thể thông thốc thổi vào khai trung,gió trời không thể không thúc thổi vào khai trung
+VIVOSDEV18_012,VIVOSDEV18,11,0.18181818181818182,0.12,1,1,0,0.12,0.0,và giáo dục con người trở thành việc luyện trí nhớ,bài giáo dục con người trở thành việc luyện trí
+VIVOSDEV11_033,VIVOSDEV11,11,0.18181818181818182,0.06818181818181818,2,0,0,0.06818181818181818,0.0,mà phải che chái ở tạm bên hông nhà cha ruột,mà phải chữa cháy ở tạm bên hông nhà cha ruột
+VIVOSDEV07_002,VIVOSDEV07,12,0.16666666666666666,0.04,2,0,0,0.02,0.02,hằng năm chúng ta thải ra hàng tỉ thiết bị điện tử,hàng năm chúng ta thải ra hàng tỷ thiết bị điện tử
+VIVOSDEV02_R009,VIVOSDEV02,6,0.16666666666666666,0.04,1,0,0,0.04,0.0,bà quảng vẫn đang bận rộn,bà quản vẫn đang bận rộn
+VIVOSDEV14_022,VIVOSDEV14,12,0.16666666666666666,0.17391304347826086,1,1,0,0.15217391304347827,0.021739130434782594,hơn là dẫn dắt các em theo chủ ý của giáo viên,hơn là dẫn dắt các em theo chủ yếu của giáo
+VIVOSDEV13_061,VIVOSDEV13,13,0.15384615384615385,0.0784313725490196,1,1,0,0.0784313725490196,0.0,nhưng sau nghe con nói ra nói vào lại ác cảm với em,nhưng sao nghe con nói ra nói vào lại ác cảm với
+VIVOSDEV13_054,VIVOSDEV13,14,0.14285714285714285,0.04477611940298507,2,0,0,0.014925373134328358,0.029850746268656712,già làng nguyễn mạnh tường trả lời phỏng vấn báo giới ảnh trung dân,gia lan nguyễn mạnh tường trả lời phỏng vấn báo giới ảnh trung dân
+VIVOSDEV02_R031,VIVOSDEV02,14,0.14285714285714285,0.07142857142857142,2,0,0,0.07142857142857142,0.0,muốn đẹp phải ghè làm sao cho các bó cơ chân nổi bật lên,muốn đẹp phải chè làm sao cho các bó cơ trên nổi bật lên
+VIVOSDEV17_024,VIVOSDEV17,15,0.13333333333333333,0.03278688524590164,2,0,0,0.03278688524590164,0.0,riêng ông nguyễn văn ba bị gỗ đè dập sọ não chết ngay tại chỗ,riêng ông nguyễn văn ba bị rỗ đè dập xọ não chết ngay tại chỗ
+VIVOSDEV13_058,VIVOSDEV13,15,0.13333333333333333,0.13846153846153847,0,2,0,0.13846153846153847,0.0,đó là giai đoạn thời tiết ít biến động và nhiệt độ không quá thấp,đó là giai đoạn thời tiết ít biến động và nhiệt độ không
+VIVOSDEV05_004,VIVOSDEV05,16,0.125,0.1044776119402985,0,2,0,0.1044776119402985,0.0,hãy tưởng tượng rằng bạn là là giám đốc dự án trong một công ty lớn,hãy tưởng tượng rằng bạn là giám đốc dự án trong một công ty
+VIVOSDEV06_006,VIVOSDEV06,8,0.125,0.029411764705882353,1,0,0,0.029411764705882353,0.0,mà do lối sống chui nhủi của chúng,mà do lối sống chui nhủ của chúng
+VIVOSDEV10_014,VIVOSDEV10,8,0.125,0.027777777777777776,1,0,0,0.027777777777777776,0.0,sau khi đọc những thông tin trên báo,sau khi lọc những thông tin trên báo
+VIVOSDEV09_029,VIVOSDEV09,8,0.125,0.05714285714285714,1,0,0,0.02857142857142857,0.02857142857142857,bạn có thể khiển trách người lái xe,bạn có thể hiện trách người lái xe
+VIVOSDEV04_R023,VIVOSDEV04,16,0.125,0.11764705882352941,1,1,0,0.11764705882352941,0.0,chính bà cũng là người nung nấu niềm đam mê diễn xuất của cô con gái,93 cũng là người nung nấu niềm đam mê diễn xuất của cô con gái
+VIVOSDEV11_022,VIVOSDEV11,9,0.1111111111111111,0.1388888888888889,0,1,0,0.1388888888888889,0.0,sẽ làm giảm tình trạng ói ọc của trẻ,sẽ làm tình trạng ói ọc của trẻ
+VIVOSDEV04_R010,VIVOSDEV04,9,0.1111111111111111,0.029411764705882353,1,0,0,0.029411764705882353,0.0,con nhỏ mở cái túi gút đeo trên cổ,con nhỏ mở cái túi rút đeo trên cổ
+VIVOSDEV03_R041,VIVOSDEV03,9,0.1111111111111111,0.08333333333333333,1,0,0,0.05555555555555555,0.027777777777777776,luôn ổn định và các xe trấu khá nặng,luôn ổn định và các xe cháu khá nặng
+VIVOSDEV05_065,VIVOSDEV05,10,0.1,0.04081632653061224,1,0,0,0.04081632653061224,0.0,những người sống thì tha thẩn trong nhà ngoài ngõ,những người sống thì tha thu trong nhà ngoài ngõ
+VIVOSDEV14_018,VIVOSDEV14,11,0.09090909090909091,0.10869565217391304,0,1,0,0.10869565217391304,0.0,biên chế này nhà thanh gọi là an nam quốc nhạc,biên chế này nhà thanh gọi là an nam quốc
+VIVOSDEV08_005,VIVOSDEV08,11,0.09090909090909091,0.09302325581395349,1,0,0,0.06976744186046512,0.023255813953488372,cây cổ thụ ấy bất chợt bị bệnh tật quật ngã,cây cổ thụ ấy bất chợt bị bệnh tật hoặc ngã
+VIVOSDEV01_R012,VIVOSDEV01,11,0.09090909090909091,0.02040816326530612,1,0,0,0.02040816326530612,0.0,những cơn gió mạnh và mưa đóng băng gây trơn trợt,những cơn gió mạnh và mưa đóng băng gây trơn trượt
+VIVOSDEV18_051,VIVOSDEV18,11,0.09090909090909091,0.0784313725490196,0,0,1,0.0784313725490196,0.0,nhưng nhiều du khách thấy thất vọng khi lên đến nơi,nhưng nhiều du khách vẫn thấy thất vọng khi lên đến nơi
+VIVOSDEV17_032,VIVOSDEV17,12,0.08333333333333333,0.019230769230769232,1,0,0,0.0,0.019230769230769232,mỗi người nở một nụ cười với những ý nghĩa khác nhau,mọi người nở một nụ cười với những ý nghĩa khác nhau
+VIVOSDEV15_020,VIVOSDEV15,12,0.08333333333333333,0.07407407407407407,0,1,0,0.07407407407407407,0.0,câu chuyện của quá khứ ông kể không biết bao nhiêu lần,câu chuyện của quá khứ ông kể không biết bao nhiêu
+VIVOSDEV16_050,VIVOSDEV16,12,0.08333333333333333,0.05263157894736842,1,0,0,0.05263157894736842,0.0,tháng bảy nhiều người con khóc nên trời buồn và khóc theo,tháng 7 nhiều người con khóc nên trời buồn và khóc theo
+VIVOSDEV05_055,VIVOSDEV05,13,0.07692307692307693,0.018867924528301886,1,0,0,0.0,0.018867924528301886,nhưng mức án tử hình đối với các bị cáo là tương xứng,những mức án tử hình đối với các bị cáo là tương xứng
+VIVOSDEV16_026,VIVOSDEV16,14,0.07142857142857142,0.01818181818181818,1,0,0,0.01818181818181818,0.0,cùng vợ ăn vội chén cơm thành lại lo ôn bài làm bài tập,cùng vợ ăn vội chén cơm thành lợi lo ôn bài làm bài tập
+VIVOSDEV14_027,VIVOSDEV14,14,0.07142857142857142,0.05454545454545454,0,0,1,0.05454545454545454,0.0,bạn có thể tham khảo một sơ yếu lý lịch điện tử sau đây,bạn có thể tham khảo một số sơ yếu lý lịch điện tử sau đây
+VIVOSDEV18_017,VIVOSDEV18,14,0.07142857142857142,0.06060606060606061,1,0,0,0.06060606060606061,0.0,tuy nhiên hợp đồng này chỉ có giá trị trong những ngày bình thường,thiên nhiên hợp đồng này chỉ có giá trị trong những ngày bình thường
+VIVOSDEV03_R020,VIVOSDEV03,15,0.06666666666666667,0.015873015873015872,1,0,0,0.015873015873015872,0.0,bên trong trái vả khi bổ ra sẽ rỗng chứ không đặc như trái sung,bên trong trái vả khi bổ ra sẽ rỗng chứ không đặt như trái sung
+VIVOSDEV03_R007,VIVOSDEV03,10,0.0,0.0,0,0,0,0.0,0.0,một chuyến du lịch dã ngoại tại bò cạp vàng,một chuyến du lịch dã ngoại tại bò cạp vàng
+VIVOSDEV04_R002,VIVOSDEV04,8,0.0,0.0,0,0,0,0.0,0.0,đó cũng là động lực thúc đẩy tôi,đó cũng là động lực thúc đẩy tôi
+VIVOSDEV06_001,VIVOSDEV06,7,0.0,0.0,0,0,0,0.0,0.0,đơn giản là tán gẫu với nhau,đơn giản là tán gẫu với nhau
+VIVOSDEV08_002,VIVOSDEV08,5,0.0,0.0,0,0,0,0.0,0.0,đừng để con sâu ăn,đừng để con sâu ăn
+VIVOSDEV11_015,VIVOSDEV11,8,0.0,0.0,0,0,0,0.0,0.0,nữ diễn viên xinh đẹp phạm băng băng,nữ diễn viên xinh đẹp phạm băng băng
+VIVOSDEV12_006,VIVOSDEV12,10,0.0,0.0,0,0,0,0.0,0.0,từ sự dư thừa quá mức của luồng tiền này,từ sự dư thừa quá mức của luồng tiền này
+VIVOSDEV13_019,VIVOSDEV13,12,0.0,0.0,0,0,0,0.0,0.0,đơn vị mình không nghe ai nói gì chưa hẳn đã tốt,đơn vị mình không nghe ai nói gì chưa hẳn đã tốt
+VIVOSDEV15_003,VIVOSDEV15,13,0.0,0.0,0,0,0,0.0,0.0,điều này khó hơn khi bạn vào bàn tiệc toàn người xa lạ,điều này khó hơn khi bạn vào bàn tiệc toàn người xa lạ
+VIVOSDEV17_011,VIVOSDEV17,11,0.0,0.0,0,0,0,0.0,0.0,rồi mặc dù biết là ngớ ngẩn tôi cứ nói ra,rồi mặc dù biết là ngớ ngẩn tôi cứ nói ra
+VIVOSDEV18_006,VIVOSDEV18,13,0.0,0.0,0,0,0,0.0,0.0,không nên chỉ dựa vào bài viết của bạn để thuyết minh thêm,không nên chỉ dựa vào bài viết của bạn để thuyết minh thêm
+VIVOSDEV01_R003,VIVOSDEV01,9,0.0,0.0,0,0,0,0.0,0.0,cũng lên tiếng ủng hộ các kiến nghị này,cũng lên tiếng ủng hộ các kiến nghị này
+VIVOSDEV04_R004,VIVOSDEV04,10,0.0,0.0,0,0,0,0.0,0.0,đôi khi bạn cũng có thể làm những điều đó,đôi khi bạn cũng có thể làm những điều đó
+VIVOSDEV05_030,VIVOSDEV05,6,0.0,0.0,0,0,0,0.0,0.0,của những thế lực hùng mạnh,của những thế lực hùng mạnh
+VIVOSDEV07_025,VIVOSDEV07,8,0.0,0.0,0,0,0,0.0,0.0,cho những chuyến dã ngoại của du khách,cho những chuyến dã ngoại của du khách
+VIVOSDEV09_022,VIVOSDEV09,7,0.0,0.0,0,0,0,0.0,0.0,trứng mực quyến rũ các ngư dân,trứng mực quyến rũ các ngư dân
+VIVOSDEV12_011,VIVOSDEV12,8,0.0,0.0,0,0,0,0.0,0.0,đó chứng tỏ rằng chúng ta đã già,đó chứng tỏ rằng chúng ta đã già
+VIVOSDEV13_026,VIVOSDEV13,12,0.0,0.0,0,0,0,0.0,0.0,không ai được ngược đãi các em vì các em học chậm,không ai được ngược đãi các em vì các em học chậm
+VIVOSDEV16_033,VIVOSDEV16,11,0.0,0.0,0,0,0,0.0,0.0,đội nào thành tích càng cao thì quản lý càng khó,đội nào thành tích càng cao thì quản lý càng khó
+VIVOSDEV19_011,VIVOSDEV19,13,0.0,0.0,0,0,0,0.0,0.0,mong anh hãy hiểu cho em em thương nhớ và yêu anh nhiều,mong anh hãy hiểu cho em em thương nhớ và yêu anh nhiều
+VIVOSDEV02_R015,VIVOSDEV02,11,0.0,0.0,0,0,0,0.0,0.0,tất cả mọi thứ đều kỳ lạ một cách phi thường,tất cả mọi thứ đều kỳ lạ một cách phi thường
+VIVOSDEV06_016,VIVOSDEV06,7,0.0,0.0,0,0,0,0.0,0.0,râu ria đã ba ngày không cạo,râu ria đã ba ngày không cạo
+VIVOSDEV07_030,VIVOSDEV07,5,0.0,0.0,0,0,0,0.0,0.0,những nhược điểm của mình,những nhược điểm của mình
+VIVOSDEV08_014,VIVOSDEV08,10,0.0,0.0,0,0,0,0.0,0.0,và nếu bạn trót làm lộn xộn màn hình nền,và nếu bạn trót làm lộn xộn màn hình nền
+VIVOSDEV12_015,VIVOSDEV12,5,0.0,0.0,0,0,0,0.0,0.0,trả lại đất cho rừng,trả lại đất cho rừng
+VIVOSDEV16_048,VIVOSDEV16,11,0.0,0.0,0,0,0,0.0,0.0,phải chăng xây dựng niềm tin vào tình yêu khó thế,phải chăng xây dựng niềm tin vào tình yêu khó thế
+VIVOSDEV19_020,VIVOSDEV19,11,0.0,0.0,0,0,0,0.0,0.0,lên các cuộc hẹn phỏng vấn và thực hiện phỏng vấn,lên các cuộc hẹn phỏng vấn và thực hiện phỏng vấn
+VIVOSDEV05_043,VIVOSDEV05,9,0.0,0.0,0,0,0,0.0,0.0,nguyên thứ trưởng mai văn dâu đã bị bắt,nguyên thứ trưởng mai văn dâu đã bị bắt
+VIVOSDEV06_021,VIVOSDEV06,5,0.0,0.0,0,0,0,0.0,0.0,một đường hướng chuyên nghiệp,một đường hướng chuyên nghiệp
+VIVOSDEV07_036,VIVOSDEV07,8,0.0,0.0,0,0,0,0.0,0.0,vì đó mới chính là thứ bạn cần,vì đó mới chính là thứ bạn cần
+VIVOSDEV08_025,VIVOSDEV08,11,0.0,0.0,0,0,0,0.0,0.0,đạo diễn trẻ này có nhiều điều ngẫm ngợi về nghề,đạo diễn trẻ này có nhiều điều ngẫm ngợi về nghề
+VIVOSDEV12_032,VIVOSDEV12,12,0.0,0.0,0,0,0,0.0,0.0,các loại cây trồng ở rừng này toàn cây kém giá trị,các loại cây trồng ở rừng này toàn cây kém giá trị
+VIVOSDEV14_035,VIVOSDEV14,11,0.0,0.0,0,0,0,0.0,0.0,nhạc sĩ la hối với ca khúc xuân và tuổi trẻ,nhạc sĩ la hối với ca khúc xuân và tuổi trẻ
+VIVOSDEV17_043,VIVOSDEV17,11,0.0,0.0,0,0,0,0.0,0.0,do vậy sẽ ảnh hưởng tới việc thu sóng vô tuyến,do vậy sẽ ảnh hưởng tới việc thu sóng vô tuyến
+VIVOSDEV18_021,VIVOSDEV18,11,0.0,0.0,0,0,0,0.0,0.0,vấn đề đặt ra ở đây là làm thế nào để,vấn đề đặt ra ở đây là làm thế nào để
+VIVOSDEV19_022,VIVOSDEV19,14,0.0,0.0,0,0,0,0.0,0.0,xét ở khía cạnh này thì đúng là mất bò mới lo làm chuồng,xét ở khía cạnh này thì đúng là mất bò mới lo làm chuồng
+VIVOSDEV01_R028,VIVOSDEV01,14,0.0,0.0,0,0,0,0.0,0.0,các chú cũng thoải mái phóng uế giữa chốn đông người mà không sợ,các chú cũng thoải mái phóng uế giữa chốn đông người mà không sợ
+VIVOSDEV06_022,VIVOSDEV06,8,0.0,0.0,0,0,0,0.0,0.0,lính cứu hỏa khó tiếp cận hiện trường,lính cứu hỏa khó tiếp cận hiện trường
+VIVOSDEV08_032,VIVOSDEV08,12,0.0,0.0,0,0,0,0.0,0.0,sẽ không khiến bạn trông gầy như những trang phục một màu,sẽ không khiến bạn trông gầy như những trang phục một màu
+VIVOSDEV09_038,VIVOSDEV09,9,0.0,0.0,0,0,0,0.0,0.0,phòng trà khiêu vũ cánh quạt cối xay đỏ,phòng trà khiêu vũ cánh quạt cối xay đỏ
+VIVOSDEV11_038,VIVOSDEV11,8,0.0,0.0,0,0,0,0.0,0.0,mà phải chuyển qua hình thức giao dịch,mà phải chuyển qua hình thức giao dịch
+VIVOSDEV12_054,VIVOSDEV12,12,0.0,0.0,0,0,0,0.0,0.0,thiếu sự quan tâm đúng mức từ các cơ quan chức năng,thiếu sự quan tâm đúng mức từ các cơ quan chức năng
+VIVOSDEV14_079,VIVOSDEV14,11,0.0,0.0,0,0,0,0.0,0.0,vậy ai sẽ chịu trách nhiệm về những trường hợp này,vậy ai sẽ chịu trách nhiệm về những trường hợp này
+VIVOSDEV15_021,VIVOSDEV15,11,0.0,0.0,0,0,0,0.0,0.0,màu son trông thật tuyệt trên bất kì màu da nào,màu son trông thật tuyệt trên bất kì màu da nào
+VIVOSDEV17_048,VIVOSDEV17,11,0.0,0.0,0,0,0,0.0,0.0,phim chiếu nguyên bản tiếng pháp có phụ đề tiếng việt,phim chiếu nguyên bản tiếng pháp có phụ đề tiếng việt
+VIVOSDEV19_024,VIVOSDEV19,12,0.0,0.0,0,0,0,0.0,0.0,tuy nhiên tôi nghĩ cậu ta xứng đáng với chức vô địch,tuy nhiên tôi nghĩ cậu ta xứng đáng với chức vô địch
+VIVOSDEV01_R034,VIVOSDEV01,3,0.0,0.0,0,0,0,0.0,0.0,người ta nói,người ta nói
+VIVOSDEV02_R032,VIVOSDEV02,8,0.0,0.0,0,0,0,0.0,0.0,y tế bình hưng hòa bị hư hỏng,y tế bình hưng hòa bị hư hỏng

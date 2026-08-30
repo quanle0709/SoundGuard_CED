@@ -1,4 +1,5 @@
 import contextlib
+import io
 import queue
 import threading
 import time
@@ -6,9 +7,20 @@ from io import StringIO
 
 import numpy as np
 
-from audio_pipeline import CEDChunker, MicrophonePipeline, UtteranceTranscriber
+from audio_pipeline import (
+    CEDChunker,
+    MicrophonePipeline,
+    PipelineEvent,
+    UtteranceTranscriber,
+)
 from emergency_system import CATEGORY_CONFIG, EmergencySystem
-from live_speech_to_text import RecognitionJob, RecognitionWorker, TranscriptDisplay
+from display_transport import HUDTransport
+from live_speech_to_text import (
+    RecognitionJob,
+    RecognitionResult,
+    RecognitionWorker,
+    TranscriptDisplay,
+)
 from streaming_audio import AudioFrame, AudioStreamHub
 
 
@@ -38,6 +50,59 @@ class FakeStream:
         type(self).closed += 1
 
 
+class RecordingHUD:
+    def __init__(self):
+        self.alerts = []
+        self.alert_states = []
+        self.environmental_sounds = []
+        self.partial_subtitles = []
+        self.final_subtitles = []
+        self.calls = []
+        self.c_frames_sent = 0
+
+    def set_alert(self, text):
+        self.alerts.append(text)
+        self.calls.append(("alert", text))
+
+    def set_alert_state(self, event_label="", help_active=False):
+        self.alert_states.append((event_label, help_active))
+        self.calls.append(("alert_state", event_label, help_active))
+
+    def set_subtitle(self, text):
+        self.final_subtitles.append(text)
+        self.calls.append(("subtitle", text))
+
+    def set_partial_subtitle(self, text):
+        self.partial_subtitles.append(text)
+        self.calls.append(("partial_subtitle", text))
+
+    def set_environmental_sound(self, text):
+        self.environmental_sounds.append(text)
+        self.calls.append(("environmental_sound", text))
+        self.c_frames_sent += 1
+
+    def set_status(self, text):
+        pass
+
+    def update(self):
+        pass
+
+    @property
+    def counters(self):
+        return {"C_frames_sent": self.c_frames_sent}
+
+
+class ManualClock:
+    def __init__(self):
+        self.value = 0.0
+
+    def __call__(self):
+        return self.value
+
+    def advance(self, seconds):
+        self.value += seconds
+
+
 def reset_fake_stream(frames):
     FakeStream.opened = FakeStream.stopped = FakeStream.closed = 0
     FakeStream.frames = frames
@@ -46,6 +111,34 @@ def reset_fake_stream(frames):
 def vad_from_amplitude(samples, threshold):
     del threshold
     return {"has_speech": bool(np.max(np.abs(samples)) > 0.5)}
+
+
+def drive_idle_production_audio(pipeline, *, seconds=16.0):
+    """Drive the real 512-sample live fan-out with >=15 seconds of audio."""
+    frame_count = int(np.ceil(seconds * 16000 / 512))
+    pipeline.speech.start()
+    pipeline.ced.start()
+    try:
+        for _ in range(frame_count):
+            pipeline.hub._callback(FRAME.reshape(-1, 1), 512, None, None)
+            pipeline._pump()
+            time.sleep(0.0005)
+        deadline = time.time() + 5.0
+        while (pipeline.ced.frames_consumed < frame_count or
+               pipeline.ced.windows_processed < int(seconds // 5)):
+            pipeline._pump()
+            if time.time() >= deadline:
+                raise AssertionError(pipeline.counters)
+            time.sleep(0.005)
+        pipeline._pump()
+        return frame_count, dict(pipeline.counters)
+    finally:
+        pipeline.speech.stop(force_final=False)
+        pipeline.ced.stop()
+        pipeline.speech.join_capture()
+        pipeline.ced.join()
+        pipeline.speech.stop_recognition()
+        pipeline._pump()
 
 
 def test_transcript_final_does_not_change_sound_history():
@@ -62,6 +155,603 @@ def test_ced_event_does_not_change_help_missing_cycles():
     before = system.help_missing_cycles
     system.process_sound_event("unknown", 0.0)
     assert system.help_missing_cycles == before
+
+
+def test_hud_receives_partial_and_final_subtitles_on_distinct_paths():
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+    )
+    pipeline._dispatch_recognition(RecognitionResult(
+        "PARTIAL", 1, "xin chao", event_sequence=1
+    ))
+    pipeline._dispatch_recognition(RecognitionResult(
+        "FINAL", 1, "xin chao ban", event_sequence=2
+    ))
+    assert hud.partial_subtitles == ["xin chao"]
+    assert hud.final_subtitles == ["xin chao ban"]
+
+
+def test_hud_routes_only_meaningful_noncritical_ced_to_screen2():
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="continuous",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+    )
+
+    def dispatch(label, confidence):
+        pipeline._dispatch_event(PipelineEvent(
+            "CED", "ced", 0.0, 1.0, 1,
+            {"label": label, "confidence": confidence},
+        ))
+
+    dispatch("Static", 0.99)
+    assert pipeline.active_ced_display_label == ""
+    assert hud.alert_states[-1] == ("", False)
+    dispatch("Dog", 0.99)
+    assert hud.environmental_sounds[-1] == "DOG"
+    dispatch("Siren", 0.99)
+    assert pipeline.active_ced_display_label == "DOG"
+    dispatch("Siren", 0.99)
+    emergency_alert = hud.alert_states[-1]
+    assert emergency_alert == ("SIREN", False)
+    assert hud.calls[-1] == ("alert_state", "SIREN", False)
+    dispatch("Static", 0.99)
+    assert hud.alert_states[-1] == emergency_alert
+    dispatch("Static", 0.99)
+    assert hud.alert_states[-1] == ("", False)
+    assert hud.environmental_sounds[-1] == ""
+
+
+def test_live_stt_dog_routes_to_ced_only_without_speech():
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+    )
+
+    pipeline._dispatch_event(PipelineEvent(
+        "CED", "ced", 0.0, 1.0, 1,
+        {"label": "Dog", "confidence": 0.99},
+    ))
+
+    assert hud.environmental_sounds[-1] == "DOG"
+    assert not hud.partial_subtitles
+    assert not hud.final_subtitles
+    assert hud.alert_states[-1] == ("", False)
+
+
+def test_live_stt_partial_plus_dog_updates_before_final():
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+    )
+    pipeline._dispatch_recognition(RecognitionResult(
+        "PARTIAL", 1, "long utterance still active", event_sequence=1
+    ))
+    pipeline._dispatch_event(PipelineEvent(
+        "CED", "ced", 0.0, 1.0, 2,
+        {"label": "Dog", "confidence": 0.99},
+    ))
+
+    assert pipeline.final_seen is False
+    assert hud.partial_subtitles == ["long utterance still active"]
+    assert hud.environmental_sounds[-1] == "DOG"
+
+
+def test_live_stt_ced_worker_consumes_during_long_active_utterance():
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        duration=0.064,
+        queue_seconds=0.5,
+        partial_interval=0.064,
+        end_silence_ms=700,
+        max_utterance_seconds=10.0,
+        pre_roll_ms=0,
+        post_roll_ms=0,
+        classifier=lambda audio, rate: {
+            "label": "Dog", "confidence": 0.99, "top_predictions": []
+        },
+        vad=lambda samples, threshold: {"has_speech": True},
+        recognizer=lambda audio, use_dtln: "long active utterance",
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+    )
+    assert pipeline.ced is not None
+
+    pipeline.speech.start()
+    pipeline.ced.start()
+    try:
+        for _ in range(40):
+            pipeline.hub._callback(FRAME.reshape(-1, 1), 512, None, None)
+            pipeline._pump()
+            time.sleep(0.004)
+        deadline = time.time() + 2.0
+        while pipeline.ced.windows_processed < 20 and time.time() < deadline:
+            pipeline._pump()
+            time.sleep(0.005)
+    finally:
+        pipeline.speech.stop(force_final=False)
+        pipeline.ced.stop()
+        pipeline.speech.join_capture()
+        pipeline.ced.join()
+        pipeline.speech.stop_recognition()
+        pipeline._pump()
+
+    assert pipeline.final_seen is False
+    assert pipeline.counters["ced_frames_consumed"] == 40
+    assert pipeline.counters["ced_windows_processed"] == 20
+    assert pipeline.counters["ced_frames_dropped"] == 0
+    assert pipeline.counters["ced_events_dropped"] == 0
+    assert hud.environmental_sounds[-1] == "DOG"
+
+
+def test_production_windows_dispatch_dog_during_16_seconds_without_speech():
+    stream = io.BytesIO()
+    hud = HUDTransport(stream=stream, auto_clock_sync=False)
+    classifier_calls = []
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        duration=5.0,
+        queue_seconds=4.0,
+        classifier=lambda audio, rate: (
+            classifier_calls.append((audio.size, rate)) or
+            {"label": "Dog", "confidence": 0.99, "top_predictions": []}
+        ),
+        vad=lambda samples, threshold: {"has_speech": False},
+        recognizer=lambda audio, use_dtln: (_ for _ in ()).throw(
+            AssertionError("STT must not run without speech")
+        ),
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+    )
+
+    frame_count, counters = drive_idle_production_audio(pipeline)
+
+    assert classifier_calls[:3] == [(80000, 16000)] * 3
+    assert pipeline.final_seen is False
+    assert pipeline.last_sequence_displayed["transcript"] == -1
+    assert pipeline.active_ced_display_label == "DOG"
+    assert counters["raw_frames_captured"] == frame_count
+    assert counters["speech_frames_produced"] == 0
+    assert counters["ced_frames_produced"] == frame_count
+    assert counters["ced_frames_consumed"] == frame_count
+    assert counters["ced_frames_dropped"] == 0
+    assert counters["ced_windows_processed"] == 3
+    assert counters["ced_events_dispatched"] == 3
+    assert counters["C_frames_sent"] == 1
+
+
+def test_production_windows_process_background_without_speech_or_ced_label():
+    stream = io.BytesIO()
+    hud = HUDTransport(stream=stream, auto_clock_sync=False)
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        duration=5.0,
+        queue_seconds=4.0,
+        classifier=lambda audio, rate: {
+            "label": "Static", "confidence": 0.99, "top_predictions": []
+        },
+        vad=lambda samples, threshold: {"has_speech": False},
+        recognizer=lambda audio, use_dtln: (_ for _ in ()).throw(
+            AssertionError("STT must not run without speech")
+        ),
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+    )
+
+    frame_count, counters = drive_idle_production_audio(pipeline)
+
+    assert pipeline.final_seen is False
+    assert pipeline.active_ced_display_label == ""
+    assert counters["raw_frames_captured"] == frame_count
+    assert counters["speech_frames_produced"] == 0
+    assert counters["ced_frames_produced"] == frame_count
+    assert counters["ced_frames_consumed"] == frame_count
+    assert counters["ced_frames_dropped"] == 0
+    assert counters["ced_windows_processed"] == 3
+    assert counters["ced_events_dispatched"] == 3
+    assert counters["C_frames_sent"] == 0
+
+
+def test_ced_ingestion_continues_while_production_window_inference_is_blocked():
+    inference_started = threading.Event()
+    release_inference = threading.Event()
+
+    def blocked_classifier(audio, rate):
+        del audio, rate
+        inference_started.set()
+        assert release_inference.wait(timeout=5.0)
+        return {"label": "Dog", "confidence": 0.99, "top_predictions": []}
+
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        duration=5.0,
+        queue_seconds=4.0,
+        classifier=blocked_classifier,
+        vad=lambda samples, threshold: {"has_speech": False},
+        recognizer=lambda audio, use_dtln: "",
+        display=TranscriptDisplay(StringIO()),
+        hud=RecordingHUD(),
+        show_all_detected_sounds_on_hud=True,
+    )
+    frame_count = int(np.ceil(16.0 * 16000 / 512))
+    pipeline.speech.start()
+    pipeline.ced.start()
+    try:
+        for _ in range(frame_count):
+            pipeline.hub._callback(FRAME.reshape(-1, 1), 512, None, None)
+            time.sleep(0.0005)
+        assert inference_started.wait(timeout=2.0)
+        deadline = time.time() + 2.0
+        while pipeline.ced.frames_consumed < frame_count and time.time() < deadline:
+            time.sleep(0.005)
+
+        assert pipeline.ced.frames_consumed == frame_count
+        assert pipeline.hub.dropped_ced_frames == 0
+        assert pipeline.ced.windows_processed == 0
+        release_inference.set()
+        deadline = time.time() + 5.0
+        while pipeline.ced.windows_processed < 3 and time.time() < deadline:
+            pipeline._pump()
+            time.sleep(0.005)
+        pipeline._pump()
+        assert pipeline.ced.windows_processed == 3
+        assert pipeline.ced_events_dispatched == 3
+        assert pipeline.speech.speech_frames_produced == 0
+    finally:
+        release_inference.set()
+        pipeline.speech.stop(force_final=False)
+        pipeline.ced.stop()
+        pipeline.speech.join_capture()
+        pipeline.ced.join()
+        pipeline.speech.stop_recognition()
+        pipeline._pump()
+
+
+def test_idle_runtime_counter_report_contains_required_live_fields():
+    clock = ManualClock()
+    output = StringIO()
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        vad=lambda samples, threshold: {"has_speech": False},
+        display=TranscriptDisplay(output),
+        hud=RecordingHUD(),
+        clock=clock,
+    )
+    pipeline._report_runtime_counters_if_due()
+    clock.advance(5.0)
+    pipeline._report_runtime_counters_if_due()
+    report = output.getvalue()
+    for name in (
+        "raw_frames_captured", "speech_frames_produced",
+        "ced_frames_produced", "ced_frames_consumed",
+        "ced_frames_dropped", "ced_windows_processed",
+        "ced_events_dispatched", "C_frames_sent",
+    ):
+        assert f"{name}=0" in report
+
+
+def test_three_production_mixed_windows_do_not_starve_ced_or_stt():
+    stream = io.BytesIO()
+    hud = HUDTransport(stream=stream, auto_clock_sync=False)
+    scores = iter((0.597129, 0.618249, 0.623165, 0.623165))
+
+    def mixed_classifier(audio, rate):
+        assert audio.size in {16000, 80000}
+        assert rate == 16000
+        dog_score = next(scores, 0.623165)
+        return {
+            "label": "Speech",
+            "confidence": 0.66,
+            "top_predictions": [
+                {"label": "Speech", "score": 0.66},
+                {"label": "Dog", "score": dog_score},
+            ],
+        }
+
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        duration=5.0,
+        queue_seconds=4.0,
+        partial_interval=1.5,
+        max_utterance_seconds=12.0,
+        classifier=mixed_classifier,
+        vad=lambda samples, threshold: {"has_speech": True},
+        recognizer=lambda audio, use_dtln: "spoken words",
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+    )
+
+    frame_count, counters = drive_idle_production_audio(pipeline)
+
+    assert counters["raw_frames_captured"] == frame_count == 500
+    assert counters["speech_frames_produced"] == frame_count
+    assert counters["ced_frames_produced"] == frame_count
+    assert counters["ced_frames_consumed"] == frame_count
+    assert counters["ced_frames_dropped"] == 0
+    assert counters["ced_windows_processed"] == 3
+    assert counters["ced_windows_dropped"] == 0
+    assert counters["ced_window_queue_max_depth"] <= 3
+    assert counters["ced_top_k_recoveries"] == 3
+    assert counters["ced_held_label_refreshes"] == 2
+    assert counters["ced_ttl_expirations"] == 0
+    assert counters["C_frames_sent"] == 1
+    assert counters["stt_partial_count"] > 0
+    assert counters["stt_final_count"] > 0
+    assert pipeline.active_ced_display_label == "DOG"
+
+
+def test_hud_alert_state_uses_independent_sound_and_help_lifecycles():
+    system = EmergencySystem(decision_mode="continuous")
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=system,
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+    )
+
+    pipeline._print_decision(system.process_sound_event("Siren", 0.99))
+    pipeline._print_decision(system.process_sound_event("Siren", 0.99))
+    assert hud.alert_states[-1] == ("SIREN", False)
+
+    pipeline._print_decision(system.process_transcript_event(HELP_TEXT))
+    assert hud.alert_states[-1] == ("SIREN", True)
+
+    help_only_system = EmergencySystem(decision_mode="continuous")
+    help_only_hud = RecordingHUD()
+    help_only_pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=help_only_system,
+        display=TranscriptDisplay(StringIO()),
+        hud=help_only_hud,
+    )
+    help_only_pipeline._print_decision(
+        help_only_system.process_transcript_event(HELP_TEXT)
+    )
+    assert help_only_hud.alert_states[-1] == ("", True)
+
+
+def test_noncritical_ced_and_help_overlay_clear_without_stale_state():
+    system = EmergencySystem(decision_mode="continuous")
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="continuous",
+        emergency_system=system,
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+    )
+
+    pipeline._print_decision(system.process_transcript_event(HELP_TEXT))
+    pipeline._dispatch_event(PipelineEvent(
+        "CED", "ced", 0.0, 1.0, 1,
+        {"label": "Dog", "confidence": 0.99},
+    ))
+    assert hud.calls[-2:] == [
+        ("alert_state", "", True),
+        ("environmental_sound", "DOG"),
+    ]
+
+    pipeline._print_decision(system.process_transcript_event("normal words"))
+    pipeline._print_decision(system.process_transcript_event("normal words"))
+    assert hud.alert_states[-1] == ("", False)
+    assert pipeline.active_ced_display_label == "DOG"
+    assert hud.environmental_sounds[-1] == "DOG"
+
+
+def test_dog_survives_repeated_speech_predictions_within_display_ttl():
+    clock = ManualClock()
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(
+            decision_mode="continuous", clock=clock
+        ),
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+        clock=clock,
+    )
+
+    def ced(label, confidence, top_predictions=None):
+        pipeline._dispatch_event(PipelineEvent(
+            "CED", "ced", 0.0, 1.0, 1,
+            {
+                "label": label,
+                "confidence": confidence,
+                "top_predictions": top_predictions or [],
+            },
+        ))
+
+    ced("Dog", 0.99)
+    pipeline._dispatch_recognition(RecognitionResult(
+        "PARTIAL", 1, "speech is still active", event_sequence=2
+    ))
+    clock.advance(2.0)
+    ced("Speech", 0.68, [
+        {"label": "Speech", "score": 0.68},
+        {"label": "Dog", "score": 0.60},
+    ])
+    clock.advance(2.0)
+    ced("Conversation", 0.67)
+
+    assert pipeline.final_seen is False
+    assert pipeline.active_ced_display_label == "DOG"
+    assert hud.partial_subtitles[-1] == "speech is still active"
+    assert hud.environmental_sounds[-1] == "DOG"
+
+
+def test_new_meaningful_ced_replaces_held_label_immediately():
+    clock = ManualClock()
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(
+            decision_mode="continuous", clock=clock
+        ),
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+        clock=clock,
+    )
+    for label in ("Dog", "Vehicle horn"):
+        pipeline._dispatch_event(PipelineEvent(
+            "CED", "ced", 0.0, 1.0, 1,
+            {"label": label, "confidence": 0.99},
+        ))
+
+    assert pipeline.active_ced_display_label == "HORN"
+    assert hud.environmental_sounds[-2:] == ["DOG", "HORN"]
+
+
+def test_threshold_valid_top_k_environmental_class_recovers_from_speech_top1():
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+    )
+    pipeline._dispatch_event(PipelineEvent(
+        "CED", "ced", 0.0, 1.0, 1,
+        {
+            "label": "Speech",
+            "confidence": 0.68,
+            "top_predictions": [
+                {"label": "Speech", "score": 0.68},
+                {"label": "Dog", "score": 0.66},
+            ],
+        },
+    ))
+
+    assert pipeline.active_ced_display_label == "DOG"
+    assert hud.environmental_sounds[-1] == "DOG"
+
+
+def test_explicit_event_end_clears_held_ced_immediately():
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+    )
+    pipeline._dispatch_event(PipelineEvent(
+        "CED", "ced", 0.0, 1.0, 1,
+        {"label": "Dog", "confidence": 0.99},
+    ))
+    pipeline._update_ced_display(
+        {"label": "Static", "confidence": 0.99},
+        {"event_state": "EVENT_ENDED", "mapped_sound": {"level": "LOW"}},
+    )
+
+    assert pipeline.active_ced_display_label == ""
+    assert hud.environmental_sounds[-1] == ""
+
+
+def test_ced_display_ttl_expires_without_new_confirmation():
+    clock = ManualClock()
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(
+            decision_mode="continuous", clock=clock
+        ),
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+        ced_display_ttl_seconds=5.5,
+        clock=clock,
+    )
+    pipeline._dispatch_event(PipelineEvent(
+        "CED", "ced", 0.0, 1.0, 1,
+        {"label": "Dog", "confidence": 0.99},
+    ))
+    clock.advance(5.49)
+    pipeline._pump()
+    assert pipeline.active_ced_display_label == "DOG"
+    clock.advance(0.02)
+    pipeline._pump()
+
+    assert pipeline.active_ced_display_label == ""
+    assert pipeline.ced_display_expires_at is None
+    assert hud.environmental_sounds[-1] == ""
+
+
+def test_suppressed_ced_from_clean_state_never_creates_fake_label():
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+    )
+    for label in ("Speech", "Conversation", "Static", "background noise"):
+        pipeline._dispatch_event(PipelineEvent(
+            "CED", "ced", 0.0, 1.0, 1,
+            {"label": label, "confidence": 0.99},
+        ))
+
+    assert pipeline.active_ced_display_label == ""
+    assert not hud.environmental_sounds
+
+
+def test_speech_with_no_prior_ced_is_subtitle_only():
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="live-stt",
+        emergency_system=EmergencySystem(decision_mode="continuous"),
+        display=TranscriptDisplay(StringIO()),
+        hud=hud,
+        show_all_detected_sounds_on_hud=True,
+    )
+    pipeline._dispatch_recognition(RecognitionResult(
+        "PARTIAL", 1, "subtitle only", event_sequence=1
+    ))
+    pipeline._dispatch_event(PipelineEvent(
+        "CED", "ced", 0.0, 1.0, 2,
+        {
+            "label": "Speech",
+            "confidence": 0.68,
+                "top_predictions": [
+                    {"label": "Speech", "score": 0.68},
+                    {"label": "Dog", "score": 0.50},
+                ],
+        },
+    ))
+
+    assert hud.partial_subtitles == ["subtitle only"]
+    assert pipeline.active_ced_display_label == ""
+    assert not hud.environmental_sounds
 
 
 def test_interleaved_evidence_preserves_independent_lifecycles():
@@ -284,6 +974,7 @@ def test_clean_close_leaves_no_pipeline_workers():
     assert not pipeline.speech.thread.is_alive()
     assert not pipeline.speech.worker.thread.is_alive()
     assert pipeline.ced is not None and not pipeline.ced.thread.is_alive()
+    assert not pipeline.ced.inference_thread.is_alive()
     assert FakeStream.stopped == FakeStream.closed == 1
 
 

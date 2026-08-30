@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-08-19T18:58:47.655686+07:00",
+  "git_commit": "24346d879634f65eeb8a647bdba0ac84e249c63d",
+  "git_branch": "main",
+  "baseline_dirty_git_status": [
+    "M .gitignore",
+    " M README.md",
+    " M app.py",
+    " M audio_pipeline.py",
+    " M emergency_system.py",
+    " M requirements.txt",
+    " M test_audio_pipeline.py",
+    "?? display_transport.py",
+    "?? firmware/",
+    "?? personalization/",
+    "?? test_display_transport.py",
+    "?? test_personalization.py"
+  ],
+  "final_dirty_git_status": [
+    "M .gitignore",
+    " M README.md",
+    " M app.py",
+    " M audio_pipeline.py",
+    " M emergency_system.py",
+    " M requirements.txt",
+    " M test_audio_pipeline.py",
+    "?? benchmark/",
+    "?? benchmark_data/",
+    "?? benchmark_results/",
+    "?? display_transport.py",
+    "?? firmware/",
+    "?? personalization/",
+    "?? requirements-dev.txt",
+    "?? test_display_transport.py",
+    "?? test_personalization.py"
+  ],
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "cpu": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+  "logical_cpu_count": 8,
+  "ram_bytes": 8242298880,
+  "gpu": null,
+  "ced_model": "mispeech/ced-tiny",
+  "ced_device": "cpu",
+  "dtln_models": [
+    {
+      "path": "external/DTLN-master/pretrained_model/model_1.tflite",
+      "sha256": "91281a38e80fe9fd330e28eda7e16fe4e483ee5199a3e687a099939013c25de0"
+    },
+    {
+      "path": "external/DTLN-master/pretrained_model/model_2.tflite",
+      "sha256": "7ae37ec802862d8a65b5cdabfbcbbe22caaf7cd39e79adf574d15837d1520830"
+    }
+  ],
+  "sample_rate_hz": 16000,
+  "ced_fixed_file_window": "entire clip",
+  "continuous_ced_window_seconds": 5.0,
+  "continuous_ced_overlap_seconds": 0.0,
+  "vad_threshold": 0.5,
+  "dtln_block_length": 512,
+  "dtln_block_shift": 128,
+  "stt_backend": "Google Speech Recognition",
+  "stt_language": "vi-VN",
+  "personalization_provider": "openai",
+  "personalization_model_override": null,
+  "openai_key_present": false,
+  "openrouter_key_present": false,
+  "random_seed": 42,
+  "snr_conditions_db": [
+    "clean",
+    20,
+    15,
+    10,
+    5,
+    0
+  ],
+  "noise": "independent seeded Gaussian white noise; identical WAV reused for paired comparisons",
+  "datasets": [
+    {
+      "sample_id": "esc50_bark_100032",
+      "true_label": "dog_barking",
+      "provenance": "ESC-50-style filename; manifest human label Bark",
+      "path": "samples/audio_1-100032-A-0.wav",
+      "sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8"
+    },
+    {
+      "sample_id": "local_vi_speech",
+      "true_label": "speech",
+      "reference": "xin chào đây là thử nghiệm giọng nói tiếng việt",
+      "provenance": "project-local recording with manifest reference transcript",
+      "path": "samples/test_speech.wav",
+      "sha256": "282e5d089ff6968942ee7ec2797d8d8ee68efe989a2b4f5c06024e7c91296098"
+    }
+  ],
+  "stability_seconds_requested": 60
+}

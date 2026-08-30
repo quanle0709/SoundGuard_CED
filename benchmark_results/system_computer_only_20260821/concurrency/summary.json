@@ -1,0 +1,31 @@
+{
+  "N": 20,
+  "ced_concurrent": {
+    "count": 20,
+    "mean_ms": 168.96633499927702,
+    "median_ms": 138.52844999928493,
+    "p95_ms": 267.5630000012461,
+    "min_ms": 114.89050000091083,
+    "max_ms": 354.1755999904126
+  },
+  "stt_concurrent": {
+    "count": 20,
+    "mean_ms": 1140.1264700005413,
+    "median_ms": 1164.8811499981093,
+    "p95_ms": 1550.4037999926368,
+    "min_ms": 775.4068000067491,
+    "max_ms": 1874.2376000009244
+  },
+  "pair_wall": {
+    "count": 20,
+    "mean_ms": 1141.824735001137,
+    "median_ms": 1166.03970000142,
+    "p95_ms": 1552.2237999975914,
+    "min_ms": 776.8913000036264,
+    "max_ms": 1875.986200000625
+  },
+  "ced_median_delta_percent": 11.071070487533753,
+  "stt_median_delta_percent": 14.884545031355323,
+  "KHKT_CLAIM": "Concurrent CED and STT impact is quantified under the production software configuration.",
+  "REPORT_USE": "Main KHKT concurrency result and latency figure."
+}
