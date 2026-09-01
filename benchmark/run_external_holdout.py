@@ -123,9 +123,9 @@ def run(resume: bool) -> None:
     os.environ["HF_HUB_OFFLINE"] = "1"
     os.environ["TRANSFORMERS_OFFLINE"] = "1"
     os.environ["SOUNDGUARD_ENABLE_SEMANTIC_CED_MAPPING"] = "1"
-    from emergency_system import evaluate_sound
-    from emergency_v3 import EmergencyV3Specialist
-    from sound_classifier import classify_audio_file
+    from soundguard.emergency.emergency_system import evaluate_sound
+    from soundguard.emergency.emergency_v3 import EmergencyV3Specialist
+    from soundguard.detection.sound_classifier import classify_audio_file
 
     specialist = EmergencyV3Specialist(logger=lambda message: print(message, file=sys.stderr))
     try:

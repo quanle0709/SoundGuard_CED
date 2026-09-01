@@ -7,21 +7,21 @@ from io import StringIO
 
 import numpy as np
 
-from audio_pipeline import (
+from soundguard.audio.audio_pipeline import (
     CEDChunker,
     MicrophonePipeline,
     PipelineEvent,
     UtteranceTranscriber,
 )
-from emergency_system import CATEGORY_CONFIG, EmergencySystem
-from display_transport import HUDTransport
-from live_speech_to_text import (
+from soundguard.emergency.emergency_system import CATEGORY_CONFIG, EmergencySystem
+from soundguard.display.display_transport import HUDTransport
+from soundguard.speech.live_speech_to_text import (
     RecognitionJob,
     RecognitionResult,
     RecognitionWorker,
     TranscriptDisplay,
 )
-from streaming_audio import AudioFrame, AudioStreamHub
+from soundguard.audio.streaming_audio import AudioFrame, AudioStreamHub
 
 
 FRAME = np.ones(512, dtype=np.float32)

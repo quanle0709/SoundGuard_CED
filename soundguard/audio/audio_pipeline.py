@@ -15,15 +15,15 @@ from typing import Callable
 
 import numpy as np
 
-from display_transport import (
+from soundguard.display.display_transport import (
     HUDTransport,
     get_alert_display_state,
 )
-from emergency_system import evaluate_sound
-from emergency_v3 import select_emergency_evidence
-from hud_awareness import evaluate_ced_for_hud
+from soundguard.emergency.emergency_system import evaluate_sound
+from soundguard.emergency.emergency_v3 import select_emergency_evidence
+from soundguard.detection.hud_awareness import evaluate_ced_for_hud
 
-from live_speech_to_text import (
+from soundguard.speech.live_speech_to_text import (
     LiveSpeechStateMachine,
     RecognitionJob,
     RecognitionResult,
@@ -31,7 +31,7 @@ from live_speech_to_text import (
     TranscriptDisplay,
     TranscriptTracker,
 )
-from streaming_audio import AudioFrame, AudioStreamHub
+from soundguard.audio.streaming_audio import AudioFrame, AudioStreamHub
 
 
 @dataclass(frozen=True)
@@ -90,7 +90,7 @@ class CEDChunker:
 def classify_raw_audio(audio: np.ndarray, sample_rate: int = 16000) -> dict:
     """Classify a raw snapshot without ever routing DTLN audio to CED."""
     import soundfile as sf
-    from sound_classifier import classify_audio_file
+    from soundguard.detection.sound_classifier import classify_audio_file
 
     path = Path(tempfile.gettempdir()) / f"soundguard_ced_{uuid.uuid4().hex}.wav"
     sf.write(path, np.asarray(audio, dtype=np.float32), sample_rate, subtype="PCM_16")
@@ -270,7 +270,7 @@ class UtteranceTranscriber:
     def _has_speech(self, samples: np.ndarray) -> bool:
         if self.vad is not None:
             return bool(self.vad(samples, self.vad_threshold)["has_speech"])
-        from voice_activity_detector import detect_speech_frame
+        from soundguard.speech.voice_activity_detector import detect_speech_frame
         return bool(detect_speech_frame(samples, threshold=self.vad_threshold)["has_speech"])
 
     def _emit(self, event: PipelineEvent) -> None:

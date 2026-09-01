@@ -36,14 +36,17 @@ import soundfile as sf
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from alert_mapper import map_alert
-from app import cleanup_dtln_recording, prepare_speech_audio
-from display_transport import HUDTransport, crc16_ccitt, encode_hud_frame
-from emergency_system import EmergencySystem
-from emergency_v3 import EmergencyV3Specialist, select_emergency_evidence
-from fusion_engine import fuse_result
-from live_speech_to_text import recognize_snapshot
-import sound_classifier
+from soundguard.emergency.alert_mapper import map_alert
+from soundguard.app import cleanup_dtln_recording, prepare_speech_audio
+from soundguard.display.display_transport import HUDTransport, crc16_ccitt, encode_hud_frame
+from soundguard.emergency.emergency_system import EmergencySystem
+from soundguard.emergency.emergency_v3 import (
+    EmergencyV3Specialist,
+    select_emergency_evidence,
+)
+from soundguard.emergency.fusion_engine import fuse_result
+from soundguard.speech.live_speech_to_text import recognize_snapshot
+from soundguard.detection import sound_classifier
 
 
 RUN_ID = "system_computer_only_20260821"

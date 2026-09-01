@@ -3,7 +3,7 @@ import librosa
 import torch
 from transformers import pipeline
 
-from sound_taxonomy import map_ced_label, semantic_ced_enabled
+from soundguard.detection.sound_taxonomy import map_ced_label, semantic_ced_enabled
 
 
 _MODEL = None

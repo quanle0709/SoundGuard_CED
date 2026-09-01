@@ -3,9 +3,9 @@ import soundfile as sf
 import tempfile
 from pathlib import Path
 
-from audio_capture import create_speech_optimized_wav
-from live_speech_to_text import LiveSpeechStateMachine
-from streaming_audio import StreamingAudioInput
+from soundguard.audio.audio_capture import create_speech_optimized_wav
+from soundguard.speech.live_speech_to_text import LiveSpeechStateMachine
+from soundguard.audio.streaming_audio import StreamingAudioInput
 
 
 FRAME = np.ones(512, dtype=np.float32)

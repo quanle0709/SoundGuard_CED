@@ -6,7 +6,7 @@ import argparse
 import csv
 from pathlib import Path
 
-from benchmark_metrics import calculate_metrics
+from benchmark_v1.benchmark_metrics import calculate_metrics
 
 
 def _pct(value) -> str:

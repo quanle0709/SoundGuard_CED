@@ -54,7 +54,7 @@ def candidate_category(raw: str) -> tuple[str, dict | None]:
 
 
 def score(name: str, rows: list[dict], semantic: bool) -> dict:
-    from emergency_system import EmergencySystem
+    from soundguard.emergency.emergency_system import EmergencySystem
     truths, predictions, emergency_truth, emergency_predictions = [], [], [], []
     normalized_rows = []
     for row in rows:

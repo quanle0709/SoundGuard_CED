@@ -349,9 +349,9 @@ def recognize_snapshot(audio: np.ndarray, use_dtln: bool, *, utterance_id: int =
                        log_messages: list[str] | None = None) -> str:
     """Recognize one accumulated utterance; heavy dependencies load on demand."""
     import soundfile as sf
-    from audio_capture import create_speech_optimized_wav
-    from speech_enhancer import enhance_audio_file
-    from speech_recognizer import transcribe_audio_file
+    from soundguard.audio.audio_capture import create_speech_optimized_wav
+    from soundguard.speech.speech_enhancer import enhance_audio_file
+    from soundguard.speech.speech_recognizer import transcribe_audio_file
 
     debug_save = save_live_utterances and is_final
     live_dir = (Path("test_outputs") / "live_utterances" if debug_save
@@ -446,8 +446,11 @@ def run_live_stt(
     max_utterance_seconds: float, pre_roll_ms: int, post_roll_ms: int,
     queue_seconds: float, save_live_utterances: bool, emergency_system,
 ) -> int:
-    from streaming_audio import StreamingAudioInput
-    from voice_activity_detector import detect_speech_frame, reset_streaming_vad
+    from soundguard.audio.streaming_audio import StreamingAudioInput
+    from soundguard.speech.voice_activity_detector import (
+        detect_speech_frame,
+        reset_streaming_vad,
+    )
 
     machine = LiveSpeechStateMachine(
         pre_roll_ms=pre_roll_ms,

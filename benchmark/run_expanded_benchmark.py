@@ -208,7 +208,7 @@ class ExpandedRunner:
         write_json(RESULTS / "methodology.json", methodology)
 
     def ced(self):
-        from sound_classifier import classify_audio_file
+        from soundguard.detection.sound_classifier import classify_audio_file
         esc = read_csv(EXTERNAL / "esc50" / "manifest.csv")
         noises = read_csv(EXTERNAL / "demand" / "manifest.csv")
         classify_audio_file(ROOT / esc[0]["path"])
@@ -329,8 +329,8 @@ class ExpandedRunner:
             self.add("CED", "Real-noise robustness", "ESC-50 + DEMAND", "Macro F1", row["macro_f1"], "ratio", row["sample_count"], f"{row['snr_db']} dB", leakage_status="POSSIBLE SOURCE OVERLAP")
 
     def dtln_ced(self):
-        from sound_classifier import classify_audio_file
-        from speech_enhancer import enhance_audio_file
+        from soundguard.detection.sound_classifier import classify_audio_file
+        from soundguard.speech.speech_enhancer import enhance_audio_file
         esc = read_csv(EXTERNAL / "esc50" / "manifest.csv")
         noises = read_csv(EXTERNAL / "demand" / "manifest.csv")
         by_label = defaultdict(list)
@@ -426,7 +426,7 @@ class ExpandedRunner:
         self.add("DTLN", "CED downstream effect", "ESC-50 + DEMAND", "Delta CED Macro F1", weighted_delta, "ratio", len(pairs), "all SNRs", leakage_status="POSSIBLE SOURCE OVERLAP")
 
     def _recognize(self, path: Path, reference: str) -> dict:
-        from speech_recognizer import transcribe_audio_file
+        from soundguard.speech.speech_recognizer import transcribe_audio_file
         start = time.perf_counter()
         try:
             hypothesis = transcribe_audio_file(path); status, error = "PASS", ""
@@ -444,7 +444,7 @@ class ExpandedRunner:
             write_json(out / "SKIPPED.json", {"status": "SKIPPED", "reason": "network STT not enabled"})
             self.add("STT", "Speech-to-Text", "VIVOS", "WER", "", "", 0, status="SKIPPED", notes="network STT not enabled")
             return
-        from speech_enhancer import enhance_audio_file
+        from soundguard.speech.speech_enhancer import enhance_audio_file
         utterances = read_csv(EXTERNAL / "vivos" / "manifest.csv")
         noises = read_csv(EXTERNAL / "demand" / "manifest.csv")
         clean_rows = read_csv(out / "clean_results.csv")
@@ -529,7 +529,7 @@ class ExpandedRunner:
         self.add("DTLN", "STT downstream effect", "VIVOS + DEMAND", "Delta STT WER", statistics.fmean(r["delta_wer"] for r in real_pairs), "ratio", sum(r["sample_count"] for r in real_pairs), "all SNRs", leakage_status="provider training unknown")
 
     def emergency(self):
-        from emergency_system import EmergencySystem
+        from soundguard.emergency.emergency_system import EmergencySystem
         clean = read_csv(RESULTS / "ced" / "predictions.csv")
         positive_labels = {"siren", "vehicle_horn", "baby_crying", "glass_breaking", "fire"}
         rows = []
@@ -551,7 +551,7 @@ class ExpandedRunner:
         self.add("Emergency", "Real-audio emergency detection", "ESC-50", "False alerts", metrics["fp"], "count", metrics["tn"] + metrics["fp"], "non-emergency clips", leakage_status="POSSIBLE SOURCE OVERLAP")
 
     def fusion(self):
-        from fusion_engine import fuse_result
+        from soundguard.emergency.fusion_engine import fuse_result
         cases = json.loads((DATA / "fusion_cases.json").read_text(encoding="utf-8"))
         rows = []
         for case in cases:
@@ -681,10 +681,10 @@ class ExpandedRunner:
                      notes="No API credential in benchmark process")
 
     def latency(self):
-        from alert_mapper import map_alert
-        from emergency_system import EmergencySystem
-        from fusion_engine import fuse_result
-        from sound_classifier import classify_audio_file
+        from soundguard.emergency.alert_mapper import map_alert
+        from soundguard.emergency.emergency_system import EmergencySystem
+        from soundguard.emergency.fusion_engine import fuse_result
+        from soundguard.detection.sound_classifier import classify_audio_file
         esc = read_csv(EXTERNAL / "esc50" / "manifest.csv")[:100]
         classify_audio_file(ROOT / esc[0]["path"])
         rows = []
@@ -704,8 +704,8 @@ class ExpandedRunner:
         self.add("Latency", "PC Software Pipeline", "ESC-50", "P95 Latency", summary["p95_ms"], "ms", len(rows), "warm fixed-file", notes="excludes capture, cloud STT, serial, ESP32, HUD, vibration")
 
     def stability(self):
-        from emergency_system import EmergencySystem
-        from fusion_engine import fuse_result
+        from soundguard.emergency.emergency_system import EmergencySystem
+        from soundguard.emergency.fusion_engine import fuse_result
         from personalization.profile_generator import generate_rule_based
         out = RESULTS / "stability"; rows, exceptions, processed = [], 0, 0
         tracemalloc.start(); started = time.perf_counter(); wall, cpu = started, time.process_time()

@@ -13,19 +13,19 @@ Run software tests first:
 Run the offline benchmark without external STT:
 
 ```powershell
-python benchmark_runner.py --run-id baseline_01
+python -m benchmark_v1.benchmark_runner --run-id baseline_01
 ```
 
 Google STT is called only with explicit consent:
 
 ```powershell
-python benchmark_runner.py --run-id baseline_stt_01 --enable-stt
+python -m benchmark_v1.benchmark_runner --run-id baseline_stt_01 --enable-stt
 ```
 
 Then generate the report:
 
 ```powershell
-python benchmark_report.py --run-id baseline_stt_01
+python -m benchmark_v1.benchmark_report --run-id baseline_stt_01
 ```
 
 Supplying `--run-id` produces an official single-run report. Omitting it produces an explicitly labeled aggregate historical report and lists every included run ID.

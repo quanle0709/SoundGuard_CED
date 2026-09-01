@@ -5,8 +5,8 @@ import time
 import unicodedata
 from types import SimpleNamespace
 
-from app import HUD_TEST_SUBTITLES
-from display_transport import (
+from soundguard.app import HUD_TEST_SUBTITLES
+from soundguard.display.display_transport import (
     CLOCK_SYNC_INTERVAL_SECONDS,
     HUDTransport,
     crc16_ccitt,

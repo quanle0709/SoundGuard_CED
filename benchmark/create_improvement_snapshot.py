@@ -19,9 +19,13 @@ EXCLUDED_PREFIXES = (
 )
 EXCLUDED_FILES = {"benchmark/create_improvement_snapshot.py"}
 PRODUCTION_FILES = (
-    "app.py", "audio_pipeline.py", "display_transport.py", "emergency_system.py",
-    "fusion_engine.py", "sound_classifier.py", "speech_enhancer.py",
-    "speech_recognizer.py", "personalization/profile_generator.py",
+    "app.py", "soundguard/app.py", "soundguard/audio/audio_pipeline.py",
+    "soundguard/display/display_transport.py",
+    "soundguard/emergency/emergency_system.py",
+    "soundguard/emergency/fusion_engine.py",
+    "soundguard/detection/sound_classifier.py",
+    "soundguard/speech/speech_enhancer.py",
+    "soundguard/speech/speech_recognizer.py", "personalization/profile_generator.py",
     "personalization/profile_validator.py", "personalization/profile_manager.py",
     "personalization/sound_labels.py", "personalization/role_knowledge.py",
     "personalization/schemas.py", "personalization/web_server.py",

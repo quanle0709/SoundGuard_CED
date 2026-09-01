@@ -7,10 +7,10 @@ import wave
 from datetime import datetime
 from pathlib import Path
 
-from benchmark_runner import (EVENT_FIELDS, MANIFEST_FIELDS, RESULT_FIELDS,
+from benchmark_v1.benchmark_runner import (EVENT_FIELDS, MANIFEST_FIELDS, RESULT_FIELDS,
                               FixedFileBenchmark, migrate_results,
                               resolve_manifest_path, validate_manifest)
-from emergency_system import EmergencySystem
+from soundguard.emergency.emergency_system import EmergencySystem
 
 
 def write_csv(path, fields, rows):
@@ -212,7 +212,7 @@ def test_skipped_no_speech_does_not_invoke_stt():
 
 
 def test_speech_conversion_failure_preserves_successful_ced_result():
-    import benchmark_runner
+    from benchmark_v1 import benchmark_runner
     harness = Harness([sample("broken", "environmental")])
     original = benchmark_runner.prepare_speech_branch_wav
     benchmark_runner.prepare_speech_branch_wav = lambda source: (_ for _ in ()).throw(

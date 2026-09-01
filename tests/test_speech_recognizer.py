@@ -1,6 +1,6 @@
 from pathlib import Path
 
-import speech_recognizer
+from soundguard.speech import speech_recognizer
 
 
 class FakeAudioFile:

@@ -4,12 +4,14 @@ import time
 import numpy as np
 import soundfile as sf
 
+from soundguard.paths import REPOSITORY_ROOT
+
 
 TARGET_SAMPLE_RATE = 16000
 BLOCK_LENGTH = 512
 BLOCK_SHIFT = 128
 
-PROJECT_DIR = Path(__file__).resolve().parent
+PROJECT_DIR = REPOSITORY_ROOT
 MODEL_DIR = PROJECT_DIR / "external" / "DTLN-master" / "pretrained_model"
 MODEL_1_PATH = MODEL_DIR / "model_1.tflite"
 MODEL_2_PATH = MODEL_DIR / "model_2.tflite"

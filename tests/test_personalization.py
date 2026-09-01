@@ -7,7 +7,7 @@ import urllib.error
 from pathlib import Path
 from unittest.mock import patch
 
-from emergency_system import EmergencySystem
+from soundguard.emergency.emergency_system import EmergencySystem
 from personalization.priority_adapter import PriorityAdapter
 from personalization.profile_generator import (
     OpenAIResponseError,

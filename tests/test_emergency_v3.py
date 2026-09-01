@@ -8,10 +8,10 @@ from unittest.mock import patch
 
 import numpy as np
 
-import app
-from audio_pipeline import CEDBranch, PipelineEvent
-from emergency_system import EmergencySystem
-from emergency_v3 import (
+from soundguard import app
+from soundguard.audio.audio_pipeline import CEDBranch, PipelineEvent
+from soundguard.emergency.emergency_system import EmergencySystem
+from soundguard.emergency.emergency_v3 import (
     ENABLE_ENV,
     EmergencyV3Specialist,
     create_emergency_v3_specialist,

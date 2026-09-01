@@ -24,11 +24,11 @@ import numpy as np
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from display_transport import HUDTransport, get_alert_display_state
-from emergency_system import EmergencySystem
-from hud_awareness import evaluate_ced_for_hud
-from sound_classifier import classify_audio_file
-from speech_recognizer import transcribe_audio_file
+from soundguard.display.display_transport import HUDTransport, get_alert_display_state
+from soundguard.emergency.emergency_system import EmergencySystem
+from soundguard.detection.hud_awareness import evaluate_ced_for_hud
+from soundguard.detection.sound_classifier import classify_audio_file
+from soundguard.speech.speech_recognizer import transcribe_audio_file
 from human_study.study_core import (
     BLOCKS,
     MANIFEST_PATH,

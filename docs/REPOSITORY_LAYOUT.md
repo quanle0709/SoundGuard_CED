@@ -1,17 +1,18 @@
 # Repository Layout
 
-SoundGuard_CED intentionally keeps its compatibility-sensitive host runtime as a small set of root-level Python modules. The evaluated commands, research manifests, and historical evidence refer to those module names. Moving them into an install-only package would add risk without changing the laptop-assisted architecture.
+SoundGuard_CED keeps one compatibility launcher at the root while the host implementation lives in the importable `soundguard/` package. A clone can still run `python app.py` without installing the repository itself.
 
 ## Current code and entry points
 
 | Path | Ownership |
 | --- | --- |
-| `app.py` | Primary host CLI and supported runtime entry point. |
-| `audio_*.py`, `streaming_audio.py` | Capture and pipeline orchestration. |
-| `sound_classifier.py`, `sound_taxonomy.py` | Default CED-Tiny inference and label handling. |
-| `speech_*.py`, `live_speech_to_text.py`, `voice_activity_detector.py` | VAD, optional DTLN enhancement, and online Vietnamese STT. |
-| `emergency_system.py`, `emergency_v3.py`, `fusion_engine.py`, `alert_mapper.py` | Default rules and optional specialist integration. |
-| `display_transport.py`, `hud_awareness.py` | Host display policy and serial framing. |
+| `app.py` | Thin compatibility launcher and supported runtime command. |
+| `soundguard/app.py` | Host CLI implementation and application orchestration. |
+| `soundguard/audio/` | Capture, bounded queues, streaming, and pipeline orchestration. |
+| `soundguard/speech/` | VAD, optional DTLN enhancement, and online Vietnamese STT. |
+| `soundguard/detection/` | CED-Tiny inference, taxonomy, and HUD-awareness policy. |
+| `soundguard/emergency/` | Default rules, HELP, fusion, alert mapping, and optional specialist integration. |
+| `soundguard/display/` | Host display policy and serial framing. |
 | `personalization/` | Optional, post-recognition profile and priority logic. |
 | `firmware/` | PlatformIO firmware for the ESP32/ESP32-C3 display controller. |
 | `tests/` | Host unit tests and firmware source-contract tests. |
@@ -26,12 +27,12 @@ SoundGuard_CED intentionally keeps its compatibility-sensitive host runtime as a
 | `benchmark/` | Current benchmark and evaluation code. Safe smoke tests must use temporary output locations. |
 | `benchmark_data/` | Versioned manifests and mappings; large/downloaded or generated data remains local. |
 | `benchmark_results/` | Historical research evidence. Do not rewrite values or normalize old paths. |
-| `benchmark_v1/` | Legacy fixed-file benchmark documentation and workflow retained for provenance. |
+| `benchmark_v1/` | Legacy fixed-file benchmark implementation and documentation retained for provenance. |
 | `human_study/` | Study protocol and tooling. Participant-level data and local derived results are excluded from Git. |
-| `docs/` | Durable architecture, evaluation, privacy, attribution, and public-image documentation. |
+| `docs/` | Durable architecture, evaluation, privacy, attribution, research-record, and public-image documentation. |
 | `external/` | Third-party attribution and locally supplied dependencies; model weights are not distributed. |
 
-The root `SOUNDGUARD_BENCHMARK_AUDIT_3_LAYER.md` and `SOUNDGUARD_LAYER2_COMPUTER_ONLY_FINAL.md` reports remain at their historical paths because they are research records rather than general project documentation. Paths embedded in frozen manifests and reports describe the repository state used for those experiments and are not claims about the reorganized tree.
+The historical [`SOUNDGUARD_BENCHMARK_AUDIT_3_LAYER.md`](research_records/SOUNDGUARD_BENCHMARK_AUDIT_3_LAYER.md) and [`SOUNDGUARD_LAYER2_COMPUTER_ONLY_FINAL.md`](research_records/SOUNDGUARD_LAYER2_COMPUTER_ONLY_FINAL.md) reports now live under `docs/research_records/`. They were moved without content changes. Frozen manifests and reports continue to retain their original root paths because those records describe the repository state used for the experiments, not the current layout.
 
 ## Local-only material
 
@@ -39,4 +40,4 @@ The ignore rules retain virtual environments, caches, model weights, downloaded/
 
 ## Packaging decision
 
-The repository is intentionally dependency-file driven (`requirements.txt` and `requirements-dev.txt`) rather than installable as a Python distribution. Its flat runtime modules, local model paths, firmware, and evidence workflows are designed to run from a clone with `python app.py`. A package migration can be reconsidered after the research configuration is frozen, but it should preserve the existing CLI and historical provenance.
+The repository remains dependency-file driven (`requirements.txt` and `requirements-dev.txt`) rather than an installable distribution. The top-level `soundguard/` package is importable directly from a clone, so `python app.py` preserves the existing workflow without `sys.path` manipulation or an editable install.

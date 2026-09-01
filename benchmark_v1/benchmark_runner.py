@@ -19,9 +19,9 @@ from collections import defaultdict
 from math import gcd
 from pathlib import Path
 
-from emergency_system import EmergencySystem, match_sound_category
+from soundguard.emergency.emergency_system import EmergencySystem, match_sound_category
 
-BENCHMARK_ROOT = Path(__file__).resolve().parent / "benchmark_v1"
+BENCHMARK_ROOT = Path(__file__).resolve().parent
 MANIFEST_FIELDS = ["sample_id", "relative_path", "scenario", "context",
                    "ground_truth_sound", "ground_truth_category", "ground_truth_transcript",
                    "expected_speech", "expected_alert_level", "expected_help_request",
@@ -195,16 +195,16 @@ class FixedFileBenchmark:
         self.allow_external_paths = allow_external_paths
         self.enable_stt, self.write_events = enable_stt, write_events
         if classifier is None:
-            from sound_classifier import classify_audio_file
+            from soundguard.detection.sound_classifier import classify_audio_file
             classifier = classify_audio_file
         if vad is None:
-            from voice_activity_detector import detect_speech
+            from soundguard.speech.voice_activity_detector import detect_speech
             vad = detect_speech
         if enhancer is None:
-            from speech_enhancer import enhance_audio_file
+            from soundguard.speech.speech_enhancer import enhance_audio_file
             enhancer = enhance_audio_file
         if transcriber is None:
-            from speech_recognizer import transcribe_audio_file
+            from soundguard.speech.speech_recognizer import transcribe_audio_file
             transcriber = transcribe_audio_file
         self.classifier, self.vad, self.enhancer = classifier, vad, enhancer
         self.transcriber, self.emergency_factory, self.timer = transcriber, emergency_factory, timer

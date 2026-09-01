@@ -26,7 +26,7 @@ def generate_predictions() -> list[dict]:
             return rows
     os.environ.setdefault("HF_HUB_OFFLINE", "1")
     os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
-    from sound_classifier import _get_classifier, load_audio_for_ced
+    from soundguard.detection.sound_classifier import _get_classifier, load_audio_for_ced
 
     classifier = _get_classifier()
     rows = []

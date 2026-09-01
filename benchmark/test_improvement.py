@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from benchmark.experiments.semantic_mapping import active_rules
-from sound_taxonomy import SEMANTIC_CED_ALIASES, map_ced_label
+from soundguard.detection.sound_taxonomy import SEMANTIC_CED_ALIASES, map_ced_label
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,7 +26,7 @@ class ImprovementTests(unittest.TestCase):
             self.assertIsNone(map_ced_label(label), label)
 
     def test_classifier_mapping_is_default_off_and_opt_in(self):
-        import sound_classifier
+        from soundguard.detection import sound_classifier
         fake = lambda *args, **kwargs: [
             {"label": "Emergency vehicle", "score": .8}, {"label": "Siren", "score": .7}]
         with patch.object(sound_classifier, "_get_classifier", return_value=fake), \

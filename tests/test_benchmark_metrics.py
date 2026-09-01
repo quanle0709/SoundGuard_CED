@@ -2,9 +2,9 @@ import csv
 import tempfile
 from pathlib import Path
 
-from benchmark_metrics import calculate_metrics
-from benchmark_report import generate_report
-from benchmark_runner import RESULT_FIELDS
+from benchmark_v1.benchmark_metrics import calculate_metrics
+from benchmark_v1.benchmark_report import generate_report
+from benchmark_v1.benchmark_runner import RESULT_FIELDS
 
 
 def row(**values):

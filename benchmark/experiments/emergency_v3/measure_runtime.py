@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
 
-from emergency_v3 import EmergencyV3Specialist
+from soundguard.emergency.emergency_v3 import EmergencyV3Specialist
 
 OUT = ROOT / "benchmark_results" / "emergency_v3" / "latency" / "runtime_resources.json"
 
