@@ -247,11 +247,15 @@ See [docs/PRIVACY_AND_LIMITATIONS.md](docs/PRIVACY_AND_LIMITATIONS.md) before re
 | `speech_*.py`, `live_speech_to_text.py`, `voice_activity_detector.py` | VAD, optional enhancement, and Vietnamese recognition |
 | `emergency_system.py`, `emergency_v3.py`, `fusion_engine.py` | Default policy and optional V3 specialist integration |
 | `display_transport.py`, `hud_awareness.py` | Host-side serial framing and display policy |
+| `tests/` | Runtime, policy, personalization, transport, and firmware source-contract tests |
 | `firmware/` | PlatformIO ESP32/ESP32-C3 OLED firmware |
 | `personalization/` | Opt-in post-recognition rule/profile adapter |
 | `benchmark/`, `benchmark_results/` | Reproducible benchmark code and retained evidence |
 | `human_study/` | Protocol and local study tooling; private/raw results excluded |
-| `docs/` | Architecture, evaluation, privacy boundaries, and public images |
+| `tools/` | Hardware-validation and transport-diagnostic utilities |
+| `docs/` | Architecture, evaluation, repository layout, attribution, privacy boundaries, and public images |
+
+See [docs/REPOSITORY_LAYOUT.md](docs/REPOSITORY_LAYOUT.md) for the complete ownership map and the distinction between current code and historical evidence.
 
 ## Installation
 
@@ -374,7 +378,7 @@ Future HearVis work may explore a standalone compute path, on-device or privacy-
 - CED-Tiny model ID: `mispeech/ced-tiny`; model terms apply separately.
 - Silero VAD: loaded through the `silero-vad` package under its upstream terms.
 - DTLN: third-party work by Nils L. Westhausen; the retained upstream license is at `external/DTLN-master/LICENSE`.
-- EfficientSED: optional/default-off experimental specialist; see `THIRD_PARTY_EFFICIENTSED.md` and its upstream license/terms.
+- EfficientSED: optional/default-off experimental specialist; see `docs/THIRD_PARTY_EFFICIENTSED.md` and its upstream license/terms.
 - Google Speech Recognition: external, network-dependent service accessed through the Python SpeechRecognition package; provider terms and privacy requirements apply.
 - Adafruit GFX, Adafruit SSD1306, and U8g2 for Adafruit GFX: firmware libraries installed by PlatformIO under their respective licenses.
 

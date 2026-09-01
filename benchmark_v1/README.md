@@ -50,4 +50,4 @@ Before the original header-only `results.csv` schema was changed, it was copied 
 
 ## Limitations
 
-This fixed-file suite measures repeatable model/pipeline quality, not microphone devices, real-time queues, or environmental drift. Those live-stream mechanics are covered separately by `test_audio_pipeline.py`. A small hand-selected dataset does not prove real-world accuracy.
+This fixed-file suite measures repeatable model/pipeline quality, not microphone devices, real-time queues, or environmental drift. Those live-stream mechanics are covered separately by `tests/test_audio_pipeline.py`. A small hand-selected dataset does not prove real-world accuracy.
