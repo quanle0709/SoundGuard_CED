@@ -17,7 +17,7 @@ from hud_awareness import (
 from live_speech_to_text import RecognitionResult, TranscriptDisplay
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "benchmark_results" / "hud_awareness_policy_v2"
 
 

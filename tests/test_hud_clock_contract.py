@@ -4,7 +4,7 @@ from pathlib import Path
 from display_transport import crc16_ccitt, encode_hud_frame
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 HUD_CPP = (ROOT / "firmware" / "src" / "hud.cpp").read_text(encoding="utf-8")
 HUD_H = (ROOT / "firmware" / "src" / "hud.h").read_text(encoding="utf-8")
 PROTOCOL = (ROOT / "firmware" / "src" / "protocol.cpp").read_text(

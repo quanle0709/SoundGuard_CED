@@ -1,5 +1,13 @@
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
 
 .venv/
 venv/
@@ -25,8 +33,11 @@ personalization/user_profile.json
 
 *.log
 *.tmp
-temp/
-outputs/
+/temp/
+/outputs/
+build/
+dist/
+*.egg-info/
 benchmark_v1/outputs/*
 !benchmark_v1/outputs/.gitkeep
 benchmark_v1/results*.csv
