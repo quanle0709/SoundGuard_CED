@@ -21,8 +21,11 @@ if str(ROOT) not in sys.path:
 import librosa
 import numpy as np
 
-from audio_pipeline import classify_raw_audio
-from hud_awareness import SUPPORTED_HUD_LABELS, evaluate_ced_for_hud
+from soundguard.audio.audio_pipeline import classify_raw_audio
+from soundguard.detection.hud_awareness import (
+    SUPPORTED_HUD_LABELS,
+    evaluate_ced_for_hud,
+)
 
 
 ESC_ROOT = ROOT / "benchmark_data" / "external" / "esc50"

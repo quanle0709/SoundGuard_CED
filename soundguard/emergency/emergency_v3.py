@@ -13,7 +13,9 @@ from typing import Callable
 
 import numpy as np
 
-ROOT = Path(__file__).resolve().parent
+from soundguard.paths import REPOSITORY_ROOT
+
+ROOT = REPOSITORY_ROOT
 ENABLE_ENV = "SOUNDGUARD_ENABLE_EMERGENCY_V3"
 PYTHON_ENV = "SOUNDGUARD_EFFICIENTSED_PYTHON"
 WORKER = ROOT / "benchmark" / "experiments" / "emergency_v3" / "efficientsed_worker.py"
@@ -148,7 +150,7 @@ def select_emergency_evidence(
     context: str = "neutral",
 ) -> tuple[str, float, str]:
     """Apply the frozen V2 OR specialist policy without changing CED output."""
-    from emergency_system import evaluate_sound
+    from soundguard.emergency.emergency_system import evaluate_sound
 
     if evaluate_sound(ced_label, ced_confidence, context).get("is_dangerous"):
         return ced_label, float(ced_confidence), "ced_tiny_v2"

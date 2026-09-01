@@ -169,7 +169,10 @@ def collect_clean_details() -> list[dict]:
     # Avoid incidental hub calls: all required weights/config are already cached.
     os.environ.setdefault("HF_HUB_OFFLINE", "1")
     os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
-    from sound_classifier import classify_audio_file, load_audio_for_ced
+    from soundguard.detection.sound_classifier import (
+        classify_audio_file,
+        load_audio_for_ced,
+    )
 
     details = []
     for index, row in enumerate(clean, 1):
@@ -294,7 +297,12 @@ The CED ontology contains: {sorted(ONTOLOGY_EQUIVALENTS[target])}. SoundGuard's 
 
 
 def emergency_analysis(details: list[dict]) -> dict:
-    from emergency_system import CATEGORY_CONFIG, LEVEL_ORDER, evaluate_sound, match_sound_category
+    from soundguard.emergency.emergency_system import (
+        CATEGORY_CONFIG,
+        LEVEL_ORDER,
+        evaluate_sound,
+        match_sound_category,
+    )
 
     false_negatives, all_rows = [], []
     for row in details:
@@ -577,9 +585,14 @@ A legitimate 30–50-case fusion benchmark is not feasible from the current outp
 
 
 def baseline_manifest() -> dict:
-    from emergency_system import CATEGORY_CONFIG
-    tracked_config = [ROOT / p for p in ("sound_classifier.py", "speech_enhancer.py", "speech_recognizer.py",
-        "emergency_system.py", "fusion_engine.py", "personalization/profile_generator.py",
+    from soundguard.emergency.emergency_system import CATEGORY_CONFIG
+    tracked_config = [ROOT / p for p in (
+        "soundguard/detection/sound_classifier.py",
+        "soundguard/speech/speech_enhancer.py",
+        "soundguard/speech/speech_recognizer.py",
+        "soundguard/emergency/emergency_system.py",
+        "soundguard/emergency/fusion_engine.py",
+        "personalization/profile_generator.py",
         "personalization/profile_validator.py", "benchmark/run_expanded_benchmark.py")]
     data_manifests = [DATA / "external" / name / "manifest.csv" for name in ("esc50", "demand", "vivos")]
     summary = json.loads((EXPANDED / "summary.json").read_text(encoding="utf-8"))
@@ -588,7 +601,9 @@ def baseline_manifest() -> dict:
         capture_output=True, text=True, check=True).stdout.strip(), "python": platform.python_version(), "random_seeds": [SEED],
         "model": "mispeech/ced-tiny", "model_config_sha256": sha256(model_config_path),
         "model_output_labels": len(model_config["id2label"]),
-        "production_thresholds_source": "emergency_system.CATEGORY_CONFIG (hash below)",
+        "production_thresholds_source": (
+            "soundguard.emergency.emergency_system.CATEGORY_CONFIG (hash below)"
+        ),
         "production_thresholds": {name: {"threshold": cfg.threshold, "level": cfg.level}
                                   for name, cfg in CATEGORY_CONFIG.items() if name != "help_request"},
         "config_hashes": {str(p.relative_to(ROOT)): sha256(p) for p in tracked_config if p.exists()},

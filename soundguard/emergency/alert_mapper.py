@@ -1,4 +1,4 @@
-from emergency_system import evaluate_sound
+from soundguard.emergency.emergency_system import evaluate_sound
 
 
 DEFAULT_THRESHOLD = 0.45

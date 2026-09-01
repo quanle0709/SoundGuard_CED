@@ -1,5 +1,5 @@
 import datetime
-from emergency_system import detect_help_request
+from soundguard.emergency.emergency_system import detect_help_request
 
 def fuse_result(timestamp, transcript, sound_result, alert_result):
     transcript_text = transcript or ""

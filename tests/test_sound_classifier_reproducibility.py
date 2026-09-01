@@ -1,6 +1,6 @@
 import huggingface_hub
 
-import sound_classifier
+from soundguard.detection import sound_classifier
 
 
 def test_frozen_local_snapshot_is_preferred(monkeypatch):

@@ -1,7 +1,7 @@
 import datetime
 from pathlib import Path
 
-from display_transport import crc16_ccitt, encode_hud_frame
+from soundguard.display.display_transport import crc16_ccitt, encode_hud_frame
 
 
 ROOT = Path(__file__).resolve().parents[1]

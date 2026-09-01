@@ -6,7 +6,9 @@ HUD = (ROOT / "firmware" / "src" / "hud.cpp").read_text(encoding="utf-8")
 PROTOCOL = (ROOT / "firmware" / "src" / "protocol.cpp").read_text(
     encoding="utf-8"
 )
-PIPELINE = (ROOT / "audio_pipeline.py").read_text(encoding="utf-8")
+PIPELINE = (ROOT / "soundguard" / "audio" / "audio_pipeline.py").read_text(
+    encoding="utf-8"
+)
 
 
 def _between(source: str, start: str, end: str) -> str:

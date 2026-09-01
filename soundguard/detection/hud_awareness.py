@@ -4,8 +4,11 @@ from __future__ import annotations
 
 import unicodedata
 
-from display_transport import get_ced_display_label
-from emergency_system import get_category_level, match_sound_category
+from soundguard.display.display_transport import get_ced_display_label
+from soundguard.emergency.emergency_system import (
+    get_category_level,
+    match_sound_category,
+)
 
 
 # Locked by benchmark/calibrate_hud_awareness.py before held-out validation.

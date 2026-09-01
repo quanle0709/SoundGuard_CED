@@ -7,14 +7,18 @@ import librosa
 import numpy as np
 import pytest
 
-from audio_pipeline import MicrophonePipeline, PipelineEvent, classify_raw_audio
-from emergency_system import EmergencySystem
-from hud_awareness import (
+from soundguard.audio.audio_pipeline import (
+    MicrophonePipeline,
+    PipelineEvent,
+    classify_raw_audio,
+)
+from soundguard.emergency.emergency_system import EmergencySystem
+from soundguard.detection.hud_awareness import (
     HUD_AWARENESS_THRESHOLD,
     evaluate_ced_for_hud,
     is_speech_only_ced_label,
 )
-from live_speech_to_text import RecognitionResult, TranscriptDisplay
+from soundguard.speech.live_speech_to_text import RecognitionResult, TranscriptDisplay
 
 
 ROOT = Path(__file__).resolve().parents[1]

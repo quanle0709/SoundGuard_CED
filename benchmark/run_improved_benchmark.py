@@ -48,9 +48,9 @@ def enable_selected() -> None:
 
 
 def ced_and_emergency() -> tuple[dict, dict, list[dict]]:
-    from emergency_system import EmergencySystem
+    from soundguard.emergency.emergency_system import EmergencySystem
     from personalization.sound_labels import canonicalize_label
-    from sound_classifier import classify_audio_file
+    from soundguard.detection.sound_classifier import classify_audio_file
     manifest = read_csv(DATA / "external" / "esc50" / "manifest.csv")
     classify_audio_file(ROOT / manifest[0]["path"])
     rows, emergency_truth, emergency_pred = [], [], []
@@ -96,7 +96,7 @@ def personalization_metrics() -> dict:
 
 
 def latency(rows: list[dict]) -> dict:
-    from sound_classifier import classify_audio_file
+    from soundguard.detection.sound_classifier import classify_audio_file
     paths = [ROOT / row["path"] for row in rows[:100]]
     for path in paths[:5]: classify_audio_file(path)
     legacy_values, improved_values = [], []

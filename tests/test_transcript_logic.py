@@ -5,7 +5,7 @@ from io import StringIO
 
 import numpy as np
 
-from live_speech_to_text import (
+from soundguard.speech.live_speech_to_text import (
     RecognitionJob,
     RecognitionWorker,
     RecognitionResult,
@@ -14,7 +14,7 @@ from live_speech_to_text import (
     process_recognition_result,
     recognize_snapshot,
 )
-from emergency_system import EmergencySystem
+from soundguard.emergency.emergency_system import EmergencySystem
 
 
 def test_partial_replacement_and_duplicate_suppression():
@@ -233,9 +233,8 @@ def test_ordinary_final_remains_low():
 
 
 def test_live_dtln_is_quiet():
-    import audio_capture
-    import speech_enhancer
-    import speech_recognizer
+    from soundguard.audio import audio_capture
+    from soundguard.speech import speech_enhancer, speech_recognizer
 
     original_enhance = speech_enhancer.enhance_audio_file
     original_optimize = audio_capture.create_speech_optimized_wav

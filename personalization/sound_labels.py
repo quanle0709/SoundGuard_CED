@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 
 
-# These are deliberately aligned with emergency_system.CATEGORY_CONFIG.  The
+# These are deliberately aligned with soundguard.emergency.emergency_system.CATEGORY_CONFIG.  The
 # personalization runtime never invents a category the frozen alert core cannot
 # process.
 SUPPORTED_SOUND_LABELS = frozenset({

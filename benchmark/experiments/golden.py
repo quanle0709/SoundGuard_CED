@@ -23,12 +23,12 @@ def sha256(path: Path) -> str:
 def capture() -> dict:
     for name in FLAGS:
         os.environ.pop(name, None)
-    from emergency_system import EmergencySystem
-    from fusion_engine import fuse_result
+    from soundguard.emergency.emergency_system import EmergencySystem
+    from soundguard.emergency.fusion_engine import fuse_result
     from personalization.profile_generator import generate_rule_based
-    from sound_classifier import classify_audio_file
-    from speech_enhancer import enhance_audio_file
-    from speech_recognizer import transcribe_audio_file
+    from soundguard.detection.sound_classifier import classify_audio_file
+    from soundguard.speech.speech_enhancer import enhance_audio_file
+    from soundguard.speech.speech_recognizer import transcribe_audio_file
 
     ced_paths = [
         ROOT / "benchmark_data/external/esc50/audio/1-100032-A-0.wav",
@@ -50,7 +50,10 @@ def capture() -> dict:
     personalization = [generate_rule_based([text]) for text in
                        ("I drive in road traffic.", "A factory-method pattern is software.", "The baby-blue color is bright.")]
     speech_path = ROOT / "benchmark_data/external/vivos/selected/VIVOSDEV01/VIVOSDEV01_R002.wav"
-    with patch("speech_recognizer.sr.Recognizer.recognize_google", return_value="  xin chào  "):
+    with patch(
+        "soundguard.speech.speech_recognizer.sr.Recognizer.recognize_google",
+        return_value="  xin chào  ",
+    ):
         stt = transcribe_audio_file(speech_path)
     dtln_input = ROOT / "benchmark_data/expanded_generated/dtln/inputs/traffic/20/1-187207-A-20.wav"
     with tempfile.TemporaryDirectory() as folder:

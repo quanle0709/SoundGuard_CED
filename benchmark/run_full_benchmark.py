@@ -192,20 +192,20 @@ class Runner:
     def audit(self) -> None:
         dirty = self.baseline_git_status
         table = [
-            ("Environmental Sound Detection / CED", "YES", "sound_classifier.py", "mispeech/ced-tiny", "YES; 2 clips only", "2 labeled clips", "Accuracy, per-class P/R/F1, confusion"),
+            ("Environmental Sound Detection / CED", "YES", "soundguard/detection/sound_classifier.py", "mispeech/ced-tiny", "YES; 2 clips only", "2 labeled clips", "Accuracy, per-class P/R/F1, confusion"),
             ("CED noise robustness", "YES", "benchmark wrapper around CED", "Seeded white-noise mixing", "YES; preliminary", "Derived from 2 clean clips", "Accuracy, Macro F1 by SNR"),
             ("CED latency", "YES", "classify_audio_file", "Warm repeated inference", "YES", "N/A", "mean/median/P90/P95/P99"),
-            ("Speech-to-Text", "YES", "speech_recognizer.py", "Google Speech Recognition vi-VN", "NETWORK-DEPENDENT", "1 transcript", "WER, CER"),
+            ("Speech-to-Text", "YES", "soundguard/speech/speech_recognizer.py", "Google Speech Recognition vi-VN", "NETWORK-DEPENDENT", "1 transcript", "WER, CER"),
             ("STT noise robustness", "YES", "same STT interface", "Seeded noise", "NETWORK-DEPENDENT", "1 transcript", "WER/CER by SNR"),
             ("STT latency", "YES", "transcribe_audio_file", "Google remote API", "NETWORK-DEPENDENT", "N/A", "latency, RTF"),
-            ("Noise filtering quality", "YES", "speech_enhancer.py", "DTLN two-stage TFLite", "YES", "Paired clean/noisy", "input/output/delta SNR"),
+            ("Noise filtering quality", "YES", "soundguard/speech/speech_enhancer.py", "DTLN two-stage TFLite", "YES", "Paired clean/noisy", "input/output/delta SNR"),
             ("Noise filtering effect on CED", "YES", "DTLN -> CED experiment", "Paired", "YES", "2 clips", "Macro F1 delta"),
             ("Noise filtering effect on STT", "YES", "DTLN -> Google STT", "Paired", "NETWORK-DEPENDENT", "1 transcript", "WER/CER delta"),
-            ("Emergency detection quality", "YES", "emergency_system.py", "Deterministic thresholds/rules", "YES", "Fixed policy cases", "TP/FP/TN/FN/P/R/F1/FNR"),
+            ("Emergency detection quality", "YES", "soundguard/emergency/emergency_system.py", "Deterministic thresholds/rules", "YES", "Fixed policy cases", "TP/FP/TN/FN/P/R/F1/FNR"),
             ("Emergency false alarms", "YES", "EmergencySystem", "Deterministic", "YES", "Fixed negatives", "false alerts/clip"),
             ("Emergency latency", "YES", "EmergencySystem single-shot", "Software timing", "YES", "Fixed cases", "mean/median/P95/P99"),
-            ("Fusion CED + STT", "YES", "fusion_engine.py", "Deterministic rules", "YES", "Fixed cases", "before/after accuracy/P/R/F1"),
-            ("Fusion error analysis", "YES", "fusion_engine.py", "A/B/C/D categories", "YES", "Fixed cases", "counts and percentages"),
+            ("Fusion CED + STT", "YES", "soundguard/emergency/fusion_engine.py", "Deterministic rules", "YES", "Fixed cases", "before/after accuracy/P/R/F1"),
+            ("Fusion error analysis", "YES", "soundguard/emergency/fusion_engine.py", "A/B/C/D categories", "YES", "Fixed cases", "counts and percentages"),
             ("Speaker/family voice recognition", "NO", "NOT IMPLEMENTED", "N/A", "NO", "NO", "NOT IMPLEMENTED"),
             ("Speaker recognition noise robustness", "NO", "NOT IMPLEMENTED", "N/A", "NO", "NO", "NOT IMPLEMENTED"),
             ("AI personalization", "YES", "personalization/", "Rules + optional OpenAI/OpenRouter", "Rules YES; API credential-dependent", "Fixed policy cases", "priority/role/context accuracy, invariants, latency"),
@@ -213,7 +213,7 @@ class Runner:
             ("End-to-end software pipeline latency", "YES", "CED -> emergency -> fusion", "PC fixed-file path", "YES", "2 clips", "PC software latency"),
             ("Continuous software stability", "YES", "Repeated control-path workload", "Bounded synthetic soak", "YES", "Deterministic events", "crashes/exceptions/CPU/RAM"),
             ("Left/right direction or vibration", "NO", "No localization/decision implementation", "N/A", "NO", "No multichannel truth/hardware", "Hardware validation required"),
-            ("HUD transport", "YES", "display_transport.py + ESP32 firmware", "CRC framed serial", "Logic only", "Unit tests only", "Physical latency/readability not benchmarkable"),
+            ("HUD transport", "YES", "soundguard/display/display_transport.py + ESP32 firmware", "CRC framed serial", "Logic only", "Unit tests only", "Physical latency/readability not benchmarkable"),
         ]
         lines = ["# SoundGuard benchmark audit", "", f"Baseline commit: `{git('rev-parse', 'HEAD')}`",
                  "", "Dirty working tree was preserved:", "", "```text", dirty or "clean", "```", "",
@@ -273,7 +273,7 @@ class Runner:
         return canonicalize_label(label) or normalize_label(label).replace(" ", "_")
 
     def ced(self) -> None:
-        from sound_classifier import classify_audio_file
+        from soundguard.detection.sound_classifier import classify_audio_file
         out = RESULTS_DIR / "ced"; out.mkdir(parents=True, exist_ok=True)
         generated = {(row["sample_id"], int(row["snr_db"])): ROOT / row["path"]
                      for row in read_csv(RESULTS_DIR / "noise_generation.csv")}
@@ -354,8 +354,8 @@ class Runner:
         return destination
 
     def noise_filter(self) -> None:
-        from sound_classifier import classify_audio_file
-        from speech_enhancer import enhance_audio_file
+        from soundguard.detection.sound_classifier import classify_audio_file
+        from soundguard.speech.speech_enhancer import enhance_audio_file
         out = RESULTS_DIR / "noise_filter"; generated_dir = DATA_DIR / "generated_audio"
         noise_rows = read_csv(RESULTS_DIR / "noise_generation.csv")
         ced_unfiltered = {(r["sample_id"], r["condition"]): r for r in read_csv(RESULTS_DIR / "ced/predictions.csv")}
@@ -423,7 +423,7 @@ class Runner:
             write_json(out / "SKIPPED.json", {"status": "SKIPPED", "reason": "network STT not enabled"})
             self.add("STT", "Speech-to-Text", "WER", "", "", 0, status="SKIPPED", notes="network STT not enabled")
             return
-        from speech_recognizer import transcribe_audio_file
+        from soundguard.speech.speech_recognizer import transcribe_audio_file
         case = next(item for item in AUDIO_CASES if item["sample_id"] == "local_vi_speech")
         paths = [("clean", case["path"], "unfiltered")]
         noise_rows = [row for row in read_csv(RESULTS_DIR / "noise_generation.csv") if row["sample_id"] == case["sample_id"]]
@@ -490,7 +490,7 @@ class Runner:
             self.add("STT", "STT noise robustness", "CER", row["cer"], "ratio", 1, f"{row['snr_db']} dB")
 
     def emergency(self) -> None:
-        from emergency_system import EmergencySystem
+        from soundguard.emergency.emergency_system import EmergencySystem
         cases = json.loads((DATA_DIR / "emergency_cases.json").read_text(encoding="utf-8"))
         rows, timings = [], []
         for case in cases:
@@ -518,7 +518,7 @@ class Runner:
                  sum(r["predicted"] for r in negatives) / len(negatives), "ratio", len(negatives), "non-emergency")
 
     def fusion(self) -> None:
-        from fusion_engine import fuse_result
+        from soundguard.emergency.fusion_engine import fuse_result
         cases = json.loads((DATA_DIR / "fusion_cases.json").read_text(encoding="utf-8"))
         rows = []
         for case in cases:
@@ -625,10 +625,10 @@ class Runner:
                  sum(r["passed"] for r in safety if r["category"] == "universal_critical") / len(cases), "ratio", len(cases))
 
     def pipeline(self) -> None:
-        from alert_mapper import map_alert
-        from emergency_system import EmergencySystem
-        from fusion_engine import fuse_result
-        from sound_classifier import classify_audio_file
+        from soundguard.emergency.alert_mapper import map_alert
+        from soundguard.emergency.emergency_system import EmergencySystem
+        from soundguard.emergency.fusion_engine import fuse_result
+        from soundguard.detection.sound_classifier import classify_audio_file
         rows = []
         classify_audio_file(AUDIO_CASES[0]["path"])
         for case in AUDIO_CASES:
@@ -647,8 +647,8 @@ class Runner:
         self.add("Pipeline", "PC Software Pipeline", "P95 Latency", summary["p95_ms"], "ms", len(rows), "warm fixed-file")
 
     def stability(self) -> None:
-        from emergency_system import EmergencySystem
-        from fusion_engine import fuse_result
+        from soundguard.emergency.emergency_system import EmergencySystem
+        from soundguard.emergency.fusion_engine import fuse_result
         from personalization.profile_generator import generate_rule_based
         out = RESULTS_DIR / "stability"; rows, exceptions, processed = [], 0, 0
         tracemalloc.start(); started = time.perf_counter(); previous_wall, previous_cpu = started, time.process_time()

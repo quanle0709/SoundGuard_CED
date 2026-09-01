@@ -1,4 +1,4 @@
-from fusion_engine import fuse_result
+from soundguard.emergency.fusion_engine import fuse_result
 
 
 def run_tests():

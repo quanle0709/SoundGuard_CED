@@ -1,5 +1,5 @@
-from alert_mapper import map_alert
-from emergency_system import (
+from soundguard.emergency.alert_mapper import map_alert
+from soundguard.emergency.emergency_system import (
     CATEGORY_CONFIG,
     EmergencySystem,
     detect_help_request,

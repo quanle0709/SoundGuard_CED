@@ -273,7 +273,7 @@ def speech_files() -> list[Path]:
 
 
 def stt_campaign(hw: HardwareSession, count: int, raw_dir: Path) -> tuple[list[dict[str, Any]], dict[str, Any]]:
-    from speech_recognizer import transcribe_audio_file
+    from soundguard.speech.speech_recognizer import transcribe_audio_file
 
     files = speech_files()
     if not files:
@@ -308,7 +308,7 @@ def stt_campaign(hw: HardwareSession, count: int, raw_dir: Path) -> tuple[list[d
 
 
 def select_hud_prediction(result: dict[str, Any]) -> tuple[str, dict[str, Any] | None]:
-    from hud_awareness import evaluate_ced_for_hud
+    from soundguard.detection.hud_awareness import evaluate_ced_for_hud
 
     candidates = list(result.get("top_predictions") or [])
     candidates.append({"label": result.get("label", "unknown"), "score": result.get("confidence", 0.0)})
@@ -338,7 +338,7 @@ def ced_sources() -> list[Path]:
 
 
 def ced_campaign(hw: HardwareSession, count: int, raw_dir: Path) -> tuple[list[dict[str, Any]], dict[str, Any]]:
-    from sound_classifier import classify_audio_file
+    from soundguard.detection.sound_classifier import classify_audio_file
 
     sources = ced_sources()
     cold_started = time.perf_counter()
@@ -386,7 +386,7 @@ def ced_campaign(hw: HardwareSession, count: int, raw_dir: Path) -> tuple[list[d
 
 
 def alert_campaign(hw: HardwareSession, count: int) -> tuple[list[dict[str, Any]], dict[str, Any]]:
-    from emergency_system import EmergencySystem
+    from soundguard.emergency.emergency_system import EmergencySystem
 
     rows: list[dict[str, Any]] = []
     for index in range(count):
@@ -627,9 +627,9 @@ def build_mixed_audio():
 
 
 def concurrent_campaign(hw: HardwareSession, raw_dir: Path) -> dict[str, Any]:
-    from audio_pipeline import MicrophonePipeline
-    from emergency_system import EmergencySystem
-    from emergency_v3 import create_emergency_v3_specialist
+    from soundguard.audio.audio_pipeline import MicrophonePipeline
+    from soundguard.emergency.emergency_system import EmergencySystem
+    from soundguard.emergency.emergency_v3 import create_emergency_v3_specialist
     from personalization import PriorityAdapter, ProfileManager
 
     raw_dir.mkdir(parents=True, exist_ok=True)
@@ -829,8 +829,12 @@ def environment_record(port_info: dict[str, Any], args, campaign_started: str) -
     freeze = subprocess.run([str(ROOT / ".venv/Scripts/python.exe"), "-m", "pip", "freeze"],
                             capture_output=True, text=True, check=False).stdout.splitlines()
     tracked = [ROOT / name for name in (
-        "sound_classifier.py", "audio_pipeline.py", "emergency_system.py", "hud_awareness.py",
-        "display_transport.py", "firmware/src/hud.cpp", "firmware/src/protocol.cpp",
+        "soundguard/detection/sound_classifier.py",
+        "soundguard/audio/audio_pipeline.py",
+        "soundguard/emergency/emergency_system.py",
+        "soundguard/detection/hud_awareness.py",
+        "soundguard/display/display_transport.py",
+        "firmware/src/hud.cpp", "firmware/src/protocol.cpp",
     )]
     return {
         "campaign_started_utc": campaign_started, "git_revision": git("rev-parse", "HEAD"),
