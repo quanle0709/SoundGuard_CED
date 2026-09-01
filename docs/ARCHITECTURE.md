@@ -30,12 +30,12 @@ Priority is deterministic: ALERT preempts SUBTITLE and CED, while HOME is the id
 
 | Concern | Files |
 | --- | --- |
-| Capture and queues | `audio_capture.py`, `streaming_audio.py`, `audio_pipeline.py` |
-| Environmental tagging | `sound_classifier.py`, `sound_taxonomy.py` |
-| Speech branch | `voice_activity_detector.py`, `speech_enhancer.py`, `live_speech_to_text.py`, `speech_recognizer.py` |
-| Policy | `emergency_system.py`, `fusion_engine.py`, `alert_mapper.py`, `hud_awareness.py` |
-| Optional specialist | `emergency_v3.py`, `benchmark/experiments/emergency_v3/` |
-| Host transport | `display_transport.py` |
+| Capture and queues | `soundguard/audio/` |
+| Environmental tagging | `soundguard/detection/sound_classifier.py`, `soundguard/detection/sound_taxonomy.py` |
+| Speech branch | `soundguard/speech/` |
+| Policy | `soundguard/emergency/`, `soundguard/detection/hud_awareness.py` |
+| Optional specialist | `soundguard/emergency/emergency_v3.py`, `benchmark/experiments/emergency_v3/` |
+| Host transport | `soundguard/display/display_transport.py` |
 | Wearable firmware | `firmware/src/`, `firmware/platformio.ini` |
 
 ## Non-capabilities

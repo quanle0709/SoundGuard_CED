@@ -2,8 +2,6 @@
 
 HearVis is a research prototype that turns Vietnamese speech and selected environmental sounds into a compact visual heads-up display. The evaluated ISIF 2026 configuration is laptop-assisted: the host performs capture, recognition, audio tagging, and priority policy; an ESP32-C3 controller validates serial frames and renders a 64 x 32 OLED.
 
-> **Naming note:** **HearVis** is the current public-facing project name. **HearSafe Glasses** (or **HearSafe**) names the prototype evaluated for the ISIF 2026 manuscript. **SoundGuard** and `SoundGuard_CED` are retained only where they record development history, repository provenance, compatibility-sensitive paths, configuration variables, or protocol literals. The repository slug remains `quanle0709/SoundGuard_CED` until the ISIF submission is frozen.
-
 ![Historical HearSafe prototype assembly](docs/images/hearvis-prototype-overview.jpg)
 
 *Historical HearSafe prototype assembly. The photograph documents the physical build but does not establish current operation.*
@@ -13,6 +11,19 @@ HearVis is a research prototype that turns Vietnamese speech and selected enviro
 Speech captions alone do not describe everything happening around a listener. HearVis explores whether a small visual interface can combine Vietnamese captions, selected environmental labels, and clearly preemptive alerts without pretending that a prototype is a certified safety or medical device.
 
 The project emphasizes explicit system boundaries and reproducible, configuration-specific measurements. It does not publish a single generic "HearVis accuracy" score.
+
+## Quick Start
+
+```powershell
+git clone https://github.com/quanle0709/SoundGuard_CED.git
+cd SoundGuard_CED
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python app.py --help
+```
+
+The root `app.py` is the stable launcher; production host code lives under `soundguard/`. Model-backed and live modes may additionally require downloaded model assets, Internet access, microphone permission, or connected HUD hardware. See [Installation](#installation) before enabling them.
 
 ## Feature Status
 
@@ -96,7 +107,7 @@ The frozen evidence contains no implemented sound localization or haptic output.
 
 ### Live Vietnamese captions
 
-`streaming_audio.py` opens one 16 kHz mono microphone stream and copies each 512-sample frame into independent bounded speech and environmental queues. On the speech branch, Silero VAD drives an utterance state machine with configurable pre-roll, end silence, post-roll, partial interval, and maximum duration. The default live values are 250 ms pre-roll, 700 ms end silence, 500 ms post-roll, and partial recognition every 1.5 seconds.
+`soundguard/audio/streaming_audio.py` opens one 16 kHz mono microphone stream and copies each 512-sample frame into independent bounded speech and environmental queues. On the speech branch, Silero VAD drives an utterance state machine with configurable pre-roll, end silence, post-roll, partial interval, and maximum duration. The default live values are 250 ms pre-roll, 700 ms end silence, 500 ms post-roll, and partial recognition every 1.5 seconds.
 
 Partial and final utterance snapshots are recognized through Google Speech Recognition with language `vi-VN`; accepted results become PARTIAL or FINAL subtitle frames. Google STT requires Internet and sends speech audio to an external service. DTLN is an optional speech-only preprocessing stage: it does not replace the raw audio used by CED.
 
@@ -108,7 +119,7 @@ This Screen 2 presentation filter is separate from emergency decisions. CED prov
 
 ### Emergency, HELP, and priority rules
 
-`emergency_system.py` maps recognized categories to explicit thresholds, base severity, stable tie-breaking priority, and cooldowns:
+`soundguard/emergency/emergency_system.py` maps recognized categories to explicit thresholds, base severity, stable tie-breaking priority, and cooldowns:
 
 | Category | Neutral threshold | Base severity | Emission cooldown |
 | --- | ---: | --- | ---: |
@@ -137,7 +148,7 @@ The local interview interface can generate and review a profile using configured
 
 The default/deployed V2 path uses CED-Tiny and leaves EfficientSED off. Optional combined V3 starts an isolated host-side EfficientSED worker lazily, supplies only its approved specialist categories to the existing emergency policy, preserves normal CED presentation, and falls back to V2 after missing dependencies or worker failure. Its results are reported separately from V2.
 
-`display_transport.py` NFC-normalizes text and sends length-delimited, CRC-16-CCITT frames over USB serial. Firmware accepts only complete valid frames, stores subtitle/environment/alert state, and renders the OLED. ALERT preempts SUBTITLE/CED; when it clears, an interrupted final-subtitle page resumes with a fresh reading interval. HOME appears when no subtitle, environmental label, or alert is active.
+`soundguard/display/display_transport.py` NFC-normalizes text and sends length-delimited, CRC-16-CCITT frames over USB serial. Firmware accepts only complete valid frames, stores subtitle/environment/alert state, and renders the OLED. ALERT preempts SUBTITLE/CED; when it clears, an interrupted final-subtitle page resumes with a fresh reading interval. HOME appears when no subtitle, environmental label, or alert is active.
 
 ## Example Interaction
 
@@ -241,19 +252,16 @@ See [docs/PRIVACY_AND_LIMITATIONS.md](docs/PRIVACY_AND_LIMITATIONS.md) before re
 
 | Path | Purpose |
 | --- | --- |
-| `app.py` | Main file, microphone, continuous, live-STT, and HUD CLI |
-| `audio_*.py`, `streaming_audio.py` | Capture, queues, preprocessing, and orchestration |
-| `sound_classifier.py`, `sound_taxonomy.py` | CED-Tiny inference and label policy |
-| `speech_*.py`, `live_speech_to_text.py`, `voice_activity_detector.py` | VAD, optional enhancement, and Vietnamese recognition |
-| `emergency_system.py`, `emergency_v3.py`, `fusion_engine.py` | Default policy and optional V3 specialist integration |
-| `display_transport.py`, `hud_awareness.py` | Host-side serial framing and display policy |
+| `app.py` | Stable root launcher for the host CLI |
+| `soundguard/` | Production host runtime, grouped by audio, speech, detection, emergency, and display |
 | `tests/` | Runtime, policy, personalization, transport, and firmware source-contract tests |
 | `firmware/` | PlatformIO ESP32/ESP32-C3 OLED firmware |
 | `personalization/` | Opt-in post-recognition rule/profile adapter |
-| `benchmark/`, `benchmark_results/` | Reproducible benchmark code and retained evidence |
+| `benchmark/`, `benchmark_v1/` | Current evaluation code and the retained fixed-file workflow |
+| `benchmark_data/`, `benchmark_results/` | Reproducibility inputs and historical evidence |
 | `human_study/` | Protocol and local study tooling; private/raw results excluded |
 | `tools/` | Hardware-validation and transport-diagnostic utilities |
-| `docs/` | Architecture, evaluation, repository layout, attribution, privacy boundaries, and public images |
+| `docs/` | Architecture, evaluation, research records, attribution, privacy boundaries, and public images |
 
 See [docs/REPOSITORY_LAYOUT.md](docs/REPOSITORY_LAYOUT.md) for the complete ownership map and the distinction between current code and historical evidence.
 
@@ -360,6 +368,8 @@ Network STT, private/local audio, external dataset downloads, hardware upload, a
 ## Research Paper
 
 The ISIF 2026 manuscript documents the laptop-assisted **HearSafe** configuration. The current draft is intentionally not published. After submission is frozen, link the final frozen/submitted manuscript at:
+
+**HearVis** is the current public-facing project name. **HearSafe Glasses** (or **HearSafe**) names the prototype evaluated for the manuscript. **SoundGuard** and `SoundGuard_CED` remain in development history, provenance-sensitive paths, configuration variables, and protocol literals.
 
 `docs/paper/HearSafe_ISIF_2026_Full_Paper.pdf`
 
