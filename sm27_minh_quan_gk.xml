@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PackData basePack="https://raw.githubusercontent.com/quanle0709/GreenGuard/main/sm27_minh_quan_base.xml"
+          name="Minh Quan GK 2026"
+          desc="Personal SM27 goalkeeper data pack">
+  <PlayerData>
+    <P id="135597" f="Minh Quan" s="Le" />
+  </PlayerData>
+</PackData>
