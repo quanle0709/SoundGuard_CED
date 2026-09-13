@@ -11,18 +11,18 @@
     "duration_seconds": 5.30
   },
   "focused_tests_after_final_hardening": {
-    "passed": 72,
+    "passed": 73,
     "subtests_passed": 5,
     "failed": 0,
-    "duration_seconds": 5.29
+    "duration_seconds": 5.32
   },
   "full_tests": {
     "command": ".\\.venv\\Scripts\\python.exe -m pytest -q",
-    "passed": 267,
+    "passed": 268,
     "subtests_passed": 7,
     "failed": 0,
     "warnings": 4,
-    "duration_seconds": 24.35
+    "duration_seconds": 24.55
   },
   "models": {
     "sound": {
@@ -47,6 +47,14 @@
   "open_set_evaluation": {
     "sound": {"correct": 6, "trials": 6, "unknown_rejected": 2, "false_accepts": 0},
     "voice": {"correct": 6, "trials": 6, "unknown_rejected": 2, "false_accepts": 0}
+  },
+  "queue_measurement": {
+    "live_hardware_run": "NOT_RUN",
+    "sound_job_capacity": 2,
+    "voice_job_capacity": 2,
+    "overflow_policy": "drop_oldest",
+    "deterministic_overload_test": "passed; one pending job dropped and newest retained",
+    "runtime_counters": ["produced", "consumed", "dropped", "failures"]
   },
   "manual_hardware_required": [
     "physical microphone end-to-end enrollment and contention",

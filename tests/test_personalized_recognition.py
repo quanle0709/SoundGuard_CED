@@ -122,6 +122,30 @@ def test_bounded_worker_isolates_model_failure_and_counts_it():
     assert worker.counters["failures"] == 1
 
 
+def test_bounded_worker_drops_oldest_pending_job_under_overload():
+    started, release = threading.Event(), threading.Event()
+    seen = []
+    def recognize(value):
+        seen.append(value)
+        if value == "first":
+            started.set()
+            assert release.wait(2)
+        return {"accepted": False, "label": "UNKNOWN"}
+    worker = BoundedRecognitionWorker("sound", recognize, maxsize=1)
+    worker.start()
+    worker.submit("1", "first")
+    assert started.wait(2)
+    worker.submit("2", "second")
+    worker.submit("3", "third")
+    release.set()
+    deadline = time.time() + 2
+    while worker.counters["consumed"] < 2 and time.time() < deadline:
+        time.sleep(0.01)
+    worker.stop()
+    assert seen == ["first", "third"]
+    assert worker.counters["dropped"] == 1
+
+
 def test_runtime_fails_open_when_model_client_raises(tmp_path):
     class BrokenClient:
         def embed(self, *_):
