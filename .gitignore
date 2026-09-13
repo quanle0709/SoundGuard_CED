@@ -30,6 +30,11 @@ test_outputs/
 credentials.json
 service-account*.json
 personalization/user_profile.json
+personalization/recognition_settings.json
+personalization/enrollments/**
+!personalization/enrollments/.gitkeep
+benchmark_data/external/personalized_recognition_venv/
+benchmark_data/external/personalized_recognition_models/
 
 *.log
 *.tmp

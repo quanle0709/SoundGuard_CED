@@ -535,6 +535,22 @@ def parse_args() -> argparse.Namespace:
         help="Optional personalized profile JSON path",
     )
     parser.add_argument(
+        "--familiar-sounds", action="store_true",
+        help="Enable opt-in local Familiar Sounds recognition",
+    )
+    parser.add_argument(
+        "--familiar-voices", action="store_true",
+        help="Enable opt-in local Familiar Voices speaker identification",
+    )
+    parser.add_argument(
+        "--recognition-root",
+        help="Optional local enrollment storage directory",
+    )
+    parser.add_argument(
+        "--personalized-python",
+        help="Optional Python executable for the isolated model worker",
+    )
+    parser.add_argument(
         "--partial-interval",
         type=float,
         default=1.5,
@@ -710,8 +726,23 @@ def main() -> int:
 
     if args.live_stt or args.mic or args.continuous:
         from soundguard.audio.audio_pipeline import MicrophonePipeline
+        from personalization.recognition import EmbeddingClient, RecognitionStore
+        from personalization.runtime import PersonalizedRecognitionRuntime
 
         mode = "live-stt" if args.live_stt else "continuous" if args.continuous else "mic"
+        personalized_runtime = None
+        if args.familiar_sounds or args.familiar_voices:
+            personalized_runtime = PersonalizedRecognitionRuntime(
+                familiar_sounds=args.familiar_sounds,
+                familiar_voices=args.familiar_voices,
+                store=RecognitionStore(args.recognition_root),
+                client=EmbeddingClient(args.personalized_python),
+            )
+            print(
+                "Personalized recognition: "
+                f"sounds={'on' if args.familiar_sounds else 'off'}, "
+                f"voices={'on' if args.familiar_voices else 'off'} (lazy, fail-open)"
+            )
         if mode == "continuous":
             print("Continuous mode started. Press Ctrl+C to stop.")
         try:
@@ -731,9 +762,12 @@ def main() -> int:
                 ),
                 hud=hud,
                 emergency_v3_specialist=emergency_v3_specialist,
+                personalized_runtime=personalized_runtime,
             )
             return pipeline.run()
         finally:
+            if personalized_runtime is not None:
+                personalized_runtime.close()
             if emergency_v3_specialist is not None:
                 emergency_v3_specialist.close()
             hud.close()

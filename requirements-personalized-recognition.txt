@@ -1,0 +1,7 @@
+# Optional, isolated runtime used by Familiar Sounds and Familiar Voices.
+# Install into benchmark_data/external/personalized_recognition_venv; do not
+# replace the core SoundGuard environment.
+onnxruntime==1.23.2
+torchvision==0.28.0
+nnAudio==0.3.4
+huggingface-hub==1.23.0

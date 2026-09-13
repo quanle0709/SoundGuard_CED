@@ -235,6 +235,47 @@ class CEDBranch:
         self.inference_thread.join(timeout)
 
 
+class FamiliarSoundBranch:
+    """Low-cost window builder feeding the optional bounded model worker."""
+
+    def __init__(self, frames: queue.Queue, submit: Callable,
+                 chunk_seconds: float = 3.0) -> None:
+        self.frames, self.submit = frames, submit
+        self.chunker = CEDChunker(
+            chunk_seconds=chunk_seconds, overlap_seconds=chunk_seconds / 2.0
+        )
+        self.stop_requested = threading.Event()
+        self.thread = threading.Thread(
+            target=self._run, name="familiar-sound-capture", daemon=True
+        )
+        self.frames_consumed = 0
+        self.windows_submitted = 0
+        self.submit_failures = 0
+
+    def start(self) -> None:
+        self.thread.start()
+
+    def _run(self) -> None:
+        while not self.stop_requested.is_set() or not self.frames.empty():
+            try:
+                frame = self.frames.get(timeout=0.05)
+            except queue.Empty:
+                continue
+            self.frames_consumed += 1
+            for due in self.chunker.add(frame):
+                try:
+                    self.submit(due.payload, str(due.event_sequence))
+                    self.windows_submitted += 1
+                except Exception:
+                    self.submit_failures += 1
+
+    def stop(self) -> None:
+        self.stop_requested.set()
+
+    def join(self, timeout: float = 5.0) -> None:
+        self.thread.join(timeout)
+
+
 class UtteranceTranscriber:
     """Shared frame/VAD/state-machine/recognition implementation for all modes."""
 
@@ -244,7 +285,7 @@ class UtteranceTranscriber:
                  pre_roll_ms: int, post_roll_ms: int,
                  save_live_utterances: bool = False,
                  vad: Callable[[np.ndarray, float], dict] | None = None,
-                 recognizer=None) -> None:
+                 recognizer=None, speaker_submit: Callable | None = None) -> None:
         self.frames, self.events = frames, events
         self.vad_threshold = vad_threshold
         self.machine = LiveSpeechStateMachine(
@@ -254,6 +295,7 @@ class UtteranceTranscriber:
         )
         self.worker = RecognitionWorker(use_dtln, recognizer, save_live_utterances)
         self.vad = vad
+        self.speaker_submit = speaker_submit
         self.stop_requested = threading.Event()
         self.force_final = False
         self.thread = threading.Thread(target=self._run, name="utterance-worker", daemon=True)
@@ -309,6 +351,11 @@ class UtteranceTranscriber:
             self._submit("PARTIAL", event, frame)
         elif event.kind == "FINAL_DUE" and event.audio is not None:
             self.partial_pending.discard(event.utterance_id)
+            if self.speaker_submit is not None:
+                try:
+                    self.speaker_submit(event.utterance_id, event.audio)
+                except Exception:
+                    pass
             self._submit("FINAL", event, frame)
 
     def _run(self) -> None:
@@ -365,6 +412,7 @@ class MicrophonePipeline:
                  ced_display_ttl_seconds: float = 5.5,
                  counter_log_interval_seconds: float = 5.0,
                  emergency_v3_specialist=None,
+                 personalized_runtime=None,
                  clock=time.monotonic) -> None:
         if mode not in {"mic", "continuous", "live-stt"}:
             raise ValueError(f"Unsupported microphone mode: {mode}")
@@ -388,6 +436,7 @@ class MicrophonePipeline:
         self.ced_ttl_expirations = 0
         self.ced_clear_requests = 0
         self.active_hud_alert = ""
+        self.personalized_runtime = personalized_runtime
         self.tracker = TranscriptTracker()
         self.events: queue.Queue[PipelineEvent] = queue.Queue(maxsize=64)
         self.hub = AudioStreamHub(
@@ -395,6 +444,10 @@ class MicrophonePipeline:
             ced_queue_seconds=max(queue_seconds, duration * 2.0),
             device_index=device_index,
             stream_factory=stream_factory,
+            familiar_sound_enabled=(
+                (lambda: self.personalized_runtime.sound_enabled)
+                if self.personalized_runtime is not None else None
+            ),
         )
         self.speech = UtteranceTranscriber(
             self.hub.speech_frames, self.events, vad_threshold=vad_threshold,
@@ -404,16 +457,29 @@ class MicrophonePipeline:
             pre_roll_ms=pre_roll_ms, post_roll_ms=post_roll_ms,
             save_live_utterances=save_live_utterances,
             vad=vad, recognizer=recognizer,
+            speaker_submit=(
+                self.personalized_runtime.submit_voice
+                if self.personalized_runtime is not None else None
+            ),
         )
         self.ced = CEDBranch(
             self.hub.ced_frames, self.events, duration, ced_overlap_seconds,
             classifier, one_shot=mode == "mic",
             emergency_v3_specialist=emergency_v3_specialist,
         )
+        self.familiar_sound = (
+            FamiliarSoundBranch(
+                self.hub.familiar_sound_frames,
+                self.personalized_runtime.submit_sound,
+            )
+            if self.personalized_runtime is not None
+            and self.personalized_runtime.familiar_sounds else None
+        )
         self.final_seen = False
         self.ced_events_dispatched = 0
         self.stt_partial_count = 0
         self.stt_final_count = 0
+        self.familiar_sounds_displayed = 0
         self.last_sequence_displayed = {"ced": -1, "transcript": -1}
 
     @staticmethod
@@ -444,6 +510,19 @@ class MicrophonePipeline:
         value = self.tracker.accept_final(result.utterance_id, result.transcript)
         self.final_seen = True
         if value:
+            original_value = value
+            speaker = (
+                self.personalized_runtime.take_voice_result(
+                    result.utterance_id, timeout=0.05
+                )
+                if self.personalized_runtime is not None else None
+            )
+            if speaker and speaker.get("accepted"):
+                speaker_label = " ".join(
+                    str(speaker.get("label", "")).split()
+                )[:32]
+                if speaker_label:
+                    value = f"[{speaker_label}] {value}"
             self.display.print_permanent(f"FINAL: {value}")
             self.hud.set_subtitle(value)
             self.display.print_permanent(
@@ -453,7 +532,7 @@ class MicrophonePipeline:
                 }, sort_keys=True)
             )
             decision = self.emergency_system.process_transcript_event(
-                value, timestamp=self._timestamp(result.capture_ended_at))
+                original_value, timestamp=self._timestamp(result.capture_ended_at))
             self._print_decision(decision)
         else:
             self.display.print_permanent("FINAL: [empty]")
@@ -644,6 +723,22 @@ class MicrophonePipeline:
 
     def _pump(self) -> None:
         self._expire_ced_display_if_needed()
+        if self.personalized_runtime is not None:
+            for result in self.personalized_runtime.drain_sound_results():
+                if result.get("accepted"):
+                    label = " ".join(str(result.get("label", "")).split())[:80]
+                    if label:
+                        self.familiar_sounds_displayed += 1
+                        self.active_ced_display_label = label
+                        self.ced_last_confirmed_at = self.clock()
+                        self.ced_display_expires_at = (
+                            self.ced_last_confirmed_at + self.ced_display_ttl_seconds
+                        )
+                        self.hud.set_environmental_sound(label)
+                        self.display.print_permanent(
+                            f"FAMILIAR SOUND: {label} "
+                            f"({float(result.get('score', 0.0)):.3f})"
+                        )
         for result in self.speech.drain_results():
             self._dispatch_recognition(result)
         while True:
@@ -683,6 +778,8 @@ class MicrophonePipeline:
         try:
             self.speech.start()
             self.ced.start()
+            if self.familiar_sound is not None:
+                self.familiar_sound.start()
             with self.hub:
                 while True:
                     self.hud.update()
@@ -701,8 +798,12 @@ class MicrophonePipeline:
         finally:
             self.speech.stop(force_final=self.mode == "mic")
             self.ced.stop()
+            if self.familiar_sound is not None:
+                self.familiar_sound.stop()
             self.speech.join_capture()
             self.ced.join()
+            if self.familiar_sound is not None:
+                self.familiar_sound.join()
             # Let already-submitted FINAL recognition complete before stopping.
             time.sleep(0.02)
             self.speech.stop_recognition()
@@ -738,6 +839,13 @@ class MicrophonePipeline:
         values["ced_clear_requests"] = self.ced_clear_requests
         values["stt_partial_count"] = self.stt_partial_count
         values["stt_final_count"] = self.stt_final_count
+        values["familiar_sounds_displayed"] = self.familiar_sounds_displayed
+        if self.familiar_sound is not None:
+            values["familiar_frames_consumed"] = self.familiar_sound.frames_consumed
+            values["familiar_windows_submitted"] = self.familiar_sound.windows_submitted
+            values["familiar_submit_failures"] = self.familiar_sound.submit_failures
+        if self.personalized_runtime is not None:
+            values.update(self.personalized_runtime.counters)
         hud_counters = getattr(self.hud, "counters", {})
         values["C_frames_sent"] = int(hud_counters.get("C_frames_sent", 0))
         return values

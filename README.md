@@ -36,11 +36,12 @@ The root `app.py` is the stable launcher; production host code lives under `soun
 | ESP32-C3/OLED HUD | **Current / evaluated hardware path** | With `--hud-port`, the controller validates frames and renders HOME, SUBTITLE/CED, and ALERT states. |
 | DTLN speech enhancement | **Optional / configurable** | The CLI uses it unless `--no-dtln` is supplied, but authorized local weights are required and are not distributed here. |
 | Rule-based personalization | **Implemented / optional / default-off** | `--personalized-alerts` injects a validated profile into post-recognition priority selection. |
+| Familiar Sounds | **Implemented / optional / default-off** | Local EfficientAT `mn10_as` prototypes, open-set rejection, temporal smoothing, and cooldown; enabled with `--familiar-sounds`. |
+| Familiar Voices | **Implemented / optional / default-off** | Local WeSpeaker ECAPA-TDNN512-LM prototypes prefix accepted final captions; enabled with `--familiar-voices`. |
 | EfficientSED combined V3 | **Optional / default-off / evaluated separately** | Isolated host-side specialist enabled explicitly; default V2 continues if it is unavailable. |
 | Semantic CED mapping | **Experimental / default-off** | Compatibility environment flag used only in named evaluation configurations. |
 | Sound localization or haptic output | **Future / not implemented** | No direction estimate or vibration path exists in the frozen system. |
 | Standalone on-glasses AI or offline Vietnamese STT | **Future / not implemented** | The evaluated prototype requires a laptop; Google STT is an online service. |
-| Familiar-voice learning or personalized acoustic models | **Not implemented** | Profiles do not learn voices, retrain CED, or fine-tune recognition models. |
 
 ## Current ISIF 2026 Prototype
 
@@ -142,7 +143,7 @@ HELP follows a separate path. Only a non-empty accepted FINAL transcript is chec
 
 Personalization is **implemented but default-off**. Its versioned JSON schema stores roles, contexts, responsibilities, supported-label priorities from 1 to 5, and short reasons. `ProfileManager` loads a requested user profile, falls back to `default_profile.json`, and finally to a built-in safe profile; strict validation rejects unknown fields, unsupported labels, invalid priorities, and conflicting aliases. The validator also preserves universal minimum priority for the defined critical categories.
 
-The local interview interface can generate and review a profile using configured provider support or a deterministic role/keyword fallback. `PriorityAdapter` then reloads the validated profile when it changes and maps its priorities to LOW/MEDIUM/HIGH/CRITICAL **after recognition**. It does not change CED thresholds, train a model, learn a voice, recognize familiar people, or fine-tune STT.
+The local interview interface can generate and review a profile using configured provider support or a deterministic role/keyword fallback. `PriorityAdapter` then reloads the validated profile when it changes and maps its priorities to LOW/MEDIUM/HIGH/CRITICAL **after recognition**. Separate opt-in Familiar Sounds and Familiar Voices tabs create local embedding prototypes; they do not retrain CED or fine-tune STT. See [Personalized Recognition](docs/PERSONALIZED_RECOGNITION.md).
 
 ### Optional EfficientSED V3 and display transport
 
@@ -319,8 +320,15 @@ Create and apply an optional personalization profile through the local interface
 
 ```powershell
 python -m personalization.web_server
-# Open http://127.0.0.1:8765, review the profile, then select Apply.
+# Open http://127.0.0.1:8765 for context, sound, and voice enrollment.
 python app.py --live-stt --hud-port COM5 --no-dtln --personalized-alerts
+```
+
+Prepare the optional pinned model environment, then enable either recognizer independently:
+
+```powershell
+python tools/prepare_personalized_recognition.py
+python app.py --live-stt --no-dtln --familiar-sounds --familiar-voices
 ```
 
 Use a specific validated profile instead of the default user-profile location:

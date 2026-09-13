@@ -26,7 +26,9 @@ class AudioStreamHub:
     def __init__(self, sample_rate: int = 16000, frame_samples: int = 512,
                  queue_seconds: float = 4.0, device_index: int | None = None,
                  stream_factory=None, clock=time.time,
-                 ced_queue_seconds: float | None = None) -> None:
+                 ced_queue_seconds: float | None = None,
+                 familiar_sound_enabled=None,
+                 familiar_queue_seconds: float = 6.0) -> None:
         if (sample_rate <= 0 or frame_samples <= 0 or queue_seconds <= 0 or
                 (ced_queue_seconds is not None and ced_queue_seconds <= 0)):
             raise ValueError("Audio stream dimensions must be positive.")
@@ -44,10 +46,16 @@ class AudioStreamHub:
         self.ced_frames: queue.Queue[AudioFrame] = queue.Queue(
             maxsize=ced_capacity
         )
+        self.familiar_sound_frames: queue.Queue[AudioFrame] = queue.Queue(
+            maxsize=max(1, int(familiar_queue_seconds / frame_seconds))
+        )
+        self._familiar_sound_enabled = familiar_sound_enabled or (lambda: False)
         self.raw_frames_captured = 0
         self.ced_frames_produced = 0
         self.dropped_speech_frames = 0
         self.dropped_ced_frames = 0
+        self.familiar_frames_produced = 0
+        self.dropped_familiar_frames = 0
         self.stream_statuses: deque[str] = deque(maxlen=32)
         self._stream_factory = stream_factory
         self._clock = clock
@@ -94,6 +102,15 @@ class AudioStreamHub:
         if self._offer(self.ced_frames, ced_frame):
             self.dropped_ced_frames += 1
         self.ced_frames_produced += 1
+        try:
+            familiar_enabled = bool(self._familiar_sound_enabled())
+        except Exception:
+            familiar_enabled = False
+        if familiar_enabled:
+            familiar_frame = AudioFrame(raw.copy(), bool(status), started, ended, sequence)
+            if self._offer(self.familiar_sound_frames, familiar_frame):
+                self.dropped_familiar_frames += 1
+            self.familiar_frames_produced += 1
 
     def __enter__(self) -> "AudioStreamHub":
         if self._stream_factory is None:
@@ -128,6 +145,8 @@ class AudioStreamHub:
             "ced_frames_produced": self.ced_frames_produced,
             "speech_frames_dropped": self.dropped_speech_frames,
             "ced_frames_dropped": self.dropped_ced_frames,
+            "familiar_frames_produced": self.familiar_frames_produced,
+            "familiar_frames_dropped": self.dropped_familiar_frames,
         }
 
 

@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "branch": "feature/hearvis-personalized-recognition",
+  "base_commit": "6b4aec80880bd89655bd290c07580ecb28534571",
+  "verdict": "IMPLEMENTED_AND_SOFTWARE_VERIFIED",
+  "focused_tests": {
+    "command": ".\\.venv\\Scripts\\python.exe -m pytest -q tests\\test_personalized_recognition.py tests\\test_audio_pipeline.py tests\\test_personalization.py",
+    "passed": 70,
+    "subtests_passed": 5,
+    "failed": 0,
+    "duration_seconds": 5.30
+  },
+  "focused_tests_after_final_hardening": {
+    "passed": 72,
+    "subtests_passed": 5,
+    "failed": 0,
+    "duration_seconds": 5.29
+  },
+  "full_tests": {
+    "command": ".\\.venv\\Scripts\\python.exe -m pytest -q",
+    "passed": 267,
+    "subtests_passed": 7,
+    "failed": 0,
+    "warnings": 4,
+    "duration_seconds": 24.35
+  },
+  "models": {
+    "sound": {
+      "name": "EfficientAT mn10_as",
+      "source_revision": "a425fdce92572e602a1d5634799bd9f1f2efa806",
+      "weight_sha256": "0bd7dc2443af498c289a2e739f02ebb515d6aa3fd3ab9db539c86123ae368a4e",
+      "embedding_dimension": 960,
+      "median_inference_seconds": 0.02664615004323423,
+      "max_inference_seconds": 1.9351150998845696,
+      "worker_rss_bytes": 472166400
+    },
+    "voice": {
+      "name": "WeSpeaker ECAPA-TDNN512-LM ONNX",
+      "model_revision": "a2f3dcb1c8702caccc7a55ceb57f5e8d1842112b",
+      "onnx_sha256": "d71b85d9b48058ef68004f04f1b78acebefb9dfcf542e19b976a12a5ad1f10b0",
+      "embedding_dimension": 192,
+      "median_inference_seconds": 0.051690049935132265,
+      "max_inference_seconds": 1.9531010000500828,
+      "worker_rss_bytes": 440102912
+    }
+  },
+  "open_set_evaluation": {
+    "sound": {"correct": 6, "trials": 6, "unknown_rejected": 2, "false_accepts": 0},
+    "voice": {"correct": 6, "trials": 6, "unknown_rejected": 2, "false_accepts": 0}
+  },
+  "manual_hardware_required": [
+    "physical microphone end-to-end enrollment and contention",
+    "consenting familiar and unfamiliar speakers in target conditions",
+    "real custom household sounds",
+    "ESP32-C3/OLED readability and display precedence"
+  ],
+  "visual_browser_qa": {
+    "status": "NOT_RUN",
+    "reason": "The in-app browser runtime could not create its kernel assets because the system-drive temporary path was unavailable; HTTP/API behavior was covered by integration tests."
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0",
+  "created_at_unix": 1789290990.5641456,
+  "sound": {
+    "dataset": "ESC-50",
+    "enrollment_folds": [
+      1,
+      2,
+      3
+    ],
+    "test_folds": [
+      4,
+      5
+    ],
+    "trials": [
+      {
+        "file": "4-182034-A-30.wav",
+        "expected": "door_wood_knock",
+        "predicted": "door_wood_knock",
+        "accepted": true,
+        "score": 0.9133780002593994,
+        "margin": 0.2353343963623047,
+        "reason": "accepted"
+      },
+      {
+        "file": "4-182039-A-30.wav",
+        "expected": "door_wood_knock",
+        "predicted": "door_wood_knock",
+        "accepted": true,
+        "score": 0.9561481475830078,
+        "margin": 0.31543517112731934,
+        "reason": "accepted"
+      },
+      {
+        "file": "4-182395-A-0.wav",
+        "expected": "dog",
+        "predicted": "dog",
+        "accepted": true,
+        "score": 0.910368800163269,
+        "margin": 0.24473541975021362,
+        "reason": "accepted"
+      },
+      {
+        "file": "4-183992-A-0.wav",
+        "expected": "dog",
+        "predicted": "dog",
+        "accepted": true,
+        "score": 0.865422248840332,
+        "margin": 0.28553181886672974,
+        "reason": "accepted"
+      },
+      {
+        "file": "4-175845-A-43.wav",
+        "expected": "UNKNOWN",
+        "predicted": "UNKNOWN",
+        "accepted": false,
+        "score": 0.6502861976623535,
+        "margin": 0.04353654384613037,
+        "reason": "below_threshold"
+      },
+      {
+        "file": "4-175846-A-43.wav",
+        "expected": "UNKNOWN",
+        "predicted": "UNKNOWN",
+        "accepted": false,
+        "score": 0.6721473932266235,
+        "margin": 0.0603177547454834,
+        "reason": "below_threshold"
+      }
+    ],
+    "metadata": {
+      "model": "EfficientAT mn10_as",
+      "revision": "a425fdce92572e602a1d5634799bd9f1f2efa806",
+      "sha256": "0bd7dc2443af498c289a2e739f02ebb515d6aa3fd3ab9db539c86123ae368a4e",
+      "source": "https://github.com/fschmid56/EfficientAT/releases/download/v0.0.1/mn10_as_mAP_471.pt",
+      "preprocessing": "efficientat-32k-mel128-win800-hop320-v1",
+      "sample_rate_hz": 32000,
+      "load_seconds": 3.015078399796039,
+      "inference_seconds": 0.027070000069215894,
+      "cpu_seconds": 0.125,
+      "worker_rss_bytes": 472166400
+    },
+    "inference_seconds": [
+      1.9351150998845696,
+      0.028733800165355206,
+      0.02564650005660951,
+      0.027721500024199486,
+      0.025669199880212545,
+      0.027070000069215894,
+      0.028156799962744117,
+      0.026885600062087178,
+      0.02517849998548627,
+      0.024670599959790707,
+      0.022857700008898973,
+      0.02640670002438128
+    ],
+    "summary": {
+      "trials": 6,
+      "correct": 6,
+      "unknown_trials": 2,
+      "false_accepts": 0,
+      "median_inference_seconds": 0.02664615004323423,
+      "max_inference_seconds": 1.9351150998845696
+    }
+  },
+  "voice": {
+    "dataset": "VIVOS selected",
+    "enrollment_utterances_per_speaker": 3,
+    "trials": [
+      {
+        "file": "VIVOSDEV03_R029.wav",
+        "expected": "VIVOSDEV03",
+        "predicted": "VIVOSDEV03",
+        "accepted": true,
+        "score": 0.8444877862930298,
+        "margin": 0.5013194978237152,
+        "reason": "accepted"
+      },
+      {
+        "file": "VIVOSDEV03_R041.wav",
+        "expected": "VIVOSDEV03",
+        "predicted": "VIVOSDEV03",
+        "accepted": true,
+        "score": 0.8143285512924194,
+        "margin": 0.4853862226009369,
+        "reason": "accepted"
+      },
+      {
+        "file": "VIVOSDEV04_R010.wav",
+        "expected": "VIVOSDEV04",
+        "predicted": "VIVOSDEV04",
+        "accepted": true,
+        "score": 0.8040321469306946,
+        "margin": 0.4145718514919281,
+        "reason": "accepted"
+      },
+      {
+        "file": "VIVOSDEV04_R013.wav",
+        "expected": "VIVOSDEV04",
+        "predicted": "VIVOSDEV04",
+        "accepted": true,
+        "score": 0.8331770896911621,
+        "margin": 0.4467373192310333,
+        "reason": "accepted"
+      },
+      {
+        "file": "VIVOSDEV05_004.wav",
+        "expected": "UNKNOWN",
+        "predicted": "UNKNOWN",
+        "accepted": false,
+        "score": 0.34920865297317505,
+        "margin": 0.06391668319702148,
+        "reason": "below_threshold"
+      },
+      {
+        "file": "VIVOSDEV05_030.wav",
+        "expected": "UNKNOWN",
+        "predicted": "UNKNOWN",
+        "accepted": false,
+        "score": 0.26785343885421753,
+        "margin": 0.0002714395523071289,
+        "reason": "below_threshold"
+      }
+    ],
+    "metadata": {
+      "model": "WeSpeaker ECAPA-TDNN512-LM",
+      "revision": "a2f3dcb1c8702caccc7a55ceb57f5e8d1842112b",
+      "sha256": "d71b85d9b48058ef68004f04f1b78acebefb9dfcf542e19b976a12a5ad1f10b0",
+      "source": "hf://Wespeaker/wespeaker-ecapa-tdnn512-LM/voxceleb_ECAPA512_LM.onnx",
+      "preprocessing": "wespeaker-kaldi-fbank80-cmn-16k-v1",
+      "sample_rate_hz": 16000,
+      "load_seconds": 0.40996189997531474,
+      "inference_seconds": 0.0964871000032872,
+      "cpu_seconds": 0.625,
+      "worker_rss_bytes": 440102912
+    },
+    "inference_seconds": [
+      1.9531010000500828,
+      0.03618970001116395,
+      0.05438999994657934,
+      0.05134579981677234,
+      0.03956309985369444,
+      0.0964871000032872,
+      0.06443000002764165,
+      0.030947899911552668,
+      0.05203430005349219,
+      0.05409320001490414,
+      0.04884700011461973,
+      0.03959149983711541
+    ],
+    "summary": {
+      "trials": 6,
+      "correct": 6,
+      "unknown_trials": 2,
+      "false_accepts": 0,
+      "median_inference_seconds": 0.051690049935132265,
+      "max_inference_seconds": 1.9531010000500828
+    }
+  }
+}

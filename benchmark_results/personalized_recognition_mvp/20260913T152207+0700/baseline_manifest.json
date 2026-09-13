@@ -1,0 +1,54 @@
+{
+  "run_id": "20260913T152207+0700",
+  "timestamp": "2026-09-13T15:22:07+07:00",
+  "timezone": "Asia/Saigon",
+  "starting_branch": "feature/hearvis-personalized-recognition",
+  "review_branch": "feature/hearvis-personalized-recognition",
+  "starting_commit": "6b4aec80880bd89655bd290c07580ecb28534571",
+  "python": "3.12.10",
+  "operating_system": "Windows 11",
+  "baseline_tests": {
+    "command": ".\\.venv\\Scripts\\python.exe -m pytest -q",
+    "passed": 255,
+    "subtests_passed": 7,
+    "failed": 0,
+    "warnings": 4,
+    "duration_seconds": 64.30
+  },
+  "web": {
+    "command": ".\\.venv\\Scripts\\python.exe -m personalization.web_server",
+    "host": "127.0.0.1",
+    "port": 8765,
+    "profile_schema": "1.0"
+  },
+  "audio": {
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "frame_samples": 512,
+    "speech_queue_seconds": 4.0,
+    "ced_queue_seconds": 10.0,
+    "ced_window_seconds": 5.0,
+    "ced_overlap_seconds": 0.0,
+    "capture_stream_count": 1,
+    "overflow_policy": "drop_oldest"
+  },
+  "models": {
+    "ced": {
+      "id": "mispeech/ced-tiny",
+      "revision": "ace276d29dd0bb3f3517b0fa8cf300738c409019"
+    },
+    "vad": "Silero VAD, 16 kHz, 512-sample frames",
+    "stt": "Google Speech Recognition vi-VN",
+    "speech_enhancement": "DTLN, STT snapshot boundary only",
+    "personalized_sound": "not present at baseline",
+    "familiar_speaker": "not present at baseline"
+  },
+  "feature_defaults": {
+    "personalized_alerts": false,
+    "emergency_v3": false,
+    "familiar_sounds": false,
+    "familiar_voices": false
+  },
+  "hud_precedence": "ALERT > SUBTITLE/CED > HOME",
+  "working_tree_note": "Pre-existing untracked evidence and human-study files were preserved and excluded from the feature scope."
+}
