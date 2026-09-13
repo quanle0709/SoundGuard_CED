@@ -1,0 +1,547 @@
+{
+  "holdout_counts": {
+    "known": 20,
+    "unknown": 25,
+    "total": 45
+  },
+  "correct_identification": {
+    "numerator": 20,
+    "denominator": 20
+  },
+  "known_acceptance": {
+    "numerator": 20,
+    "denominator": 20
+  },
+  "unknown_rejection": {
+    "numerator": 25,
+    "denominator": 25
+  },
+  "false_acceptance": {
+    "numerator": 0,
+    "denominator": 25
+  },
+  "false_rejection": {
+    "numerator": 0,
+    "denominator": 20
+  },
+  "misidentification": {
+    "numerator": 0,
+    "denominator": 20
+  },
+  "top1_known": {
+    "numerator": 20,
+    "denominator": 20
+  },
+  "overall_decision_correct": {
+    "numerator": 45,
+    "denominator": 45
+  },
+  "ambiguous_results": {
+    "numerator": 0,
+    "denominator": 45
+  },
+  "per_profile": {
+    "DEMO SPEAKER A": {
+      "top1_correct": 10,
+      "top1_total": 10,
+      "accepted_correct": 10,
+      "accepted_correct_total": 10
+    },
+    "DEMO SPEAKER B": {
+      "top1_correct": 10,
+      "top1_total": 10,
+      "accepted_correct": 10,
+      "accepted_correct_total": 10
+    }
+  },
+  "confusion_matrix": {
+    "DEMO SPEAKER A": {
+      "DEMO SPEAKER A": 10,
+      "DEMO SPEAKER B": 0,
+      "UNKNOWN": 0
+    },
+    "DEMO SPEAKER B": {
+      "DEMO SPEAKER A": 0,
+      "DEMO SPEAKER B": 10,
+      "UNKNOWN": 0
+    },
+    "UNKNOWN": {
+      "DEMO SPEAKER A": 0,
+      "DEMO SPEAKER B": 0,
+      "UNKNOWN": 25
+    }
+  },
+  "holdout_rejection_reasons": {
+    "below_threshold": 25
+  },
+  "score_distributions": {
+    "known": {
+      "count": 20,
+      "min": 0.7559952735900879,
+      "p25": 0.8161987662315369,
+      "p50": 0.8563739657402039,
+      "p95": 0.9164574027061463,
+      "max": 0.9304139614105225
+    },
+    "unknown": {
+      "count": 25,
+      "min": 0.08759301900863647,
+      "p25": 0.18437829613685608,
+      "p50": 0.2381109893321991,
+      "p95": 0.3643585979938507,
+      "max": 0.36849725246429443
+    }
+  },
+  "runner_up_margin_distributions": {
+    "known": {
+      "count": 20,
+      "min": 0.6113492995500565,
+      "p25": 0.6859792955219746,
+      "p50": 0.7218650281429291,
+      "p95": 0.809674172103405,
+      "max": 0.8296073526144028
+    },
+    "unknown": {
+      "count": 25,
+      "min": 0.012541264295578003,
+      "p25": 0.08175647258758545,
+      "p50": 0.1314651221036911,
+      "p95": 0.36043271236121655,
+      "max": 0.37544309720396996
+    }
+  },
+  "calibration": {
+    "method": "fixed-grid maximin balanced known-identification/unknown-rejection; safety tie-break",
+    "candidate_threshold_range": [
+      0.35,
+      0.95,
+      0.01
+    ],
+    "candidate_margin_range": [
+      0.0,
+      0.3,
+      0.01
+    ],
+    "threshold": 0.68,
+    "margin": 0.3,
+    "known_correct": 10,
+    "known_total": 10,
+    "unknown_rejected": 15,
+    "unknown_total": 15
+  },
+  "calibration_counts": {
+    "known": 10,
+    "unknown": 15
+  },
+  "prototype_build_seconds": {
+    "DEMO SPEAKER A": 15.767731999978423,
+    "DEMO SPEAKER B": 1.9600362998899072
+  },
+  "prototype_build_seconds_distribution": {
+    "count": 2,
+    "min": 1.9600362998899072,
+    "p25": 5.411960224912036,
+    "p50": 8.863884149934165,
+    "p95": 15.077347214973997,
+    "max": 15.767731999978423
+  },
+  "enrollment_quality": [
+    {
+      "file": "2830-3980-0002.flac",
+      "expected_label": "DEMO SPEAKER A",
+      "quality": "valid",
+      "duration_seconds": 2.025,
+      "sample_rate_hz": 16000
+    },
+    {
+      "file": "2830-3980-0065.flac",
+      "expected_label": "DEMO SPEAKER A",
+      "quality": "valid",
+      "duration_seconds": 6.515,
+      "sample_rate_hz": 16000
+    },
+    {
+      "file": "2830-3980-0031.flac",
+      "expected_label": "DEMO SPEAKER A",
+      "quality": "valid",
+      "duration_seconds": 8.485,
+      "sample_rate_hz": 16000
+    },
+    {
+      "file": "2830-3980-0042.flac",
+      "expected_label": "DEMO SPEAKER A",
+      "quality": "valid",
+      "duration_seconds": 3.02,
+      "sample_rate_hz": 16000
+    },
+    {
+      "file": "2830-3980-0028.flac",
+      "expected_label": "DEMO SPEAKER A",
+      "quality": "valid",
+      "duration_seconds": 3.54,
+      "sample_rate_hz": 16000
+    },
+    {
+      "file": "1320-122617-0018.flac",
+      "expected_label": "DEMO SPEAKER B",
+      "quality": "valid",
+      "duration_seconds": 9.695,
+      "sample_rate_hz": 16000
+    },
+    {
+      "file": "1320-122617-0038.flac",
+      "expected_label": "DEMO SPEAKER B",
+      "quality": "valid",
+      "duration_seconds": 2.24,
+      "sample_rate_hz": 16000
+    },
+    {
+      "file": "1320-122617-0003.flac",
+      "expected_label": "DEMO SPEAKER B",
+      "quality": "valid",
+      "duration_seconds": 6.285,
+      "sample_rate_hz": 16000
+    },
+    {
+      "file": "1320-122617-0040.flac",
+      "expected_label": "DEMO SPEAKER B",
+      "quality": "valid",
+      "duration_seconds": 7.975,
+      "sample_rate_hz": 16000
+    },
+    {
+      "file": "1320-122617-0002.flac",
+      "expected_label": "DEMO SPEAKER B",
+      "quality": "valid",
+      "duration_seconds": 13.585,
+      "sample_rate_hz": 16000
+    }
+  ],
+  "rejected_examples": [
+    {
+      "phase": "calibration",
+      "file": "5639-40744-0009.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.1565110981464386,
+      "runner_up_margin": 0.16475720703601837,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "5639-40744-0018.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.039960674941539764,
+      "runner_up_margin": 0.10761886835098267,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "5639-40744-0039.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.12696677446365356,
+      "runner_up_margin": 0.1424538055434823,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "5639-40744-0038.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.15932589769363403,
+      "runner_up_margin": 0.18929971754550934,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "5639-40744-0041.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.0882004052400589,
+      "runner_up_margin": 0.10421569272875786,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "237-134500-0025.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.12267462909221649,
+      "runner_up_margin": 0.12711895070970058,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "237-134500-0028.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.09815490245819092,
+      "runner_up_margin": 0.08993058651685715,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "237-134500-0000.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.11926226317882538,
+      "runner_up_margin": 0.09561996534466743,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "237-126133-0024.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.08433416485786438,
+      "runner_up_margin": 0.028074540197849274,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "237-134500-0031.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.05761520192027092,
+      "runner_up_margin": 0.007569793611764908,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "5105-28241-0010.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.37302884459495544,
+      "runner_up_margin": 0.07031425833702087,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "5105-28241-0004.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.42096275091171265,
+      "runner_up_margin": 0.12759548425674438,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "5105-28240-0022.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.433744341135025,
+      "runner_up_margin": 0.20749486982822418,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "5105-28241-0007.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.4253484308719635,
+      "runner_up_margin": 0.2344062775373459,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "5105-28240-0019.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.35119014978408813,
+      "runner_up_margin": 0.13817471265792847,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "672-122797-0056.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.36088788509368896,
+      "runner_up_margin": 0.23236428201198578,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "672-122797-0021.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.3611617386341095,
+      "runner_up_margin": 0.28513940423727036,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "672-122797-0053.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.1964861899614334,
+      "runner_up_margin": 0.08175647258758545,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "672-122797-0040.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.3206993341445923,
+      "runner_up_margin": 0.17369131743907928,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "672-122797-0043.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.365157812833786,
+      "runner_up_margin": 0.23879386484622955,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "8230-279154-0034.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.34123411774635315,
+      "runner_up_margin": 0.37544309720396996,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "8230-279154-0032.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.2381109893321991,
+      "runner_up_margin": 0.26874738186597824,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "8230-279154-0021.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.36849725246429443,
+      "runner_up_margin": 0.35815837793052197,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "8230-279154-0035.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.29133856296539307,
+      "runner_up_margin": 0.2951035127043724,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "8230-279154-0029.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.3401530981063843,
+      "runner_up_margin": 0.3610012959688902,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "7127-75947-0011.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.2801376283168793,
+      "runner_up_margin": 0.28935557045042515,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "7127-75947-0036.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.29281485080718994,
+      "runner_up_margin": 0.20912593603134155,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "7127-75947-0020.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.27166759967803955,
+      "runner_up_margin": 0.06645599007606506,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "7127-75947-0038.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.26830771565437317,
+      "runner_up_margin": 0.11180931329727173,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "7127-75947-0005.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.16494856774806976,
+      "runner_up_margin": 0.05361654609441757,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "1284-134647-0000.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.22864826023578644,
+      "runner_up_margin": 0.07908876240253448,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "1284-1181-0010.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.16901792585849762,
+      "runner_up_margin": 0.0763198584318161,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "1284-1180-0013.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.18437829613685608,
+      "runner_up_margin": 0.1314651221036911,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "1284-1180-0019.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.16345849633216858,
+      "runner_up_margin": 0.1024223081767559,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "1284-1180-0022.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.08759301900863647,
+      "runner_up_margin": 0.1064829621464014,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "8463-294825-0001.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.21989426016807556,
+      "runner_up_margin": 0.09654930979013443,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "8463-294828-0021.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.11466692388057709,
+      "runner_up_margin": 0.09518015943467617,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "8463-294825-0004.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.16078948974609375,
+      "runner_up_margin": 0.012541264295578003,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "8463-294825-0013.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.19015365839004517,
+      "runner_up_margin": 0.03291329741477966,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "8463-294828-0034.flac",
+      "expected_label": "UNKNOWN",
+      "score": 0.222721129655838,
+      "runner_up_margin": 0.20783070847392082,
+      "reason": "below_threshold"
+    }
+  ],
+  "temporal_smoothing": {
+    "applicable": false,
+    "reason": "voice identification is utterance-level; sound-only smoothing/cooldown is not applied"
+  },
+  "consent_acknowledged_in_isolated_benchmark": true
+}

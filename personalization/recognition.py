@@ -362,7 +362,7 @@ class RecognitionStore:
         audio, sample_rate, quality = validate_audio_bytes(raw, kind)
         with self._lock:
             profile = self._load(kind, profile_id)
-            maximum = 5 if kind == "sound" else 10
+            maximum = 10
             if len(profile["samples"]) >= maximum:
                 raise RecognitionError(f"{kind} profile accepts at most {maximum} samples")
             if any(item.get("sha256") == quality["sha256"] for item in profile["samples"]):

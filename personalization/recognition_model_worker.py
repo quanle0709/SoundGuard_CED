@@ -47,8 +47,8 @@ def _normalise(vector) -> np.ndarray:
     return value / norm
 
 
-def _rss_bytes() -> int | None:
-    """Best-effort resident memory without adding a runtime dependency."""
+def _memory_bytes() -> tuple[int | None, int | None]:
+    """Return best-effort current and peak resident memory."""
     try:
         if os.name == "nt":
             import ctypes
@@ -77,14 +77,15 @@ def _rss_bytes() -> int | None:
             if get_memory(
                 handle, ctypes.byref(counters), counters.cb
             ):
-                return int(counters.WorkingSetSize)
+                return int(counters.WorkingSetSize), int(counters.PeakWorkingSetSize)
         else:
             import resource
             maximum = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-            return int(maximum * (1024 if sys.platform != "darwin" else 1))
+            peak = int(maximum * (1024 if sys.platform != "darwin" else 1))
+            return None, peak
     except Exception:
         pass
-    return None
+    return None, None
 
 
 def _lower_process_priority() -> None:
@@ -159,11 +160,13 @@ class EfficientATEmbedder:
             spectrum = self.mel(tensor)
             _, features = self.model(spectrum.unsqueeze(0))
         metadata = dict(self.metadata)
+        rss, peak_rss = _memory_bytes()
         metadata.update({
             "load_seconds": self.load_seconds,
             "inference_seconds": time.perf_counter() - started,
             "cpu_seconds": time.process_time() - cpu_started,
-            "worker_rss_bytes": _rss_bytes(),
+            "worker_rss_bytes": rss,
+            "worker_peak_rss_bytes": peak_rss,
         })
         return _normalise(features.detach().cpu().numpy()), metadata
 
@@ -224,11 +227,13 @@ class WeSpeakerEmbedder:
             ["embs"], {"feats": features.unsqueeze(0).numpy()}
         )[0]
         metadata = dict(self.metadata)
+        rss, peak_rss = _memory_bytes()
         metadata.update({
             "load_seconds": self.load_seconds,
             "inference_seconds": time.perf_counter() - started,
             "cpu_seconds": time.process_time() - cpu_started,
-            "worker_rss_bytes": _rss_bytes(),
+            "worker_rss_bytes": rss,
+            "worker_peak_rss_bytes": peak_rss,
         })
         return _normalise(embs), metadata
 

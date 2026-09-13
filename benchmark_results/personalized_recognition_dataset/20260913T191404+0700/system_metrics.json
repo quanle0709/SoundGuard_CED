@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260913T191404+0700",
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+    "logical_cpu_count": 8,
+    "model_threads": "worker defaults",
+    "optional_runtime_packages": {
+      "onnxruntime": "1.23.2",
+      "torch": "2.13.0",
+      "torchvision": "0.28.0",
+      "torchaudio": "2.11.0",
+      "nnAudio": "0.3.4",
+      "librosa": "0.11.0",
+      "huggingface-hub": "1.23.0",
+      "numpy": "2.4.6",
+      "soundfile": "0.14.0"
+    }
+  },
+  "latency_and_memory": {
+    "sound": {
+      "cold_wall_seconds": {
+        "count": 3,
+        "min": 13.351336000021547,
+        "p25": 14.762475149938837,
+        "p50": 16.173614299856126,
+        "p95": 24.29379607993178,
+        "max": 25.196038499940187
+      },
+      "cold_measurement_count": 3,
+      "warm_wall_seconds": {
+        "count": 122,
+        "min": 0.053398000076413155,
+        "p25": 0.06788215000415221,
+        "p50": 0.0727120500523597,
+        "p95": 0.14736058489652346,
+        "max": 0.7022247000131756
+      },
+      "warm_model_inference_seconds": {
+        "count": 122,
+        "min": 0.050879199989140034,
+        "p25": 0.06518839998170733,
+        "p50": 0.07005285006016493,
+        "p95": 0.14219849994406103,
+        "max": 0.6983282999135554
+      },
+      "warm_worker_cpu_seconds": {
+        "count": 122,
+        "min": 0.0625,
+        "p25": 0.109375,
+        "p50": 0.1328125,
+        "p95": 0.1875,
+        "max": 0.234375
+      },
+      "worker_rss_bytes": {
+        "count": 123,
+        "min": 342196224.0,
+        "p25": 350695424.0,
+        "p50": 418033664.0,
+        "p95": 425551462.4,
+        "max": 425590784.0
+      },
+      "worker_peak_rss_bytes": {
+        "count": 123,
+        "min": 424185856.0,
+        "p25": 424935424.0,
+        "p50": 425480192.0,
+        "p95": 425590784.0,
+        "max": 425590784.0
+      },
+      "model": {
+        "model": "EfficientAT mn10_as",
+        "revision": "a425fdce92572e602a1d5634799bd9f1f2efa806",
+        "sha256": "0bd7dc2443af498c289a2e739f02ebb515d6aa3fd3ab9db539c86123ae368a4e",
+        "preprocessing": "efficientat-32k-mel128-win800-hop320-v1"
+      }
+    },
+    "voice": {
+      "cold_wall_seconds": {
+        "count": 3,
+        "min": 10.365879599936306,
+        "p25": 12.619577300036326,
+        "p50": 14.873275000136346,
+        "p95": 17.660378710064105,
+        "max": 17.97005690005608
+      },
+      "cold_measurement_count": 3,
+      "warm_wall_seconds": {
+        "count": 79,
+        "min": 0.05248750001192093,
+        "p25": 0.10384205006994307,
+        "p50": 0.15241759992204607,
+        "p95": 0.46868063998408604,
+        "max": 0.5407910000067204
+      },
+      "warm_model_inference_seconds": {
+        "count": 79,
+        "min": 0.050797499949112535,
+        "p25": 0.10150914988480508,
+        "p50": 0.14934460003860295,
+        "p95": 0.46408906003925937,
+        "max": 0.536945499945432
+      },
+      "warm_worker_cpu_seconds": {
+        "count": 79,
+        "min": 0.078125,
+        "p25": 0.203125,
+        "p50": 0.3125,
+        "p95": 0.9078124999999999,
+        "max": 0.96875
+      },
+      "worker_rss_bytes": {
+        "count": 80,
+        "min": 402096128.0,
+        "p25": 417813504.0,
+        "p50": 422123520.0,
+        "p95": 462623744.0,
+        "max": 470650880.0
+      },
+      "worker_peak_rss_bytes": {
+        "count": 80,
+        "min": 418054144.0,
+        "p25": 462643200.0,
+        "p50": 470650880.0,
+        "p95": 470650880.0,
+        "max": 470650880.0
+      },
+      "model": {
+        "model": "WeSpeaker ECAPA-TDNN512-LM",
+        "revision": "a2f3dcb1c8702caccc7a55ceb57f5e8d1842112b",
+        "sha256": "d71b85d9b48058ef68004f04f1b78acebefb9dfcf542e19b976a12a5ad1f10b0",
+        "preprocessing": "wespeaker-kaldi-fbank80-cmn-16k-v1"
+      }
+    }
+  },
+  "real_concurrent_workers": {
+    "both_worker_threads_started": true,
+    "sound_results": [
+      {
+        "key": "sound-concurrent-1",
+        "id": "b81fb3e6-769c-4518-8be7-c71e927726e0",
+        "display_name": "DOOR KNOCK",
+        "score": 0.9034208059310913,
+        "threshold": 0.77,
+        "margin_required": 0.1,
+        "priority": 3,
+        "label": "UNKNOWN",
+        "accepted": false,
+        "reason": "temporal_evidence",
+        "runner_up_score": 0.6565735340118408,
+        "margin": 0.2468472719192505,
+        "ranked": [
+          {
+            "id": "b81fb3e6-769c-4518-8be7-c71e927726e0",
+            "display_name": "DOOR KNOCK",
+            "score": 0.9034208059310913,
+            "threshold": 0.77,
+            "margin_required": 0.1,
+            "priority": 3
+          },
+          {
+            "id": "908ed6b8-8f78-4aea-98e1-f4f838adfa40",
+            "display_name": "CLOCK ALARM",
+            "score": 0.6565735340118408,
+            "threshold": 0.77,
+            "margin_required": 0.1,
+            "priority": 3
+          },
+          {
+            "id": "95023630-cca8-4474-8f5a-df69bf18d6c6",
+            "display_name": "WASHING MACHINE",
+            "score": 0.6286588907241821,
+            "threshold": 0.77,
+            "margin_required": 0.1,
+            "priority": 3
+          }
+        ],
+        "model": {
+          "model": "EfficientAT mn10_as",
+          "revision": "a425fdce92572e602a1d5634799bd9f1f2efa806",
+          "sha256": "0bd7dc2443af498c289a2e739f02ebb515d6aa3fd3ab9db539c86123ae368a4e",
+          "source": "https://github.com/fschmid56/EfficientAT/releases/download/v0.0.1/mn10_as_mAP_471.pt",
+          "preprocessing": "efficientat-32k-mel128-win800-hop320-v1",
+          "sample_rate_hz": 32000,
+          "load_seconds": 16.519822699949145,
+          "inference_seconds": 0.14655980002135038,
+          "cpu_seconds": 0.25,
+          "worker_rss_bytes": 63938560,
+          "worker_peak_rss_bytes": 425590784
+        }
+      },
+      {
+        "key": "sound-concurrent-2",
+        "id": "b81fb3e6-769c-4518-8be7-c71e927726e0",
+        "display_name": "DOOR KNOCK",
+        "score": 0.9034208059310913,
+        "threshold": 0.77,
+        "margin_required": 0.1,
+        "priority": 3,
+        "label": "DOOR KNOCK",
+        "accepted": true,
+        "reason": "accepted",
+        "runner_up_score": 0.6565735340118408,
+        "margin": 0.2468472719192505,
+        "ranked": [
+          {
+            "id": "b81fb3e6-769c-4518-8be7-c71e927726e0",
+            "display_name": "DOOR KNOCK",
+            "score": 0.9034208059310913,
+            "threshold": 0.77,
+            "margin_required": 0.1,
+            "priority": 3
+          },
+          {
+            "id": "908ed6b8-8f78-4aea-98e1-f4f838adfa40",
+            "display_name": "CLOCK ALARM",
+            "score": 0.6565735340118408,
+            "threshold": 0.77,
+            "margin_required": 0.1,
+            "priority": 3
+          },
+          {
+            "id": "95023630-cca8-4474-8f5a-df69bf18d6c6",
+            "display_name": "WASHING MACHINE",
+            "score": 0.6286588907241821,
+            "threshold": 0.77,
+            "margin_required": 0.1,
+            "priority": 3
+          }
+        ],
+        "model": {
+          "model": "EfficientAT mn10_as",
+          "revision": "a425fdce92572e602a1d5634799bd9f1f2efa806",
+          "sha256": "0bd7dc2443af498c289a2e739f02ebb515d6aa3fd3ab9db539c86123ae368a4e",
+          "source": "https://github.com/fschmid56/EfficientAT/releases/download/v0.0.1/mn10_as_mAP_471.pt",
+          "preprocessing": "efficientat-32k-mel128-win800-hop320-v1",
+          "sample_rate_hz": 32000,
+          "load_seconds": 16.519822699949145,
+          "inference_seconds": 0.10024129995144904,
+          "cpu_seconds": 0.078125,
+          "worker_rss_bytes": 64131072,
+          "worker_peak_rss_bytes": 425590784
+        }
+      }
+    ],
+    "voice_result": {
+      "id": "f0e61488-587c-4e0f-bfcd-1947514ef2b7",
+      "display_name": "DEMO SPEAKER A",
+      "score": 0.8624651432037354,
+      "threshold": 0.68,
+      "margin_required": 0.3,
+      "priority": 3,
+      "label": "DEMO SPEAKER A",
+      "accepted": true,
+      "reason": "accepted",
+      "runner_up_score": 0.08205611258745193,
+      "margin": 0.7804090306162834,
+      "ranked": [
+        {
+          "id": "f0e61488-587c-4e0f-bfcd-1947514ef2b7",
+          "display_name": "DEMO SPEAKER A",
+          "score": 0.8624651432037354,
+          "threshold": 0.68,
+          "margin_required": 0.3,
+          "priority": 3
+        },
+        {
+          "id": "757d247b-2c13-4bba-8b7f-bda43c6a2bc5",
+          "display_name": "DEMO SPEAKER B",
+          "score": 0.08205611258745193,
+          "threshold": 0.68,
+          "margin_required": 0.3,
+          "priority": 3
+        }
+      ],
+      "model": {
+        "model": "WeSpeaker ECAPA-TDNN512-LM",
+        "revision": "a2f3dcb1c8702caccc7a55ceb57f5e8d1842112b",
+        "sha256": "d71b85d9b48058ef68004f04f1b78acebefb9dfcf542e19b976a12a5ad1f10b0",
+        "source": "hf://Wespeaker/wespeaker-ecapa-tdnn512-LM/voxceleb_ECAPA512_LM.onnx",
+        "preprocessing": "wespeaker-kaldi-fbank80-cmn-16k-v1",
+        "sample_rate_hz": 16000,
+        "load_seconds": 1.5325557000469416,
+        "inference_seconds": 0.2296006998512894,
+        "cpu_seconds": 0.375,
+        "worker_rss_bytes": 403398656,
+        "worker_peak_rss_bytes": 470650880
+      }
+    },
+    "counters": {
+      "sound_enabled": true,
+      "voice_enabled": true,
+      "familiar_sound_produced": 2,
+      "familiar_sound_consumed": 2,
+      "familiar_sound_dropped": 0,
+      "familiar_sound_failures": 0,
+      "familiar_voice_produced": 1,
+      "familiar_voice_consumed": 1,
+      "familiar_voice_dropped": 0,
+      "familiar_voice_failures": 0
+    },
+    "combined_worker_rss_bytes": 467529728,
+    "combined_worker_peak_rss_bytes": 896241664
+  },
+  "synthetic_queue_and_failure": {
+    "bounded_queue_stress": {
+      "sound": {
+        "submitted": 10,
+        "processed": 3,
+        "timed_out": 0,
+        "failed": 0,
+        "dropped": 7,
+        "processed_payloads": [
+          0,
+          8,
+          9
+        ],
+        "drop_oldest_verified": true
+      },
+      "voice": {
+        "submitted": 10,
+        "processed": 3,
+        "timed_out": 0,
+        "failed": 0,
+        "dropped": 7,
+        "processed_payloads": [
+          0,
+          8,
+          9
+        ],
+        "drop_oldest_verified": true
+      }
+    },
+    "failure_isolation": {
+      "submitted": 2,
+      "processed": 2,
+      "timed_out": 1,
+      "failed": 1,
+      "dropped": 0,
+      "all_fail_open_unknown": true
+    }
+  },
+  "features_off": {
+    "sound_worker_created": false,
+    "voice_worker_created": false,
+    "sound_submit_result": false,
+    "voice_submit_result": false,
+    "model_calls": 0,
+    "baseline_preserved": true
+  },
+  "api_lifecycle": {
+    "sound": {
+      "http_statuses": [
+        201,
+        201,
+        201,
+        200,
+        200
+      ],
+      "built": true,
+      "consent_acknowledged": false,
+      "test_reason": "accepted",
+      "disabled": true,
+      "reenabled": true,
+      "sample_delete_status": 200,
+      "sample_delete_invalidated_prototype": true,
+      "profile_delete_status": 200,
+      "profile_deleted": true,
+      "profile_list_status": 200,
+      "remaining_kind_profiles": 0
+    },
+    "voice": {
+      "http_statuses": [
+        201,
+        201,
+        201,
+        201,
+        200,
+        200
+      ],
+      "built": true,
+      "consent_acknowledged": true,
+      "test_reason": "accepted",
+      "disabled": true,
+      "reenabled": true,
+      "sample_delete_status": 200,
+      "sample_delete_invalidated_prototype": true,
+      "profile_delete_status": 200,
+      "profile_deleted": true,
+      "profile_list_status": 200,
+      "remaining_kind_profiles": 0
+    }
+  },
+  "dataset_backed_fusion": {
+    "used_real_model_voice_decision": true,
+    "used_real_model_sound_decision": true,
+    "partial_caption_unprefixed": true,
+    "final_caption_prefixed": true,
+    "expected_final_caption": "[DEMO SPEAKER A] gi\u00fap t\u00f4i",
+    "help_received_raw_unprefixed_transcript": true,
+    "help_active": true,
+    "locked_alert_before_sound": "SOS",
+    "locked_alert_after_sound": "SOS",
+    "familiar_sound_displayed": "DOOR KNOCK",
+    "familiar_sound_did_not_override_locked_alert": true
+  },
+  "fusion_regression_contracts": {
+    "final_caption_prefix_only": "verified with real dataset decisions and focused test",
+    "help_receives_raw_unprefixed_transcript": "verified with real dataset decisions and focused test",
+    "familiar_sound_cannot_override_help_alert": "verified with real dataset decisions, focused test, and firmware ALERT precedence"
+  },
+  "user_data_isolation": {
+    "before": {
+      "file_count": 2,
+      "aggregate_sha256": "64f95be3e263b7fe68201242bab4db90954ac642f85dd91a5b1f65d44612de2d"
+    },
+    "after": {
+      "file_count": 2,
+      "aggregate_sha256": "64f95be3e263b7fe68201242bab4db90954ac642f85dd91a5b1f65d44612de2d"
+    },
+    "unchanged": true,
+    "benchmark_root": "benchmark_data/external/personalized_recognition_dataset_runs/20260913T191404+0700",
+    "normal_profile_root_not_used": "personalization/enrollments"
+  },
+  "commands": {
+    "data_acquisition": [
+      "curl.exe -L --fail --retry 3 --output benchmark_data\\external\\personalized_recognition_datasets\\test-clean.tar.gz https://www.openslr.org/resources/12/test-clean.tar.gz",
+      "Get-FileHash benchmark_data\\external\\personalized_recognition_datasets\\test-clean.tar.gz -Algorithm MD5",
+      "tar -xzf benchmark_data\\external\\personalized_recognition_datasets\\test-clean.tar.gz -C benchmark_data\\external\\personalized_recognition_datasets",
+      "download selected ESC-50 WAV files from https://raw.githubusercontent.com/karolpiczak/ESC-50/33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6/audio/<filename> using sound_split_manifest.csv"
+    ],
+    "benchmark": ".\\.venv\\Scripts\\python.exe tools\\evaluate_personalized_recognition_dataset.py --output benchmark_results/personalized_recognition_dataset/20260913T191404+0700 --downloaded-bytes 434872784",
+    "focused_tests": ".\\.venv\\Scripts\\python.exe -m pytest -q tests\\test_personalized_recognition.py tests\\test_personalized_recognition_dataset.py",
+    "full_tests": ".\\.venv\\Scripts\\python.exe -m pytest -q"
+  },
+  "software_unit_verification": {
+    "focused": {
+      "status": "passed",
+      "passed": 20,
+      "failed": 0,
+      "duration_seconds": 1.79
+    },
+    "full": {
+      "status": "passed",
+      "passed": 275,
+      "failed": 0,
+      "warnings": 4,
+      "subtests_passed": 7,
+      "duration_seconds": 59.02
+    }
+  },
+  "measurements_not_performed": [
+    "physical microphone capture",
+    "physical OLED/HUD rendering",
+    "live CED/STT/model contention",
+    "power and thermal measurements",
+    "real family-member or Vietnamese speech evaluation",
+    "replay/spoof testing"
+  ]
+}

@@ -109,6 +109,32 @@ def test_voice_consent_and_minimum_sample_contract(tmp_path):
         store.build("voice", profile["id"], fake_embed)
 
 
+def test_sound_profiles_accept_recommended_ten_samples(tmp_path):
+    store = RecognitionStore(tmp_path)
+    profile = store.create("sound", "Door knock")
+    for index in range(10):
+        store.add_sample("sound", profile["id"], wav_bytes(frequency=300 + index * 20))
+    assert store.list("sound")[0]["sample_count"] == 10
+    with pytest.raises(RecognitionError, match="at most 10"):
+        store.add_sample("sound", profile["id"], wav_bytes(frequency=700))
+
+
+def test_personalization_page_uses_hearvis_copy_and_valid_utf8():
+    page = (Path(__file__).parents[1] / "personalization" / "static" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert "HearVis Personalization" in page
+    assert "Local custom sound classes" in page
+    assert "Personalized recognition" in page
+    assert "5–10 varied, clean samples" in page
+    assert "6–10 natural utterances" in page
+    assert "Minimum accepted: 2 valid samples" in page
+    assert "Minimum accepted: 3 valid utterances" in page
+    assert "SoundGuard" not in page
+    assert "ON-DEVICE CUSTOM CLASSES" not in page.upper()
+    assert "â" not in page and "Â" not in page
+
+
 def test_bounded_worker_isolates_model_failure_and_counts_it():
     def broken(_):
         raise RuntimeError("model crashed")
@@ -171,6 +197,28 @@ def test_runtime_fails_open_when_model_client_raises(tmp_path):
     assert results[0]["reason"] == "worker_error"
 
 
+def test_runtime_fails_open_when_model_client_times_out(tmp_path):
+    class TimeoutClient:
+        def embed(self, *_):
+            raise TimeoutError("model exceeded deadline")
+        def close(self):
+            pass
+    store = RecognitionStore(tmp_path)
+    profile = store.create("voice", "Demo", consent_acknowledged=True)
+    for frequency in (220, 260, 300):
+        store.add_sample("voice", profile["id"], wav_bytes(1.2, frequency))
+    store.build("voice", profile["id"], fake_embed)
+    runtime = PersonalizedRecognitionRuntime(
+        familiar_voices=True, store=store, client=TimeoutClient()
+    )
+    runtime.submit_voice("one", np.ones(24_000, dtype=np.float32))
+    result = runtime.take_voice_result("one", timeout=2)
+    runtime.close()
+    assert result["label"] == "UNKNOWN"
+    assert result["reason"] == "worker_error"
+    assert "TimeoutError" in result["error"]
+
+
 def test_runtime_with_no_built_profiles_closes_without_starting_workers(tmp_path):
     class Client:
         def close(self): pass
@@ -213,11 +261,12 @@ def test_live_enabled_check_is_cached_and_never_reads_storage_in_callback():
 
 class RecordingHUD:
     def __init__(self):
+        self.partial_subtitles = []
         self.final_subtitles = []
         self.environmental_sounds = []
         self.counters = {"C_frames_sent": 0}
     def set_subtitle(self, value): self.final_subtitles.append(value)
-    def set_partial_subtitle(self, value): pass
+    def set_partial_subtitle(self, value): self.partial_subtitles.append(value)
     def set_environmental_sound(self, value): self.environmental_sounds.append(value)
     def set_alert_state(self, *args): pass
     def set_status(self, value): pass
@@ -246,9 +295,44 @@ def test_speaker_prefix_is_display_only_and_help_fusion_receives_raw_transcript(
         display=TranscriptDisplay(io.StringIO()), hud=hud,
         personalized_runtime=Runtime(),
     )
+    pipeline._dispatch_recognition(
+        RecognitionResult("PARTIAL", 1, "help", event_sequence=1)
+    )
     pipeline._dispatch_recognition(RecognitionResult("FINAL", 1, "help me", event_sequence=2))
+    assert hud.partial_subtitles == ["help"]
     assert hud.final_subtitles == ["[Lan] help me"]
     assert seen == ["help me"]
+
+
+def test_familiar_sound_display_cannot_clear_locked_help_alert():
+    class Runtime:
+        familiar_sounds = True
+        sound_enabled = True
+        counters = {}
+        def __init__(self):
+            self.pending = [{
+                "accepted": True, "label": "DOOR KNOCK", "score": 0.95
+            }]
+        def submit_sound(self, *_): return True
+        def submit_voice(self, *_): return False
+        def take_voice_result(self, *_args, **_kwargs): return None
+        def drain_sound_results(self):
+            values, self.pending = self.pending, []
+            return values
+    system = EmergencySystem(decision_mode="continuous")
+    hud = RecordingHUD()
+    pipeline = MicrophonePipeline(
+        mode="live-stt", emergency_system=system,
+        display=TranscriptDisplay(io.StringIO()), hud=hud,
+        personalized_runtime=Runtime(),
+    )
+    pipeline._dispatch_recognition(
+        RecognitionResult("FINAL", 1, "giúp tôi", event_sequence=2)
+    )
+    assert system.help_active and pipeline.active_hud_alert == "SOS"
+    pipeline._pump()
+    assert system.help_active and pipeline.active_hud_alert == "SOS"
+    assert hud.environmental_sounds[-1] == "DOOR KNOCK"
 
 
 def test_http_api_preserves_start_and_adds_local_enrollment(tmp_path):

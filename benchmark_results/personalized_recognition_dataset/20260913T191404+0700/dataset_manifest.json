@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260913T191404+0700",
+  "created_at": "2026-09-13T19:16:20.964904+07:00",
+  "random_seed": 20260913,
+  "downloaded_bytes_for_this_validation": 434872784,
+  "datasets": {
+    "sound": {
+      "name": "ESC-50",
+      "source_url": "https://github.com/karolpiczak/ESC-50",
+      "revision": "33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6",
+      "license": "CC BY-NC 3.0 (see official repository LICENSE)",
+      "metadata_sha256": "ca660da60191a97de289983a05821c9382d852a38a2ba8428980816b68cf6246",
+      "official_folds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "selected_files": 123,
+      "selected_bytes": 54248412
+    },
+    "voice": {
+      "name": "LibriSpeech SLR12 test-clean",
+      "source_url": "https://www.openslr.org/resources/12/test-clean.tar.gz",
+      "catalog_url": "https://www.openslr.org/12/",
+      "license": "CC BY 4.0",
+      "archive_bytes": 346663984,
+      "official_md5": "32fa31d27d2e1cad72775fee3f4849a9",
+      "actual_md5": "32fa31d27d2e1cad72775fee3f4849a9",
+      "selected_files": 80,
+      "selected_bytes": 10602076,
+      "enrolled_speakers": [
+        {
+          "speaker_id": "2830",
+          "display_label": "DEMO SPEAKER A"
+        },
+        {
+          "speaker_id": "1320",
+          "display_label": "DEMO SPEAKER B"
+        }
+      ],
+      "calibration_impostor_speaker_ids": [
+        "5639",
+        "237",
+        "5105"
+      ],
+      "holdout_impostor_speaker_ids": [
+        "672",
+        "8230",
+        "7127",
+        "1284",
+        "8463"
+      ]
+    }
+  },
+  "splits": {
+    "sound": {
+      "enrollment": 15,
+      "calibration": 30,
+      "positive_holdout": 30,
+      "calibration_unknown": 24,
+      "negative_holdout": 24
+    },
+    "voice": {
+      "enrollment": 10,
+      "calibration": 10,
+      "positive_holdout": 20,
+      "calibration_unknown": 15,
+      "negative_holdout": 25
+    }
+  },
+  "split_integrity": {
+    "same_file_reuse": false,
+    "esc50_source_cross_split": false,
+    "voice_utterance_cross_split": false,
+    "threshold_and_margin_selected_from_calibration_only": true
+  },
+  "attribution_and_license_notes": [
+    "ESC-50 clips originate from Freesound and are distributed by the official ESC-50 repository under CC BY-NC 3.0.",
+    "LibriSpeech SLR12 is read English speech distributed under CC BY 4.0.",
+    "Raw audio is cached only under Git-ignored benchmark_data/external paths and is not committed."
+  ]
+}

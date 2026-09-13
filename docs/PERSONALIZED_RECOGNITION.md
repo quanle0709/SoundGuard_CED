@@ -24,7 +24,7 @@ Finish enrollment before starting live mode. Live mode snapshots enabled prototy
 ### Familiar Sounds
 
 1. Open **Familiar sounds** and create a named profile.
-2. Record or upload 2–5 clean WAV examples, ideally from different distances and ordinary background conditions.
+2. Record or upload at least two valid WAV examples. For reliable use, 5–10 varied samples from different distances and ordinary background conditions are recommended.
 3. Remove bad samples. Silent, too-quiet, severely clipped, duplicate, too-short, too-long, and undecodable audio is rejected.
 4. Build the prototype. EfficientAT embeds every valid sample and stores an L2-normalized centroid locally.
 5. Use **Test WAV** with both a known example and a different sound. Review the score, margin, and `UNKNOWN` reason.
@@ -34,7 +34,7 @@ Live sound decisions require cosine score `>= 0.72`, lead over the runner-up `>=
 ### Familiar Voices
 
 1. Obtain the person's informed permission and acknowledge consent in the UI.
-2. Record at least three natural utterances. Vary wording; do not enroll a single repeated phrase.
+2. Record at least three valid natural utterances. For reliable use, 6–10 utterances with varied wording are recommended; do not enroll a single repeated phrase.
 3. Build the profile, then test with held-out known speech and an unenrolled speaker.
 
 Speaker identification runs once on the raw final utterance supplied by the existing VAD/state machine. Score `>= 0.72` and runner-up margin `>= 0.06` are required. Accepted final captions are rendered as `[Display name] transcript`. HELP receives the original unprefixed transcript so speaker metadata cannot change emergency phrase matching.
@@ -73,16 +73,27 @@ Each directory contains metadata, PCM WAV samples, and (after build) `prototype.
 
 The sound checkpoint's complete SHA-256 is recorded by the worker and in the evaluation artifact. Optional Python versions are pinned in `requirements-personalized-recognition.txt`.
 
-## Verification and measured host cost
+## Reproducible public-dataset verification
 
-The deterministic protocol is in `tools/evaluate_personalized_recognition.py`; its output is under `benchmark_results/personalized_recognition_mvp/`. ESC-50 enrollment uses folds 1–3 and tests folds 4–5. VIVOS uses three enrollment utterances and separate held-out utterances per enrolled speaker plus an unenrolled speaker. These small checks validate plumbing and open-set behavior; they are not population-level accuracy claims.
+The full functional evaluator is `tools/evaluate_personalized_recognition_dataset.py`. After the official datasets are cached, one command creates a new timestamped isolated run:
 
-On the development Windows CPU after cache warm-up:
+```powershell
+.\.venv\Scripts\python.exe tools\evaluate_personalized_recognition_dataset.py
+```
 
-- EfficientAT: 6/6 trial decisions correct, including 2/2 unknown rejections and zero false accepts; median embedding 0.027 s, maximum 1.935 s in the measured run; worker RSS about 472 MB.
-- WeSpeaker: 6/6 trial decisions correct, including 2/2 unknown rejections and zero false accepts; median embedding 0.052 s, maximum 1.953 s; worker RSS about 440 MB.
-- Both workers retained concurrently can therefore approach 912 MB RSS. Fresh Numba/model caches can make the first request materially slower; the UI explicitly reports a lazy first build.
-- Bounded queue drops and worker failures are exposed in runtime counters. The deterministic software tests exercise drop-oldest behavior and failure isolation without loading either model.
+The cache must contain official ESC-50 metadata and selected official WAV files under `benchmark_data/external/esc50/`, plus the checksummed official LibriSpeech SLR12 `test-clean.tar.gz` and extracted `LibriSpeech/test-clean/` tree under `benchmark_data/external/personalized_recognition_datasets/`. All of that material and all generated benchmark enrollment profiles remain Git-ignored. The script refuses a metadata/archive checksum mismatch and never uses `personalization/enrollments/`.
+
+The recorded run is `benchmark_results/personalized_recognition_dataset/20260913T191404+0700/`. It uses seed `20260913`, exact checksummed file manifests, ESC-50 fold 1 for five enrollment clips per class, folds 2–3 for calibration, and folds 4–5 for holdout. LibriSpeech uses two enrolled speakers with five enrollment utterances each, separate calibration and holdout utterances, three calibration-only impostor speakers, and five different holdout impostor speakers.
+
+Results on this deliberately small fixed split:
+
+- Familiar Sounds: known top-1 was 30/30, but the calibration-derived open-set threshold/margin accepted the correct class for 19/30 known clips and rejected 20/24 unknown clips. There were 11/30 false rejections and 4/24 false accepts; all four false accepts were vacuum-cleaner clips accepted as washing machine. Overall open-set decisions were correct for 39/54 clips.
+- Familiar Voices: 20/20 enrolled-speaker holdouts were correctly accepted and 25/25 impostor holdouts were rejected, with 0/25 false accepts and 0/20 false rejects. This 45/45 result is only a public-dataset functional result on two English read-speech identities and five holdout impostor identities, not a population accuracy claim.
+- The run also exercised actual HTTP create/list/upload/build/test/enable/disable/sample-delete/profile-delete routes for both feature types, both real workers together, deterministic drop-oldest queues, injected failure/timeout isolation, sound smoothing/cooldown, feature-off behavior, final-caption-only speaker prefixes, raw HELP transcripts, and locked alert priority.
+
+Cold/warm latency, per-request CPU time, current/peak worker RSS, prototype times, score and margin distributions, confusion matrices, every rejected example and reason, exact source/model revisions, API results, queue counters, and unsupported claims are in the run artifacts. Fresh caches and concurrent host activity can materially increase cold-load time.
+
+ESC-50 tests few-shot custom-category behavior, not personalized recognition of a particular household instance. LibriSpeech is a public English read-speech functional check; it does not establish performance for family members, Vietnamese speech, noisy/reverberant use, replay attacks, or identities outside this split. The older `tools/evaluate_personalized_recognition.py` output remains only a small plumbing smoke check.
 
 ## Remaining manual checks
 

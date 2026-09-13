@@ -1,0 +1,732 @@
+{
+  "holdout_counts": {
+    "known": 30,
+    "unknown": 24,
+    "total": 54
+  },
+  "correct_identification": {
+    "numerator": 19,
+    "denominator": 30
+  },
+  "known_acceptance": {
+    "numerator": 19,
+    "denominator": 30
+  },
+  "unknown_rejection": {
+    "numerator": 20,
+    "denominator": 24
+  },
+  "false_acceptance": {
+    "numerator": 4,
+    "denominator": 24
+  },
+  "false_rejection": {
+    "numerator": 11,
+    "denominator": 30
+  },
+  "misidentification": {
+    "numerator": 0,
+    "denominator": 30
+  },
+  "top1_known": {
+    "numerator": 30,
+    "denominator": 30
+  },
+  "overall_decision_correct": {
+    "numerator": 39,
+    "denominator": 54
+  },
+  "ambiguous_results": {
+    "numerator": 4,
+    "denominator": 54
+  },
+  "per_profile": {
+    "CLOCK ALARM": {
+      "top1_correct": 10,
+      "top1_total": 10,
+      "accepted_correct": 6,
+      "accepted_correct_total": 10
+    },
+    "DOOR KNOCK": {
+      "top1_correct": 10,
+      "top1_total": 10,
+      "accepted_correct": 9,
+      "accepted_correct_total": 10
+    },
+    "WASHING MACHINE": {
+      "top1_correct": 10,
+      "top1_total": 10,
+      "accepted_correct": 4,
+      "accepted_correct_total": 10
+    }
+  },
+  "confusion_matrix": {
+    "CLOCK ALARM": {
+      "CLOCK ALARM": 6,
+      "DOOR KNOCK": 0,
+      "WASHING MACHINE": 0,
+      "UNKNOWN": 4
+    },
+    "DOOR KNOCK": {
+      "CLOCK ALARM": 0,
+      "DOOR KNOCK": 9,
+      "WASHING MACHINE": 0,
+      "UNKNOWN": 1
+    },
+    "WASHING MACHINE": {
+      "CLOCK ALARM": 0,
+      "DOOR KNOCK": 0,
+      "WASHING MACHINE": 4,
+      "UNKNOWN": 6
+    },
+    "UNKNOWN": {
+      "CLOCK ALARM": 0,
+      "DOOR KNOCK": 0,
+      "WASHING MACHINE": 4,
+      "UNKNOWN": 20
+    }
+  },
+  "holdout_rejection_reasons": {
+    "below_threshold": 27,
+    "ambiguous_margin": 4
+  },
+  "score_distributions": {
+    "known": {
+      "count": 30,
+      "min": 0.6816087365150452,
+      "p25": 0.7777109742164612,
+      "p50": 0.8237694203853607,
+      "p95": 0.9193661153316498,
+      "max": 0.9455262422561646
+    },
+    "unknown": {
+      "count": 24,
+      "min": 0.6028964519500732,
+      "p25": 0.6735950410366058,
+      "p50": 0.702655702829361,
+      "p95": 0.875724983215332,
+      "max": 0.8952329158782959
+    }
+  },
+  "runner_up_margin_distributions": {
+    "known": {
+      "count": 30,
+      "min": 0.050455570220947266,
+      "p25": 0.1004505604505539,
+      "p50": 0.16441798210144043,
+      "p95": 0.28636794686317435,
+      "max": 0.30134040117263794
+    },
+    "unknown": {
+      "count": 24,
+      "min": 0.005466341972351074,
+      "p25": 0.014061525464057922,
+      "p50": 0.023897767066955566,
+      "p95": 0.21239113211631774,
+      "max": 0.21406280994415283
+    }
+  },
+  "calibration": {
+    "method": "fixed-grid maximin balanced known-identification/unknown-rejection; safety tie-break",
+    "candidate_threshold_range": [
+      0.35,
+      0.95,
+      0.01
+    ],
+    "candidate_margin_range": [
+      0.0,
+      0.3,
+      0.01
+    ],
+    "threshold": 0.77,
+    "margin": 0.1,
+    "known_correct": 29,
+    "known_total": 30,
+    "unknown_rejected": 22,
+    "unknown_total": 24
+  },
+  "calibration_counts": {
+    "known": 30,
+    "unknown": 24
+  },
+  "prototype_build_seconds": {
+    "CLOCK ALARM": 25.51980459992774,
+    "DOOR KNOCK": 0.379842400085181,
+    "WASHING MACHINE": 0.3794114999473095
+  },
+  "prototype_build_seconds_distribution": {
+    "count": 3,
+    "min": 0.3794114999473095,
+    "p25": 0.37962695001624525,
+    "p50": 0.379842400085181,
+    "p95": 23.00580837994348,
+    "max": 25.51980459992774
+  },
+  "enrollment_quality": [
+    {
+      "file": "1-13613-A-37.wav",
+      "expected_label": "CLOCK ALARM",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-14262-A-37.wav",
+      "expected_label": "CLOCK ALARM",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-34853-A-37.wav",
+      "expected_label": "CLOCK ALARM",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-67033-A-37.wav",
+      "expected_label": "CLOCK ALARM",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-72195-A-37.wav",
+      "expected_label": "CLOCK ALARM",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-101336-A-30.wav",
+      "expected_label": "DOOR KNOCK",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-103995-A-30.wav",
+      "expected_label": "DOOR KNOCK",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-103999-A-30.wav",
+      "expected_label": "DOOR KNOCK",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-26188-A-30.wav",
+      "expected_label": "DOOR KNOCK",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-52290-A-30.wav",
+      "expected_label": "DOOR KNOCK",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-21896-A-35.wav",
+      "expected_label": "WASHING MACHINE",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-23996-A-35.wav",
+      "expected_label": "WASHING MACHINE",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-23996-B-35.wav",
+      "expected_label": "WASHING MACHINE",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-27165-A-35.wav",
+      "expected_label": "WASHING MACHINE",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    },
+    {
+      "file": "1-27166-A-35.wav",
+      "expected_label": "WASHING MACHINE",
+      "quality": "valid",
+      "duration_seconds": 5.0,
+      "sample_rate_hz": 44100
+    }
+  ],
+  "rejected_examples": [
+    {
+      "phase": "calibration",
+      "file": "3-132340-A-37.wav",
+      "expected_label": "CLOCK ALARM",
+      "score": 0.7980819940567017,
+      "runner_up_margin": 0.026708245277404785,
+      "reason": "ambiguous_margin"
+    },
+    {
+      "phase": "calibration",
+      "file": "2-123712-A-33.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7736967206001282,
+      "runner_up_margin": 0.06510508060455322,
+      "reason": "ambiguous_margin"
+    },
+    {
+      "phase": "calibration",
+      "file": "2-70344-A-33.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7419487237930298,
+      "runner_up_margin": 0.04152190685272217,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "3-101381-A-33.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7726753950119019,
+      "runner_up_margin": 0.08650529384613037,
+      "reason": "ambiguous_margin"
+    },
+    {
+      "phase": "calibration",
+      "file": "3-101381-B-33.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7381341457366943,
+      "runner_up_margin": 0.06992202997207642,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "2-119748-A-38.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7182850241661072,
+      "runner_up_margin": 0.030306994915008545,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "2-127108-A-38.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6998212337493896,
+      "runner_up_margin": 0.045136094093322754,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "3-142593-A-38.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7405319213867188,
+      "runner_up_margin": 0.030048847198486328,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "3-143933-A-38.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7156933546066284,
+      "runner_up_margin": 0.06195908784866333,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "3-152020-A-36.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6069684028625488,
+      "runner_up_margin": 0.0005390644073486328,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "3-152020-C-36.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6655398011207581,
+      "runner_up_margin": 0.030527055263519287,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "2-125520-A-43.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.678321361541748,
+      "runner_up_margin": 0.001345992088317871,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "2-128465-A-43.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7296109199523926,
+      "runner_up_margin": 0.051939547061920166,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "3-145577-A-43.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6070363521575928,
+      "runner_up_margin": 0.018653512001037598,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "3-146697-A-43.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7473046779632568,
+      "runner_up_margin": 0.046280741691589355,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "2-43802-A-42.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6614423990249634,
+      "runner_up_margin": 0.04452085494995117,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "2-43806-A-42.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6444792747497559,
+      "runner_up_margin": 0.018924236297607422,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "3-51376-A-42.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.5832152366638184,
+      "runner_up_margin": 0.014024734497070312,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "3-51731-A-42.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.676827073097229,
+      "runner_up_margin": 0.028984427452087402,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "2-114280-A-0.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6385498642921448,
+      "runner_up_margin": 0.026429831981658936,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "2-114587-A-0.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.66791832447052,
+      "runner_up_margin": 0.036714792251586914,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "3-136288-A-0.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6563119888305664,
+      "runner_up_margin": 0.0031256675720214844,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "calibration",
+      "file": "3-144028-A-0.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7042856216430664,
+      "runner_up_margin": 0.026348233222961426,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-218981-A-30.wav",
+      "expected_label": "DOOR KNOCK",
+      "score": 0.7458311915397644,
+      "runner_up_margin": 0.12394988536834717,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-169508-A-37.wav",
+      "expected_label": "CLOCK ALARM",
+      "score": 0.7774417400360107,
+      "runner_up_margin": 0.09037500619888306,
+      "reason": "ambiguous_margin"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-204684-A-37.wav",
+      "expected_label": "CLOCK ALARM",
+      "score": 0.7975540161132812,
+      "runner_up_margin": 0.055312395095825195,
+      "reason": "ambiguous_margin"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-210612-A-37.wav",
+      "expected_label": "CLOCK ALARM",
+      "score": 0.7277553677558899,
+      "runner_up_margin": 0.06923514604568481,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-211408-A-37.wav",
+      "expected_label": "CLOCK ALARM",
+      "score": 0.8060000538825989,
+      "runner_up_margin": 0.0936552882194519,
+      "reason": "ambiguous_margin"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-218199-B-35.wav",
+      "expected_label": "WASHING MACHINE",
+      "score": 0.6909991502761841,
+      "runner_up_margin": 0.054788172245025635,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-218199-D-35.wav",
+      "expected_label": "WASHING MACHINE",
+      "score": 0.7544435858726501,
+      "runner_up_margin": 0.09653311967849731,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-218199-E-35.wav",
+      "expected_label": "WASHING MACHINE",
+      "score": 0.6816087365150452,
+      "runner_up_margin": 0.05835282802581787,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-141683-A-35.wav",
+      "expected_label": "WASHING MACHINE",
+      "score": 0.7679507732391357,
+      "runner_up_margin": 0.17555713653564453,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-181977-A-35.wav",
+      "expected_label": "WASHING MACHINE",
+      "score": 0.743134617805481,
+      "runner_up_margin": 0.12223827838897705,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-223810-A-35.wav",
+      "expected_label": "WASHING MACHINE",
+      "score": 0.7785186767578125,
+      "runner_up_margin": 0.050455570220947266,
+      "reason": "ambiguous_margin"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-107117-A-33.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7070353627204895,
+      "runner_up_margin": 0.04847264289855957,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-107120-A-33.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6929435133934021,
+      "runner_up_margin": 0.05968743562698364,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-161270-A-33.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7221481204032898,
+      "runner_up_margin": 0.005466341972351074,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-161270-B-33.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6901025176048279,
+      "runner_up_margin": 0.014313757419586182,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-175945-A-38.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7337769269943237,
+      "runner_up_margin": 0.09812211990356445,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-179984-A-38.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7221897840499878,
+      "runner_up_margin": 0.042760491371154785,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-201194-A-38.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7201036214828491,
+      "runner_up_margin": 0.006990492343902588,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-208624-A-38.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7269233465194702,
+      "runner_up_margin": 0.023827195167541504,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-175845-A-43.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6790040731430054,
+      "runner_up_margin": 0.011953473091125488,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-175846-A-43.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6749374866485596,
+      "runner_up_margin": 0.016527652740478516,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-179860-A-43.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6583771705627441,
+      "runner_up_margin": 0.021047532558441162,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-179863-A-43.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7186516523361206,
+      "runner_up_margin": 0.05107516050338745,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-102871-A-42.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6128460168838501,
+      "runner_up_margin": 0.02534794807434082,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-111671-A-42.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6258973479270935,
+      "runner_up_margin": 0.03218108415603638,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-117118-A-42.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6028964519500732,
+      "runner_up_margin": 0.013304829597473145,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-117120-A-42.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6434018611907959,
+      "runner_up_margin": 0.02396833896636963,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-182395-A-0.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6695677042007446,
+      "runner_up_margin": 0.006907641887664795,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "4-183992-A-0.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6982760429382324,
+      "runner_up_margin": 0.021695852279663086,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-203128-A-0.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.7166521549224854,
+      "runner_up_margin": 0.01737278699874878,
+      "reason": "below_threshold"
+    },
+    {
+      "phase": "holdout",
+      "file": "5-203128-B-0.wav",
+      "expected_label": "UNKNOWN",
+      "score": 0.6800640821456909,
+      "runner_up_margin": 0.006127476692199707,
+      "reason": "below_threshold"
+    }
+  ],
+  "smoothing_and_cooldown": {
+    "performed": true,
+    "source_file": "4-182034-A-30.wav",
+    "sequence": [
+      {
+        "step": "first",
+        "accepted": false,
+        "reason": "temporal_evidence"
+      },
+      {
+        "step": "second",
+        "accepted": true,
+        "reason": "accepted"
+      },
+      {
+        "step": "within_cooldown",
+        "accepted": false,
+        "reason": "cooldown"
+      },
+      {
+        "step": "after_cooldown",
+        "accepted": true,
+        "reason": "accepted"
+      }
+    ]
+  }
+}
