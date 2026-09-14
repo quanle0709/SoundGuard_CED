@@ -1,15 +1,15 @@
-"""Independent DCASE/VIVOS domain-shift validation for personalized recognition.
+"""Independent UrbanSound8K/VIVOS validation for personalized recognition.
 
 The evaluator never reads the normal enrollment store. It consumes locally cached,
-official archives/extractions, selects source-disjoint development and holdout data,
-and does not embed holdout audio until a development-only method is frozen.
+verified archives/extractions, selects fold- and source-disjoint development and
+holdout data, and does not embed holdout audio until a development-only method is
+frozen.  A prior VIVOS result may be carried forward without re-embedding it.
 """
 
 from __future__ import annotations
 
 import argparse
 import csv
-import hashlib
 import json
 import os
 import platform
@@ -25,7 +25,6 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 import numpy as np
-import soundfile as sf
 
 from personalization.recognition import (
     DEFAULT_MARGINS,
@@ -58,175 +57,228 @@ from tools.evaluate_personalized_recognition_dataset import (
 
 SEED = 20260913
 VIVOS_MD5 = "72972a8b14050f3f11ea7c3debabd7af"
-DCASE_DOI = "10.5281/zenodo.2583796"
-DCASE_LICENSE = "CC BY-NC 4.0"
+URBANSOUND8K_MD5 = "9aa69802bbf37fb986f71ec1483a196e"
+URBANSOUND8K_DOI = "10.5281/zenodo.1203745"
+URBANSOUND8K_LICENSE = "CC BY-NC 3.0"
+URBANSOUND8K_CLASS_IDS = {
+    "air_conditioner": 0,
+    "car_horn": 1,
+    "children_playing": 2,
+    "dog_bark": 3,
+    "drilling": 4,
+    "engine_idling": 5,
+    "gun_shot": 6,
+    "jackhammer": 7,
+    "siren": 8,
+    "street_music": 9,
+}
+URBANSOUND8K_CLASSES = set(URBANSOUND8K_CLASS_IDS)
 TARGETS = {
-    "Alarm_bell_ringing": "ALARM / BELL",
-    "Blender": "BLENDER",
-    "Vacuum_cleaner": "VACUUM CLEANER",
+    "dog_bark": "DOG BARK",
+    "car_horn": "CAR HORN",
+    "siren": "SIREN",
 }
 CONFUSABLES = {
-    "Electric_shaver_toothbrush": "VACUUM CLEANER",
-    "Dishes": "ALARM / BELL",
-    "Running_water": "BLENDER",
-    "Frying": "BLENDER",
+    "engine_idling": "CAR HORN",
+    "street_music": "SIREN",
+    "children_playing": "SIREN",
+    "air_conditioner": "SIREN",
+    "drilling": "SIREN",
+    "jackhammer": "SIREN",
+    "gun_shot": "CAR HORN",
 }
-ALL_NEGATIVES = (*CONFUSABLES, "Speech", "Dog", "Cat")
+ALL_NEGATIVES = tuple(CONFUSABLES)
 DEVELOPMENT_SPLITS = {"enrollment", "development_extra", "calibration", "calibration_unknown"}
 HOLDOUT_SPLITS = {"positive_holdout", "negative_holdout"}
 
 
-def _canonical_source(value: object) -> str:
-    return str(value or "").replace("\\", "/").strip()
+def load_urbansound8k(metadata_csv: Path, audio_root: Path,
+                      expected_rows: int = 8_732) -> tuple[list[dict], dict]:
+    """Validate the official inventory and return metadata-linked WAV candidates."""
+    with metadata_csv.open(newline="", encoding="utf-8-sig") as stream:
+        source_rows = list(csv.DictReader(stream))
+    required = {
+        "slice_file_name", "fsID", "start", "end", "salience", "fold",
+        "classID", "class",
+    }
+    if len(source_rows) != expected_rows:
+        raise RuntimeError(
+            f"UrbanSound8K metadata has {len(source_rows)}, expected {expected_rows} rows"
+        )
+    if not source_rows or not required.issubset(source_rows[0]):
+        raise RuntimeError("UrbanSound8K.csv is missing required columns")
+    classes = {row["class"] for row in source_rows}
+    folds = {int(row["fold"]) for row in source_rows}
+    if classes != URBANSOUND8K_CLASSES or folds != set(range(1, 11)):
+        raise RuntimeError("UrbanSound8K class or fold inventory does not match v1.0")
+    if any(
+        int(row["classID"]) != URBANSOUND8K_CLASS_IDS[row["class"]]
+        for row in source_rows
+    ):
+        raise RuntimeError("UrbanSound8K classID mapping does not match v1.0")
+    if len({row["slice_file_name"] for row in source_rows}) != len(source_rows):
+        raise RuntimeError("UrbanSound8K metadata contains duplicate excerpt filenames")
 
-
-def _scaper_events(path: Path) -> tuple[list[dict], str]:
-    """Read the small subset of JAMS/Scaper fields needed for leakage control."""
-    document = json.loads(path.read_text(encoding="utf-8"))
-    data = []
-    for annotation in document.get("annotations", []):
-        if str(annotation.get("namespace", "")).lower() == "scaper":
-            data.extend(annotation.get("data", []))
-    events, background = [], ""
-    for item in data:
-        value = item.get("value") if isinstance(item.get("value"), dict) else {}
-        role = str(value.get("role", ""))
-        source = _canonical_source(value.get("source_file"))
-        if role == "background":
-            background = source
-            continue
-        if role != "foreground":
-            continue
-        onset = float(item.get("time", value.get("event_time", 0.0)))
-        duration = float(item.get("duration", value.get("event_duration", 0.0)))
-        events.append({
-            "label": str(value.get("event_label", value.get("label", ""))),
-            "source_id": source,
-            "onset": onset,
-            "offset": onset + duration,
-            "snr_db": value.get("snr"),
+    candidates, missing = [], []
+    for source in source_rows:
+        fold = int(source["fold"])
+        path = audio_root / f"fold{fold}" / source["slice_file_name"]
+        if not path.is_file():
+            missing.append(str(path))
+        candidates.append({
+            "dataset": "UrbanSound8K v1.0",
+            "category": source["class"],
+            "class_id": int(source["classID"]),
+            "fs_id": str(source["fsID"]),
+            "fold": fold,
+            "salience": int(source["salience"]),
+            "source_start_seconds": float(source["start"]),
+            "source_end_seconds": float(source["end"]),
+            "file": source["slice_file_name"],
+            "path": repo_path(path),
+            "_path": path,
         })
-    return events, background
+    if missing:
+        raise RuntimeError(
+            f"{len(missing)} UrbanSound8K metadata-linked WAV files are missing; first={missing[0]}"
+        )
+    wav_count = sum(1 for _ in audio_root.rglob("*.wav"))
+    if wav_count != expected_rows:
+        raise RuntimeError(
+            f"UrbanSound8K extraction has {wav_count}, expected {expected_rows} WAV files"
+        )
+    return candidates, {
+        "metadata_rows": len(source_rows),
+        "wav_files": wav_count,
+        "classes": sorted(classes),
+        "folds": sorted(folds),
+        "metadata_linked_wavs_missing": 0,
+    }
 
 
-def discover_dcase_candidates(jams_root: Path, audio_root: Path) -> list[dict]:
-    wavs = defaultdict(list)
-    for path in audio_root.rglob("*.wav"):
-        wavs[path.stem].append(path)
-    candidates = []
-    for jams_path in sorted(jams_root.rglob("*.jams")):
-        matches = wavs.get(jams_path.stem, [])
-        if len(matches) != 1:
-            continue
-        events, background = _scaper_events(jams_path)
-        if not events or not background:
-            continue
-        for index, event in enumerate(events):
-            if event["label"] not in {*TARGETS, *ALL_NEGATIVES}:
-                continue
-            # Crop with a small context pad, but exclude any foreground overlap.
-            crop_onset = max(0.0, event["onset"] - 0.10)
-            crop_offset = min(10.0, event["offset"] + 0.10)
-            overlaps = [
-                other for other_index, other in enumerate(events)
-                if other_index != index
-                and min(crop_offset, other["offset"]) - max(crop_onset, other["onset"]) > 0.0
-            ]
-            duration = crop_offset - crop_onset
-            if overlaps or duration < 0.4 or duration > 15.0 or not event["source_id"]:
-                continue
-            candidates.append({
-                "dataset": "DCASE 2019 Task 4 synthetic strongly annotated",
-                "soundscape": matches[0].name,
-                "soundscape_path": repo_path(matches[0]),
-                "jams_file": jams_path.name,
-                "category": event["label"],
-                "foreground_source_id": event["source_id"],
-                "background_source_id": background,
-                "event_onset_seconds": event["onset"],
-                "event_offset_seconds": event["offset"],
-                "crop_onset_seconds": crop_onset,
-                "crop_offset_seconds": crop_offset,
-                "snr_db": event["snr_db"],
-                "overlapping_foreground_events": 0,
-                "_soundscape": matches[0],
-            })
-    return candidates
+def _sound_quality_status(row: dict, cache: dict[str, tuple[bool, str]]) -> tuple[bool, str]:
+    key = row["path"]
+    if key not in cache:
+        try:
+            validate_audio_bytes(row["_path"].read_bytes(), "sound")
+            cache[key] = (True, "")
+        except RecognitionError as exc:
+            cache[key] = (False, str(exc))
+    return cache[key]
 
 
-def _select_disjoint(candidates: list[dict], count: int, used_fg: set[str],
-                     used_bg: set[str], rng: random.Random) -> list[dict]:
+def _select_disjoint(candidates: list[dict], count: int, used_fsids: set[str],
+                     rng: random.Random, *, require_valid: bool = False,
+                     quality_cache: dict[str, tuple[bool, str]] | None = None,
+                     quality_rejections: dict[str, dict] | None = None) -> list[dict]:
     values = list(candidates)
     rng.shuffle(values)
+    values.sort(key=lambda row: (row["salience"] != 1, -(
+        row["source_end_seconds"] - row["source_start_seconds"]
+    )))
     selected = []
     for row in values:
-        foreground, background = row["foreground_source_id"], row["background_source_id"]
-        if foreground in used_fg or background in used_bg:
+        source_id = row["fs_id"]
+        if source_id in used_fsids:
             continue
+        if require_valid:
+            if quality_cache is None:
+                raise AssertionError("quality-aware selection requires a cache")
+            valid, reason = _sound_quality_status(row, quality_cache)
+            if not valid:
+                if quality_rejections is not None:
+                    quality_rejections.setdefault(row["path"], {
+                        "file": row["file"], "path": row["path"],
+                        "category": row["category"], "fold": row["fold"],
+                        "fs_id": row["fs_id"], "reason": reason,
+                    })
+                continue
         selected.append(dict(row))
-        used_fg.add(foreground)
-        used_bg.add(background)
+        used_fsids.add(source_id)
         if len(selected) == count:
             return selected
     raise RuntimeError(
-        f"only {len(selected)}/{count} candidates remain after foreground/background disjointness"
+        f"only {len(selected)}/{count} candidates remain after fsID disjointness"
     )
 
 
-def build_sound_split(candidates: list[dict]) -> list[dict]:
+def build_sound_split(candidates: list[dict], *, quality_splits: set[str] | None = None,
+                      quality_cache: dict[str, tuple[bool, str]] | None = None,
+                      quality_rejections: dict[str, dict] | None = None) -> list[dict]:
     rng = random.Random(SEED)
-    used_fg: set[str] = set()
-    used_bg: set[str] = set()
+    quality_splits = quality_splits or set()
+    used_fsids: set[str] = set()
     rows = []
     by_category = defaultdict(list)
     for row in candidates:
         by_category[row["category"]].append(row)
     for category, label in TARGETS.items():
-        for split, count in (
-            ("enrollment", 5), ("development_extra", 5),
-            ("calibration", 5), ("positive_holdout", 10),
+        for split, count, folds in (
+            ("enrollment", 5, {1, 2}),
+            ("development_extra", 5, {3, 4, 5}),
+            ("calibration", 10, {3, 4, 5}),
+            ("positive_holdout", 10, {6, 7, 8, 9, 10}),
         ):
-            chosen = _select_disjoint(by_category[category], count, used_fg, used_bg, rng)
+            pool = [row for row in by_category[category] if row["fold"] in folds]
+            chosen = _select_disjoint(
+                pool, count, used_fsids, rng,
+                require_valid=split in quality_splits,
+                quality_cache=quality_cache,
+                quality_rejections=quality_rejections,
+            )
             for row in chosen:
                 row.update({"split": split, "expected_label": label, "confusable_for": ""})
                 rows.append(row)
-    negative_pool = []
-    for category in ALL_NEGATIVES:
-        for row in by_category[category]:
-            value = dict(row)
-            value["confusable_for"] = CONFUSABLES.get(category, "")
-            negative_pool.append(value)
-    for split in ("calibration_unknown", "negative_holdout"):
-        chosen = _select_disjoint(negative_pool, 20, used_fg, used_bg, rng)
-        for row in chosen:
-            row.update({"split": split, "expected_label": "UNKNOWN"})
-            rows.append(row)
-    if len({row["foreground_source_id"] for row in rows}) != len(rows):
-        raise AssertionError("a DCASE foreground source crossed benchmark splits")
-    if len({row["background_source_id"] for row in rows}) != len(rows):
-        raise AssertionError("a DCASE background source crossed benchmark splits")
+
+    # Thirty unknowns per phase, balanced across all seven non-enrolled classes.
+    # Engine idling and street music receive the two remainder slots.
+    negative_counts = {category: 4 for category in ALL_NEGATIVES}
+    negative_counts.update({"engine_idling": 5, "street_music": 5})
+    for split, folds in (
+        ("calibration_unknown", {3, 4, 5}),
+        ("negative_holdout", {6, 7, 8, 9, 10}),
+    ):
+        for category in ALL_NEGATIVES:
+            pool = [row for row in by_category[category] if row["fold"] in folds]
+            chosen = _select_disjoint(
+                pool, negative_counts[category], used_fsids, rng,
+                require_valid=split in quality_splits,
+                quality_cache=quality_cache,
+                quality_rejections=quality_rejections,
+            )
+            for row in chosen:
+                row.update({
+                    "split": split, "expected_label": "UNKNOWN",
+                    "confusable_for": CONFUSABLES[category],
+                })
+                rows.append(row)
+    if len({row["fs_id"] for row in rows}) != len(rows):
+        raise AssertionError("an UrbanSound8K fsID crossed benchmark splits")
+    expected_folds = {
+        "enrollment": {1, 2},
+        "development_extra": {3, 4, 5},
+        "calibration": {3, 4, 5},
+        "calibration_unknown": {3, 4, 5},
+        "positive_holdout": {6, 7, 8, 9, 10},
+        "negative_holdout": {6, 7, 8, 9, 10},
+    }
+    for row in rows:
+        if row["fold"] not in expected_folds[row["split"]]:
+            raise AssertionError("an UrbanSound8K row crossed the designated fold boundary")
     return rows
 
 
-def materialize_sound_crops(rows: list[dict], crop_root: Path, splits: set[str]) -> None:
-    crop_root.mkdir(parents=True, exist_ok=True)
-    for index, row in enumerate(row for row in rows if row["split"] in splits):
-        if row.get("_path") is not None:
+def prepare_sound_rows(rows: list[dict], splits: set[str]) -> None:
+    """Validate and checksum only the phase whose audio is about to be embedded."""
+    for row in (row for row in rows if row["split"] in splits):
+        if row.get("sha256"):
             continue
-        samples, sample_rate = sf.read(row["_soundscape"], dtype="float32", always_2d=True)
-        start = max(0, round(float(row["crop_onset_seconds"]) * sample_rate))
-        stop = min(len(samples), round(float(row["crop_offset_seconds"]) * sample_rate))
-        crop = samples[start:stop]
-        token = hashlib.sha256(
-            f"{row['soundscape']}:{start}:{stop}".encode("utf-8")
-        ).hexdigest()[:16]
-        path = crop_root / f"{row['split']}_{index:03d}_{token}.wav"
-        sf.write(path, crop, sample_rate, subtype="PCM_16")
-        _, _, quality = validate_audio_bytes(path.read_bytes(), "sound")
+        path = row["_path"]
+        raw = path.read_bytes()
+        _, _, quality = validate_audio_bytes(raw, "sound")
         row.update({
-            "file": path.name, "path": repo_path(path), "sha256": sha256(path),
+            "sha256": sha256(path),
             "bytes": path.stat().st_size, "quality": quality,
-            "_path": path,
         })
 
 
@@ -602,10 +654,12 @@ def tracker_metrics(records: list[dict]) -> dict:
 
 
 def measure_background_preload(store: RecognitionStore, python_path: Path,
-                               sound_path: Path, voice_path: Path) -> dict:
+                               sound_path: Path, voice_path: Path | None = None) -> dict:
+    enabled_kinds = ["sound", *(["voice"] if voice_path is not None else [])]
     client = EmbeddingClient(python_path)
     runtime = PersonalizedRecognitionRuntime(
-        familiar_sounds=True, familiar_voices=True, store=store, client=client,
+        familiar_sounds=True, familiar_voices=voice_path is not None,
+        store=store, client=client,
         sample_rate=16_000, sound_cooldown_seconds=0,
     )
     ready_seconds = {}
@@ -618,15 +672,19 @@ def measure_background_preload(store: RecognitionStore, python_path: Path,
         while time.monotonic() < deadline:
             states = client.status()
             elapsed = time.perf_counter() - started
-            for kind in ("sound", "voice"):
+            for kind in enabled_kinds:
                 if states[kind]["status"] == "ready" and kind not in ready_seconds:
                     ready_seconds[kind] = elapsed
-            if all(states[kind]["status"] in {"ready", "failed"} for kind in ("sound", "voice")):
+            if all(
+                states[kind]["status"] in {"ready", "failed"}
+                for kind in enabled_kinds
+            ):
                 break
             time.sleep(0.02)
         final = client.status()
         post_ready = {}
-        for kind, path in (("sound", sound_path), ("voice", voice_path)):
+        paths = {"sound": sound_path, **({"voice": voice_path} if voice_path else {})}
+        for kind, path in paths.items():
             if final[kind]["status"] != "ready":
                 post_ready[kind] = {"performed": False, "reason": final[kind]["error"]}
                 continue
@@ -645,8 +703,9 @@ def measure_background_preload(store: RecognitionStore, python_path: Path,
             "time_to_ready_seconds": ready_seconds,
             "post_ready_first_request": post_ready,
             "worker_process_count": len(client._processes),
-            "duplicate_preload_requests_suppressed": (
-                not client.preload_async("sound") and not client.preload_async("voice")
+            "enabled_kinds": enabled_kinds,
+            "duplicate_preload_requests_suppressed": all(
+                not client.preload_async(kind) for kind in enabled_kinds
             ),
             "runtime_counters": runtime.counters,
         }
@@ -672,6 +731,25 @@ def _previous_cold_metrics() -> dict:
 
 def _split_counts(rows: list[dict]) -> dict:
     return dict(Counter(row["split"] for row in rows))
+
+
+def load_carried_vivos_result(path: Path, voice_rows: list[dict], selection: dict) -> tuple[dict, dict]:
+    """Normalize the completed VIVOS evaluation without repeating model inference."""
+    source = json.loads(path.read_text(encoding="utf-8"))
+    if source.get("archive_md5") != VIVOS_MD5:
+        raise RuntimeError("carried VIVOS result archive MD5 does not match the official corpus")
+    if source.get("split_counts") != _split_counts(voice_rows):
+        raise RuntimeError("carried VIVOS split counts do not match the deterministic manifest")
+    if source.get("selection") != selection:
+        raise RuntimeError("carried VIVOS speaker selection does not match the deterministic manifest")
+    if source.get("real_user_data_unchanged") is not True:
+        raise RuntimeError("carried VIVOS result did not preserve real user data")
+    final = dict(source["final"])
+    final["development"] = source["development"]
+    final["production_profile_build"] = source["production_profile_build"]
+    final["evaluation_carried_forward"] = True
+    final["source_result"] = repo_path(path)
+    return final, source["runtime"]["voice"]
 
 
 def _safe_manifest_rows(rows: list[dict]) -> list[dict]:
@@ -706,36 +784,38 @@ def build_summary(manifest: dict, sound: dict, voice: dict, runtime: dict) -> st
     )
     return f"""# HearVis personalized-recognition domain-shift validation
 
-Run `{manifest['run_id']}` used only the official DCASE 2019 Task 4 strongly annotated synthetic subset and the official VIVOS test partition. No ESC-50 or LibriSpeech evaluation was repeated.
+Run `{manifest['run_id']}` used UrbanSound8K v1.0 and carried forward the completed official VIVOS test-partition evaluation. No DCASE, ESC-50, LibriSpeech, or VIVOS inference was repeated.
 
 ## Exact splits
 
-- DCASE sounds: `{manifest['splits']['sound']}`. Every selected event has a distinct original foreground source and background source across enrollment, development, calibration, and final holdout. Holdout audio was embedded once, only after development selection was frozen.
+- UrbanSound8K sounds: `{manifest['splits']['sound']}`. Enrollment uses folds 1-2, development uses folds 3-5, and final holdout uses folds 6-10. Every selected clip has a distinct `fsID` across all phases. Holdout audio was embedded once, only after development selection was frozen.
 - VIVOS voices: `{manifest['splits']['voice']}`. Two neutral-label enrolled speakers use 5 enrollment, 5 calibration, and 10 final positive utterances each. Three disjoint speakers supply calibration impostors and five other disjoint speakers supply 5 final impostor utterances each.
 
-## DCASE household sounds
+## UrbanSound8K familiar sounds
 
 - Frozen current method: {_metric_line(sound['baseline_metrics'])}.
 - Development-selected method on the same untouched holdout: {sound_improved_text}.
 - Retention gate passed: `{sound['algorithm_change_retained']}` -- {sound['retention_reason']}.
-- Confusion matrices, per-profile counts, score/margin distributions, raw decisions, calibration grids, crop timestamps, source IDs, and latency are in the sibling JSON/CSV artifacts.
+- Confusion matrices, per-profile counts, score/margin distributions, raw decisions, calibration grids, folds, `fsID` values, and latency are in the sibling JSON/CSV artifacts.
 
 ## Vietnamese familiar voices
 
 - Frozen current method: {_metric_line(voice['baseline_metrics'])}.
-- Development-selected method: {voice_improved_text}.
+- Development-selected method: {voice_improved_text}. These metrics were copied from the completed checksummed VIVOS run; no voice embeddings were recomputed.
 - VIVOS is quiet, read Vietnamese speech. This small test does not prove performance for spontaneous family conversation, room or microphone changes, noise, illness, overlapping speakers, or replay attacks.
 
 ## Non-blocking model preload
 
 - Runtime start returned in `{runtime['runtime_start_return_seconds']:.4f}` seconds.
-- Background time-to-ready: sound `{runtime['time_to_ready_seconds'].get('sound')}` seconds; voice `{runtime['time_to_ready_seconds'].get('voice')}` seconds.
-- Final lifecycle states: sound `{runtime['final_status']['sound']['status']}`, voice `{runtime['final_status']['voice']['status']}`; worker processes `{runtime['worker_process_count']}`; duplicate requests suppressed `{runtime['duplicate_preload_requests_suppressed']}`.
+- Background sound-model time-to-ready: `{runtime['time_to_ready_seconds'].get('sound')}` seconds.
+- Final lifecycle state: sound `{runtime['final_status']['sound']['status']}`; worker processes `{runtime['worker_process_count']}`; duplicate requests suppressed `{runtime['duplicate_preload_requests_suppressed']}`. Voice preload was not repeated because no voice-path code changed after its successful two-model smoke test.
 - The unchanged prior synchronous cold-start measurements are copied by reference into `runtime_metrics.json`; post-ready first-request latency and worker memory are recorded there. Server startup, capture, CED, STT, HELP, and emergency processing do not wait for these model loads.
 
 ## Isolation and limitations
 
-Raw audio, model caches, cropped events, embeddings, and isolated profiles remain under Git-ignored `benchmark_data/external/`. No raw audio or biometric data is included here. Physical microphone/OLED behavior, live CED/STT contention, power, thermals, replay resistance, and real household/family conditions were not measured.
+Raw audio, model caches, embeddings, and isolated profiles remain under Git-ignored `benchmark_data/external/`. No raw audio or biometric data is included here. Physical microphone/OLED behavior, live CED/STT contention, power, thermals, replay resistance, and real household/family conditions were not measured.
+
+This is a contract-specific open-set personalization split, not UrbanSound8K's recommended ten-fold cross-validation protocol. Its metrics must not be compared with published UrbanSound8K classifier results.
 """
 
 
@@ -743,23 +823,39 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", help="timestamped result directory")
     parser.add_argument(
-        "--dcase-jams-root", required=True,
-        help="extracted official DCASE 2019 Scaper JAMS directory",
+        "--urbansound-root",
+        default="benchmark_data/external/personalized_recognition_domain_shift/urbansound8k/UrbanSound8K",
+        help="extracted UrbanSound8K directory containing audio/ and metadata/",
     )
     parser.add_argument(
-        "--dcase-audio-root", required=True,
-        help="extracted official DCASE 2019 synthetic soundscape directory",
+        "--urbansound-archive",
+        default="benchmark_data/external/personalized_recognition_domain_shift/urbansound8k/UrbanSound8K.tar.gz",
     )
-    parser.add_argument("--dcase-archive", required=True)
-    parser.add_argument("--dcase-official-md5", required=True)
-    parser.add_argument("--dcase-jams-archive", required=True)
-    parser.add_argument("--dcase-jams-official-md5", required=True)
+    parser.add_argument(
+        "--urbansound-download-url",
+        default="https://zenodo.org/records/1203745/files/UrbanSound8K.tar.gz?download=1",
+    )
+    parser.add_argument(
+        "--allow-verified-repackage", action="store_true",
+        help=(
+            "allow a reputable mirror/repackage whose inventory passes all checks; "
+            "the manifest will explicitly report that the official archive MD5 was not verified"
+        ),
+    )
     parser.add_argument(
         "--vivos-archive", default="benchmark_data/external/vivos/vivos.tar.gz"
     )
     parser.add_argument(
         "--vivos-root",
         default="benchmark_data/external/personalized_recognition_domain_shift/vivos/vivos/test/waves",
+    )
+    parser.add_argument(
+        "--vivos-result",
+        default=(
+            "benchmark_data/external/personalized_recognition_domain_shift_runs/"
+            "vivos_partial_1789307364/result.json"
+        ),
+        help="completed VIVOS result to carry forward without repeating embeddings",
     )
     parser.add_argument("--python", default=None)
     parser.add_argument("--downloaded-bytes", type=int, default=0)
@@ -769,28 +865,27 @@ def main() -> int:
         path = Path(value)
         return path if path.is_absolute() else ROOT / path
 
-    dcase_jams = absolute(args.dcase_jams_root)
-    dcase_audio = absolute(args.dcase_audio_root)
-    dcase_archive = absolute(args.dcase_archive)
-    dcase_jams_archive = absolute(args.dcase_jams_archive)
+    urbansound_root = absolute(args.urbansound_root)
+    urbansound_archive = absolute(args.urbansound_archive)
     vivos_archive = absolute(args.vivos_archive)
     vivos_root = absolute(args.vivos_root)
+    vivos_result = absolute(args.vivos_result)
     python_path = absolute(args.python) if args.python else (
         ROOT / "benchmark_data" / "external" / "personalized_recognition_venv"
         / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
     )
     for path in (
-        dcase_jams, dcase_audio, dcase_archive, dcase_jams_archive,
-        vivos_archive, vivos_root, python_path,
+        urbansound_root, urbansound_archive, vivos_archive, vivos_root,
+        vivos_result, python_path,
     ):
         if not path.exists():
             raise FileNotFoundError(path)
-    actual_dcase_md5 = md5(dcase_archive)
-    if actual_dcase_md5.lower() != args.dcase_official_md5.lower():
-        raise RuntimeError("official DCASE archive MD5 mismatch")
-    actual_dcase_jams_md5 = md5(dcase_jams_archive)
-    if actual_dcase_jams_md5.lower() != args.dcase_jams_official_md5.lower():
-        raise RuntimeError("official DCASE JAMS archive MD5 mismatch")
+    actual_urbansound_md5 = md5(urbansound_archive)
+    official_archive_verified = actual_urbansound_md5 == URBANSOUND8K_MD5
+    if not official_archive_verified and not args.allow_verified_repackage:
+        raise RuntimeError("UrbanSound8K archive MD5 does not match the official v1.0 archive")
+    if not official_archive_verified and "zenodo.org" in args.urbansound_download_url:
+        raise RuntimeError("a repackaged archive must not be labeled as an official Zenodo download")
     if md5(vivos_archive) != VIVOS_MD5:
         raise RuntimeError("official VIVOS archive MD5 mismatch")
 
@@ -809,34 +904,66 @@ def main() -> int:
     os.environ["TEMP"] = os.environ["TMP"] = str(temp_root)
     tempfile.tempdir = str(temp_root)
 
-    candidates = discover_dcase_candidates(dcase_jams, dcase_audio)
-    sound_rows = build_sound_split(candidates)
+    metadata_csv = urbansound_root / "metadata" / "UrbanSound8K.csv"
+    audio_root = urbansound_root / "audio"
+    candidates, urban_inventory = load_urbansound8k(metadata_csv, audio_root)
+    quality_cache: dict[str, tuple[bool, str]] = {}
+    quality_rejections: dict[str, dict] = {}
+    sound_rows = build_sound_split(
+        candidates,
+        quality_splits=DEVELOPMENT_SPLITS,
+        quality_cache=quality_cache,
+        quality_rejections=quality_rejections,
+    )
     # Only development material is read before method selection.
-    materialize_sound_crops(sound_rows, isolated_root / "sound_crops", DEVELOPMENT_SPLITS)
+    prepare_sound_rows(sound_rows, DEVELOPMENT_SPLITS)
     voice_rows, voice_selection = build_vivos_split(vivos_root)
+    voice_final, carried_voice_runtime = load_carried_vivos_result(
+        vivos_result, voice_rows, voice_selection
+    )
     real_before = snapshot_real_user_data()
     store = RecognitionStore(isolated_root / "profiles")
     client = EmbeddingClient(python_path)
     tracker = TimedEmbedder(client)
     try:
         sound_build = create_production_profiles("sound", sound_rows, store, tracker)
-        voice_build = create_production_profiles("voice", voice_rows, store, tracker)
         sound_vectors = embed_rows(sound_rows, tracker, "sound", DEVELOPMENT_SPLITS)
-        voice_vectors = embed_rows(voice_rows, tracker, "voice", DEVELOPMENT_SPLITS)
         sound_development = calibrate_candidates("sound", sound_rows, sound_vectors)
-        voice_development = calibrate_candidates("voice", voice_rows, voice_vectors)
 
-        # The method is now frozen. Materialize/embed untouched final holdout once.
-        materialize_sound_crops(sound_rows, isolated_root / "sound_crops", HOLDOUT_SPLITS)
+        # The method is now frozen. Apply the same production quality gate to a
+        # metadata-preordered holdout, then validate/embed the accepted clips once.
+        development_identity = [
+            (row["split"], row["path"]) for row in sound_rows
+            if row["split"] in DEVELOPMENT_SPLITS
+        ]
+        development_file_metadata = {
+            row["path"]: {
+                key: row[key] for key in ("sha256", "bytes", "quality")
+            }
+            for row in sound_rows if row["split"] in DEVELOPMENT_SPLITS
+        }
+        sound_rows = build_sound_split(
+            candidates,
+            quality_splits=DEVELOPMENT_SPLITS | HOLDOUT_SPLITS,
+            quality_cache=quality_cache,
+            quality_rejections=quality_rejections,
+        )
+        if development_identity != [
+            (row["split"], row["path"]) for row in sound_rows
+            if row["split"] in DEVELOPMENT_SPLITS
+        ]:
+            raise AssertionError("quality-gating holdout changed the frozen development split")
+        for row in sound_rows:
+            if row["split"] in DEVELOPMENT_SPLITS:
+                row.update(development_file_metadata[row["path"]])
+        prepare_sound_rows(sound_rows, HOLDOUT_SPLITS)
         sound_vectors.update(embed_rows(sound_rows, tracker, "sound", HOLDOUT_SPLITS))
-        voice_vectors.update(embed_rows(voice_rows, tracker, "voice", HOLDOUT_SPLITS))
         sound_final = evaluate_holdout("sound", sound_rows, sound_vectors, sound_development)
-        voice_final = evaluate_holdout("voice", voice_rows, voice_vectors, voice_development)
     finally:
         client.close()
 
-    # Write manifests only after the untouched holdout has been materialized so every
-    # selected crop has its size and checksum recorded.
+    # Write manifests only after untouched holdout embedding so each selected file
+    # has its size and checksum recorded without pre-reading holdout audio.
     write_csv(output / "sound_split_manifest.csv", _safe_manifest_rows(sound_rows))
     write_csv(output / "voice_split_manifest.csv", public_rows(voice_rows))
 
@@ -856,21 +983,17 @@ def main() -> int:
     preload = measure_background_preload(
         store, python_path,
         next(row["_path"] for row in sound_rows if row["split"] == "positive_holdout"),
-        next(row["_path"] for row in voice_rows if row["split"] == "positive_holdout"),
     )
     real_after = snapshot_real_user_data()
 
-    for final, development, build in (
-        (sound_final, sound_development, sound_build),
-        (voice_final, voice_development, voice_build),
-    ):
-        final["development"] = development
-        final["production_profile_build"] = build
+    sound_final["development"] = sound_development
+    sound_final["production_profile_build"] = sound_build
     runtime_metrics = {
-        "schema_version": "1.0", "run_id": run_id,
+        "schema_version": "2.0", "run_id": run_id,
         "preload": preload,
         "previous_synchronous_cold_start": _previous_cold_metrics(),
         "embedding_latency_and_memory": tracker_metrics(tracker.records),
+        "carried_vivos_embedding_latency_and_memory": carried_voice_runtime,
         "fusion": fusion,
         "user_data_isolation": {
             "before": real_before, "after": real_after,
@@ -892,29 +1015,40 @@ def main() -> int:
         ],
     }
     manifest = {
-        "schema_version": "1.0", "run_id": run_id,
+        "schema_version": "2.0", "run_id": run_id,
         "created_at": datetime.now().astimezone().isoformat(), "seed": SEED,
         "downloaded_bytes_for_this_run": args.downloaded_bytes,
         "datasets": {
             "sound": {
-                "name": "DCASE 2019 Task 4 synthetic strongly annotated subset",
-                "task_url": "https://dcase.community/challenge2019/task-sound-event-detection-in-domestic-environments",
-                "doi": DCASE_DOI, "license": DCASE_LICENSE,
-                "soundscape_archive": {
-                    "path": repo_path(dcase_archive),
-                    "bytes": dcase_archive.stat().st_size,
-                    "official_md5": args.dcase_official_md5.lower(),
-                    "actual_md5": actual_dcase_md5,
+                "name": "UrbanSound8K v1.0",
+                "project_url": "https://urbansounddataset.weebly.com/urbansound8k.html",
+                "record_url": "https://zenodo.org/records/1203745",
+                "download_url_used": args.urbansound_download_url,
+                "doi": URBANSOUND8K_DOI, "license": URBANSOUND8K_LICENSE,
+                "archive": {
+                    "path": repo_path(urbansound_archive),
+                    "bytes": urbansound_archive.stat().st_size,
+                    "official_md5": URBANSOUND8K_MD5,
+                    "actual_md5": actual_urbansound_md5,
+                    "official_archive_md5_verified": official_archive_verified,
+                    "verified_repackage_allowed": args.allow_verified_repackage,
                 },
-                "jams_archive": {
-                    "path": repo_path(dcase_jams_archive),
-                    "bytes": dcase_jams_archive.stat().st_size,
-                    "official_md5": args.dcase_jams_official_md5.lower(),
-                    "actual_md5": actual_dcase_jams_md5,
+                "inventory": urban_inventory,
+                "candidate_metadata_rows": len(candidates),
+                "selected_clips": len(sound_rows),
+                "selected_bytes": sum(row["bytes"] for row in sound_rows),
+                "quality_rejections": list(quality_rejections.values()),
+                "profiles": {
+                    label: [
+                        {
+                            "file": row["file"], "fs_id": row["fs_id"],
+                            "fold": row["fold"], "salience": row["salience"],
+                        }
+                        for row in sound_rows
+                        if row["split"] == "enrollment" and row["expected_label"] == label
+                    ]
+                    for label in sorted(TARGETS.values())
                 },
-                "candidate_clean_events": len(candidates),
-                "selected_events": len(sound_rows),
-                "selected_crop_bytes": sum(row["bytes"] for row in sound_rows),
             },
             "voice": {
                 "name": "VIVOS Vietnamese Speech Corpus for ASR, test partition",
@@ -930,13 +1064,17 @@ def main() -> int:
                 },
                 "selected_utterances": len(voice_rows),
                 "selected_bytes": sum(row["bytes"] for row in voice_rows),
+                "evaluation_carried_forward": True,
+                "source_result": repo_path(vivos_result),
                 **voice_selection,
             },
         },
         "splits": {"sound": _split_counts(sound_rows), "voice": _split_counts(voice_rows)},
         "split_integrity": {
-            "sound_foreground_source_disjoint": True,
-            "sound_background_source_disjoint": True,
+            "sound_fs_id_disjoint": True,
+            "sound_enrollment_folds": [1, 2],
+            "sound_development_folds": [3, 4, 5],
+            "sound_holdout_folds": [6, 7, 8, 9, 10],
             "holdout_from_enrollment_augmentation": False,
             "voice_file_reuse": False,
             "voice_impostor_speakers_disjoint": True,
@@ -955,14 +1093,15 @@ def main() -> int:
     write_json(output / "sound_metrics.json", sound_final)
     write_json(output / "voice_metrics.json", voice_final)
     write_json(output / "sound_calibration_results.json", sound_development)
-    write_json(output / "voice_calibration_results.json", voice_development)
+    write_json(output / "voice_calibration_results.json", voice_final["development"])
     write_json(output / "runtime_metrics.json", runtime_metrics)
     write_json(output / "dataset_manifest.json", manifest)
     (output / "reproduction.md").write_text(
         "# Reproduction\n\n"
-        "Use the checksummed official archives listed in `dataset_manifest.json`, extract them "
-        "under ignored `benchmark_data/external/`, then run:\n\n"
-        f"```powershell\n.\\.venv\\Scripts\\python.exe tools\\evaluate_personalized_recognition_domain_shift.py --dcase-jams-root {repo_path(dcase_jams)} --dcase-audio-root {repo_path(dcase_audio)} --dcase-archive {repo_path(dcase_archive)} --dcase-official-md5 {args.dcase_official_md5.lower()} --dcase-jams-archive {repo_path(dcase_jams_archive)} --dcase-jams-official-md5 {args.dcase_jams_official_md5.lower()} --downloaded-bytes {args.downloaded_bytes}\n```\n",
+        "Use the verified UrbanSound8K archive/extraction and completed VIVOS result listed "
+        "in `dataset_manifest.json`, keep them under ignored `benchmark_data/external/`, "
+        "then run:\n\n"
+        f"```powershell\n.\\.venv\\Scripts\\python.exe tools\\evaluate_personalized_recognition_domain_shift.py --urbansound-root {repo_path(urbansound_root)} --urbansound-archive {repo_path(urbansound_archive)} --urbansound-download-url \"{args.urbansound_download_url}\" --vivos-result {repo_path(vivos_result)} --downloaded-bytes {args.downloaded_bytes}\n```\n",
         encoding="utf-8",
     )
     (output / "summary.md").write_text(

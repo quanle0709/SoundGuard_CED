@@ -70,6 +70,7 @@ benchmark_results/**/checkpoint.json
 benchmark_results/baseline_git_status.txt
 benchmark_results/concurrency_probe_raw/
 benchmark_results/corrected_harness_probe_soak_2/
+benchmark_results/personalized_recognition_domain_shift/
 benchmark_results/layer2_hardware/20260822_204620/
 benchmark_results/layer2_hardware/20260822_204750/
 benchmark_results/layer2_hardware/20260822_205436/
