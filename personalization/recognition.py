@@ -188,62 +188,168 @@ class EmbeddingClient:
         if self.timeout_seconds <= 0:
             raise ValueError("model timeout must be positive")
         self._processes: dict[str, subprocess.Popen] = {}
-        self._lock = threading.Lock()
+        self._process_lock = threading.RLock()
+        self._kind_locks = {kind: threading.Lock() for kind in PROFILE_KINDS}
+        self._state_lock = threading.Lock()
+        self._states = {
+            kind: {
+                "status": "idle", "started_at": None, "ready_at": None,
+                "failed_at": None, "error": None, "metadata": None,
+            }
+            for kind in PROFILE_KINDS
+        }
+        self._preload_threads: dict[str, threading.Thread] = {}
+        self._closing = False
 
     @property
     def loaded(self) -> bool:
-        return any(process.poll() is None for process in self._processes.values())
+        return any(value["status"] == "ready" for value in self.status().values())
+
+    def status(self, kind: str | None = None) -> dict:
+        """Return a JSON-safe snapshot of per-model lifecycle state."""
+        if kind is not None and kind not in PROFILE_KINDS:
+            raise ValueError("kind must be sound or voice")
+        with self._state_lock:
+            values = {
+                name: {
+                    key: (dict(value) if isinstance(value, dict) else value)
+                    for key, value in state.items()
+                }
+                for name, state in self._states.items()
+                if kind is None or name == kind
+            }
+        return values[kind] if kind is not None else values
+
+    def _set_state(self, kind: str, status: str, **fields) -> None:
+        now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        with self._state_lock:
+            state = self._states[kind]
+            state["status"] = status
+            if status == "loading":
+                state.update({
+                    "started_at": now, "ready_at": None, "failed_at": None,
+                    "error": None,
+                })
+            elif status == "ready":
+                state.update({"ready_at": now, "failed_at": None, "error": None})
+            elif status == "failed":
+                state.update({"failed_at": now, "ready_at": None})
+            state.update(fields)
 
     def _start(self, kind: str) -> subprocess.Popen:
-        existing = self._processes.get(kind)
-        if existing is not None and existing.poll() is None:
-            return existing
-        if not self.python_path.is_file():
-            raise ModelUnavailable(
-                f"optional recognition Python is missing: {self.python_path}"
+        with self._process_lock:
+            existing = self._processes.get(kind)
+            if existing is not None and existing.poll() is None:
+                return existing
+            if not self.python_path.is_file():
+                raise ModelUnavailable(
+                    f"optional recognition Python is missing: {self.python_path}"
+                )
+            process = subprocess.Popen(
+                [str(self.python_path), "-m", WORKER_MODULE],
+                cwd=str(REPOSITORY_ROOT), stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL, text=True, encoding="utf-8", bufsize=1,
             )
-        process = subprocess.Popen(
-            [str(self.python_path), "-m", WORKER_MODULE],
-            cwd=str(REPOSITORY_ROOT), stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL, text=True, encoding="utf-8", bufsize=1,
+            self._processes[kind] = process
+            return process
+
+    def _request(self, kind: str, request: dict) -> dict:
+        process = self._start(kind)
+        if process.stdin is None or process.stdout is None:
+            raise RuntimeError("model worker pipes are unavailable")
+        process.stdin.write(json.dumps({"kind": kind, **request}) + "\n")
+        process.stdin.flush()
+        response_queue: queue.Queue[str] = queue.Queue(maxsize=1)
+        reader = threading.Thread(
+            target=lambda: response_queue.put(process.stdout.readline()),
+            name=f"{kind}-model-response", daemon=True,
         )
-        self._processes[kind] = process
-        return process
+        reader.start()
+        try:
+            line = response_queue.get(timeout=self.timeout_seconds)
+        except queue.Empty as exc:
+            raise TimeoutError(
+                f"{kind} model request exceeded {self.timeout_seconds:g} seconds"
+            ) from exc
+        if not line:
+            raise RuntimeError("model worker exited without a response")
+        response = json.loads(line)
+        if not response.get("ok"):
+            raise RuntimeError(response.get("error", "model worker failed"))
+        return response
+
+    def _perform_preload(self, kind: str) -> dict:
+        try:
+            with self._kind_locks[kind]:
+                response = self._request(kind, {"action": "preload"})
+            metadata = dict(response["metadata"])
+            self._set_state(kind, "ready", metadata=metadata)
+            return metadata
+        except Exception as exc:
+            self._close_kind(kind)
+            self._set_state(kind, "failed", error=f"{type(exc).__name__}: {exc}")
+            raise ModelUnavailable(f"{type(exc).__name__}: {exc}") from exc
+
+    def preload_async(self, kind: str) -> bool:
+        """Start one lower-priority model load and return without waiting.
+
+        Repeated calls while loading or ready are no-ops, preventing duplicate
+        worker processes and duplicate model instances.
+        """
+        if kind not in PROFILE_KINDS:
+            raise ValueError("kind must be sound or voice")
+        with self._state_lock:
+            if self._closing or self._states[kind]["status"] in {"loading", "ready"}:
+                return False
+            now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+            self._states[kind].update({
+                "status": "loading", "started_at": now, "ready_at": None,
+                "failed_at": None, "error": None, "metadata": None,
+            })
+
+        def load() -> None:
+            try:
+                self._perform_preload(kind)
+            except ModelUnavailable:
+                # Failure is exposed through status; optional callers stay alive.
+                pass
+
+        thread = threading.Thread(
+            target=load, name=f"familiar-{kind}-model-preload", daemon=True
+        )
+        self._preload_threads[kind] = thread
+        thread.start()
+        return True
 
     def embed(self, kind: str, audio_path: str | Path) -> tuple[np.ndarray, dict]:
-        with self._lock:
-            try:
-                process = self._start(kind)
-                if process.stdin is None or process.stdout is None:
-                    raise RuntimeError("model worker pipes are unavailable")
-                process.stdin.write(json.dumps({
-                    "kind": kind, "audio_path": str(Path(audio_path).resolve())
-                }) + "\n")
-                process.stdin.flush()
-                response_queue: queue.Queue[str] = queue.Queue(maxsize=1)
-                reader = threading.Thread(
-                    target=lambda: response_queue.put(process.stdout.readline()),
-                    name=f"{kind}-model-response", daemon=True,
-                )
-                reader.start()
-                try:
-                    line = response_queue.get(timeout=self.timeout_seconds)
-                except queue.Empty as exc:
-                    raise TimeoutError(
-                        f"{kind} embedding exceeded {self.timeout_seconds:g} seconds"
-                    ) from exc
-                if not line:
-                    raise RuntimeError("model worker exited without a response")
-                response = json.loads(line)
-                if not response.get("ok"):
-                    raise RuntimeError(response.get("error", "model worker failed"))
-                return l2_normalize(np.asarray(response["embedding"], dtype=np.float32)), response["metadata"]
-            except Exception as exc:
-                self._close_kind(kind)
-                raise ModelUnavailable(f"{type(exc).__name__}: {exc}") from exc
+        if kind not in PROFILE_KINDS:
+            raise ValueError("kind must be sound or voice")
+        current_status = self.status(kind)["status"]
+        if current_status == "loading":
+            raise ModelUnavailable(f"{kind} recognition model is loading")
+        if current_status != "ready":
+            self._set_state(kind, "loading")
+        try:
+            with self._kind_locks[kind]:
+                response = self._request(kind, {
+                    "action": "embed", "audio_path": str(Path(audio_path).resolve())
+                })
+            metadata = dict(response["metadata"])
+            self._set_state(kind, "ready", metadata=metadata)
+            return (
+                l2_normalize(np.asarray(response["embedding"], dtype=np.float32)),
+                metadata,
+            )
+        except Exception as exc:
+            self._close_kind(kind)
+            self._set_state(kind, "failed", error=f"{type(exc).__name__}: {exc}")
+            if isinstance(exc, ModelUnavailable):
+                raise
+            raise ModelUnavailable(f"{type(exc).__name__}: {exc}") from exc
 
     def _close_kind(self, kind: str) -> None:
-        process = self._processes.pop(kind, None)
+        with self._process_lock:
+            process = self._processes.pop(kind, None)
         if process is None:
             return
         try:
@@ -256,8 +362,12 @@ class EmbeddingClient:
                 pass
 
     def close(self) -> None:
-        for kind in list(self._processes):
-            self._close_kind(kind)
+        with self._state_lock:
+            self._closing = True
+        for kind in PROFILE_KINDS:
+            with self._kind_locks[kind]:
+                self._close_kind(kind)
+            self._set_state(kind, "idle", metadata=None, error=None)
 
 
 class RecognitionStore:

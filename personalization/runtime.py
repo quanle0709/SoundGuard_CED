@@ -65,6 +65,14 @@ class PersonalizedRecognitionRuntime:
             if worker is not None:
                 worker.start()
         self.started = True
+        preload = getattr(self.client, "preload_async", None)
+        if callable(preload):
+            # Only enabled features with an already-built profile may allocate a
+            # model. Each request returns immediately and is duplicate-safe.
+            if self.sound_enabled:
+                preload("sound")
+            if self.voice_enabled:
+                preload("voice")
 
     def _embed_samples(self, kind: str, samples: np.ndarray) -> tuple[np.ndarray, dict]:
         audio = np.asarray(samples, dtype=np.float32).reshape(-1)
@@ -142,6 +150,10 @@ class PersonalizedRecognitionRuntime:
             "sound_enabled": self.sound_enabled,
             "voice_enabled": self.voice_enabled,
         }
+        status = getattr(self.client, "status", None)
+        if callable(status):
+            for kind, state in status().items():
+                values[f"familiar_{kind}_model_status"] = state["status"]
         for name, worker in (("sound", self.sound_worker), ("voice", self.voice_worker)):
             for key, value in (worker.counters if worker else {}).items():
                 values[f"familiar_{name}_{key}"] = value

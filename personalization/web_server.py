@@ -71,6 +71,18 @@ EMBEDDING_CLIENT = EmbeddingClient()
 URL_KINDS = {"familiar-sounds": "sound", "familiar-voices": "voice"}
 
 
+def preload_enabled_models() -> list[str]:
+    """Start eligible model loads without delaying the web server or requests."""
+    preload = getattr(EMBEDDING_CLIENT, "preload_async", None)
+    if not callable(preload):
+        return []
+    started = []
+    for kind in ("sound", "voice"):
+        if RECOGNITION_STORE.matcher_profiles(kind) and preload(kind):
+            started.append(kind)
+    return started
+
+
 class PersonalizationHandler(BaseHTTPRequestHandler):
     server_version = "SoundGuardPersonalization/1.0"
 
@@ -111,11 +123,13 @@ class PersonalizationHandler(BaseHTTPRequestHandler):
             profile, source = MANAGER.load()
             self._json(200, {"profile": profile, "source": source})
         elif path == "/api/recognition":
+            status = getattr(EMBEDDING_CLIENT, "status", lambda: {})()
             self._json(200, {
                 "familiar_sounds": RECOGNITION_STORE.list("sound"),
                 "familiar_voices": RECOGNITION_STORE.list("voice"),
                 "model_worker_configured": EMBEDDING_CLIENT.python_path.is_file(),
                 "model_worker_loaded": EMBEDDING_CLIENT.loaded,
+                "model_worker_status": status,
                 "storage_root": str(RECOGNITION_STORE.root),
             })
         else:
@@ -157,6 +171,7 @@ class PersonalizationHandler(BaseHTTPRequestHandler):
                     r"/api/(familiar-sounds|familiar-voices)/([^/]+)/build", path)):
                 kind, profile_id = URL_KINDS[match.group(1)], match.group(2)
                 profile = RECOGNITION_STORE.build(kind, profile_id, EMBEDDING_CLIENT.embed)
+                preload_enabled_models()
                 self._json(200, {"profile": profile})
             elif (match := re.fullmatch(
                     r"/api/(familiar-sounds|familiar-voices)/test", path)):
@@ -185,6 +200,8 @@ class PersonalizationHandler(BaseHTTPRequestHandler):
             profile = RECOGNITION_STORE.update(
                 URL_KINDS[match.group(1)], match.group(2), self._read_json()
             )
+            if profile.get("enabled"):
+                preload_enabled_models()
             self._json(200, {"profile": profile})
         except (ValueError, RecognitionError, json.JSONDecodeError) as exc:
             self._json(400, {"error": str(exc)})
@@ -221,6 +238,7 @@ def main() -> None:
     args = parser.parse_args()
     server = ThreadingHTTPServer((args.host, args.port), PersonalizationHandler)
     print(f"SoundGuard personalization: http://{args.host}:{args.port}")
+    preload_enabled_models()
     try:
         server.serve_forever()
     except KeyboardInterrupt:

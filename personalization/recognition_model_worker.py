@@ -251,6 +251,22 @@ class Worker:
             self.models[kind] = EfficientATEmbedder() if kind == "sound" else WeSpeakerEmbedder()
         return self.models[kind].embed(path)  # type: ignore[attr-defined]
 
+    def preload(self, kind: str) -> dict:
+        """Load one model without requiring or retaining a user audio sample."""
+        if kind not in {"sound", "voice"}:
+            raise ValueError("kind must be sound or voice")
+        if kind not in self.models:
+            self.models[kind] = EfficientATEmbedder() if kind == "sound" else WeSpeakerEmbedder()
+        model = self.models[kind]
+        metadata = dict(model.metadata)  # type: ignore[attr-defined]
+        rss, peak_rss = _memory_bytes()
+        metadata.update({
+            "load_seconds": float(model.load_seconds),  # type: ignore[attr-defined]
+            "worker_rss_bytes": rss,
+            "worker_peak_rss_bytes": peak_rss,
+        })
+        return metadata
+
 
 def main() -> None:
     worker_temp = MODEL_CACHE.parent / "personalized_recognition_tmp"
@@ -270,16 +286,25 @@ def main() -> None:
     for line in sys.stdin:
         try:
             request = json.loads(line)
-            with contextlib.redirect_stdout(sys.stderr):
-                embedding, metadata = worker.embed(
-                    str(request.get("kind", "")),
-                    Path(str(request.get("audio_path", ""))),
-                )
-            response = {
-                "ok": True,
-                "embedding": embedding.tolist(),
-                "metadata": metadata,
-            }
+            action = str(request.get("action", "embed"))
+            if action == "preload":
+                with contextlib.redirect_stdout(sys.stderr):
+                    metadata = worker.preload(str(request.get("kind", "")))
+                response = {"ok": True, "action": "preload", "metadata": metadata}
+            elif action == "embed":
+                with contextlib.redirect_stdout(sys.stderr):
+                    embedding, metadata = worker.embed(
+                        str(request.get("kind", "")),
+                        Path(str(request.get("audio_path", ""))),
+                    )
+                response = {
+                    "ok": True,
+                    "action": "embed",
+                    "embedding": embedding.tolist(),
+                    "metadata": metadata,
+                }
+            else:
+                raise ValueError("action must be preload or embed")
         except Exception as exc:
             response = {
                 "ok": False,

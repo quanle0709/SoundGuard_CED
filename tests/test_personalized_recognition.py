@@ -14,6 +14,8 @@ import soundfile as sf
 
 from personalization.recognition import (
     BoundedRecognitionWorker,
+    EmbeddingClient,
+    ModelUnavailable,
     RecognitionError,
     RecognitionStore,
     TemporalDecisionGate,
@@ -172,6 +174,57 @@ def test_bounded_worker_drops_oldest_pending_job_under_overload():
     assert worker.counters["dropped"] == 1
 
 
+def test_model_preload_is_non_blocking_duplicate_safe_and_fail_open_while_loading(tmp_path):
+    release = threading.Event()
+
+    class ProbeClient(EmbeddingClient):
+        def __init__(self):
+            super().__init__(python_path=Path(__file__))
+            self.requests = 0
+
+        def _request(self, kind, request):
+            del kind
+            self.requests += 1
+            assert request["action"] == "preload"
+            assert release.wait(2)
+            return {"ok": True, "metadata": {"model": "probe", "load_seconds": 0.1}}
+
+    client = ProbeClient()
+    started = time.perf_counter()
+    assert client.preload_async("sound") is True
+    assert time.perf_counter() - started < 0.2
+    assert client.preload_async("sound") is False
+    assert client.status("sound")["status"] == "loading"
+    with pytest.raises(ModelUnavailable, match="loading"):
+        client.embed("sound", tmp_path / "unused.wav")
+    release.set()
+    deadline = time.time() + 2
+    while client.status("sound")["status"] == "loading" and time.time() < deadline:
+        time.sleep(0.01)
+    assert client.status("sound")["status"] == "ready"
+    assert client.loaded and client.requests == 1
+    client.close()
+
+
+def test_model_preload_failure_is_exposed_without_raising_on_caller_thread():
+    class BrokenClient(EmbeddingClient):
+        def __init__(self):
+            super().__init__(python_path=Path(__file__))
+
+        def _request(self, *_):
+            raise RuntimeError("cannot load")
+
+    client = BrokenClient()
+    assert client.preload_async("voice") is True
+    deadline = time.time() + 2
+    while client.status("voice")["status"] == "loading" and time.time() < deadline:
+        time.sleep(0.01)
+    state = client.status("voice")
+    assert state["status"] == "failed"
+    assert "cannot load" in state["error"]
+    client.close()
+
+
 def test_runtime_fails_open_when_model_client_raises(tmp_path):
     class BrokenClient:
         def embed(self, *_):
@@ -227,6 +280,30 @@ def test_runtime_with_no_built_profiles_closes_without_starting_workers(tmp_path
         store=RecognitionStore(tmp_path), client=Client(),
     )
     assert not runtime.sound_enabled and not runtime.voice_enabled
+    runtime.close()
+
+
+def test_runtime_preloads_only_enabled_features_with_valid_profiles(tmp_path):
+    class Client:
+        def __init__(self): self.preloads = []
+        def preload_async(self, kind):
+            self.preloads.append(kind)
+            return True
+        def close(self): pass
+
+    store = RecognitionStore(tmp_path)
+    profile = store.create("sound", "Bell")
+    for frequency in (440, 660):
+        store.add_sample("sound", profile["id"], wav_bytes(frequency=frequency))
+    store.build("sound", profile["id"], fake_embed)
+    client = Client()
+    runtime = PersonalizedRecognitionRuntime(
+        familiar_sounds=True, familiar_voices=False, store=store, client=client
+    )
+    runtime.start()
+    assert client.preloads == ["sound"]
+    runtime.start()
+    assert client.preloads == ["sound"]
     runtime.close()
 
 
@@ -340,6 +417,9 @@ def test_http_api_preserves_start_and_adds_local_enrollment(tmp_path):
         python_path = Path(__file__)
         loaded = False
         embed = staticmethod(fake_embed)
+        status = staticmethod(lambda: {
+            "sound": {"status": "idle"}, "voice": {"status": "idle"}
+        })
     store = RecognitionStore(tmp_path)
     with patch("personalization.web_server.RECOGNITION_STORE", store), patch(
         "personalization.web_server.EMBEDDING_CLIENT", FakeClient()
@@ -384,6 +464,7 @@ def test_http_api_preserves_start_and_adds_local_enrollment(tmp_path):
             with urllib.request.urlopen(base + "/api/recognition", timeout=3) as response:
                 listed = json.load(response)
             assert listed["familiar_sounds"][0]["display_name"] == "Bell"
+            assert listed["model_worker_status"]["sound"]["status"] == "idle"
         finally:
             server.shutdown()
             server.server_close()

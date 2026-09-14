@@ -16,7 +16,13 @@ python -m personalization.web_server
 # Open http://127.0.0.1:8765
 ```
 
-The first sound or voice build lazily loads its model. No optional model loads merely by opening the site.
+The first sound or voice build lazily loads its model. When live mode or the existing
+personalization server starts, each enabled feature with at least one valid built profile begins
+one background preload; disabled features and features without a valid profile do not load a
+model. Recognition remains fail-open while a model is loading or if preload fails. The
+`/api/recognition` response reports each model as `idle`, `loading`, `ready`, or `failed`, including
+load timing or the failure text where available. Repeated preload requests do not create duplicate
+workers.
 Finish enrollment before starting live mode. Live mode snapshots enabled prototypes at startup so its real-time microphone callback never performs profile disk I/O; restart live mode after changing profiles.
 
 ## Enrollment and testing
